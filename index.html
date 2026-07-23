@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0B3D2E">
+  <meta name="description" content="Read or download the BSOE 100 Tips for AI in Finance educational handbook.">
+  <meta property="og:title" content="100 Tips for AI in Finance | BSOE Institute">
+  <meta property="og:description" content="A practical educational handbook for finance professionals.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/pages/page-001.webp">
+  <title>100 Tips for AI in Finance | BSOE Institute</title>
+  <style>
+    :root {
+      --dark-green: #0B3D2E;
+      --forest-green: #1F6B52;
+      --gold: #C9A45D;
+      --near-white: #F7FAF7;
+      --card: #FFFFFF;
+      --text: #1F2A25;
+      --muted: #647169;
+      --border: #D8E3DC;
+      --shadow: 0 14px 40px rgba(11, 61, 46, 0.13);
+      --page-width: 920px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 8% 0%, rgba(201,164,93,.16), transparent 25rem),
+        linear-gradient(180deg, #EDF4EF 0, var(--near-white) 25rem);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+    a { color: inherit; }
+    .skip-link {
+      position: fixed; left: 1rem; top: -5rem; z-index: 1000;
+      background: #fff; color: var(--dark-green); padding: .75rem 1rem;
+      border-radius: .5rem; box-shadow: var(--shadow);
+    }
+    .skip-link:focus { top: 1rem; }
+    .hero {
+      background: linear-gradient(135deg, var(--dark-green), #144F3D 62%, var(--forest-green));
+      color: #fff;
+      padding: clamp(2rem, 5vw, 4.5rem) 1.25rem 2.4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: ""; position: absolute; width: 32rem; height: 32rem;
+      right: -10rem; top: -16rem; border: 1px solid rgba(255,255,255,.16);
+      border-radius: 50%; box-shadow: 0 0 0 4rem rgba(255,255,255,.025), 0 0 0 8rem rgba(255,255,255,.02);
+    }
+    .hero-inner { max-width: 1180px; margin: 0 auto; position: relative; z-index: 1; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: .55rem;
+      font-size: .78rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase;
+      color: #F5E7C4; margin-bottom: 1rem;
+    }
+    .eyebrow::before { content: ""; width: 2.5rem; height: .2rem; background: var(--gold); border-radius: 1rem; }
+    h1 { margin: 0; max-width: 870px; font-size: clamp(2.2rem, 5.2vw, 5rem); line-height: .98; letter-spacing: -.04em; }
+    .hero p { max-width: 760px; margin: 1.25rem 0 0; color: rgba(255,255,255,.84); font-size: clamp(1rem, 2vw, 1.25rem); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.7rem; }
+    .button {
+      display: inline-flex; align-items: center; justify-content: center; gap: .55rem;
+      min-height: 46px; padding: .75rem 1rem; border-radius: .7rem;
+      text-decoration: none; font-weight: 800; border: 1px solid transparent; cursor: pointer;
+      font: inherit; transition: transform .18s ease, background .18s ease, box-shadow .18s ease;
+    }
+    .button:hover { transform: translateY(-1px); }
+    .button-primary { background: var(--gold); color: #17372C; box-shadow: 0 8px 22px rgba(0,0,0,.18); }
+    .button-secondary { color: #fff; border-color: rgba(255,255,255,.3); background: rgba(255,255,255,.08); }
+    .toolbar-wrap { position: sticky; top: 0; z-index: 50; padding: .65rem 1rem; background: rgba(247,250,247,.91); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+    .toolbar {
+      max-width: 1180px; margin: 0 auto; display: flex; align-items: center;
+      justify-content: space-between; gap: .8rem; flex-wrap: wrap;
+    }
+    .toolbar-group { display: flex; align-items: center; flex-wrap: wrap; gap: .45rem; }
+    .tool-button, .page-jump {
+      border: 1px solid var(--border); background: #fff; color: var(--dark-green);
+      border-radius: .55rem; min-height: 38px; padding: .48rem .7rem; font-weight: 800;
+    }
+    .tool-button { cursor: pointer; }
+    .tool-button:hover { background: #EAF2ED; }
+    .page-jump { width: 5.2rem; }
+    .status { color: var(--muted); font-size: .9rem; white-space: nowrap; }
+    main { width: 100%; padding: 2rem 1rem 4rem; }
+    .reader-intro {
+      max-width: 920px; margin: 0 auto 1.5rem; padding: 1rem 1.15rem;
+      border-left: 4px solid var(--gold); background: rgba(255,255,255,.88);
+      border-radius: 0 .75rem .75rem 0; color: var(--muted); box-shadow: 0 7px 22px rgba(11,61,46,.06);
+    }
+    .pages { width: 100%; display: grid; justify-items: center; gap: 1.6rem; }
+    .pdf-page {
+      width: min(var(--page-width), calc(100vw - 2rem)); margin: 0;
+      background: #fff; border: 1px solid rgba(11,61,46,.12); border-radius: .45rem;
+      box-shadow: var(--shadow); overflow: hidden; transition: width .2s ease;
+      scroll-margin-top: 5.5rem;
+    }
+    .pdf-page img { display: block; width: 100%; height: auto; background: #fff; }
+    .pdf-page figcaption {
+      padding: .55rem .75rem; text-align: center; color: var(--muted);
+      font-size: .78rem; border-top: 1px solid var(--border); background: #FBFCFB;
+    }
+    .back-top {
+      position: fixed; right: 1rem; bottom: 1rem; z-index: 40;
+      width: 46px; height: 46px; border-radius: 50%; border: 0;
+      background: var(--dark-green); color: #fff; font-size: 1.15rem; cursor: pointer;
+      box-shadow: 0 10px 24px rgba(11,61,46,.28); opacity: 0; pointer-events: none; transition: opacity .2s ease;
+    }
+    .back-top.visible { opacity: 1; pointer-events: auto; }
+    footer { background: var(--dark-green); color: rgba(255,255,255,.78); padding: 2rem 1rem; text-align: center; }
+    footer strong { color: #fff; }
+    @media (max-width: 640px) {
+      .toolbar { justify-content: center; }
+      .toolbar-group { justify-content: center; }
+      .status { width: 100%; text-align: center; }
+      main { padding-left: .55rem; padding-right: .55rem; }
+      .pdf-page { width: min(var(--page-width), calc(100vw - 1.1rem)); border-radius: .25rem; }
+      .hero-actions .button { width: 100%; }
+    }
+    @media print {
+      .hero, .toolbar-wrap, .reader-intro, .back-top, footer, figcaption { display: none !important; }
+      main { padding: 0; }
+      .pages { display: block; }
+      .pdf-page { width: 100%; border: 0; box-shadow: none; page-break-after: always; border-radius: 0; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#reader">Skip to handbook</a>
+  <header class="hero">
+    <div class="hero-inner">
+      <div class="eyebrow">BSOE Institute</div>
+      <h1>100 Tips for AI in Finance</h1>
+      <p>A practical educational handbook for finance professionals, presented online in the same visual format as the published PDF.</p>
+      <div class="hero-actions">
+        <a class="button button-primary" href="BSOE_100_Tips_for_AI_in_Finance.pdf" download>Download the PDF</a>
+        <a class="button button-secondary" href="BSOE_100_Tips_for_AI_in_Finance.pdf" target="_blank" rel="noopener">Open PDF in a new tab</a>
+        <a class="button button-secondary" href="#reader">Read online</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="toolbar-wrap" aria-label="Document controls">
+    <div class="toolbar">
+      <div class="toolbar-group">
+        <button class="tool-button" id="zoomOut" type="button" aria-label="Zoom out">-</button>
+        <button class="tool-button" id="zoomReset" type="button">100%</button>
+        <button class="tool-button" id="zoomIn" type="button" aria-label="Zoom in">+</button>
+        <button class="tool-button" id="fullscreen" type="button">Full screen</button>
+        <button class="tool-button" type="button" onclick="window.print()">Print</button>
+      </div>
+      <div class="toolbar-group">
+        <label class="status" for="pageJump">Go to page</label>
+        <input class="page-jump" id="pageJump" type="number" inputmode="numeric" min="1" max="105" value="1" aria-label="Page number">
+        <button class="tool-button" id="goPage" type="button">Go</button>
+        <span class="status" id="pageStatus" aria-live="polite">Page 1 of 105</span>
+      </div>
+    </div>
+  </div>
+
+  <main id="reader">
+    <div class="reader-intro">
+      This page reproduces the handbook exactly as published. Use the controls above to zoom, jump to a page, print, open the searchable PDF, or download it directly.
+    </div>
+    <section class="pages" aria-label="Handbook pages">
+        <figure class="pdf-page" id="page-1">
+          <img src="assets/pages/page-001.webp" alt="100 Tips for AI in Finance, page 1 of 105" width="1071" height="1516" loading="eager" decoding="async">
+          <figcaption>Page 1 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-2">
+          <img src="assets/pages/page-002.webp" alt="100 Tips for AI in Finance, page 2 of 105" width="1071" height="1516" loading="eager" decoding="async">
+          <figcaption>Page 2 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-3">
+          <img src="assets/pages/page-003.webp" alt="100 Tips for AI in Finance, page 3 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 3 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-4">
+          <img src="assets/pages/page-004.webp" alt="100 Tips for AI in Finance, page 4 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 4 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-5">
+          <img src="assets/pages/page-005.webp" alt="100 Tips for AI in Finance, page 5 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 5 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-6">
+          <img src="assets/pages/page-006.webp" alt="100 Tips for AI in Finance, page 6 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 6 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-7">
+          <img src="assets/pages/page-007.webp" alt="100 Tips for AI in Finance, page 7 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 7 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-8">
+          <img src="assets/pages/page-008.webp" alt="100 Tips for AI in Finance, page 8 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 8 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-9">
+          <img src="assets/pages/page-009.webp" alt="100 Tips for AI in Finance, page 9 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 9 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-10">
+          <img src="assets/pages/page-010.webp" alt="100 Tips for AI in Finance, page 10 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 10 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-11">
+          <img src="assets/pages/page-011.webp" alt="100 Tips for AI in Finance, page 11 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 11 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-12">
+          <img src="assets/pages/page-012.webp" alt="100 Tips for AI in Finance, page 12 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 12 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-13">
+          <img src="assets/pages/page-013.webp" alt="100 Tips for AI in Finance, page 13 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 13 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-14">
+          <img src="assets/pages/page-014.webp" alt="100 Tips for AI in Finance, page 14 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 14 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-15">
+          <img src="assets/pages/page-015.webp" alt="100 Tips for AI in Finance, page 15 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 15 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-16">
+          <img src="assets/pages/page-016.webp" alt="100 Tips for AI in Finance, page 16 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 16 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-17">
+          <img src="assets/pages/page-017.webp" alt="100 Tips for AI in Finance, page 17 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 17 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-18">
+          <img src="assets/pages/page-018.webp" alt="100 Tips for AI in Finance, page 18 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 18 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-19">
+          <img src="assets/pages/page-019.webp" alt="100 Tips for AI in Finance, page 19 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 19 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-20">
+          <img src="assets/pages/page-020.webp" alt="100 Tips for AI in Finance, page 20 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 20 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-21">
+          <img src="assets/pages/page-021.webp" alt="100 Tips for AI in Finance, page 21 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 21 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-22">
+          <img src="assets/pages/page-022.webp" alt="100 Tips for AI in Finance, page 22 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 22 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-23">
+          <img src="assets/pages/page-023.webp" alt="100 Tips for AI in Finance, page 23 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 23 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-24">
+          <img src="assets/pages/page-024.webp" alt="100 Tips for AI in Finance, page 24 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 24 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-25">
+          <img src="assets/pages/page-025.webp" alt="100 Tips for AI in Finance, page 25 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 25 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-26">
+          <img src="assets/pages/page-026.webp" alt="100 Tips for AI in Finance, page 26 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 26 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-27">
+          <img src="assets/pages/page-027.webp" alt="100 Tips for AI in Finance, page 27 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 27 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-28">
+          <img src="assets/pages/page-028.webp" alt="100 Tips for AI in Finance, page 28 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 28 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-29">
+          <img src="assets/pages/page-029.webp" alt="100 Tips for AI in Finance, page 29 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 29 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-30">
+          <img src="assets/pages/page-030.webp" alt="100 Tips for AI in Finance, page 30 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 30 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-31">
+          <img src="assets/pages/page-031.webp" alt="100 Tips for AI in Finance, page 31 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 31 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-32">
+          <img src="assets/pages/page-032.webp" alt="100 Tips for AI in Finance, page 32 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 32 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-33">
+          <img src="assets/pages/page-033.webp" alt="100 Tips for AI in Finance, page 33 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 33 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-34">
+          <img src="assets/pages/page-034.webp" alt="100 Tips for AI in Finance, page 34 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 34 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-35">
+          <img src="assets/pages/page-035.webp" alt="100 Tips for AI in Finance, page 35 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 35 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-36">
+          <img src="assets/pages/page-036.webp" alt="100 Tips for AI in Finance, page 36 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 36 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-37">
+          <img src="assets/pages/page-037.webp" alt="100 Tips for AI in Finance, page 37 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 37 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-38">
+          <img src="assets/pages/page-038.webp" alt="100 Tips for AI in Finance, page 38 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 38 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-39">
+          <img src="assets/pages/page-039.webp" alt="100 Tips for AI in Finance, page 39 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 39 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-40">
+          <img src="assets/pages/page-040.webp" alt="100 Tips for AI in Finance, page 40 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 40 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-41">
+          <img src="assets/pages/page-041.webp" alt="100 Tips for AI in Finance, page 41 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 41 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-42">
+          <img src="assets/pages/page-042.webp" alt="100 Tips for AI in Finance, page 42 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 42 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-43">
+          <img src="assets/pages/page-043.webp" alt="100 Tips for AI in Finance, page 43 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 43 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-44">
+          <img src="assets/pages/page-044.webp" alt="100 Tips for AI in Finance, page 44 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 44 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-45">
+          <img src="assets/pages/page-045.webp" alt="100 Tips for AI in Finance, page 45 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 45 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-46">
+          <img src="assets/pages/page-046.webp" alt="100 Tips for AI in Finance, page 46 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 46 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-47">
+          <img src="assets/pages/page-047.webp" alt="100 Tips for AI in Finance, page 47 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 47 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-48">
+          <img src="assets/pages/page-048.webp" alt="100 Tips for AI in Finance, page 48 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 48 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-49">
+          <img src="assets/pages/page-049.webp" alt="100 Tips for AI in Finance, page 49 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 49 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-50">
+          <img src="assets/pages/page-050.webp" alt="100 Tips for AI in Finance, page 50 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 50 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-51">
+          <img src="assets/pages/page-051.webp" alt="100 Tips for AI in Finance, page 51 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 51 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-52">
+          <img src="assets/pages/page-052.webp" alt="100 Tips for AI in Finance, page 52 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 52 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-53">
+          <img src="assets/pages/page-053.webp" alt="100 Tips for AI in Finance, page 53 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 53 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-54">
+          <img src="assets/pages/page-054.webp" alt="100 Tips for AI in Finance, page 54 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 54 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-55">
+          <img src="assets/pages/page-055.webp" alt="100 Tips for AI in Finance, page 55 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 55 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-56">
+          <img src="assets/pages/page-056.webp" alt="100 Tips for AI in Finance, page 56 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 56 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-57">
+          <img src="assets/pages/page-057.webp" alt="100 Tips for AI in Finance, page 57 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 57 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-58">
+          <img src="assets/pages/page-058.webp" alt="100 Tips for AI in Finance, page 58 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 58 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-59">
+          <img src="assets/pages/page-059.webp" alt="100 Tips for AI in Finance, page 59 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 59 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-60">
+          <img src="assets/pages/page-060.webp" alt="100 Tips for AI in Finance, page 60 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 60 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-61">
+          <img src="assets/pages/page-061.webp" alt="100 Tips for AI in Finance, page 61 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 61 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-62">
+          <img src="assets/pages/page-062.webp" alt="100 Tips for AI in Finance, page 62 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 62 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-63">
+          <img src="assets/pages/page-063.webp" alt="100 Tips for AI in Finance, page 63 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 63 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-64">
+          <img src="assets/pages/page-064.webp" alt="100 Tips for AI in Finance, page 64 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 64 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-65">
+          <img src="assets/pages/page-065.webp" alt="100 Tips for AI in Finance, page 65 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 65 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-66">
+          <img src="assets/pages/page-066.webp" alt="100 Tips for AI in Finance, page 66 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 66 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-67">
+          <img src="assets/pages/page-067.webp" alt="100 Tips for AI in Finance, page 67 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 67 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-68">
+          <img src="assets/pages/page-068.webp" alt="100 Tips for AI in Finance, page 68 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 68 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-69">
+          <img src="assets/pages/page-069.webp" alt="100 Tips for AI in Finance, page 69 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 69 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-70">
+          <img src="assets/pages/page-070.webp" alt="100 Tips for AI in Finance, page 70 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 70 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-71">
+          <img src="assets/pages/page-071.webp" alt="100 Tips for AI in Finance, page 71 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 71 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-72">
+          <img src="assets/pages/page-072.webp" alt="100 Tips for AI in Finance, page 72 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 72 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-73">
+          <img src="assets/pages/page-073.webp" alt="100 Tips for AI in Finance, page 73 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 73 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-74">
+          <img src="assets/pages/page-074.webp" alt="100 Tips for AI in Finance, page 74 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 74 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-75">
+          <img src="assets/pages/page-075.webp" alt="100 Tips for AI in Finance, page 75 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 75 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-76">
+          <img src="assets/pages/page-076.webp" alt="100 Tips for AI in Finance, page 76 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 76 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-77">
+          <img src="assets/pages/page-077.webp" alt="100 Tips for AI in Finance, page 77 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 77 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-78">
+          <img src="assets/pages/page-078.webp" alt="100 Tips for AI in Finance, page 78 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 78 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-79">
+          <img src="assets/pages/page-079.webp" alt="100 Tips for AI in Finance, page 79 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 79 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-80">
+          <img src="assets/pages/page-080.webp" alt="100 Tips for AI in Finance, page 80 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 80 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-81">
+          <img src="assets/pages/page-081.webp" alt="100 Tips for AI in Finance, page 81 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 81 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-82">
+          <img src="assets/pages/page-082.webp" alt="100 Tips for AI in Finance, page 82 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 82 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-83">
+          <img src="assets/pages/page-083.webp" alt="100 Tips for AI in Finance, page 83 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 83 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-84">
+          <img src="assets/pages/page-084.webp" alt="100 Tips for AI in Finance, page 84 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 84 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-85">
+          <img src="assets/pages/page-085.webp" alt="100 Tips for AI in Finance, page 85 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 85 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-86">
+          <img src="assets/pages/page-086.webp" alt="100 Tips for AI in Finance, page 86 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 86 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-87">
+          <img src="assets/pages/page-087.webp" alt="100 Tips for AI in Finance, page 87 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 87 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-88">
+          <img src="assets/pages/page-088.webp" alt="100 Tips for AI in Finance, page 88 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 88 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-89">
+          <img src="assets/pages/page-089.webp" alt="100 Tips for AI in Finance, page 89 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 89 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-90">
+          <img src="assets/pages/page-090.webp" alt="100 Tips for AI in Finance, page 90 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 90 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-91">
+          <img src="assets/pages/page-091.webp" alt="100 Tips for AI in Finance, page 91 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 91 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-92">
+          <img src="assets/pages/page-092.webp" alt="100 Tips for AI in Finance, page 92 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 92 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-93">
+          <img src="assets/pages/page-093.webp" alt="100 Tips for AI in Finance, page 93 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 93 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-94">
+          <img src="assets/pages/page-094.webp" alt="100 Tips for AI in Finance, page 94 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 94 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-95">
+          <img src="assets/pages/page-095.webp" alt="100 Tips for AI in Finance, page 95 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 95 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-96">
+          <img src="assets/pages/page-096.webp" alt="100 Tips for AI in Finance, page 96 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 96 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-97">
+          <img src="assets/pages/page-097.webp" alt="100 Tips for AI in Finance, page 97 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 97 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-98">
+          <img src="assets/pages/page-098.webp" alt="100 Tips for AI in Finance, page 98 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 98 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-99">
+          <img src="assets/pages/page-099.webp" alt="100 Tips for AI in Finance, page 99 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 99 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-100">
+          <img src="assets/pages/page-100.webp" alt="100 Tips for AI in Finance, page 100 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 100 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-101">
+          <img src="assets/pages/page-101.webp" alt="100 Tips for AI in Finance, page 101 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 101 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-102">
+          <img src="assets/pages/page-102.webp" alt="100 Tips for AI in Finance, page 102 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 102 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-103">
+          <img src="assets/pages/page-103.webp" alt="100 Tips for AI in Finance, page 103 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 103 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-104">
+          <img src="assets/pages/page-104.webp" alt="100 Tips for AI in Finance, page 104 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 104 of 105</figcaption>
+        </figure>
+        <figure class="pdf-page" id="page-105">
+          <img src="assets/pages/page-105.webp" alt="100 Tips for AI in Finance, page 105 of 105" width="1071" height="1516" loading="lazy" decoding="async">
+          <figcaption>Page 105 of 105</figcaption>
+        </figure>
+    </section>
+  </main>
+
+  <button class="back-top" id="backTop" type="button" aria-label="Back to top">↑</button>
+
+  <footer>
+    <strong>BSOE Institute</strong><br>
+    100 Tips for AI in Finance - Educational Edition
+  </footer>
+
+  <script>
+    (() => {
+      const root = document.documentElement;
+      const pages = [...document.querySelectorAll('.pdf-page')];
+      const status = document.getElementById('pageStatus');
+      const jump = document.getElementById('pageJump');
+      const reset = document.getElementById('zoomReset');
+      const backTop = document.getElementById('backTop');
+      const baseWidth = 920;
+      let zoom = 1;
+
+      function setZoom(next) {
+        zoom = Math.min(1.5, Math.max(0.6, next));
+        root.style.setProperty('--page-width', `${Math.round(baseWidth * zoom)}px`);
+        reset.textContent = `${Math.round(zoom * 100)}%`;
+      }
+      document.getElementById('zoomIn').addEventListener('click', () => setZoom(zoom + .1));
+      document.getElementById('zoomOut').addEventListener('click', () => setZoom(zoom - .1));
+      reset.addEventListener('click', () => setZoom(1));
+
+      function goToPage() {
+        const value = Math.min(105, Math.max(1, Number(jump.value) || 1));
+        jump.value = value;
+        document.getElementById(`page-${value}`).scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+      document.getElementById('goPage').addEventListener('click', goToPage);
+      jump.addEventListener('keydown', event => { if (event.key === 'Enter') goToPage(); });
+
+      document.getElementById('fullscreen').addEventListener('click', async () => {
+        try {
+          if (!document.fullscreenElement) await document.documentElement.requestFullscreen();
+          else await document.exitFullscreen();
+        } catch (_) {}
+      });
+
+      const visible = new Map();
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => visible.set(Number(entry.target.id.split('-')[1]), entry.intersectionRatio));
+        const current = [...visible.entries()].filter(([, ratio]) => ratio > 0).sort((a,b) => b[1]-a[1])[0];
+        if (current) {
+          jump.value = current[0];
+          status.textContent = `Page ${current[0]} of 105`;
+          history.replaceState(null, '', `#page-${current[0]}`);
+        }
+      }, { threshold: [0.15, 0.35, 0.6] });
+      pages.forEach(page => observer.observe(page));
+
+      window.addEventListener('scroll', () => backTop.classList.toggle('visible', window.scrollY > 1000), { passive: true });
+      backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+      if (location.hash.startsWith('#page-')) {
+        const target = document.querySelector(location.hash);
+        if (target) setTimeout(() => target.scrollIntoView(), 100);
+      }
+    })();
+  </script>
+</body>
+</html>
