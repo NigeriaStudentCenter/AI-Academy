@@ -1,3 +1,8 @@
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -277,6 +282,42 @@
     .info-card strong { display: block; color: var(--green); margin-bottom: 6px; font-size: 1.06rem; }
     .info-card p { margin: 0; color: var(--muted); }
 
+    .video-section {
+      margin-bottom: 58px;
+    }
+
+    .video-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: clamp(16px, 3vw, 24px);
+    }
+
+    .video-frame {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      border-radius: 16px;
+      background: #000;
+    }
+
+    .video-frame iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .video-note {
+      margin: 14px 2px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: .95rem;
+    }
+
     .assessment-shell {
       overflow: hidden;
       margin-bottom: 58px;
@@ -516,26 +557,35 @@
     .cta-meta { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0 22px; }
     .pill { border: 1px solid rgba(255,255,255,.25); border-radius: 999px; padding: 7px 11px; font-size: .88rem; }
 
-    .lead-form {
+    .registration-form {
       background: var(--white);
       color: var(--ink);
       border-radius: 16px;
       padding: 20px;
       margin-top: 24px;
+      border: 1px solid rgba(212,176,106,.55);
     }
 
-    .lead-form h4 { margin: 0 0 6px; color: var(--green); }
-    .lead-form p { color: var(--muted); margin-top: 0; }
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr auto; gap: 12px; }
-    .field label { display: block; font-weight: 750; margin-bottom: 5px; color: var(--green); }
-    .field input {
+    .registration-form h4 { margin: 0 0 6px; color: var(--green); }
+    .registration-form p { color: var(--muted); margin-top: 0; }
+    .registration-frame {
       width: 100%;
+      min-height: 920px;
       border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 12px;
-      min-height: 46px;
+      border-radius: 12px;
+      background: var(--white);
     }
-    .form-note { font-size: .82rem; color: var(--muted); margin-top: 10px; }
+    .registration-fallback {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+    .registration-fallback p { margin: 0; font-size: .9rem; }
 
     .academy-section { margin-top: 64px; }
     .academy-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
@@ -589,7 +639,6 @@
       .info-grid { grid-template-columns: 1fr 1fr; }
       .choice-grid { grid-template-columns: 1fr; }
       .academy-grid { grid-template-columns: 1fr 1fr; }
-      .form-grid { grid-template-columns: 1fr; }
       .header-price { display: none; }
     }
 
@@ -603,10 +652,11 @@
       .step-actions, .action-right { width: 100%; }
       .step-actions .btn, .action-right .btn { flex: 1; }
       .score-circle { width: 128px; height: 128px; }
+      .registration-frame { min-height: 1080px; }
     }
 
     @media print {
-      .site-header, .hero, #introContent, #assessmentShell, .academy-section, .faq-section, footer, .lead-form, .result-controls { display: none !important; }
+      .site-header, .hero, #introContent, #assessmentShell, .academy-section, .faq-section, footer, .registration-form, .result-controls { display: none !important; }
       body { background: white; }
       main { padding: 0; }
       .results { display: block !important; }
@@ -658,6 +708,26 @@
   <main>
     <div class="container">
       <div id="introContent">
+        <section class="video-section" aria-labelledby="video-title">
+          <div class="section-heading">
+            <h2 id="video-title">Take the test. Build your future. Support the journey home.</h2>
+            <p>Watch this short introduction to the AI Readiness Assessment, the BSOE AI Academy and the Return to Nigeria Initiative.</p>
+          </div>
+          <div class="video-card">
+            <div class="video-frame">
+              <iframe
+                src="https://www.youtube-nocookie.com/embed/5mmqTT3aTuI?rel=0"
+                title="BSOE AI Readiness Assessment and Return to Nigeria Initiative video"
+                loading="lazy"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <p class="video-note">Press play to discover why AI readiness matters and how your learning can support a wider community mission.</p>
+          </div>
+        </section>
+
         <section id="how-it-works" aria-labelledby="why-title">
           <div class="section-heading">
             <h2 id="why-title">AI readiness is more than knowing how to ask a chatbot a question</h2>
@@ -776,7 +846,7 @@
           </details>
           <details class="faq-card">
             <summary>Are my answers stored?</summary>
-            <p>Your assessment answers are saved only in your current browser so you do not lose progress. They are not sent to BSOE by this webpage. Contact details are sent only if you choose to use the separate information form.</p>
+            <p>Your assessment answers are saved only in your current browser so you do not lose progress. They are not sent to BSOE by this webpage. Details entered into the registration form are submitted through Microsoft Forms only when you choose to register.</p>
           </details>
         </div>
       </section>
@@ -800,11 +870,12 @@
   <script>
     /* ==============================================================
        BEGINNER EDIT AREA
-       Replace only the values between quotation marks below.
+       The Microsoft registration form is already connected.
+       Replace only the remaining placeholder values between quotation marks.
        ============================================================== */
     const CONFIG = {
-      registrationUrl: "REPLACE_ME_REGISTRATION_FORM_LINK",
-      contactFormEndpoint: "REPLACE_ME_CONTACT_FORM_ENDPOINT",
+      registrationUrl: "https://forms.cloud.microsoft/r/sG6JjDcKKZ",
+      microsoftFormEmbedUrl: "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=iBFpdp2b7ke7Wir-xS9NXkpgLZIEiUNDtHJNCjHCrCFUQTdIWlhZMFRESEQzT1ZKNThGTFBYWUMxWi4u&route=shorturl&embed=true",
       contactEmail: "REPLACE_ME_CONTACT_EMAIL",
       privacyUrl: "REPLACE_ME_PRIVACY_POLICY_LINK",
       termsUrl: "REPLACE_ME_TERMS_LINK",
@@ -1446,7 +1517,7 @@
       const plan = getThirtyDayPlan(results.weakest, state.audience);
       const recommendation = getProgrammeRecommendation(results);
       const registrationUrl = safeUrl(CONFIG.registrationUrl);
-      const formReady = CONFIG.contactFormEndpoint && !CONFIG.contactFormEndpoint.startsWith("REPLACE_ME");
+      const microsoftFormEmbedUrl = safeUrl(CONFIG.microsoftFormEmbedUrl, registrationUrl);
 
       const dimensionHtml = Object.entries(results.percentages).map(([key, value]) => `
         <div class="dimension-line">
@@ -1511,21 +1582,23 @@
             <button id="restartAssessment" class="btn btn-secondary" type="button">Restart assessment</button>
           </div>
 
-          <form id="leadForm" class="lead-form" action="${formReady ? CONFIG.contactFormEndpoint : "#"}" method="POST">
-            <h4>Receive Academy information and your recommended next step</h4>
-            <p>Your score is already shown above. Sharing your details is optional.</p>
-            <input type="hidden" name="audience" value="${audienceLabel(state.audience)}">
-            <input type="hidden" name="overall_score" value="${results.overall}%">
-            <input type="hidden" name="readiness_level" value="${results.level.name}">
-            <input type="hidden" name="recommended_pathway" value="${recommendation.pathway}">
-            <input type="hidden" name="recommended_programme" value="${recommendation.programme}">
-            <div class="form-grid">
-              <div class="field"><label for="leadName">Name</label><input id="leadName" name="name" autocomplete="name" required></div>
-              <div class="field"><label for="leadEmail">Email address</label><input id="leadEmail" name="email" type="email" autocomplete="email" required></div>
-              <div style="align-self:end"><button class="btn btn-primary" type="submit">Send me information</button></div>
+          <section id="academyRegistration" class="registration-form" aria-labelledby="registrationFormTitle">
+            <h4 id="registrationFormTitle">Complete your BSOE AI Academy registration</h4>
+            <p>Your assessment result is already shown above. Complete the secure Microsoft form below to register for your recommended programme.</p>
+            <iframe
+              class="registration-frame"
+              src="${microsoftFormEmbedUrl}"
+              title="BSOE AI Academy registration form"
+              loading="lazy"
+              allowfullscreen
+              webkitallowfullscreen
+              mozallowfullscreen>
+            </iframe>
+            <div class="registration-fallback">
+              <p>If the form does not appear on your device, open it directly in a new browser tab.</p>
+              <a class="btn btn-primary" href="${registrationUrl}" target="_blank" rel="noopener">Open registration form</a>
             </div>
-            <div class="form-note">This form requires an external form service. Replace the contact form endpoint in the BEGINNER EDIT AREA before publishing.</div>
-          </form>
+          </section>
         </div>
       `;
 
@@ -1545,12 +1618,6 @@
         });
       }
 
-      document.getElementById("leadForm").addEventListener("submit", event => {
-        if (!formReady) {
-          event.preventDefault();
-          alert("The contact form service has not been connected yet. Replace contactFormEndpoint in the BEGINNER EDIT AREA of index.html.");
-        }
-      });
     }
 
     function restartAssessment() {
