@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 1 — Tailor Your CV to Beat the ATS</title>
+<style>
+  :root{--green:#14532d;--green2:#0e3a20;--gold:#c6a25a;--ink:#1f2a24;--mut:#5f7268;--soft:#f4f8f5;--line:#e2ece8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--ink);background:var(--soft);line-height:1.6}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+  header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:40px 0 34px}
+  header .lbl{color:var(--gold);letter-spacing:3px;font-size:13px;font-weight:700;text-transform:uppercase}
+  header h1{margin:8px 0 12px;font-size:34px;line-height:1.15}
+  .meta{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#eafff2;font-size:13px;padding:5px 12px;border-radius:999px}
+  main{padding:30px 0 60px}
+  h2{font-size:23px;margin:34px 0 6px;color:var(--green)}
+  h2 .n{display:inline-flex;width:34px;height:34px;border-radius:9px;background:var(--gold);color:var(--green2);align-items:center;justify-content:center;font-weight:800;margin-right:10px;font-size:17px}
+  p{margin:8px 0}
+  .callout{border-left:4px solid var(--gold);background:#fff;border-radius:10px;padding:16px 18px;margin:16px 0;box-shadow:0 3px 12px rgba(20,83,45,.05)}
+  .callout.out{border-left-color:var(--green)}
+  .callout b{color:var(--green)}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:16px 0}
+  .tool{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .tool h3{margin:0 0 4px;font-size:18px;color:var(--green)}
+  .tool ol{margin:10px 0 14px;padding-left:20px}
+  .tool li{font-size:14.5px;margin:5px 0}
+  .btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:10px 16px;border-radius:9px}
+  .btn:hover{background:var(--green2)}
+  .prompt{position:relative;background:#0f2f22;color:#e9f3ec;border-radius:12px;padding:18px 18px 18px;margin:14px 0;font-family:'SFMono-Regular',Consolas,monospace;font-size:14px;line-height:1.55;white-space:pre-wrap}
+  .prompt .copy{position:absolute;top:12px;right:12px;background:var(--gold);color:var(--green2);border:0;border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer;font-size:12.5px;font-family:inherit}
+  .prompt .copy:hover{filter:brightness(.95)}
+  .prompt .ph{color:var(--gold)}
+  ul.check{list-style:none;padding:0;margin:14px 0}
+  ul.check li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid var(--line);font-size:15px}
+  ul.check li:before{content:"\2713";position:absolute;left:0;color:var(--gold);font-weight:800;font-size:17px}
+  .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
+  .quiz details{border-top:1px solid var(--line);padding:10px 0}
+  .quiz summary{cursor:pointer;font-weight:600;color:var(--green)}
+  .quiz p{color:var(--mut);font-size:14.5px;margin:8px 0 0}
+  .prove{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;border-radius:16px;padding:26px;margin:24px 0}
+  .prove h2{color:#fff;margin-top:0}
+  .prove .n{background:#fff;color:var(--green)}
+  footer{color:var(--mut);font-size:13px;text-align:center;padding:20px 0 50px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="lbl">AI Academy · Employability</div>
+    <h1>Tailor Your CV to Beat the ATS</h1>
+    <div class="meta"><span class="chip">Beginner</span><span class="chip">~25 min</span><span class="chip">ChatGPT · Copilot · Claude · Gemini</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="callout out"><b>What you'll be able to do:</b> upload your CV and a job advert into an AI tool, compare them against the job <i>and</i> person specification, get an honest upgrade, and format your CV to pass the ATS — on your own, in under 15 minutes. <br><span style="color:var(--mut);font-size:14px">An <b>ATS</b> (Applicant Tracking System) is software most employers use to scan and rank CVs against the advert before a human sees them.</span></div>
+
+  <div class="callout"><b>The scenario:</b> Ama applied to 30 jobs and heard nothing. Her CV is strong but generic, so each employer's ATS scores it low against the advert's exact wording and filters her out before a person ever reads it. The fix isn't a better CV — it's a CV matched to each advert, fast.</div>
+
+  <h2><span class="n">1</span>Upload your CV <em>and</em> the job spec</h2>
+  <p>Every tool below lets you attach files. Upload <b>two things</b>: your CV, and the job description / person specification (a file or pasted text).</p>
+  <div class="cards">
+    <div class="tool">
+      <h3>ChatGPT</h3>
+      <ol>
+        <li>Log in, then click <b>New chat</b>.</li>
+        <li>Click the <b>attach (paperclip / +)</b> icon in the message box.</li>
+        <li>Upload your <b>CV</b> and the <b>job spec</b> (PDF or Word).</li>
+        <li>Paste the comparison prompt below and send.</li>
+      </ol>
+      <a class="btn" href="https://chatgpt.com" target="_blank" rel="noopener">Create / sign in</a>
+    </div>
+    <div class="tool">
+      <h3>Claude</h3>
+      <ol>
+        <li>Log in, start a <b>new chat</b>.</li>
+        <li>Click the <b>paperclip</b> icon.</li>
+        <li>Upload the <b>CV</b> and <b>job spec</b> (PDF, Word or image).</li>
+        <li>Paste the prompt and send. (Great for longer CVs.)</li>
+      </ol>
+      <a class="btn" href="https://claude.ai" target="_blank" rel="noopener">Create / sign in</a>
+    </div>
+    <div class="tool">
+      <h3>Microsoft Copilot</h3>
+      <ol>
+        <li>Open your CV in <b>Word</b>, or go to Copilot chat.</li>
+        <li>In chat, click <b>attach</b> to add files from your device or OneDrive (type <b>/</b> to reference a stored file in M365 Copilot).</li>
+        <li>Add the <b>job spec</b> too.</li>
+        <li>Paste the prompt. Best for employer settings.</li>
+      </ol>
+      <a class="btn" href="https://copilot.microsoft.com" target="_blank" rel="noopener">Create / sign in</a>
+    </div>
+    <div class="tool">
+      <h3>Gemini</h3>
+      <ol>
+        <li>Sign in with your Google account.</li>
+        <li>Click the <b>upload (+ / image &amp; file)</b> icon.</li>
+        <li>Upload the <b>CV</b> and <b>job spec</b>.</li>
+        <li>Paste the prompt and send.</li>
+      </ol>
+      <a class="btn" href="https://gemini.google.com" target="_blank" rel="noopener">Create / sign in</a>
+    </div>
+  </div>
+
+  <h2><span class="n">2</span>Compare your CV to the job &amp; person spec</h2>
+  <p>Once both files are attached, paste this prompt. It produces an honest gap analysis.</p>
+  <div class="prompt"><button class="copy">Copy</button>Act as a recruiter and CV expert. I have uploaded my CV and the job description / person specification.
+Compare them and produce a table with these columns:
+Requirement | Essential or Desirable | Do I meet it? (Yes / Partly / No) | Evidence in my CV | What to add or reword.
+Be honest and specific. At the end, give me a match score out of 10 and the 3 biggest gaps to fix first.</div>
+
+  <h2><span class="n">3</span>Get AI to upgrade your CV</h2>
+  <p>Now turn the gaps into a stronger CV — honestly, using only your real experience.</p>
+  <div class="prompt"><button class="copy">Copy</button>Based on that gap analysis, rewrite my CV's profile summary and work-experience bullet points
+so they better match this role. Rules:
+- Use ONLY my real experience. Do not invent anything.
+- Weave in the advert's key terms where they are genuinely true for me.
+- Start each bullet with a strong action verb and add a result or number where I have one.
+Output as plain text I can paste into Word.</div>
+
+  <h2><span class="n">4</span>Beat the ATS</h2>
+  <p>Ask the AI to surface the exact keywords the ATS scans for, then format the CV so the ATS can read it.</p>
+  <div class="prompt"><button class="copy">Copy</button>From this advert, list the exact keywords and phrases an ATS will scan for
+that are missing or weak in my CV. For each, tell me where I can add it truthfully.
+Then give me an ATS-friendly formatting checklist for my CV.</div>
+  <p style="margin-top:18px"><b>ATS-friendly formatting checklist</b> (apply these to your CV file):</p>
+  <ul class="check">
+    <li>Single-column layout — avoid tables, text boxes and multiple columns (many ATS can't read them).</li>
+    <li>Standard headings: <i>Work Experience, Education, Skills</i>.</li>
+    <li>Standard fonts (Arial/Calibri); no logos, icons or photos.</li>
+    <li>Put your contact details in the body, not in the header or footer.</li>
+    <li>Match the exact job title where it's genuinely true.</li>
+    <li>Include the advert's key phrases in your own true wording.</li>
+    <li>Spell out acronyms once, e.g. Search Engine Optimisation (SEO).</li>
+    <li>Save in the format the advert asks for (usually .docx or PDF).</li>
+  </ul>
+
+  <div class="callout"><b>Try this today (5 min):</b> take one real advert, upload it with your CV, and run Step 2. Read the match score and the 3 biggest gaps. You've just seen exactly why you were or weren't getting callbacks.</div>
+  <div class="callout"><b>Common mistake:</b> letting AI add skills you don't have because they're in the advert. Delete anything untrue — it gets exposed at interview.</div>
+  <div class="callout"><b>Privacy &amp; ethics:</b> don't paste your home address, phone or ID numbers into a public AI tool — your experience is enough. AI tailors how you present <i>real</i> experience; it never invents it.</div>
+
+  <h2>Check your understanding</h2>
+  <div class="quiz">
+    <details><summary>Q1. What does an ATS actually do?</summary><p>It scans and ranks CVs by how well they match the advert, before a human sees them.</p></details>
+    <details><summary>Q2. Why upload the job spec as well as your CV?</summary><p>So the AI can compare the two and show exactly which requirements you meet, partly meet, or miss.</p></details>
+    <details><summary>Q3. True or false: it's fine to add advert keywords even if they're not true for you.</summary><p>False — only include skills and keywords that are genuinely true.</p></details>
+  </div>
+
+  <div class="prove">
+    <h2><span class="n">P</span>Prove-It assignment</h2>
+    <p>Submit three things to earn this lesson's credit toward your certificate:</p>
+    <p>1. Your <b>original CV</b>.<br>2. A <b>tailored CV</b> for one real advert (built with the steps above).<br>3. <b>2–3 sentences</b> on the gaps you found and what you changed.</p>
+    <p style="opacity:.9;font-size:14.5px">This produces a before/after artifact that proves you can do this unaided — exactly what the certificate certifies.</p>
+  </div>
+
+  <footer>British School of Outdoor Education · AI Academy · Tools change often — if a step looks different, verify on the tool's official site.</footer>
+</main>
+
+<script>
+  document.querySelectorAll('.prompt .copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var text=b.parentNode.textContent.replace(/^Copy/,'').trim();
+      navigator.clipboard.writeText(text); b.textContent='Copied'; setTimeout(function(){b.textContent='Copy';},1400);
+    });
+  });
+</script>
+</body>
+</html>
