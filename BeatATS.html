@@ -21,6 +21,10 @@
   .callout{border-left:4px solid var(--gold);background:#fff;border-radius:10px;padding:16px 18px;margin:16px 0;box-shadow:0 3px 12px rgba(20,83,45,.05)}
   .callout.out{border-left-color:var(--green)}
   .callout b{color:var(--green)}
+  .tip{background:#f4f8f5;border:1px solid #d8e6dd;border-radius:10px;padding:12px 16px;margin:6px 0 18px;font-size:14px;line-height:1.5}
+  .tip b{color:var(--green)}
+  .tip .ex{color:#4a5a51;font-style:italic}
+  .tip .rf{color:#8a6a08;margin-top:8px}
   .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin:16px 0}
   .tool{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
   .tool h3{margin:0 0 4px;font-size:18px;color:var(--green)}
@@ -58,6 +62,7 @@
   <div class="callout out"><b>What you'll be able to do:</b> upload your CV and a job advert into an AI tool, compare them against the job <i>and</i> person specification, get an honest upgrade, and format your CV to pass the ATS — on your own, in under 15 minutes. <br><span style="color:var(--mut);font-size:14px">An <b>ATS</b> (Applicant Tracking System) is software most employers use to scan and rank CVs against the advert before a human sees them.</span></div>
 
   <div class="callout"><b>The scenario:</b> Ama applied to 30 jobs and heard nothing. Her CV is strong but generic, so each employer's ATS scores it low against the advert's exact wording and filters her out before a person ever reads it. The fix isn't a better CV — it's a CV matched to each advert, fast.</div>
+  <div class="callout" style="border-left-color:#c9950a"><b>Use any free app:</b> these prompts work in ChatGPT, Claude, Gemini or Copilot &mdash; pick whichever you like. Everything in this lesson works on the free version.</div>
 
   <h2><span class="n">1</span>Upload your CV <em>and</em> the job spec</h2>
   <p>Every tool below lets you attach files. Upload <b>two things</b>: your CV, and the job description / person specification (a file or pasted text).</p>
@@ -110,6 +115,7 @@
 Compare them and produce a table with these columns:
 Requirement | Essential or Desirable | Do I meet it? (Yes / Partly / No) | Evidence in my CV | What to add or reword.
 Be honest and specific. At the end, give me a match score out of 10 and the 3 biggest gaps to fix first.</div>
+  <div class="tip"><b>What a good result looks like:</b> <span class="ex">a row such as &mdash; "SEO experience | Essential | Partly | 'Ran the company blog' | Add the exact phrase 'search engine optimisation (SEO)' and a result" &mdash; ending with a line like "Match score: 6/10, biggest gaps: analytics, stakeholder management."</span><div class="rf"><b>Refine it:</b> if it's vague, reply &mdash; <i>"Be more specific to my actual CV and quote the exact lines you're referring to."</i></div></div>
 
   <h2><span class="n">3</span>Get AI to upgrade your CV</h2>
   <p>Now turn the gaps into a stronger CV — honestly, using only your real experience.</p>
@@ -119,6 +125,7 @@ so they better match this role. Rules:
 - Weave in the advert's key terms where they are genuinely true for me.
 - Start each bullet with a strong action verb and add a result or number where I have one.
 Output as plain text I can paste into Word.</div>
+  <div class="tip"><b>What a good result looks like:</b> <span class="ex">a weak bullet transformed &mdash; "Managed social media" becomes "Grew Instagram following 40% in 3 months by planning a weekly content calendar."</span><div class="rf"><b>Refine it:</b> too generic? reply &mdash; <i>"Make it more specific to my experience and add numbers where I have them."</i></div></div>
 
   <h2><span class="n">4</span>Beat the ATS</h2>
   <p>Ask the AI to surface the exact keywords the ATS scans for, then format the CV so the ATS can read it.</p>
