@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Fact-Checking, Hallucinations & Data Safety</title><style>
+  :root{--green:#14532d;--green2:#0e3a20;--gold:#c6a25a;--dgold:#c9950a;--ink:#1f2a24;--mut:#5f7268;--soft:#f4f8f5;--line:#e2ece8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--ink);background:var(--soft);line-height:1.6}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+  header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:40px 0 34px;border-bottom:5px solid var(--dgold)}
+  header .lbl{color:var(--gold);letter-spacing:3px;font-size:13px;font-weight:700;text-transform:uppercase}
+  header h1{margin:8px 0 12px;font-size:33px;line-height:1.15}
+  .meta{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#eafff2;font-size:13px;padding:5px 12px;border-radius:999px}
+  main{padding:30px 0 60px}
+  h2{font-size:22px;margin:32px 0 6px;color:var(--green)}
+  h2 .n{display:inline-flex;width:32px;height:32px;border-radius:9px;background:var(--dgold);color:#fff;align-items:center;justify-content:center;font-weight:800;margin-right:10px;font-size:16px}
+  p{margin:8px 0}
+  .callout{border-left:4px solid var(--dgold);background:#fff;border-radius:10px;padding:16px 18px;margin:16px 0;box-shadow:0 3px 12px rgba(20,83,45,.05)}
+  .callout.out{border-left-color:var(--green)}
+  .callout b{color:var(--green)}
+  .tip{background:#f4f8f5;border:1px solid #d8e6dd;border-radius:10px;padding:12px 16px;margin:6px 0 18px;font-size:14px;line-height:1.5}
+  .tip b{color:var(--green)} .tip .ex{color:#4a5a51;font-style:italic} .tip .rf{color:#8a6a08;margin-top:8px}
+  .frame{background:#0f2f22;color:#eafff2;border-radius:12px;padding:18px 20px;margin:16px 0}
+  .frame b{color:var(--gold)}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:16px 0}
+  .tool{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .tool h3{margin:0 0 4px;font-size:17px;color:var(--green)} .tool p{font-size:14px;color:var(--mut);margin:4px 0}
+  .btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:9px 15px;border-radius:9px}
+  .btn:hover{background:var(--green2)}
+  .prompt{position:relative;background:#0f2f22;color:#e9f3ec;border-radius:12px;padding:18px;margin:14px 0;font-family:'SFMono-Regular',Consolas,monospace;font-size:13.5px;line-height:1.55;white-space:pre-wrap}
+  .prompt .copy{position:absolute;top:12px;right:12px;background:var(--dgold);color:#fff;border:0;border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer;font-size:12px;font-family:inherit}
+  ul.check{list-style:none;padding:0;margin:14px 0}
+  ul.check li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid var(--line);font-size:15px}
+  ul.check li:before{content:"\2713";position:absolute;left:0;color:var(--dgold);font-weight:800;font-size:17px}
+  .proof{background:#fff;border:2px solid var(--dgold);border-radius:16px;padding:22px;margin:22px 0}
+  .proof h2{margin:0 0 12px;color:var(--green)}
+  .proof .lab{display:inline-block;background:#fbf2d3;color:#8a6a08;border:1px solid #e8d493;border-radius:999px;padding:2px 12px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .proof .cv{background:#f4f8f5;border-radius:10px;padding:14px 16px;font-size:15px;margin-bottom:16px}
+  .proof .note{font-size:13px;color:var(--mut);margin-top:6px}
+  .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
+  .quiz details{border-top:1px solid var(--line);padding:10px 0}
+  .quiz summary{cursor:pointer;font-weight:600;color:var(--green)}
+  .quiz p{color:var(--mut);font-size:14.5px;margin:8px 0 0}
+  .prove{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;border-radius:16px;padding:26px;margin:24px 0;border-top:5px solid var(--dgold)}
+  .prove h2{color:#fff;margin-top:0} .prove .n{background:var(--dgold);color:#fff}
+  .assess{text-align:center;margin:26px 0}
+  .assess a{display:inline-block;background:linear-gradient(135deg,#e0ab12,#c9950a);color:#14532d;font-weight:800;font-size:17px;padding:15px 30px;border-radius:12px;text-decoration:none;box-shadow:0 4px 12px rgba(201,149,10,.35)}
+  footer{color:var(--mut);font-size:13px;text-align:center;padding:20px 0 50px}
+</style></head><body>
+<header><div class="wrap"><div class="lbl">AI Academy · AI Skills for Work</div><h1>Fact-Checking, Hallucinations & Data Safety</h1><div class="meta"><span class="chip">Intermediate</span><span class="chip">~20 min</span><span class="chip">Any AI · your judgement</span></div></div></header>
+<main class="wrap">
+<div class="callout out"><b>What you'll be able to do:</b> catch AI mistakes before they cost you, and know exactly what data you must never put into a public AI &mdash; the trust-and-safety skills every employer now expects.</div>
+<div class="callout"><b>The scenario:</b> An AI-written report looks perfect &mdash; but one confident statistic is invented and a "source" doesn't exist. You almost sent it to a client. Meanwhile a colleague pastes customer data into a free chatbot, not realising the risk.</div>
+<div class="callout" style="border-left-color:#c9950a"><b>Use any free app:</b> these prompts work in ChatGPT, Claude, Gemini or Copilot &mdash; pick whichever you like. Everything here works on the free version.</div>
+<h2><span class="n">1</span>Two habits that protect you</h2><div class="frame"><b>Trust, then verify:</b> AI can state false things confidently ("hallucinate"). Always check facts, figures and sources.<br><b>Guard the data:</b> never paste confidential, personal or client data into public AI tools.</div>
+<h2><span class="n">2</span>Force sources you can check</h2>
+<p>Make the AI show its working so you can verify.</p>
+<div class="prompt"><button class="copy">Copy</button>For every factual claim or statistic in your answer, add a source I can check, and clearly flag anything you are NOT confident about.
+Question: [your question]</div>
+<div class="tip"><b>What good looks like:</b> <span class="ex">answers where claims carry checkable sources and uncertain points are flagged, not hidden.</span><div class="rf"><b>Refine it:</b> reply &mdash; <i>"Which of these sources did you actually verify versus assume?"</i></div></div>
+<h2><span class="n">3</span>Run a fact-check pass</h2>
+<p>Turn the AI into a sceptical reviewer of a draft.</p>
+<div class="prompt"><button class="copy">Copy</button>Act as a fact-checker. Review the text below and list any claims that may be inaccurate, outdated, or need a source before I share this.
+Text: [paste]</div>
+<div class="tip"><b>What good looks like:</b> <span class="ex">a short list of the specific claims to double-check before you publish.</span><div class="rf"><b>Refine it:</b> reply &mdash; <i>"Rank them by how risky it would be to get each one wrong."</i></div></div>
+<h2><span class="n">4</span>Redact before you share</h2>
+<p>Strip sensitive data before anything goes near a public tool.</p>
+<div class="prompt"><button class="copy">Copy</button>Rewrite the text below removing any confidential company data, client names, personal details or numbers I should not expose. Replace them with [REDACTED].
+Text: [paste]</div>
+<div class="tip"><b>What good looks like:</b> <span class="ex">a safe version with sensitive items replaced, ready to use with a public AI.</span><div class="rf"><b>Refine it:</b> reply &mdash; <i>"List what you redacted so I can double-check nothing was missed."</i></div></div>
+
+<h2>Never paste these into a public AI</h2><ul class="check"><li>Customer or client personal data (names, emails, addresses)</li><li>Financial data, contracts or trade secrets</li><li>Passwords, API keys or logins</li><li>Anything your employer's policy marks confidential</li></ul><p style="color:var(--mut);font-size:14px">For sensitive work data, use an enterprise tool like Microsoft 365 Copilot, which keeps data inside your organisation.</p>
+<div class="proof"><h2>Put this on your CV &amp; say it in interview</h2><div class="lab">CV bullet</div><div class="cv">"Enforced rigorous fact-checking and hallucination-detection on all AI-assisted work and applied strict data-privacy standards, ensuring [100%] verified, compliant outputs safe to share with clients."</div><div class="lab">Interview answer (STAR)</div><div class="cv">"An AI-drafted report contained a confident but invented statistic. Because I run a fact-check pass on every AI output, I caught it before it reached the client, corrected it against a real source, and flagged our team's data-safety rules for public AI tools."</div><div class="note">Swap the [bracketed] figures for your own real results &mdash; bold is great, but every number must be true for you.</div></div>
+<h2>Check your understanding</h2><div class="quiz"><details><summary>Q1. What is an AI "hallucination"?</summary><p>When the AI states something false or invented as if it were true.</p></details><details><summary>Q2. Name one thing you must never paste into a public AI tool.</summary><p>Client/personal data, financial data, passwords or anything confidential.</p></details><details><summary>Q3. Which type of tool is safer for sensitive company data?</summary><p>An enterprise tool like Microsoft 365 Copilot that keeps data inside the organisation.</p></details></div>
+<div class="prove"><h2><span class="n">P</span>Prove-It assignment</h2><p>Submit to earn certificate credit:</p><p>1. An AI claim you fact-checked and found wrong or unverifiable.<br>2. How you verified it (or the source you checked).<br>3. One data-safety rule you'll always follow.</p></div>
+<div class="assess"><a href="https://forms.office.com/your-form-link" target="_blank" rel="noopener">Take the assessment &amp; submit your Prove-It &rarr;</a></div>
+<footer>British School of Outdoor Education · AI Academy · AI Skills for Work · Tools change often — if a step looks different, verify on the tool's official site.</footer>
+</main><script>
+  document.querySelectorAll('.prompt .copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.parentNode.textContent.replace(/^Copy/,'').trim();
+      navigator.clipboard.writeText(t); b.textContent='Copied'; setTimeout(function(){b.textContent='Copy';},1400);
+    });
+  });
+</script></body></html>
