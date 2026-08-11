@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Lesson 3 — Agent Skills</title>
+<style>
+  :root{--green:#14532d;--green2:#0e3a20;--gold:#c6a25a;--dgold:#c9950a;--ink:#1f2a24;--mut:#5f7268;--soft:#f4f8f5;--line:#e2ece8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--ink);background:var(--soft);line-height:1.6}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+  header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:40px 0 34px;border-bottom:5px solid var(--dgold)}
+  header .lbl{color:var(--gold);letter-spacing:3px;font-size:13px;font-weight:700;text-transform:uppercase}
+  header h1{margin:8px 0 12px;font-size:32px;line-height:1.15}
+  .meta{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#eafff2;font-size:13px;padding:5px 12px;border-radius:999px}
+  main{padding:26px 0 60px}
+  h2{font-size:22px;margin:32px 0 6px;color:var(--green)}
+  h2 .n{display:inline-flex;width:32px;height:32px;border-radius:9px;background:var(--dgold);color:#fff;align-items:center;justify-content:center;font-weight:800;margin-right:10px;font-size:16px}
+  p{margin:8px 0}
+  .callout{border-left:4px solid var(--dgold);background:#fff;border-radius:10px;padding:16px 18px;margin:16px 0;box-shadow:0 3px 12px rgba(20,83,45,.05)}
+  .callout.out{border-left-color:var(--green)} .callout b{color:var(--green)}
+  .jargon{background:#0f2f22;color:#eafff2;border-radius:14px;padding:20px 22px;margin:18px 0}
+  .jargon h3{margin:0 0 4px;color:var(--gold);font-size:17px}
+  .jargon .sub{color:#a9c6b5;font-size:13px;margin-bottom:8px}
+  .jargon dt{color:var(--gold);font-weight:700;margin-top:14px;font-size:15px}
+  .jargon dd{margin:3px 0 0;font-size:14.5px;color:#dbeee1}
+  .jargon .eg{color:#f0e2b8;font-style:italic}
+  .track{border-radius:14px;padding:18px 20px;margin:16px 0;border:1px solid var(--line);background:#fff}
+  .track.nocode{border-left:5px solid var(--green)}
+  .track.code{border-left:5px solid var(--dgold)}
+  .track .k{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:3px 12px;border-radius:999px;margin-bottom:8px}
+  .track.nocode .k{background:#e7f2eb;color:var(--green)}
+  .track.code .k{background:#fbf2d3;color:#8a6a08}
+  .track ol{margin:8px 0 0;padding-left:20px} .track li{margin:5px 0;font-size:14.5px}
+  .btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:9px 15px;border-radius:9px;margin-top:6px}
+  .btn:hover{background:var(--green2)}
+  pre{position:relative;background:#0f2f22;color:#e9f3ec;border-radius:10px;padding:16px;overflow-x:auto;font-size:13px;line-height:1.55;margin:12px 0}
+  .copy{position:absolute;top:10px;right:10px;background:var(--dgold);color:#fff;border:0;border-radius:8px;padding:5px 11px;font-weight:700;cursor:pointer;font-size:12px}
+  .guard{background:#fbf7ea;border:1px solid #e8d493;border-radius:14px;padding:18px 20px;margin:20px 0}
+  .guard h2{margin-top:0;color:#8a6a08}
+  ul.check{list-style:none;padding:0;margin:10px 0}
+  ul.check li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid #eadfbc;font-size:15px}
+  ul.check li:before{content:"\2713";position:absolute;left:0;color:var(--dgold);font-weight:800;font-size:17px}
+  .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
+  .quiz details{border-top:1px solid var(--line);padding:10px 0}
+  .quiz summary{cursor:pointer;font-weight:600;color:var(--green)}
+  .quiz p{color:var(--mut);font-size:14.5px;margin:8px 0 0}
+  .prove{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;border-radius:16px;padding:26px;margin:24px 0;border-top:5px solid var(--dgold)}
+  .prove h2{color:#fff;margin-top:0} .prove .n{background:var(--dgold);color:#fff}
+  .assess{text-align:center;margin:26px 0}
+  .assess a{display:inline-block;background:linear-gradient(135deg,#e0ab12,#c9950a);color:var(--green);font-weight:800;font-size:16px;padding:14px 28px;border-radius:12px;text-decoration:none;box-shadow:0 4px 12px rgba(201,149,10,.35)}
+  footer{color:var(--mut);font-size:13px;text-align:center;padding:20px 0 50px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="lbl">AI Academy · Advanced: AI Systems & Agents</div>
+  <h1>Lesson 3 — Agent Skills: make AI follow your rules</h1>
+  <div class="meta"><span class="chip">Advanced</span><span class="chip">~30 min</span><span class="chip">Dual track: no-code + code</span></div>
+</div></header>
+
+<main class="wrap">
+
+  <div class="jargon">
+    <h3>Jargon, in plain words</h3>
+    <div class="sub">New techy words for this lesson, explained like you're 12 — with when and why you'd use them.</div>
+    <dl>
+      <dt>Skill</dt>
+      <dd>A saved, reusable rule-book the AI follows automatically for a task. <span class="eg">Like a recipe card the chef must follow every time, so the dish is always the same.</span> <b>When:</b> when you need the same high standard every time. <b>Why:</b> consistency and compliance, with no re-explaining.</dd>
+      <dt>Instructions / system prompt</dt>
+      <dd>The standing directions you give the AI up front that shape everything it does. <span class="eg">Like the job description you hand a new worker on day one.</span></dd>
+      <dt>Custom GPT / Project</dt>
+      <dd>A saved AI helper you set up <i>once</i> with instructions and knowledge, then reuse. <span class="eg">Like a labelled toolbox set up for one job.</span> (A "Custom GPT" is ChatGPT's version; a "Project" is Claude's.)</dd>
+      <dt>Knowledge file</dt>
+      <dd>Documents you give the helper to rely on — a brand guide, a policy, an FAQ. <span class="eg">Like the staff handbook kept on the worker's desk.</span></dd>
+      <dt>SKILL.md</dt>
+      <dd>A simple text file that packages a skill's rules in a standard format (used by developer tools). <span class="eg">The written recipe card itself.</span></dd>
+      <dt>Trigger</dt>
+      <dd>What makes a skill kick in — a keyword, a file type, a kind of task. <span class="eg">"When someone orders dessert, use the dessert recipe."</span></dd>
+    </dl>
+  </div>
+
+  <div class="callout out"><b>What you'll be able to do:</b> build a reusable AI helper that follows <b>your</b> rules every time — a <b>Custom GPT</b> or <b>Project</b> with <b>instructions</b> and a <b>knowledge file</b> — and understand how a <b>Skill</b> (a <b>SKILL.md</b>) packages those rules for consistency.</div>
+
+  <div class="callout"><b>The scenario:</b> A support team's replies sound different from every person — some off-brand, some missing the legal disclaimer. Instead of re-explaining the rules each time, they build a <b>Skill</b> that enforces the tone, structure and disclaimer automatically. Now every reply is on-brand, every time.</div>
+
+  <h2><span class="n">1</span>What a Skill actually is</h2>
+  <p>A plain prompt teaches the AI something <i>once</i>. A <b>Skill</b> saves the rules so the AI applies them <i>every time</i>, automatically. It's built from <b>instructions</b> (the standing rules) plus an optional <b>knowledge file</b> (documents to rely on, like your style guide). Package that up and you get a helper that never forgets the standard.</p>
+  <p><b>When it's used:</b> on-brand customer replies, reports that always follow a template, code that follows the team's style, marking that always uses the same rubric. <b>Why it's used:</b> consistency, compliance, and huge time savings — you set the rules once.</p>
+
+  <h2><span class="n">2</span>Try it — no code</h2>
+  <p>Build your own rule-following helper today, with no programming.</p>
+  <div class="track nocode">
+    <span class="k">Try it · ChatGPT Custom GPT</span>
+    <ol>
+      <li>In ChatGPT, go to <b>Explore GPTs → Create</b>.</li>
+      <li>In <b>Instructions</b>, write your rules: role, tone, structure, must-dos and don'ts.</li>
+      <li>Upload a <b>knowledge file</b> (e.g. a one-page style guide or checklist).</li>
+      <li>Test it: give it a task and watch it follow your rules automatically.</li>
+    </ol>
+    <a class="btn" href="https://chatgpt.com" target="_blank" rel="noopener">Open ChatGPT</a>
+  </div>
+  <div class="track nocode">
+    <span class="k">Try it · Claude Project</span>
+    <ol>
+      <li>In Claude, create a <b>Project</b>.</li>
+      <li>Add <b>custom instructions</b> (your standing rules).</li>
+      <li>Add knowledge (drop in your guide or examples).</li>
+      <li>Every chat in that Project now follows the rules.</li>
+    </ol>
+    <a class="btn" href="https://claude.ai" target="_blank" rel="noopener">Open Claude</a>
+  </div>
+
+  <h2><span class="n">3</span>Go deeper — with code (optional)</h2>
+  <p>Skip if you like — you've already built a rule-following helper above. For the technical view, a <b>Skill</b> can be written as a small <b>SKILL.md</b> file that developer tools load. Read it like a labelled recipe card:</p>
+  <div class="track code">
+    <span class="k">Go deeper · a SKILL.md example</span>
+    <pre><button class="copy">Copy</button>---
+name: brand-reply
+description: Draft a customer reply in our house style, always with the disclaimer.
+---
+# Rules
+- Warm, plain English. No jargon.
+- Keep it under 120 words.
+- If it's about refunds, link to the refunds policy.
+- Always end with the legal disclaimer text.
+
+# Example
+Input: "My order is late."
+Output: a short, warm apology + next step + the disclaimer.</pre>
+    <p style="font-size:13.5px;color:var(--mut)">The <b>name</b> and <b>description</b> help the tool know <i>when</i> to <b>trigger</b> the skill; the rules and example steer the output. Always follow the official docs for the exact format — it changes.</p>
+  </div>
+
+  <div class="guard">
+    <h2>Guardrails — safety &amp; ethics</h2>
+    <ul class="check">
+      <li><b>Never put secrets in a Skill.</b> No passwords, API keys, or private customer data in instructions or knowledge — especially if the helper is shared.</li>
+      <li><b>Test before you trust it.</b> Try real, tricky cases; make sure the rules actually hold.</li>
+      <li><b>Version your rules.</b> Keep track of changes so you can undo a bad edit.</li>
+      <li><b>Keep a human review step</b> for anything customer-facing or high-stakes.</li>
+    </ul>
+  </div>
+
+  <div class="callout"><b>Try this today (5 min):</b> build a tiny Custom GPT or Project that enforces one checklist or house style, then give it a task and watch it obey the rules.</div>
+  <div class="callout"><b>Common mistake:</b> piling in too many or conflicting rules. Keep them short, clear and non-contradictory — and test them.</div>
+
+  <h2>Check your understanding</h2>
+  <div class="quiz">
+    <details><summary>Q1. In plain words, what is a Skill?</summary><p>A saved, reusable rule-book the AI follows automatically every time — like a recipe card the chef must follow.</p></details>
+    <details><summary>Q2. What is a knowledge file for?</summary><p>Documents the helper relies on (brand guide, policy, FAQ) so its answers follow your source, not guesswork.</p></details>
+    <details><summary>Q3. Why build a Skill instead of retyping rules each time?</summary><p>Consistency and compliance — the same standard every time, set once, saving time.</p></details>
+  </div>
+
+  <div class="prove">
+    <h2><span class="n">P</span>Prove-It assignment</h2>
+    <p>Submit to earn certificate credit:</p>
+    <p>1. A screenshot of a Custom GPT or Project you built, showing your <b>instructions</b>.<br>2. An example of it applying your rules to a real task.<br>3. One rule you deliberately kept <b>out</b> of it for safety (e.g. no secrets/PII).</p>
+  </div>
+
+  <div class="assess"><a href="https://nigeriastudentcenter.github.io/AI-Academy/agentskills.html" target="_blank" rel="noopener">Take the Lesson 3 quiz &rarr;</a></div>
+
+  <footer>British School of Outdoor Education · AI Academy · Advanced: AI Systems & Agents · Tools change often — verify exact steps on the official docs.</footer>
+</main>
+
+<script>
+  document.querySelectorAll('pre .copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.parentNode.textContent.replace(/^Copy/,'').trim();
+      navigator.clipboard.writeText(t); b.textContent='Copied'; setTimeout(function(){b.textContent='Copy';},1400);
+    });
+  });
+</script>
+</body>
+</html>
