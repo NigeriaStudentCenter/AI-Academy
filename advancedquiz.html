@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Assessment — AI Agents & Systems</title>
+<style>
+  :root{--green:#14532d;--green2:#0e3a20;--gold:#c6a25a;--dgold:#c9950a;--ink:#1f2a24;--mut:#5f7268;--soft:#f4f8f5;--line:#e2ece8;--ok:#16a34a;--no:#dc2626}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:var(--soft);color:var(--ink);line-height:1.6;padding:0}
+  header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:36px 0 30px;border-bottom:5px solid var(--dgold)}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px}
+  header .lbl{color:var(--gold);letter-spacing:3px;font-size:13px;font-weight:700;text-transform:uppercase}
+  header h1{margin:8px 0 6px;font-size:30px}
+  header p{margin:0;color:#e7efe9;font-size:15px}
+  main{padding:26px 0 60px}
+  .jargon{background:#0f2f22;color:#eafff2;border-radius:14px;padding:18px 20px;margin:0 0 22px}
+  .jargon h3{margin:0 0 8px;color:var(--gold);font-size:16px}
+  .jargon dl{margin:0} .jargon dt{color:var(--gold);font-weight:700;margin-top:10px}
+  .jargon dd{margin:2px 0 0;font-size:14.5px;color:#dbeee1}
+  .q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:18px;box-shadow:0 3px 12px rgba(20,83,45,.05)}
+  .q .tag{display:inline-block;background:#fbf2d3;color:#8a6a08;border:1px solid #e8d493;border-radius:999px;padding:2px 12px;font-size:12px;font-weight:700;margin-bottom:10px}
+  .q h2{font-size:18px;margin:0 0 10px;color:var(--green)}
+  .q p{margin:8px 0}
+  .scenario{background:var(--soft);border-left:4px solid var(--dgold);border-radius:8px;padding:12px 14px;font-size:14.5px;margin:10px 0}
+  ul.opts{list-style:none;padding:0;margin:6px 0}
+  ul.opts li{margin:6px 0}
+  label{cursor:pointer;display:flex;gap:9px;align-items:flex-start;font-size:15px}
+  select,textarea{width:100%;border:1px solid var(--line);border-radius:8px;padding:9px;font-family:inherit;font-size:14.5px}
+  textarea{min-height:90px;resize:vertical}
+  table{width:100%;border-collapse:collapse;margin-top:8px}
+  th,td{border:1px solid var(--line);padding:9px;text-align:left;font-size:14px;vertical-align:middle}
+  pre{background:#0f2f22;color:#eafff2;padding:14px;border-radius:10px;overflow-x:auto;font-size:13px;line-height:1.5}
+  .hint{font-size:13px;color:var(--mut);margin-top:6px}
+  .fb{margin-top:12px;padding:12px 14px;border-radius:8px;display:none;font-size:14.5px}
+  .fb.ok{background:#dcfce7;color:#14532d;border:1px solid #bbf7d0}
+  .fb.no{background:#fee2e2;color:#7f1d1d;border:1px solid #fecaca}
+  .fb.rec{background:#f4f8f5;color:#1f2a24;border:1px solid #d8e6dd}
+  button{background:linear-gradient(135deg,#e0ab12,#c9950a);color:var(--green);border:0;padding:15px 24px;font-size:16px;font-weight:800;border-radius:12px;cursor:pointer;width:100%;box-shadow:0 4px 12px rgba(201,149,10,.35)}
+  #summary{display:none;margin-top:22px;padding:24px;background:#fff;border:2px solid var(--dgold);border-radius:16px;text-align:center}
+  #summary h2{margin:0 0 6px;color:var(--green)}
+  #summary .pill{display:inline-block;font-weight:800;padding:6px 16px;border-radius:999px;margin-top:8px}
+  .assess{text-align:center;margin:22px 0 0}
+  .assess a{display:inline-block;background:var(--green);color:#fff;font-weight:800;padding:14px 26px;border-radius:12px;text-decoration:none}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="lbl">AI Academy · Advanced: AI Systems & Agents</div>
+  <h1>Assessment — AI Agents & Systems</h1>
+  <p>5 questions · pass mark 3/5 on the auto-graded parts + your Prove-It. Take your time.</p>
+</div></header>
+
+<main class="wrap">
+
+  <div class="jargon">
+    <h3>First — the words you'll need, in plain English</h3>
+    <dl>
+      <dt>Agent</dt><dd>An AI that doesn't just answer once — it's given a goal and takes several steps on its own to reach it. Like sending a helper to "organise my party": they make a list, book things, and check it's done.</dd>
+      <dt>Workflow</dt><dd>The set steps a task follows, in order. Like a recipe: do this, then this, then that.</dd>
+      <dt>Tool call</dt><dd>When the AI uses something outside itself to get a step done — search the web, look in a database, send an email. Like a chef reaching for a specific kitchen gadget.</dd>
+      <dt>Connector</dt><dd>A safe link that lets the AI see your real data (files, email, a database) instead of you pasting it. Like giving a trusted helper a key to one cupboard — not the whole house.</dd>
+      <dt>Human-in-the-loop (HITL)</dt><dd>A checkpoint where a person must approve before the AI does something risky or costly. Like a "are you sure?" that a manager has to sign off.</dd>
+      <dt>Guardrails</dt><dd>The safety limits you set so the agent can't go too far — spend caps, step limits, "ask a human first" rules.</dd>
+    </dl>
+  </div>
+
+  <form id="quiz">
+
+    <!-- Q1 -->
+    <div class="q" id="q1">
+      <span class="tag">Q1 · Concept</span>
+      <h2>What makes something an "AI agent" rather than a normal chatbot answer?</h2>
+      <ul class="opts">
+        <li><label><input type="radio" name="q1" value="A"> A) It can accept longer prompts.</label></li>
+        <li><label><input type="radio" name="q1" value="B"> B) It runs forever without stopping.</label></li>
+        <li><label><input type="radio" name="q1" value="C"> C) It's given a goal, then plans multiple steps, uses tools, checks its own results, and self-corrects until the goal is met.</label></li>
+        <li><label><input type="radio" name="q1" value="D"> D) It never needs a human to check it.</label></li>
+      </ul>
+      <div class="fb" id="fb1"></div>
+    </div>
+
+    <!-- Q2 matching -->
+    <div class="q" id="q2">
+      <span class="tag">Q2 · Match the part to its job</span>
+      <h2>Match each building block to what it does</h2>
+      <table>
+        <tr><th>Building block</th><th>Its job (pick one)</th></tr>
+        <tr><td><b>Connector</b><div class="hint">the safe key to your data</div></td>
+          <td><select name="m1"><option value="">-- choose --</option><option value="A">A. Checks if a step worked, and retries if not</option><option value="B">B. Safely links the AI to your files/database/email</option><option value="C">C. A saved rule-book the AI must follow for a task</option><option value="D">D. Breaks the big goal into steps and runs them in order</option></select></td></tr>
+        <tr><td><b>Skill</b><div class="hint">the rule-book</div></td>
+          <td><select name="m2"><option value="">-- choose --</option><option value="A">A. Checks if a step worked, and retries if not</option><option value="B">B. Safely links the AI to your files/database/email</option><option value="C">C. A saved rule-book the AI must follow for a task</option><option value="D">D. Breaks the big goal into steps and runs them in order</option></select></td></tr>
+        <tr><td><b>Reflection loop</b><div class="hint">the "did that work?" check</div></td>
+          <td><select name="m3"><option value="">-- choose --</option><option value="A">A. Checks if a step worked, and retries if not</option><option value="B">B. Safely links the AI to your files/database/email</option><option value="C">C. A saved rule-book the AI must follow for a task</option><option value="D">D. Breaks the big goal into steps and runs them in order</option></select></td></tr>
+        <tr><td><b>Orchestrator</b><div class="hint">the planner/manager</div></td>
+          <td><select name="m4"><option value="">-- choose --</option><option value="A">A. Checks if a step worked, and retries if not</option><option value="B">B. Safely links the AI to your files/database/email</option><option value="C">C. A saved rule-book the AI must follow for a task</option><option value="D">D. Breaks the big goal into steps and runs them in order</option></select></td></tr>
+      </table>
+      <div class="fb" id="fb2"></div>
+    </div>
+
+    <!-- Q3 scenario: HITL / irreversible -->
+    <div class="q" id="q3">
+      <span class="tag">Q3 · Scenario · missing human check</span>
+      <h2>Spot the danger and fix it</h2>
+      <div class="scenario"><b>Scenario:</b> A purchasing agent is told "buy 25 laptops from our usual supplier." The usual model is out of stock, so the agent buys a different £2,000 model — 25 of them — with <b>no one approving it</b>.</div>
+      <p>In your own words: what went wrong, and what one guardrail would prevent it?</p>
+      <textarea name="q3" placeholder="What went wrong... / The guardrail I'd add..."></textarea>
+      <div class="hint">Think about: should the AI spend big money or change the plan without a person saying yes?</div>
+      <div class="fb" id="fb3"></div>
+    </div>
+
+    <!-- Q4 scenario: over-broad connector / data privacy -->
+    <div class="q" id="q4">
+      <span class="tag">Q4 · Scenario · data access</span>
+      <h2>Too much access</h2>
+      <div class="scenario"><b>Scenario:</b> To answer one question about last week's sales, someone connects the AI to the company's <b>entire</b> shared drive — HR files, contracts and salaries included.</div>
+      <p>Why is this risky, and what's the safer way to set up the connector?</p>
+      <textarea name="q4" placeholder="Why it's risky... / The safer setup..."></textarea>
+      <div class="hint">Think about the "one cupboard, not the whole house" idea.</div>
+      <div class="fb" id="fb4"></div>
+    </div>
+
+    <!-- Q5 code debugging, partial credit -->
+    <div class="q" id="q5">
+      <span class="tag">Q5 · Read the logic · partial credit</span>
+      <h2>Find the problems in this agent loop</h2>
+      <p>You don't need to code — just read it like a recipe and spot what could go wrong.</p>
+<pre>run agent (goal, max_steps = 10):
+    step = 0
+    history = [goal]
+    while step &lt; max_steps:
+        action = ask_ai(history)      # what should I do next?
+        result = do_action(action)    # do it
+        history.add(result)
+        step = step + 1
+    return "Goal completed!"</pre>
+      <p>Name up to two problems (one is enough to pass this question):</p>
+      <textarea name="q5" placeholder="Problem 1: ...&#10;Problem 2: ..."></textarea>
+      <div class="hint">Hints: (1) When does it actually stop — does it ever check the goal is <i>done</i>? (2) What if a step fails — does anything catch the error?</div>
+      <div class="fb" id="fb5"></div>
+    </div>
+
+    <button type="button" onclick="grade()">Check my answers</button>
+  </form>
+
+  <div id="summary">
+    <h2>Your result</h2>
+    <p id="stext"></p>
+    <div id="spill" class="pill"></div>
+  </div>
+
+  <div class="assess" id="assessWrap" style="display:none">
+    <a href="https://forms.office.com/your-form-link" target="_blank" rel="noopener">Submit your Prove-It to earn the certificate &rarr;</a>
+  </div>
+</main>
+
+<script>
+  function setFb(id,cls,html){var e=document.getElementById(id);e.className='fb '+cls;e.innerHTML=html;e.style.display='block';}
+  function grade(){
+    var score=0;
+    // Q1
+    var q1=(document.querySelector('input[name=q1]:checked')||{}).value;
+    if(q1==='C'){score++;setFb('fb1','ok','<b>Correct.</b> An agent plans, uses tools, checks results and self-corrects toward a goal.');}
+    else setFb('fb1','no','<b>Not quite.</b> The answer is <b>C</b> — planning, tool use, self-checking and self-correcting is what makes it an agent.');
+    // Q2
+    var m={m1:'B',m2:'C',m3:'A',m4:'D'},ok2=true;
+    for(var k in m){if((document.querySelector('[name='+k+']')||{}).value!==m[k])ok2=false;}
+    if(ok2){score++;setFb('fb2','ok','<b>All correct.</b> Connector=B, Skill=C, Reflection=A, Orchestrator=D.');}
+    else setFb('fb2','no','<b>Some are off.</b> Correct: Connector→B (links to data), Skill→C (rule-book), Reflection→A (checks & retries), Orchestrator→D (plans steps).');
+    // Q3 self-graded
+    var q3=(document.querySelector('[name=q3]').value||'').trim();
+    if(q3.length>20){score++;setFb('fb3','rec','<b>Recorded (1 point).</b> Model answer: the agent made an expensive, plan-changing decision with no approval. Guardrail: a <b>human-in-the-loop</b> approval step for spending over a set limit or for any substitution.');}
+    else setFb('fb3','no','<b>Add a little more.</b> Say what went wrong <i>and</i> name one guardrail.');
+    // Q4 self-graded
+    var q4=(document.querySelector('[name=q4]').value||'').trim();
+    if(q4.length>20){score++;setFb('fb4','rec','<b>Recorded (1 point).</b> Model answer: connecting the whole drive exposes private HR/salary/contract data unnecessarily. Safer: give the connector access to <b>only</b> the sales folder it needs (least privilege), and remove access afterwards.');}
+    else setFb('fb4','no','<b>Add a little more.</b> Explain the risk <i>and</i> the safer setup.');
+    // Q5 self-graded partial
+    var q5=(document.querySelector('[name=q5]').value||'').trim();
+    if(q5.length>15){score++;setFb('fb5','rec','<b>Recorded (1 point).</b> The two real problems: (1) it never checks if the goal is actually <b>done</b> — it just runs 10 steps every time (wasting time and money); (2) if a step <b>fails</b>, nothing catches the error, so it keeps going on broken results. Good fixes: add a "goal complete? then stop" check, and handle errors/retries.');}
+    else setFb('fb5','no','<b>Add a little more.</b> Name at least one problem — look at the hints.');
+    // summary
+    var s=document.getElementById('summary');
+    document.getElementById('stext').innerText='You scored '+score+' out of 5. Read the feedback above to check your written answers.';
+    var pill=document.getElementById('spill');
+    if(score>=3){pill.style.background='#dcfce7';pill.style.color='#14532d';pill.innerText='PASS — nice work';document.getElementById('assessWrap').style.display='block';}
+    else{pill.style.background='#fee2e2';pill.style.color='#7f1d1d';pill.innerText='Not yet — review and retry';}
+    s.style.display='block'; s.scrollIntoView({behavior:'smooth'});
+  }
+</script>
+</body>
+</html>
