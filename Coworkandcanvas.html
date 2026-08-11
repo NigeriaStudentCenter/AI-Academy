@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Lesson 4 — Cowork & Canvas</title>
+<style>
+  :root{--green:#14532d;--green2:#0e3a20;--gold:#c6a25a;--dgold:#c9950a;--ink:#1f2a24;--mut:#5f7268;--soft:#f4f8f5;--line:#e2ece8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--ink);background:var(--soft);line-height:1.6}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+  header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:40px 0 34px;border-bottom:5px solid var(--dgold)}
+  header .lbl{color:var(--gold);letter-spacing:3px;font-size:13px;font-weight:700;text-transform:uppercase}
+  header h1{margin:8px 0 12px;font-size:32px;line-height:1.15}
+  .meta{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#eafff2;font-size:13px;padding:5px 12px;border-radius:999px}
+  main{padding:26px 0 60px}
+  h2{font-size:22px;margin:32px 0 6px;color:var(--green)}
+  h2 .n{display:inline-flex;width:32px;height:32px;border-radius:9px;background:var(--dgold);color:#fff;align-items:center;justify-content:center;font-weight:800;margin-right:10px;font-size:16px}
+  p{margin:8px 0}
+  .callout{border-left:4px solid var(--dgold);background:#fff;border-radius:10px;padding:16px 18px;margin:16px 0;box-shadow:0 3px 12px rgba(20,83,45,.05)}
+  .callout.out{border-left-color:var(--green)} .callout b{color:var(--green)}
+  .jargon{background:#0f2f22;color:#eafff2;border-radius:14px;padding:20px 22px;margin:18px 0}
+  .jargon h3{margin:0 0 4px;color:var(--gold);font-size:17px}
+  .jargon .sub{color:#a9c6b5;font-size:13px;margin-bottom:8px}
+  .jargon dt{color:var(--gold);font-weight:700;margin-top:14px;font-size:15px}
+  .jargon dd{margin:3px 0 0;font-size:14.5px;color:#dbeee1}
+  .jargon .eg{color:#f0e2b8;font-style:italic}
+  .track{border-radius:14px;padding:18px 20px;margin:16px 0;border:1px solid var(--line);background:#fff}
+  .track.nocode{border-left:5px solid var(--green)}
+  .track.code{border-left:5px solid var(--dgold)}
+  .track .k{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:3px 12px;border-radius:999px;margin-bottom:8px}
+  .track.nocode .k{background:#e7f2eb;color:var(--green)}
+  .track.code .k{background:#fbf2d3;color:#8a6a08}
+  .track ol{margin:8px 0 0;padding-left:20px} .track li{margin:5px 0;font-size:14.5px}
+  .btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:9px 15px;border-radius:9px;margin-top:6px}
+  .btn:hover{background:var(--green2)}
+  pre{position:relative;background:#0f2f22;color:#e9f3ec;border-radius:10px;padding:16px;overflow-x:auto;font-size:13px;line-height:1.55;margin:12px 0}
+  .copy{position:absolute;top:10px;right:10px;background:var(--dgold);color:#fff;border:0;border-radius:8px;padding:5px 11px;font-weight:700;cursor:pointer;font-size:12px}
+  .guard{background:#fbf7ea;border:1px solid #e8d493;border-radius:14px;padding:18px 20px;margin:20px 0}
+  .guard h2{margin-top:0;color:#8a6a08}
+  ul.check{list-style:none;padding:0;margin:10px 0}
+  ul.check li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid #eadfbc;font-size:15px}
+  ul.check li:before{content:"\2713";position:absolute;left:0;color:var(--dgold);font-weight:800;font-size:17px}
+  .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
+  .quiz details{border-top:1px solid var(--line);padding:10px 0}
+  .quiz summary{cursor:pointer;font-weight:600;color:var(--green)}
+  .quiz p{color:var(--mut);font-size:14.5px;margin:8px 0 0}
+  .prove{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;border-radius:16px;padding:26px;margin:24px 0;border-top:5px solid var(--dgold)}
+  .prove h2{color:#fff;margin-top:0} .prove .n{background:var(--dgold);color:#fff}
+  .assess{text-align:center;margin:26px 0}
+  .assess a{display:inline-block;background:linear-gradient(135deg,#e0ab12,#c9950a);color:var(--green);font-weight:800;font-size:16px;padding:14px 28px;border-radius:12px;text-decoration:none;box-shadow:0 4px 12px rgba(201,149,10,.35)}
+  footer{color:var(--mut);font-size:13px;text-align:center;padding:20px 0 50px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="lbl">AI Academy · Advanced: AI Systems & Agents</div>
+  <h1>Lesson 4 — Cowork & Canvas: co-create with AI</h1>
+  <div class="meta"><span class="chip">Advanced</span><span class="chip">~25 min</span><span class="chip">Dual track: no-code + code</span></div>
+</div></header>
+
+<main class="wrap">
+
+  <div class="jargon">
+    <h3>Jargon, in plain words</h3>
+    <div class="sub">New techy words for this lesson, explained like you're 12 — with when and why you'd use them.</div>
+    <dl>
+      <dt>Canvas</dt>
+      <dd>A side-by-side workspace where you and the AI build and edit something <i>together</i> — not just chat back and forth. <span class="eg">Like sharing a whiteboard or a Google Doc with a colleague, instead of texting them every change.</span> <b>When:</b> writing, editing, coding, planning. <b>Why:</b> you edit directly and improve it fast.</dd>
+      <dt>Artifact</dt>
+      <dd>The actual thing you're making in the canvas — a document, a web page, a chart, some code. <span class="eg">The drawing on the whiteboard itself.</span> (Claude calls these "Artifacts", ChatGPT "Canvas", Copilot "Pages".)</dd>
+      <dt>Cowork</dt>
+      <dd>Working <i>alongside</i> the AI as a partner, hands-on, rather than asking and waiting. <span class="eg">Like cooking together in a kitchen, not ordering a takeaway.</span></dd>
+      <dt>Iteration</dt>
+      <dd>Improving something step by step, in rounds. <span class="eg">Draft, tweak, tweak again — like polishing something until it shines.</span> <b>Why:</b> the best work rarely comes out perfect first time.</dd>
+      <dt>Version</dt>
+      <dd>A saved snapshot of your work at a moment in time, so you can go back. <span class="eg">Like save points in a game, or "undo".</span></dd>
+      <dt>Human-in-the-loop</dt>
+      <dd>A person stays in control — reviewing and steering the AI's changes. <span class="eg">You're the driver; the AI is the very fast assistant.</span> <b>Why:</b> catches mistakes before they ship.</dd>
+    </dl>
+  </div>
+
+  <div class="callout out"><b>What you'll be able to do:</b> co-create a real deliverable <i>with</i> AI in a <b>canvas</b> — editing and iterating side by side instead of one-shot chatting — while keeping a <b>human in the loop</b> so the work stays right.</div>
+
+  <div class="callout"><b>The scenario:</b> Priya keeps re-typing "no, change just the second paragraph" into a chatbot, losing track of which version is which. In a <b>canvas</b>, she edits the document directly, asks the AI to adjust only that section, and refines it live. The polished version is done in minutes — and she never lost her place.</div>
+
+  <h2><span class="n">1</span>What a canvas actually is</h2>
+  <p>Normal chat is a back-and-forth of messages. A <b>canvas</b> opens the <b>artifact</b> — your document, page or code — right next to the chat, so you can <b>cowork</b>: edit it yourself, highlight a bit and say "improve this", and <b>iterate</b> round by round. You keep <b>versions</b>, and you stay in control as the <b>human in the loop</b>.</p>
+  <p><b>When it's used:</b> polishing a report, building a landing page, refining code, shaping a plan. <b>Why it's used:</b> it's faster and clearer than re-prompting from scratch, and you can see and steer every change.</p>
+
+  <h2><span class="n">2</span>Try it — no code</h2>
+  <p>Co-build something today in a canvas — pick whichever tool you have.</p>
+  <div class="track nocode">
+    <span class="k">Try it · ChatGPT Canvas</span>
+    <ol>
+      <li>Start a chat and ask it to <i>"open a canvas and draft a one-page project brief."</i></li>
+      <li>Edit the text directly, or highlight a part and ask for a change.</li>
+      <li>Iterate until it's right — you're coworking, not re-prompting.</li>
+    </ol>
+    <a class="btn" href="https://chatgpt.com" target="_blank" rel="noopener">Open ChatGPT</a>
+  </div>
+  <div class="track nocode">
+    <span class="k">Try it · Claude Artifacts</span>
+    <ol>
+      <li>Ask Claude to build something (a doc, a simple web page, a chart) — it appears as an <b>Artifact</b> beside the chat.</li>
+      <li>Ask for tweaks; watch it update the artifact, keeping <b>versions</b>.</li>
+    </ol>
+    <a class="btn" href="https://claude.ai" target="_blank" rel="noopener">Open Claude</a>
+  </div>
+  <div class="track nocode">
+    <span class="k">Also · Microsoft Copilot Pages</span>
+    <ol>
+      <li>In Copilot, send a response to a <b>Page</b> and edit it together, then share with colleagues.</li>
+    </ol>
+    <a class="btn" href="https://copilot.microsoft.com" target="_blank" rel="noopener">Open Copilot</a>
+  </div>
+
+  <h2><span class="n">3</span>Go deeper — build an interactive artifact (optional)</h2>
+  <p>Skip if you like — you've already coworked above. To push it, ask a canvas to build something <i>interactive</i> and then iterate on it.</p>
+  <div class="track code">
+    <span class="k">Go deeper · iterate a mini dashboard</span>
+    <ol>
+      <li>Ask: <i>"Build a simple HTML dashboard showing these 4 numbers as cards: [your numbers]."</i></li>
+      <li>Then iterate by steering: <i>"Add a bar chart", "make the header green", "add a total at the top."</i></li>
+      <li>Each request updates the same artifact and keeps a <b>version</b> — that's coworking on code.</li>
+    </ol>
+    <pre><button class="copy">Copy</button>Build a single-file HTML dashboard with 4 metric cards for these numbers:
+[Sales 1200] [New customers 84] [Refunds 3] [Rating 4.6].
+Then wait - I'll ask for changes one at a time.</pre>
+    <p style="font-size:13.5px;color:var(--mut)">You don't write the code — you <i>direct</i> it and review each version. That's the human-in-the-loop skill employers want.</p>
+  </div>
+
+  <div class="guard">
+    <h2>Guardrails — safety &amp; ethics</h2>
+    <ul class="check">
+      <li><b>Review before you ship.</b> Read every AI change — don't send an artifact you haven't checked.</li>
+      <li><b>Keep sensitive data out</b> of anything you'll share or publish from a canvas.</li>
+      <li><b>Track versions and ownership</b> — know what changed and who approved it.</li>
+      <li><b>You're the human in the loop:</b> accept, reject or fix each change deliberately.</li>
+    </ul>
+  </div>
+
+  <div class="callout"><b>Try this today (5 min):</b> open a canvas and co-build a one-page brief or a simple web page, editing it directly and iterating twice. Notice how much faster it is than re-prompting.</div>
+  <div class="callout"><b>Common mistake:</b> treating the canvas like normal chat — re-asking from scratch each time. The whole point is to <i>edit and iterate</i> on the same artifact.</div>
+
+  <h2>Check your understanding</h2>
+  <div class="quiz">
+    <details><summary>Q1. In plain words, what is a canvas?</summary><p>A side-by-side workspace where you and the AI build and edit the same thing together, instead of only chatting.</p></details>
+    <details><summary>Q2. What is an "artifact"?</summary><p>The thing you're building in the canvas — a document, web page, chart or code.</p></details>
+    <details><summary>Q3. Why cowork in a canvas instead of one-shot chatting?</summary><p>You edit directly, iterate round by round, keep versions, and stay in control of every change.</p></details>
+  </div>
+
+  <div class="prove">
+    <h2><span class="n">P</span>Prove-It assignment</h2>
+    <p>Submit to earn certificate credit:</p>
+    <p>1. A screenshot of an <b>artifact</b> you co-built in a canvas.<br>2. One thing you changed by <b>iterating</b> (before/after).<br>3. One sentence on how you stayed the <b>human in the loop</b> (what you reviewed or rejected).</p>
+  </div>
+
+  <div class="assess"><a href="https://nigeriastudentcenter.github.io/AI-Academy/coworkandcanvasquiz.html" target="_blank" rel="noopener">Take the Lesson 4 quiz &rarr;</a></div>
+
+  <footer>British School of Outdoor Education · AI Academy · Advanced: AI Systems & Agents · Tools change often — verify exact steps on the official docs.</footer>
+</main>
+
+<script>
+  document.querySelectorAll('pre .copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.parentNode.textContent.replace(/^Copy/,'').trim();
+      navigator.clipboard.writeText(t); b.textContent='Copied'; setTimeout(function(){b.textContent='Copy';},1400);
+    });
+  });
+</script>
+</body>
+</html>
