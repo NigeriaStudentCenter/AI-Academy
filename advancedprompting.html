@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Advanced Prompting & Iterative Refinement</title><style>
+  :root{--green:#14532d;--green2:#0e3a20;--gold:#c6a25a;--dgold:#c9950a;--ink:#1f2a24;--mut:#5f7268;--soft:#f4f8f5;--line:#e2ece8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--ink);background:var(--soft);line-height:1.6}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+  header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:40px 0 34px;border-bottom:5px solid var(--dgold)}
+  header .lbl{color:var(--gold);letter-spacing:3px;font-size:13px;font-weight:700;text-transform:uppercase}
+  header h1{margin:8px 0 12px;font-size:33px;line-height:1.15}
+  .meta{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#eafff2;font-size:13px;padding:5px 12px;border-radius:999px}
+  main{padding:30px 0 60px}
+  h2{font-size:22px;margin:32px 0 6px;color:var(--green)}
+  h2 .n{display:inline-flex;width:32px;height:32px;border-radius:9px;background:var(--dgold);color:#fff;align-items:center;justify-content:center;font-weight:800;margin-right:10px;font-size:16px}
+  p{margin:8px 0}
+  .callout{border-left:4px solid var(--dgold);background:#fff;border-radius:10px;padding:16px 18px;margin:16px 0;box-shadow:0 3px 12px rgba(20,83,45,.05)}
+  .callout.out{border-left-color:var(--green)}
+  .callout b{color:var(--green)}
+  .tip{background:#f4f8f5;border:1px solid #d8e6dd;border-radius:10px;padding:12px 16px;margin:6px 0 18px;font-size:14px;line-height:1.5}
+  .tip b{color:var(--green)} .tip .ex{color:#4a5a51;font-style:italic} .tip .rf{color:#8a6a08;margin-top:8px}
+  .frame{background:#0f2f22;color:#eafff2;border-radius:12px;padding:18px 20px;margin:16px 0}
+  .frame b{color:var(--gold)}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:16px 0}
+  .tool{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .tool h3{margin:0 0 4px;font-size:17px;color:var(--green)} .tool p{font-size:14px;color:var(--mut);margin:4px 0}
+  .btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:9px 15px;border-radius:9px}
+  .btn:hover{background:var(--green2)}
+  .prompt{position:relative;background:#0f2f22;color:#e9f3ec;border-radius:12px;padding:18px;margin:14px 0;font-family:'SFMono-Regular',Consolas,monospace;font-size:13.5px;line-height:1.55;white-space:pre-wrap}
+  .prompt .copy{position:absolute;top:12px;right:12px;background:var(--dgold);color:#fff;border:0;border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer;font-size:12px;font-family:inherit}
+  ul.check{list-style:none;padding:0;margin:14px 0}
+  ul.check li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid var(--line);font-size:15px}
+  ul.check li:before{content:"\2713";position:absolute;left:0;color:var(--dgold);font-weight:800;font-size:17px}
+  .proof{background:#fff;border:2px solid var(--dgold);border-radius:16px;padding:22px;margin:22px 0}
+  .proof h2{margin:0 0 12px;color:var(--green)}
+  .proof .lab{display:inline-block;background:#fbf2d3;color:#8a6a08;border:1px solid #e8d493;border-radius:999px;padding:2px 12px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .proof .cv{background:#f4f8f5;border-radius:10px;padding:14px 16px;font-size:15px;margin-bottom:16px}
+  .proof .note{font-size:13px;color:var(--mut);margin-top:6px}
+  .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
+  .quiz details{border-top:1px solid var(--line);padding:10px 0}
+  .quiz summary{cursor:pointer;font-weight:600;color:var(--green)}
+  .quiz p{color:var(--mut);font-size:14.5px;margin:8px 0 0}
+  .prove{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;border-radius:16px;padding:26px;margin:24px 0;border-top:5px solid var(--dgold)}
+  .prove h2{color:#fff;margin-top:0} .prove .n{background:var(--dgold);color:#fff}
+  .assess{text-align:center;margin:26px 0}
+  .assess a{display:inline-block;background:linear-gradient(135deg,#e0ab12,#c9950a);color:#14532d;font-weight:800;font-size:17px;padding:15px 30px;border-radius:12px;text-decoration:none;box-shadow:0 4px 12px rgba(201,149,10,.35)}
+  footer{color:var(--mut);font-size:13px;text-align:center;padding:20px 0 50px}
+</style></head><body>
+<header><div class="wrap"><div class="lbl">AI Academy · AI Skills for Work</div><h1>Advanced Prompting & Iterative Refinement</h1><div class="meta"><span class="chip">Intermediate</span><span class="chip">~25 min</span><span class="chip">ChatGPT · Claude · Copilot · Gemini</span></div></div></header>
+<main class="wrap">
+<div class="callout out"><b>What you'll be able to do:</b> go beyond one-shot prompts &mdash; use examples, step-by-step reasoning and refinement loops to turn a mediocre first draft into a polished, publication-ready output.</div>
+<div class="callout"><b>The scenario:</b> The AI gave you a bland first draft of a client proposal, and you're tempted to rewrite it all by hand. Instead, a few advanced techniques get the AI to fix its own work in seconds.</div>
+<div class="callout" style="border-left-color:#c9950a"><b>Use any free app:</b> these prompts work in ChatGPT, Claude, Gemini or Copilot &mdash; pick whichever you like. Everything here works on the free version.</div>
+<h2><span class="n">1</span>Three techniques that change everything</h2><div class="frame"><b>Show, don't just tell:</b> give 1-2 examples of the style you want.<br><b>Ask for reasoning:</b> add "think step by step" for complex tasks.<br><b>Refine in a loop:</b> have the AI critique its own answer, then rewrite it.</div>
+<h2><span class="n">2</span>Example-driven (few-shot) prompt</h2>
+<p>Give the AI a model to copy so the output matches your voice.</p>
+<div class="prompt"><button class="copy">Copy</button>Here are two examples of the writing style I want:
+[Example 1]
+[Example 2]
+Now write [what you need] in exactly that style, tone and length.</div>
+<div class="tip"><b>What good looks like:</b> <span class="ex">output that mirrors your samples' tone and structure, not a generic template.</span><div class="rf"><b>Refine it:</b> reply &mdash; <i>"Match Example 2 more closely on sentence length and formality."</i></div></div>
+<h2><span class="n">3</span>Self-critique & rewrite</h2>
+<p>Let the AI grade and improve its own draft against your criteria.</p>
+<div class="prompt"><button class="copy">Copy</button>Critique your last answer against these criteria: [clear, specific, persuasive, under 200 words].
+List what&#x27;s weak, then rewrite it to fix every point.</div>
+<div class="tip"><b>What good looks like:</b> <span class="ex">a short list of weaknesses followed by a noticeably tighter, stronger rewrite.</span><div class="rf"><b>Refine it:</b> reply &mdash; <i>"Now cut it by 30% without losing the key argument."</i></div></div>
+<h2><span class="n">4</span>Step-by-step for complex tasks</h2>
+<p>For anything with logic or multiple parts, ask it to reason first.</p>
+<div class="prompt"><button class="copy">Copy</button>Think step by step before answering. First outline your approach, then give the final answer.
+Task: [describe the complex task].</div>
+<div class="tip"><b>What good looks like:</b> <span class="ex">a brief plan, then a more accurate final answer because it reasoned first.</span><div class="rf"><b>Refine it:</b> reply &mdash; <i>"Show me one alternative approach and which you'd recommend."</i></div></div>
+
+
+<div class="proof"><h2>Put this on your CV &amp; say it in interview</h2><div class="lab">CV bullet</div><div class="cv">"Applied advanced prompt engineering &mdash; few-shot examples, chain-of-thought reasoning and iterative self-critique &mdash; to consistently generate publication-ready content, reducing revision cycles by [50%]."</div><div class="lab">Interview answer (STAR)</div><div class="cv">"A first-draft proposal came back generic, so rather than rewrite it manually I fed the model two style examples, then ran a self-critique-and-rewrite loop against clear criteria. In two iterations it produced a client-ready draft, saving roughly [an hour] per document."</div><div class="note">Swap the [bracketed] figures for your own real results &mdash; bold is great, but every number must be true for you.</div></div>
+<h2>Check your understanding</h2><div class="quiz"><details><summary>Q1. What is "few-shot" prompting?</summary><p>Giving the AI one or more examples of what you want so it matches them.</p></details><details><summary>Q2. When should you ask the AI to "think step by step"?</summary><p>For complex, multi-part or logical tasks &mdash; reasoning first improves accuracy.</p></details><details><summary>Q3. What is the self-critique loop?</summary><p>Asking the AI to grade its own answer against criteria, then rewrite it better.</p></details></div>
+<div class="prove"><h2><span class="n">P</span>Prove-It assignment</h2><p>Submit to earn certificate credit:</p><p>1. A weak first AI output.<br>2. The improved version after 2 refinement steps.<br>3. One sentence naming which technique made the biggest difference.</p></div>
+<div class="assess"><a href="https://forms.office.com/your-form-link" target="_blank" rel="noopener">Take the assessment &amp; submit your Prove-It &rarr;</a></div>
+<footer>British School of Outdoor Education · AI Academy · AI Skills for Work · Tools change often — if a step looks different, verify on the tool's official site.</footer>
+</main><script>
+  document.querySelectorAll('.prompt .copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.parentNode.textContent.replace(/^Copy/,'').trim();
+      navigator.clipboard.writeText(t); b.textContent='Copied'; setTimeout(function(){b.textContent='Copy';},1400);
+    });
+  });
+</script></body></html>
