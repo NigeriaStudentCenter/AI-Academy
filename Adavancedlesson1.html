@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Lesson 1 — Connectors & Context</title>
+<style>
+  :root{--green:#14532d;--green2:#0e3a20;--gold:#c6a25a;--dgold:#c9950a;--ink:#1f2a24;--mut:#5f7268;--soft:#f4f8f5;--line:#e2ece8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--ink);background:var(--soft);line-height:1.6}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+  header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:40px 0 34px;border-bottom:5px solid var(--dgold)}
+  header .lbl{color:var(--gold);letter-spacing:3px;font-size:13px;font-weight:700;text-transform:uppercase}
+  header h1{margin:8px 0 12px;font-size:32px;line-height:1.15}
+  .meta{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#eafff2;font-size:13px;padding:5px 12px;border-radius:999px}
+  main{padding:26px 0 60px}
+  h2{font-size:22px;margin:32px 0 6px;color:var(--green)}
+  h2 .n{display:inline-flex;width:32px;height:32px;border-radius:9px;background:var(--dgold);color:#fff;align-items:center;justify-content:center;font-weight:800;margin-right:10px;font-size:16px}
+  p{margin:8px 0}
+  .callout{border-left:4px solid var(--dgold);background:#fff;border-radius:10px;padding:16px 18px;margin:16px 0;box-shadow:0 3px 12px rgba(20,83,45,.05)}
+  .callout.out{border-left-color:var(--green)} .callout b{color:var(--green)}
+  /* jargon box */
+  .jargon{background:#0f2f22;color:#eafff2;border-radius:14px;padding:20px 22px;margin:18px 0}
+  .jargon h3{margin:0 0 4px;color:var(--gold);font-size:17px}
+  .jargon .sub{color:#a9c6b5;font-size:13px;margin-bottom:8px}
+  .jargon dt{color:var(--gold);font-weight:700;margin-top:14px;font-size:15px}
+  .jargon dd{margin:3px 0 0;font-size:14.5px;color:#dbeee1}
+  .jargon .eg{color:#f0e2b8;font-style:italic}
+  /* dual track */
+  .track{border-radius:14px;padding:18px 20px;margin:16px 0;border:1px solid var(--line);background:#fff}
+  .track.nocode{border-left:5px solid var(--green)}
+  .track.code{border-left:5px solid var(--dgold)}
+  .track .k{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:3px 12px;border-radius:999px;margin-bottom:8px}
+  .track.nocode .k{background:#e7f2eb;color:var(--green)}
+  .track.code .k{background:#fbf2d3;color:#8a6a08}
+  .track ol{margin:8px 0 0;padding-left:20px} .track li{margin:5px 0;font-size:14.5px}
+  .btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:9px 15px;border-radius:9px;margin-top:6px}
+  .btn:hover{background:var(--green2)}
+  pre{position:relative;background:#0f2f22;color:#e9f3ec;border-radius:10px;padding:16px;overflow-x:auto;font-size:13px;line-height:1.5;margin:12px 0}
+  .copy{position:absolute;top:10px;right:10px;background:var(--dgold);color:#fff;border:0;border-radius:8px;padding:5px 11px;font-weight:700;cursor:pointer;font-size:12px}
+  .guard{background:#fbf7ea;border:1px solid #e8d493;border-radius:14px;padding:18px 20px;margin:20px 0}
+  .guard h2{margin-top:0;color:#8a6a08}
+  ul.check{list-style:none;padding:0;margin:10px 0}
+  ul.check li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid #eadfbc;font-size:15px}
+  ul.check li:before{content:"\2713";position:absolute;left:0;color:var(--dgold);font-weight:800;font-size:17px}
+  .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
+  .quiz details{border-top:1px solid var(--line);padding:10px 0}
+  .quiz summary{cursor:pointer;font-weight:600;color:var(--green)}
+  .quiz p{color:var(--mut);font-size:14.5px;margin:8px 0 0}
+  .prove{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;border-radius:16px;padding:26px;margin:24px 0;border-top:5px solid var(--dgold)}
+  .prove h2{color:#fff;margin-top:0} .prove .n{background:var(--dgold);color:#fff}
+  .assess{text-align:center;margin:26px 0}
+  .assess a{display:inline-block;background:linear-gradient(135deg,#e0ab12,#c9950a);color:var(--green);font-weight:800;font-size:16px;padding:14px 28px;border-radius:12px;text-decoration:none;box-shadow:0 4px 12px rgba(201,149,10,.35)}
+  footer{color:var(--mut);font-size:13px;text-align:center;padding:20px 0 50px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="lbl">AI Academy · Advanced: AI Systems & Agents</div>
+  <h1>Lesson 1 — Connectors & Context: give AI your real data</h1>
+  <div class="meta"><span class="chip">Advanced</span><span class="chip">~30 min</span><span class="chip">Dual track: no-code + code</span></div>
+</div></header>
+
+<main class="wrap">
+
+  <div class="jargon">
+    <h3>Jargon, in plain words</h3>
+    <div class="sub">The techy words in this lesson, explained like you're 12. This glossary grows a little each lesson.</div>
+    <dl>
+      <dt>Connector</dt>
+      <dd>A safe link that lets an AI look at your real information — your files, your email, a database — without you copy-pasting it. <span class="eg">Like giving a trusted helper a key to one cupboard, not the whole house.</span> <b>When:</b> whenever you want the AI to answer from your own stuff. <b>Why:</b> real answers about your data, not generic web guesses.</dd>
+      <dt>Data source</dt>
+      <dd>Simply where your information lives — a Google Drive folder, a spreadsheet, your inbox, a database. <span class="eg">Like the fridge, the cupboard, or the freezer where different food is kept.</span></dd>
+      <dt>Context / grounding</dt>
+      <dd>Giving the AI the real facts to base its answer on, so it talks about <i>your</i> situation. <span class="eg">Like showing a tutor your actual homework before they help — otherwise they're guessing.</span> <b>Why:</b> stops the AI making things up.</dd>
+      <dt>Permissions / access</dt>
+      <dd>What the AI is allowed to see. You decide. <span class="eg">Like a visitor's pass that only opens certain doors.</span></dd>
+      <dt>Least privilege</dt>
+      <dd>A safety rule: only give access to exactly what's needed — nothing extra. <span class="eg">One cupboard key, never the master key.</span> <b>Why:</b> if something goes wrong, far less can be exposed.</dd>
+      <dt>MCP (Model Context Protocol)</dt>
+      <dd>A shared "plug shape" that lets different AIs connect to different data tools in the same standard way. <span class="eg">Like a USB port — one standard plug fits loads of devices, so you don't need a different cable for everything.</span></dd>
+      <dt>API <span style="font-weight:400;color:#a9c6b5">(you'll meet this properly in Lesson 2)</span></dt>
+      <dd>A way for two pieces of software to talk to each other and swap information. <span class="eg">Like a waiter carrying your order to the kitchen and bringing food back.</span></dd>
+    </dl>
+  </div>
+
+  <div class="callout out"><b>What you'll be able to do:</b> safely connect an AI to your <b>own</b> real data so it answers from your files instead of the generic web — and understand, in plain terms, how a <b>connector</b> (and the <b>MCP</b> standard) makes that happen.</div>
+
+  <div class="callout"><b>The scenario:</b> Amara spends every Monday copy-pasting last week's numbers from a shared drive, her inbox and a spreadsheet into an AI to write a report. It's slow and error-prone. A <b>connector</b> lets the AI read those <b>data sources</b> directly — so the report writes itself from live, correct information.</div>
+
+  <h2><span class="n">1</span>What a connector actually is</h2>
+  <p>Normally you paste text into an AI. A <b>connector</b> flips that around: it lets the AI reach into a <b>data source</b> you choose and read what it needs. You're not sending it everything — you're handing over <b>one cupboard key</b>. That's the idea of <b>least privilege</b>: give the smallest access that does the job.</p>
+  <p><b>When it's used:</b> writing a report from your own spreadsheet, answering "what did this contract say?", or pulling last week's sales without hunting through folders. <b>Why it's used:</b> the AI's answer is <b>grounded</b> in your real facts, so it's accurate and specific — not a generic guess.</p>
+
+  <h2><span class="n">2</span>Try it — no code</h2>
+  <p>You can use a connector today, in a normal app, with no programming. Pick one:</p>
+
+  <div class="track nocode">
+    <span class="k">Try it · Google Gemini</span>
+    <ol>
+      <li>In Gemini, type <b>@</b> to see connected apps, then choose <b>@Google Drive</b> or <b>@Gmail</b>.</li>
+      <li>Point it at a real file, e.g. <i>"Using @Google Drive, summarise the sales figures in last month's report."</i></li>
+      <li>Notice it answers from <b>your</b> document — that's grounding in action.</li>
+    </ol>
+    <a class="btn" href="https://gemini.google.com" target="_blank" rel="noopener">Open Gemini</a>
+  </div>
+
+  <div class="track nocode">
+    <span class="k">Try it · Microsoft Copilot</span>
+    <ol>
+      <li>Open Copilot where your work lives (Word, or Copilot chat with a file from OneDrive/SharePoint).</li>
+      <li>Ask: <i>"Summarise the key points and deadlines in [this document]."</i></li>
+      <li>Copilot reads the file directly — no copy-paste. This is the connector doing the work.</li>
+    </ol>
+    <a class="btn" href="https://copilot.microsoft.com" target="_blank" rel="noopener">Open Copilot</a>
+  </div>
+
+  <h2><span class="n">3</span>Go deeper — with code (optional)</h2>
+  <p>This is for learners who want the developer view. Skip it if you like — you've already used a connector above.</p>
+  <div class="track code">
+    <span class="k">Go deeper · MCP (the "USB port" for AI data)</span>
+    <p style="margin-top:2px"><b>MCP</b> is a standard way to plug an AI into a data tool — a folder, a database, a code repo. Instead of a custom link for every tool, MCP gives one standard "plug shape", so the same AI can connect to many things. Tools like Claude can add an MCP server that exposes, say, a local folder.</p>
+    <p>Conceptually, you tell the app which MCP server to run. A simplified example of the idea (a config that connects a local folder) looks like this:</p>
+    <pre><button class="copy">Copy</button>{
+  "mcpServers": {
+    "my-files": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/one/folder"]
+    }
+  }
+}</pre>
+    <p style="font-size:13.5px;color:var(--mut)">Notice it points at <b>one folder</b>, not your whole drive — least privilege in practice. Always follow the official MCP documentation for the current, exact steps; the details change often.</p>
+  </div>
+
+  <div class="guard">
+    <h2>Guardrails — safety &amp; ethics (read this every time)</h2>
+    <ul class="check">
+      <li><b>Least privilege:</b> connect the <i>one</i> folder or file needed — never the whole drive.</li>
+      <li><b>Know where data goes:</b> check whether the tool keeps or trains on your data; use enterprise tools for sensitive work.</li>
+      <li><b>No secret data by accident:</b> a broad connector can expose HR, salary or client files you didn't mean to share.</li>
+      <li><b>Revoke access</b> when you're done, and follow your organisation's data policy.</li>
+    </ul>
+  </div>
+
+  <div class="callout"><b>Try this today (5 min):</b> connect an AI to <b>one</b> of your own files (a Drive doc or a OneDrive file) and ask it a question only that file can answer. You've just grounded an AI in your real data.</div>
+  <div class="callout"><b>Common mistake:</b> connecting far more than you need "to be safe". That's the opposite of safe — it exposes data. Connect the minimum.</div>
+
+  <h2>Check your understanding</h2>
+  <div class="quiz">
+    <details><summary>Q1. In plain words, what is a connector?</summary><p>A safe link that lets an AI read your chosen data (files, email, a database) directly, instead of you copy-pasting it.</p></details>
+    <details><summary>Q2. What does "least privilege" mean and why does it matter?</summary><p>Give the AI access to only what it needs — one folder, not everything. If something goes wrong, far less data is exposed.</p></details>
+    <details><summary>Q3. What problem does MCP solve?</summary><p>It's a standard "plug" so many different AIs can connect to many different data tools the same way — like USB for AI data.</p></details>
+  </div>
+
+  <div class="prove">
+    <h2><span class="n">P</span>Prove-It assignment</h2>
+    <p>Submit to earn certificate credit:</p>
+    <p>1. A screenshot of an AI answering a question from <b>your own</b> connected file or folder.<br>2. One sentence on <b>what access you granted</b> and why it was the minimum needed.<br>3. One data-safety rule you'll always follow when connecting data.</p>
+  </div>
+
+  <div class="assess"><a href="https://nigeriastudentcenter.github.io/AI-Academy/connectorquiz.html" target="_blank" rel="noopener">Take the Lesson 1 quiz &rarr;</a></div>
+
+  <footer>British School of Outdoor Education · AI Academy · Advanced: AI Systems & Agents · Tools change often — verify exact steps on the official docs.</footer>
+</main>
+
+<script>
+  document.querySelectorAll('pre .copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.parentNode.textContent.replace(/^Copy/,'').trim();
+      navigator.clipboard.writeText(t); b.textContent='Copied'; setTimeout(function(){b.textContent='Copy';},1400);
+    });
+  });
+</script>
+</body>
+</html>
