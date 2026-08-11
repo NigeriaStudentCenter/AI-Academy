@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Lesson 5 — Agentic Workflows</title>
+<style>
+  :root{--green:#14532d;--green2:#0e3a20;--gold:#c6a25a;--dgold:#c9950a;--ink:#1f2a24;--mut:#5f7268;--soft:#f4f8f5;--line:#e2ece8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--ink);background:var(--soft);line-height:1.6}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+  header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:40px 0 34px;border-bottom:5px solid var(--dgold)}
+  header .lbl{color:var(--gold);letter-spacing:3px;font-size:13px;font-weight:700;text-transform:uppercase}
+  header h1{margin:8px 0 12px;font-size:32px;line-height:1.15}
+  .meta{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#eafff2;font-size:13px;padding:5px 12px;border-radius:999px}
+  main{padding:26px 0 60px}
+  h2{font-size:22px;margin:32px 0 6px;color:var(--green)}
+  h2 .n{display:inline-flex;width:32px;height:32px;border-radius:9px;background:var(--dgold);color:#fff;align-items:center;justify-content:center;font-weight:800;margin-right:10px;font-size:16px}
+  p{margin:8px 0}
+  .callout{border-left:4px solid var(--dgold);background:#fff;border-radius:10px;padding:16px 18px;margin:16px 0;box-shadow:0 3px 12px rgba(20,83,45,.05)}
+  .callout.out{border-left-color:var(--green)} .callout b{color:var(--green)}
+  .jargon{background:#0f2f22;color:#eafff2;border-radius:14px;padding:20px 22px;margin:18px 0}
+  .jargon h3{margin:0 0 4px;color:var(--gold);font-size:17px}
+  .jargon .sub{color:#a9c6b5;font-size:13px;margin-bottom:8px}
+  .jargon dt{color:var(--gold);font-weight:700;margin-top:14px;font-size:15px}
+  .jargon dd{margin:3px 0 0;font-size:14.5px;color:#dbeee1}
+  .jargon .eg{color:#f0e2b8;font-style:italic}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:14px 0}
+  .flow span{background:#e7f2eb;border:1px solid #cfe3d6;color:var(--green);font-weight:700;font-size:13.5px;padding:8px 14px;border-radius:10px}
+  .flow .arw{color:var(--dgold);font-weight:800}
+  .track{border-radius:14px;padding:18px 20px;margin:16px 0;border:1px solid var(--line);background:#fff}
+  .track.nocode{border-left:5px solid var(--green)}
+  .track.code{border-left:5px solid var(--dgold)}
+  .track .k{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:3px 12px;border-radius:999px;margin-bottom:8px}
+  .track.nocode .k{background:#e7f2eb;color:var(--green)}
+  .track.code .k{background:#fbf2d3;color:#8a6a08}
+  .track ol{margin:8px 0 0;padding-left:20px} .track li{margin:5px 0;font-size:14.5px}
+  .btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:9px 15px;border-radius:9px;margin-top:6px}
+  .btn:hover{background:var(--green2)}
+  pre{position:relative;background:#0f2f22;color:#e9f3ec;border-radius:10px;padding:16px;overflow-x:auto;font-size:13px;line-height:1.55;margin:12px 0}
+  .copy{position:absolute;top:10px;right:10px;background:var(--dgold);color:#fff;border:0;border-radius:8px;padding:5px 11px;font-weight:700;cursor:pointer;font-size:12px}
+  .guard{background:#fbf7ea;border:1px solid #e8d493;border-radius:14px;padding:18px 20px;margin:20px 0}
+  .guard h2{margin-top:0;color:#8a6a08}
+  ul.check{list-style:none;padding:0;margin:10px 0}
+  ul.check li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid #eadfbc;font-size:15px}
+  ul.check li:before{content:"\2713";position:absolute;left:0;color:var(--dgold);font-weight:800;font-size:17px}
+  .capstone{background:linear-gradient(135deg,#14532d,#0b3d20);color:#fff;border-radius:16px;padding:26px;margin:24px 0;border-top:5px solid var(--dgold)}
+  .capstone h2{color:#fff;margin-top:0}
+  .capstone ol{padding-left:20px} .capstone li{margin:5px 0}
+  .capstone a{display:inline-block;background:linear-gradient(135deg,#e0ab12,#c9950a);color:var(--green);font-weight:800;padding:12px 22px;border-radius:11px;text-decoration:none;margin-top:12px}
+  .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
+  .quiz details{border-top:1px solid var(--line);padding:10px 0}
+  .quiz summary{cursor:pointer;font-weight:600;color:var(--green)}
+  .quiz p{color:var(--mut);font-size:14.5px;margin:8px 0 0}
+  .prove{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;border-radius:16px;padding:26px;margin:24px 0;border-top:5px solid var(--dgold)}
+  .prove h2{color:#fff;margin-top:0} .prove .n{background:var(--dgold);color:#fff}
+  .assess{text-align:center;margin:26px 0}
+  .assess a{display:inline-block;background:linear-gradient(135deg,#e0ab12,#c9950a);color:var(--green);font-weight:800;font-size:16px;padding:14px 28px;border-radius:12px;text-decoration:none;box-shadow:0 4px 12px rgba(201,149,10,.35)}
+  footer{color:var(--mut);font-size:13px;text-align:center;padding:20px 0 50px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="lbl">AI Academy · Advanced: AI Systems & Agents</div>
+  <h1>Lesson 5 — Agentic AI & Autonomous Workflows</h1>
+  <div class="meta"><span class="chip">Advanced · Finale</span><span class="chip">~35 min</span><span class="chip">Dual track: no-code + code</span></div>
+</div></header>
+
+<main class="wrap">
+
+  <div class="jargon">
+    <h3>Jargon, in plain words</h3>
+    <div class="sub">The last set of techy words — explained like you're 12 — with when and why you'd use them.</div>
+    <dl>
+      <dt>Agent</dt>
+      <dd>An AI given a <i>goal</i> that plans several steps on its own, uses tools, checks its results and self-corrects until it's done. <span class="eg">Like sending a capable assistant to "organise the office party" — they make a list, book things, and check it's all sorted.</span> <b>When:</b> multi-step goals. <b>Why:</b> it handles a whole task, not just one answer.</dd>
+      <dt>Orchestrator (the planner)</dt>
+      <dd>The part that breaks the big goal into steps and decides what to do next. <span class="eg">The project manager with the to-do list.</span></dd>
+      <dt>Tool call</dt>
+      <dd>When the agent uses something outside itself — search the web, read a database, send an email. <span class="eg">A chef reaching for a specific gadget.</span></dd>
+      <dt>Reflection loop</dt>
+      <dd>The agent checking "did that work?" and trying again or adjusting if not. <span class="eg">Tasting the soup and adding salt if it needs it.</span></dd>
+      <dt>Termination check</dt>
+      <dd>The "is the goal actually <b>done</b>? then stop" test that prevents endless looping. <span class="eg">A checklist that says "finished — down tools."</span> <b>Why:</b> stops wasted time and money.</dd>
+      <dt>Autonomy</dt>
+      <dd>How much the agent is allowed to do on its own without asking. <span class="eg">A new employee's level of sign-off authority.</span></dd>
+      <dt>Guardrails &amp; human-in-the-loop</dt>
+      <dd>The safety limits — spend caps, step caps, "ask a human first" for risky actions. <span class="eg">Stabilisers on a bike, and a manager who must approve big decisions.</span> <b>Why:</b> keeps an autonomous agent safe.</dd>
+    </dl>
+  </div>
+
+  <div class="callout out"><b>What you'll be able to do:</b> explain how an <b>agent</b> works (plan → act with tools → reflect → repeat until done), build a simple one with no code, and — most importantly — design the <b>guardrails</b> that keep it safe. This is the skill the whole track builds toward.</div>
+
+  <div class="callout"><b>The scenario:</b> An agent is told "book me the cheapest trip to Lagos." Without guardrails it might book a non-refundable flight on the wrong date, loop forever comparing options, or overspend. With a planner, a reflection loop, a termination check and a human-in-the-loop, it plans, checks its work, and <b>asks before buying</b>. Same power — made safe.</div>
+
+  <h2><span class="n">1</span>How an agent actually works</h2>
+  <p>An agent runs a little cycle: the <b>orchestrator</b> plans a step, the agent makes a <b>tool call</b> to do it, the <b>reflection loop</b> checks if it worked, and it repeats — until the <b>termination check</b> says the goal is done. All of it sits inside <b>guardrails</b>.</p>
+  <div class="flow"><span>Plan</span><span class="arw">&rarr;</span><span>Act (tool call)</span><span class="arw">&rarr;</span><span>Reflect: did it work?</span><span class="arw">&rarr;</span><span>Done? stop · else repeat</span></div>
+  <p><b>When it's used:</b> research-and-summarise tasks, triaging inbound requests, multi-step data jobs, "do this whole thing for me" workflows. <b>Why it's used:</b> it automates entire tasks — which is exactly why the guardrails matter so much.</p>
+
+  <h2><span class="n">2</span>Try it — no code</h2>
+  <p>Build a simple agent that plans and completes a multi-step task — no programming.</p>
+  <div class="track nocode">
+    <span class="k">Try it · Microsoft Copilot Studio</span>
+    <ol>
+      <li>Open Copilot Studio and create a new <b>agent</b>.</li>
+      <li>Give it a goal and a couple of <b>tools/actions</b> (e.g. search, or a connected data source).</li>
+      <li>Test it on a multi-step task and watch it <b>plan</b> and act. Set limits where you can.</li>
+    </ol>
+    <a class="btn" href="https://copilotstudio.microsoft.com" target="_blank" rel="noopener">Open Copilot Studio</a>
+  </div>
+  <div class="track nocode">
+    <span class="k">Also · a Custom GPT with Actions</span>
+    <ol>
+      <li>Build a Custom GPT and add one or two <b>Actions</b> (tools it can call).</li>
+      <li>Instruct it to plan, act, then check its result before finishing.</li>
+      <li>You've made a simple agent loop by hand.</li>
+    </ol>
+    <a class="btn" href="https://chatgpt.com" target="_blank" rel="noopener">Open ChatGPT</a>
+  </div>
+
+  <h2><span class="n">3</span>Go deeper — read &amp; fix an agent loop (optional)</h2>
+  <p>No coding — read this like a recipe and spot the danger. This loop runs a fixed number of steps and never checks if the goal is done, with no safety at all:</p>
+  <div class="track code">
+    <span class="k">Go deeper · the risky loop</span>
+    <pre><button class="copy">Copy</button>run agent (goal, max_steps = 10):
+    step = 0
+    while step &lt; max_steps:
+        action = ask_ai(history)     # what next?
+        result = do_action(action)   # just do it - even if risky!
+        step = step + 1
+    return "Goal completed!"          # ...but was it, really?</pre>
+    <p><b>The fixes, in plain words:</b></p>
+    <ul class="check">
+      <li><b>Termination check:</b> after each step, ask "is the goal actually done?" and stop if yes.</li>
+      <li><b>Human-in-the-loop:</b> before any risky action (spend, delete, send), get a person's approval.</li>
+      <li><b>Caps:</b> add a spend limit and a step limit so it can't run away.</li>
+      <li><b>Error handling:</b> if a step fails, catch it and retry safely instead of charging on.</li>
+    </ul>
+    <pre><button class="copy">Copy</button>run agent (goal, max_steps = 10, budget = 100):
+    step = 0; spent = 0
+    while step &lt; max_steps and spent &lt; budget:      # caps
+        action = ask_ai(history)
+        if action.is_risky and not human_approves(action):   # human-in-the-loop
+            continue
+        try:
+            result = do_action(action)              # error handling
+        except Error:
+            handle_and_retry()
+        spent = spent + action.cost
+        if goal_is_met(result):                     # termination check
+            return "Done"
+        step = step + 1
+    return "Stopped safely at a limit"</pre>
+  </div>
+
+  <div class="guard">
+    <h2>Guardrails — the most important part of this whole track</h2>
+    <ul class="check">
+      <li><b>Human-in-the-loop</b> for anything irreversible or expensive (buying, deleting, sending, publishing).</li>
+      <li><b>Spend and step caps</b> so an agent can never run up a huge bill or loop forever.</li>
+      <li><b>Logging &amp; auditability:</b> keep a record of what the agent did and why.</li>
+      <li><b>Least-privilege permissions:</b> the agent can only touch what it truly needs.</li>
+      <li><b>Fail-safe defaults:</b> if unsure, it stops and asks — it doesn't guess on something risky.</li>
+    </ul>
+  </div>
+
+  <div class="callout"><b>Try this today (5 min):</b> pick a real task and sketch an agent for it — the goal, the steps, the tools, and (most important) the guardrails you'd put around it.</div>
+  <div class="callout"><b>Common mistake:</b> giving an agent lots of autonomy with no caps and no human check. Power without guardrails is how agents cause real damage.</div>
+
+  <div class="capstone">
+    <h2>Capstone — put the whole track together</h2>
+    <p>Design (and, if technical, prototype) one governed workflow that combines all five pillars:</p>
+    <ol>
+      <li><b>Connect</b> the AI to a data source (Lesson 1).</li>
+      <li><b>Structure</b> it with a Skill / rules (Lesson 3).</li>
+      <li><b>Cowork</b> on the deliverable in a canvas (Lesson 4).</li>
+      <li><b>Automate</b> it with an agent or API (Lessons 2 &amp; 5).</li>
+      <li><b>Govern</b> it — guardrails for cost, safety and human oversight throughout.</li>
+    </ol>
+    <p style="opacity:.9;font-size:14.5px">Submit a short write-up + screenshots + a diagram of your workflow and its guardrails. This is what earns your advanced certificate.</p>
+    <a href="https://nigeriastudentcenter.github.io/AI-Academy/advancedquiz.html" target="_blank" rel="noopener">Take the final capstone assessment &rarr;</a>
+  </div>
+
+  <h2>Check your understanding</h2>
+  <div class="quiz">
+    <details><summary>Q1. What makes something an agent?</summary><p>It's given a goal, then plans steps, uses tools, checks results and self-corrects until the goal is met.</p></details>
+    <details><summary>Q2. What does a termination check do?</summary><p>It stops the agent once the goal is actually done — preventing endless, costly looping.</p></details>
+    <details><summary>Q3. Name two guardrails every autonomous agent should have.</summary><p>Any two of: human-in-the-loop for risky actions, spend/step caps, logging, least-privilege permissions, fail-safe defaults.</p></details>
+  </div>
+
+  <div class="prove">
+    <h2><span class="n">P</span>Prove-It assignment</h2>
+    <p>Submit to earn certificate credit:</p>
+    <p>1. A diagram or description of a simple agent (goal, steps, tools).<br>2. The <b>guardrails</b> you'd add and why.<br>3. One risky action you'd put behind a <b>human-in-the-loop</b> approval.</p>
+  </div>
+
+  <div class="assess"><a href="https://nigeriastudentcenter.github.io/AI-Academy/advancedquiz.html" target="_blank" rel="noopener">Take the Lesson 5 quiz &rarr;</a></div>
+
+  <footer>British School of Outdoor Education · AI Academy · Advanced: AI Systems & Agents · Tools change often — verify exact steps on the official docs.</footer>
+</main>
+
+<script>
+  document.querySelectorAll('pre .copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.parentNode.textContent.replace(/^Copy/,'').trim();
+      navigator.clipboard.writeText(t); b.textContent='Copied'; setTimeout(function(){b.textContent='Copy';},1400);
+    });
+  });
+</script>
+</body>
+</html>
