@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Strategic AI Tool Selection & Core Prompt Structure</title><style>
+  :root{--green:#14532d;--green2:#0e3a20;--gold:#c6a25a;--dgold:#c9950a;--ink:#1f2a24;--mut:#5f7268;--soft:#f4f8f5;--line:#e2ece8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--ink);background:var(--soft);line-height:1.6}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+  header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:40px 0 34px;border-bottom:5px solid var(--dgold)}
+  header .lbl{color:var(--gold);letter-spacing:3px;font-size:13px;font-weight:700;text-transform:uppercase}
+  header h1{margin:8px 0 12px;font-size:33px;line-height:1.15}
+  .meta{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#eafff2;font-size:13px;padding:5px 12px;border-radius:999px}
+  main{padding:30px 0 60px}
+  h2{font-size:22px;margin:32px 0 6px;color:var(--green)}
+  h2 .n{display:inline-flex;width:32px;height:32px;border-radius:9px;background:var(--dgold);color:#fff;align-items:center;justify-content:center;font-weight:800;margin-right:10px;font-size:16px}
+  p{margin:8px 0}
+  .callout{border-left:4px solid var(--dgold);background:#fff;border-radius:10px;padding:16px 18px;margin:16px 0;box-shadow:0 3px 12px rgba(20,83,45,.05)}
+  .callout.out{border-left-color:var(--green)}
+  .callout b{color:var(--green)}
+  .tip{background:#f4f8f5;border:1px solid #d8e6dd;border-radius:10px;padding:12px 16px;margin:6px 0 18px;font-size:14px;line-height:1.5}
+  .tip b{color:var(--green)} .tip .ex{color:#4a5a51;font-style:italic} .tip .rf{color:#8a6a08;margin-top:8px}
+  .frame{background:#0f2f22;color:#eafff2;border-radius:12px;padding:18px 20px;margin:16px 0}
+  .frame b{color:var(--gold)}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:16px 0}
+  .tool{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .tool h3{margin:0 0 4px;font-size:17px;color:var(--green)} .tool p{font-size:14px;color:var(--mut);margin:4px 0}
+  .btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:9px 15px;border-radius:9px}
+  .btn:hover{background:var(--green2)}
+  .prompt{position:relative;background:#0f2f22;color:#e9f3ec;border-radius:12px;padding:18px;margin:14px 0;font-family:'SFMono-Regular',Consolas,monospace;font-size:13.5px;line-height:1.55;white-space:pre-wrap}
+  .prompt .copy{position:absolute;top:12px;right:12px;background:var(--dgold);color:#fff;border:0;border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer;font-size:12px;font-family:inherit}
+  ul.check{list-style:none;padding:0;margin:14px 0}
+  ul.check li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid var(--line);font-size:15px}
+  ul.check li:before{content:"\2713";position:absolute;left:0;color:var(--dgold);font-weight:800;font-size:17px}
+  .proof{background:#fff;border:2px solid var(--dgold);border-radius:16px;padding:22px;margin:22px 0}
+  .proof h2{margin:0 0 12px;color:var(--green)}
+  .proof .lab{display:inline-block;background:#fbf2d3;color:#8a6a08;border:1px solid #e8d493;border-radius:999px;padding:2px 12px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .proof .cv{background:#f4f8f5;border-radius:10px;padding:14px 16px;font-size:15px;margin-bottom:16px}
+  .proof .note{font-size:13px;color:var(--mut);margin-top:6px}
+  .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
+  .quiz details{border-top:1px solid var(--line);padding:10px 0}
+  .quiz summary{cursor:pointer;font-weight:600;color:var(--green)}
+  .quiz p{color:var(--mut);font-size:14.5px;margin:8px 0 0}
+  .prove{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;border-radius:16px;padding:26px;margin:24px 0;border-top:5px solid var(--dgold)}
+  .prove h2{color:#fff;margin-top:0} .prove .n{background:var(--dgold);color:#fff}
+  .assess{text-align:center;margin:26px 0}
+  .assess a{display:inline-block;background:linear-gradient(135deg,#e0ab12,#c9950a);color:#14532d;font-weight:800;font-size:17px;padding:15px 30px;border-radius:12px;text-decoration:none;box-shadow:0 4px 12px rgba(201,149,10,.35)}
+  footer{color:var(--mut);font-size:13px;text-align:center;padding:20px 0 50px}
+</style></head><body>
+<header><div class="wrap"><div class="lbl">AI Academy · AI Skills for Work</div><h1>Strategic AI Tool Selection & Core Prompt Structure</h1><div class="meta"><span class="chip">Beginner</span><span class="chip">~25 min</span><span class="chip">Claude · Copilot · ChatGPT · Gemini</span></div></div></header>
+<main class="wrap">
+<div class="callout out"><b>What you'll be able to do:</b> choose the <b>right</b> AI tool for a task and structure a prompt with the R-C-C-O framework, so you turn a 15-page document into a one-page executive brief in minutes &mdash; not hours.</div>
+<div class="callout"><b>The scenario:</b> Your team needs a 15-page remote-work policy turned into a one-page summary of compliance changes for the executives &mdash; and the meeting is in 20 minutes. Pick the wrong tool or a vague prompt and you'll waste the whole 20 minutes on a generic, useless summary.</div>
+<div class="callout" style="border-left-color:#c9950a"><b>Use any free app:</b> these prompts work in ChatGPT, Claude, Gemini or Copilot &mdash; pick whichever you like. Everything here works on the free version.</div>
+<h2><span class="n">1</span>Pick the right tool</h2><div class="cards"><div class="tool"><h3>Claude</h3><p>Best for long documents and careful, accurate reading.</p><a class="btn" href="https://claude.ai" target="_blank" rel="noopener">Open</a></div><div class="tool"><h3>Microsoft Copilot</h3><p>Best when the file lives in Word/OneDrive; employer-standard.</p><a class="btn" href="https://copilot.microsoft.com" target="_blank" rel="noopener">Open</a></div><div class="tool"><h3>ChatGPT</h3><p>Strong all-rounder with file upload.</p><a class="btn" href="https://chatgpt.com" target="_blank" rel="noopener">Open</a></div><div class="tool"><h3>Gemini</h3><p>Best with Google Docs/Drive; generous free tier.</p><a class="btn" href="https://gemini.google.com" target="_blank" rel="noopener">Open</a></div></div><h2><span class="n">2</span>The R-C-C-O framework</h2><p>Great prompts have four parts. Use this every time and your results jump in quality.</p><div class="frame"><b>R</b>ole — who the AI should act as.<br><b>C</b>ontext — the background and the goal.<br><b>C</b>onstraints — rules: length, sources, what to avoid.<br><b>O</b>utput format — exactly how you want it laid out.</div>
+<h2><span class="n">3</span>The executive-brief prompt</h2>
+<p>Attach or paste your document, then use this R-C-C-O prompt.</p>
+<div class="prompt"><button class="copy">Copy</button>Role: Act as a Senior Operations Analyst.
+Context: I am attaching a 15-page internal remote-work policy. The executive team needs to understand what changed this year versus last year.
+Constraints: Use ONLY the provided text. Do not invent details. Keep it under 300 words. Flag any compliance risks or hard deadlines.
+Output format: An Executive Brief with (1) Key Policy Changes (3-4 bullets); (2) a table of Compliance Risks &amp; Deadlines (Item, Risk Level, Deadline); (3) Recommended Next Steps (2 bullets).
+Document: [paste text or attach file]</div>
+<div class="tip"><b>What good looks like:</b> <span class="ex">a tight brief: "Core hours shifted 10-4 to 9-3; stipend up $500 to $750; security training now semi-annual," a risk table with dates, and two clear next steps.</span><div class="rf"><b>Refine it:</b> too dense? reply &mdash; <i>"Condense each Key Change to one sentence, bold the key metrics, and add one line at the top naming the single biggest change."</i></div></div>
+
+
+<div class="proof"><h2>Put this on your CV &amp; say it in interview</h2><div class="lab">CV bullet</div><div class="cv">"Leveraged Claude and Microsoft Copilot to synthesise multi-page enterprise policy documents into board-ready executive briefs using structured R-C-C-O prompting, cutting document-review time by [75%]."</div><div class="lab">Interview answer (STAR)</div><div class="cv">"When leadership needed a lengthy compliance document broken down 20 minutes before a meeting, I chose Claude for its long-context accuracy, applied a structured R-C-C-O prompt, and delivered a one-page brief with a risk table in under three minutes &mdash; giving the team time to act."</div><div class="note">Swap the [bracketed] figures for your own real results &mdash; bold is great, but every number must be true for you.</div></div>
+<h2>Check your understanding</h2><div class="quiz"><details><summary>Q1. What do the four letters R-C-C-O stand for?</summary><p>Role, Context, Constraints, Output format.</p></details><details><summary>Q2. Which tool suits a long document already in Word/OneDrive?</summary><p>Microsoft Copilot (or Claude for careful long-context reading).</p></details><details><summary>Q3. Why include "use only the provided text" as a constraint?</summary><p>To stop the AI inventing details (hallucinating) and keep it faithful to the document.</p></details></div>
+<div class="prove"><h2><span class="n">P</span>Prove-It assignment</h2><p>Submit to earn certificate credit:</p><p>1. A 3+ page document you chose.<br>2. The one-page executive brief the AI produced from your R-C-C-O prompt.<br>3. One sentence on which tool you picked and why.</p></div>
+<div class="assess"><a href="https://forms.office.com/your-form-link" target="_blank" rel="noopener">Take the assessment &amp; submit your Prove-It &rarr;</a></div>
+<footer>British School of Outdoor Education · AI Academy · AI Skills for Work · Tools change often — if a step looks different, verify on the tool's official site.</footer>
+</main><script>
+  document.querySelectorAll('.prompt .copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.parentNode.textContent.replace(/^Copy/,'').trim();
+      navigator.clipboard.writeText(t); b.textContent='Copied'; setTimeout(function(){b.textContent='Copy';},1400);
+    });
+  });
+</script></body></html>
