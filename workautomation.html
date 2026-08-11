@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Workflow Efficiency & Daily Operations</title><style>
+  :root{--green:#14532d;--green2:#0e3a20;--gold:#c6a25a;--dgold:#c9950a;--ink:#1f2a24;--mut:#5f7268;--soft:#f4f8f5;--line:#e2ece8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--ink);background:var(--soft);line-height:1.6}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+  header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:40px 0 34px;border-bottom:5px solid var(--dgold)}
+  header .lbl{color:var(--gold);letter-spacing:3px;font-size:13px;font-weight:700;text-transform:uppercase}
+  header h1{margin:8px 0 12px;font-size:33px;line-height:1.15}
+  .meta{display:flex;gap:10px;flex-wrap:wrap}
+  .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#eafff2;font-size:13px;padding:5px 12px;border-radius:999px}
+  main{padding:30px 0 60px}
+  h2{font-size:22px;margin:32px 0 6px;color:var(--green)}
+  h2 .n{display:inline-flex;width:32px;height:32px;border-radius:9px;background:var(--dgold);color:#fff;align-items:center;justify-content:center;font-weight:800;margin-right:10px;font-size:16px}
+  p{margin:8px 0}
+  .callout{border-left:4px solid var(--dgold);background:#fff;border-radius:10px;padding:16px 18px;margin:16px 0;box-shadow:0 3px 12px rgba(20,83,45,.05)}
+  .callout.out{border-left-color:var(--green)}
+  .callout b{color:var(--green)}
+  .tip{background:#f4f8f5;border:1px solid #d8e6dd;border-radius:10px;padding:12px 16px;margin:6px 0 18px;font-size:14px;line-height:1.5}
+  .tip b{color:var(--green)} .tip .ex{color:#4a5a51;font-style:italic} .tip .rf{color:#8a6a08;margin-top:8px}
+  .frame{background:#0f2f22;color:#eafff2;border-radius:12px;padding:18px 20px;margin:16px 0}
+  .frame b{color:var(--gold)}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:16px 0}
+  .tool{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .tool h3{margin:0 0 4px;font-size:17px;color:var(--green)} .tool p{font-size:14px;color:var(--mut);margin:4px 0}
+  .btn{display:inline-block;background:var(--green);color:#fff;text-decoration:none;font-weight:700;font-size:14px;padding:9px 15px;border-radius:9px}
+  .btn:hover{background:var(--green2)}
+  .prompt{position:relative;background:#0f2f22;color:#e9f3ec;border-radius:12px;padding:18px;margin:14px 0;font-family:'SFMono-Regular',Consolas,monospace;font-size:13.5px;line-height:1.55;white-space:pre-wrap}
+  .prompt .copy{position:absolute;top:12px;right:12px;background:var(--dgold);color:#fff;border:0;border-radius:8px;padding:6px 12px;font-weight:700;cursor:pointer;font-size:12px;font-family:inherit}
+  ul.check{list-style:none;padding:0;margin:14px 0}
+  ul.check li{padding:8px 0 8px 30px;position:relative;border-bottom:1px solid var(--line);font-size:15px}
+  ul.check li:before{content:"\2713";position:absolute;left:0;color:var(--dgold);font-weight:800;font-size:17px}
+  .proof{background:#fff;border:2px solid var(--dgold);border-radius:16px;padding:22px;margin:22px 0}
+  .proof h2{margin:0 0 12px;color:var(--green)}
+  .proof .lab{display:inline-block;background:#fbf2d3;color:#8a6a08;border:1px solid #e8d493;border-radius:999px;padding:2px 12px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+  .proof .cv{background:#f4f8f5;border-radius:10px;padding:14px 16px;font-size:15px;margin-bottom:16px}
+  .proof .note{font-size:13px;color:var(--mut);margin-top:6px}
+  .quiz{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin:16px 0}
+  .quiz details{border-top:1px solid var(--line);padding:10px 0}
+  .quiz summary{cursor:pointer;font-weight:600;color:var(--green)}
+  .quiz p{color:var(--mut);font-size:14.5px;margin:8px 0 0}
+  .prove{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;border-radius:16px;padding:26px;margin:24px 0;border-top:5px solid var(--dgold)}
+  .prove h2{color:#fff;margin-top:0} .prove .n{background:var(--dgold);color:#fff}
+  .assess{text-align:center;margin:26px 0}
+  .assess a{display:inline-block;background:linear-gradient(135deg,#e0ab12,#c9950a);color:#14532d;font-weight:800;font-size:17px;padding:15px 30px;border-radius:12px;text-decoration:none;box-shadow:0 4px 12px rgba(201,149,10,.35)}
+  footer{color:var(--mut);font-size:13px;text-align:center;padding:20px 0 50px}
+</style></head><body>
+<header><div class="wrap"><div class="lbl">AI Academy · AI Skills for Work</div><h1>Workflow Efficiency & Daily Operations</h1><div class="meta"><span class="chip">Intermediate</span><span class="chip">~20 min</span><span class="chip">Copilot · ChatGPT · Claude · Otter.ai</span></div></div></header>
+<main class="wrap">
+<div class="callout out"><b>What you'll be able to do:</b> use AI to clear the routine work that eats your day &mdash; email, meeting notes and reports &mdash; reclaiming hours every week.</div>
+<div class="callout"><b>The scenario:</b> It's 4pm: your inbox is overflowing, you owe meeting minutes to three people, and the weekly report isn't started. Done by hand that's two hours; with AI it's twenty minutes.</div>
+<div class="callout" style="border-left-color:#c9950a"><b>Use any free app:</b> these prompts work in ChatGPT, Claude, Gemini or Copilot &mdash; pick whichever you like. Everything here works on the free version.</div>
+<h2><span class="n">1</span>Where AI saves the most time</h2><div class="cards"><div class="tool"><h3>Email</h3><p>Copilot in Outlook / Gemini in Gmail: summarise threads, draft replies.</p></div><div class="tool"><h3>Meetings</h3><p>Copilot in Teams or Otter.ai: auto-notes and action items.</p></div><div class="tool"><h3>Reports</h3><p>ChatGPT / Claude / Copilot: turn notes or data into a clean report.</p></div></div>
+<h2><span class="n">2</span>Email: summarise &amp; reply</h2>
+<p>Paste a long thread and get the gist plus a draft.</p>
+<div class="prompt"><button class="copy">Copy</button>Summarise this email thread in 3 bullet points, then draft a reply that [confirms the deadline / politely declines / asks for X]. Keep it professional and under 120 words.
+Thread: [paste]</div>
+<div class="tip"><b>What good looks like:</b> <span class="ex">a 3-bullet summary and a ready-to-send, on-tone reply.</span><div class="rf"><b>Refine it:</b> reply &mdash; <i>"Make the reply warmer and add a clear next step with a date."</i></div></div>
+<h2><span class="n">3</span>Meetings: notes to actions</h2>
+<p>Turn messy notes into a summary and an action list.</p>
+<div class="prompt"><button class="copy">Copy</button>Turn these meeting notes into: (1) a 4-line summary; (2) an action table with columns Owner, Action, Due date.
+Notes: [paste]</div>
+<div class="tip"><b>What good looks like:</b> <span class="ex">a crisp summary and a table where every action has an owner and a date.</span><div class="rf"><b>Refine it:</b> reply &mdash; <i>"Flag any action with no owner and suggest who should take it."</i></div></div>
+<h2><span class="n">4</span>Reports: bullets to brief</h2>
+<p>Draft a structured report from rough notes or data.</p>
+<div class="prompt"><button class="copy">Copy</button>Turn these bullet points into a structured weekly report with: Highlights, Risks, Next week&#x27;s focus. Keep it under 250 words.
+Bullets: [paste]</div>
+<div class="tip"><b>What good looks like:</b> <span class="ex">a manager-ready report with clear headings instead of a wall of text.</span><div class="rf"><b>Refine it:</b> reply &mdash; <i>"Add a one-line executive summary at the very top."</i></div></div>
+
+
+<div class="proof"><h2>Put this on your CV &amp; say it in interview</h2><div class="lab">CV bullet</div><div class="cv">"Automated daily operations with Microsoft Copilot and AI assistants &mdash; email triage, meeting minutes and weekly reporting &mdash; reclaiming approximately [5 hours] per week for higher-value work."</div><div class="lab">Interview answer (STAR)</div><div class="cv">"Routine admin was consuming my afternoons, so I built AI workflows for email summaries, meeting-action tables and report drafting. What used to take two hours now takes twenty minutes, freeing roughly [5 hours a week]."</div><div class="note">Swap the [bracketed] figures for your own real results &mdash; bold is great, but every number must be true for you.</div></div>
+<h2>Check your understanding</h2><div class="quiz"><details><summary>Q1. Which tool gives automatic notes and actions inside a meeting?</summary><p>Microsoft Copilot in Teams (or Otter.ai).</p></details><details><summary>Q2. What two things should a good "notes to actions" output always include?</summary><p>An owner and a due date for every action.</p></details><details><summary>Q3. Why give the AI a word limit on a report?</summary><p>To keep it concise and manager-ready instead of a long wall of text.</p></details></div>
+<div class="prove"><h2><span class="n">P</span>Prove-It assignment</h2><p>Submit to earn certificate credit:</p><p>1. One real recurring task you automated (email, notes or report).<br>2. The AI output.<br>3. A rough estimate of the time it saved you.</p></div>
+<div class="assess"><a href="https://forms.office.com/your-form-link" target="_blank" rel="noopener">Take the assessment &amp; submit your Prove-It &rarr;</a></div>
+<footer>British School of Outdoor Education · AI Academy · AI Skills for Work · Tools change often — if a step looks different, verify on the tool's official site.</footer>
+</main><script>
+  document.querySelectorAll('.prompt .copy').forEach(function(b){
+    b.addEventListener('click',function(){
+      var t=b.parentNode.textContent.replace(/^Copy/,'').trim();
+      navigator.clipboard.writeText(t); b.textContent='Copied'; setTimeout(function(){b.textContent='Copy';},1400);
+    });
+  });
+</script></body></html>
