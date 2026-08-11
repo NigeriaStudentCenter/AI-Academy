@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lesson 3 Quiz — Agent Skills</title>
+<style>
+  :root{--green:#14532d;--green2:#0e3a20;--gold:#c6a25a;--dgold:#c9950a;--ink:#1f2a24;--mut:#5f7268;--soft:#f4f8f5;--line:#e2ece8}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:var(--soft);color:var(--ink);line-height:1.6}
+  header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:34px 0 28px;border-bottom:5px solid var(--dgold)}
+  .wrap{max-width:800px;margin:0 auto;padding:0 20px}
+  header .lbl{color:var(--gold);letter-spacing:3px;font-size:13px;font-weight:700;text-transform:uppercase}
+  header h1{margin:8px 0 4px;font-size:27px}
+  header p{margin:0;color:#e7efe9;font-size:14.5px}
+  main{padding:24px 0 60px}
+  .recap{background:#0f2f22;color:#eafff2;border-radius:14px;padding:16px 20px;margin-bottom:20px;font-size:14.5px}
+  .recap b{color:var(--gold)}
+  .q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:20px;margin-bottom:16px;box-shadow:0 3px 12px rgba(20,83,45,.05)}
+  .q .tag{display:inline-block;background:#fbf2d3;color:#8a6a08;border:1px solid #e8d493;border-radius:999px;padding:2px 12px;font-size:12px;font-weight:700;margin-bottom:10px}
+  .q h2{font-size:17px;margin:0 0 10px;color:var(--green)}
+  .scenario{background:var(--soft);border-left:4px solid var(--dgold);border-radius:8px;padding:12px 14px;font-size:14.5px;margin:10px 0}
+  ul.opts{list-style:none;padding:0;margin:6px 0} ul.opts li{margin:7px 0}
+  label{cursor:pointer;display:flex;gap:9px;align-items:flex-start;font-size:15px}
+  textarea{width:100%;border:1px solid var(--line);border-radius:8px;padding:9px;font-family:inherit;font-size:14.5px;min-height:80px;resize:vertical}
+  .hint{font-size:13px;color:var(--mut);margin-top:6px}
+  .fb{margin-top:12px;padding:12px 14px;border-radius:8px;display:none;font-size:14.5px}
+  .fb.ok{background:#dcfce7;color:#14532d;border:1px solid #bbf7d0}
+  .fb.no{background:#fee2e2;color:#7f1d1d;border:1px solid #fecaca}
+  .fb.rec{background:#f4f8f5;color:#1f2a24;border:1px solid #d8e6dd}
+  button{background:linear-gradient(135deg,#e0ab12,#c9950a);color:var(--green);border:0;padding:15px 24px;font-size:16px;font-weight:800;border-radius:12px;cursor:pointer;width:100%;box-shadow:0 4px 12px rgba(201,149,10,.35)}
+  #summary{display:none;margin-top:22px;padding:24px;background:#fff;border:2px solid var(--dgold);border-radius:16px;text-align:center}
+  #summary h2{margin:0 0 6px;color:var(--green)}
+  #summary .pill{display:inline-block;font-weight:800;padding:6px 16px;border-radius:999px;margin-top:8px}
+  .assess{text-align:center;margin:20px 0 0;display:none}
+  .assess a{display:inline-block;background:var(--green);color:#fff;font-weight:800;padding:14px 26px;border-radius:12px;text-decoration:none}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <div class="lbl">AI Academy · Advanced · Lesson 3</div>
+  <h1>Quiz — Agent Skills</h1>
+  <p>4 questions · pass mark 3/4 · tests only what Lesson 3 covered.</p>
+</div></header>
+
+<main class="wrap">
+  <div class="recap"><b>Quick recap:</b> a <b>Skill</b> is a saved rule-book the AI follows every time · <b>instructions</b> are the standing rules · a <b>knowledge file</b> is the documents it relies on · a <b>Custom GPT / Project</b> is a reusable helper you set up once.</div>
+
+  <form id="quiz">
+    <div class="q">
+      <span class="tag">Q1 · Concept</span>
+      <h2>What is a Skill, in plain words?</h2>
+      <ul class="opts">
+        <li><label><input type="radio" name="q1" value="A"> A) A saved rule-book the AI follows automatically every time — like a recipe card.</label></li>
+        <li><label><input type="radio" name="q1" value="B"> B) A faster AI model.</label></li>
+        <li><label><input type="radio" name="q1" value="C"> C) A one-off question you ask once.</label></li>
+        <li><label><input type="radio" name="q1" value="D"> D) A type of API key.</label></li>
+      </ul>
+      <div class="fb" id="fb1"></div>
+    </div>
+
+    <div class="q">
+      <span class="tag">Q2 · Knowledge file</span>
+      <h2>What is a knowledge file for?</h2>
+      <ul class="opts">
+        <li><label><input type="radio" name="q2" value="A"> A) Documents the helper relies on (brand guide, policy, FAQ) so its answers follow your source.</label></li>
+        <li><label><input type="radio" name="q2" value="B"> B) A file that speeds up your internet.</label></li>
+        <li><label><input type="radio" name="q2" value="C"> C) A backup of your passwords.</label></li>
+        <li><label><input type="radio" name="q2" value="D"> D) The AI's own memory of every user.</label></li>
+      </ul>
+      <div class="fb" id="fb2"></div>
+    </div>
+
+    <div class="q">
+      <span class="tag">Q3 · Why</span>
+      <h2>Why build a Skill instead of retyping the rules each time?</h2>
+      <ul class="opts">
+        <li><label><input type="radio" name="q3" value="A"> A) For consistency and compliance — the same standard every time, set once.</label></li>
+        <li><label><input type="radio" name="q3" value="B"> B) So the AI never needs the internet.</label></li>
+        <li><label><input type="radio" name="q3" value="C"> C) So you can skip checking the output.</label></li>
+        <li><label><input type="radio" name="q3" value="D"> D) To make answers longer.</label></li>
+      </ul>
+      <div class="fb" id="fb3"></div>
+    </div>
+
+    <div class="q">
+      <span class="tag">Q4 · Scenario · secrets in a shared skill</span>
+      <h2>Spot the problem and fix it</h2>
+      <div class="scenario"><b>Scenario:</b> To make a support Custom GPT "know everything", someone pastes the customer database and an admin password into its instructions — then shares the GPT with the whole company.</div>
+      <p>In your own words: why is this risky, and what should they do instead?</p>
+      <textarea name="q4" placeholder="Why it's risky... / What to do instead..."></textarea>
+      <div class="hint">Think: who can now see what's inside a shared Skill?</div>
+      <div class="fb" id="fb4"></div>
+    </div>
+
+    <button type="button" onclick="grade()">Check my answers</button>
+  </form>
+
+  <div id="summary"><h2>Your result</h2><p id="stext"></p><div id="spill" class="pill"></div></div>
+  <div class="assess" id="assessWrap"><a href="https://forms.office.com/your-form-link" target="_blank" rel="noopener">Submit your Prove-It to earn credit &rarr;</a></div>
+</main>
+
+<script>
+  function setFb(id,cls,html){var e=document.getElementById(id);e.className='fb '+cls;e.innerHTML=html;e.style.display='block';}
+  function grade(){
+    var s=0;
+    var q1=(document.querySelector('input[name=q1]:checked')||{}).value;
+    if(q1==='A'){s++;setFb('fb1','ok','<b>Correct.</b> A Skill is a saved rule-book the AI follows every time.');}
+    else setFb('fb1','no','<b>Not quite.</b> The answer is <b>A</b> — a reusable rule-book, like a recipe card.');
+    var q2=(document.querySelector('input[name=q2]:checked')||{}).value;
+    if(q2==='A'){s++;setFb('fb2','ok','<b>Correct.</b> Knowledge files are the documents the helper relies on.');}
+    else setFb('fb2','no','<b>Not quite.</b> The answer is <b>A</b> — the source documents it should follow.');
+    var q3=(document.querySelector('input[name=q3]:checked')||{}).value;
+    if(q3==='A'){s++;setFb('fb3','ok','<b>Correct.</b> Skills give consistency and compliance, set once.');}
+    else setFb('fb3','no','<b>Not quite.</b> The answer is <b>A</b> — consistency every time. (You should still check outputs.)');
+    var q4=(document.querySelector('[name=q4]').value||'').trim();
+    if(q4.length>20){s++;setFb('fb4','rec','<b>Recorded (1 point).</b> Model answer: anyone the GPT is shared with could read the database and password inside it — a serious data breach. Instead: never put secrets or personal data in a Skill; keep them out, and pull data securely via a connector with least-privilege access.');}
+    else setFb('fb4','no','<b>Add a little more.</b> Say why it\'s risky <i>and</i> the safer way.');
+    document.getElementById('stext').innerText='You scored '+s+' out of 4. Check the feedback above.';
+    var pill=document.getElementById('spill'), sum=document.getElementById('summary');
+    if(s>=3){pill.style.background='#dcfce7';pill.style.color='#14532d';pill.innerText='PASS — well done';document.getElementById('assessWrap').style.display='block';}
+    else{pill.style.background='#fee2e2';pill.style.color='#7f1d1d';pill.innerText='Not yet — review Lesson 3 and retry';}
+    sum.style.display='block'; sum.scrollIntoView({behavior:'smooth'});
+  }
+</script>
+</body>
+</html>
