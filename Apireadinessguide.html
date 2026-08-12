@@ -1,0 +1,106 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Learner's Guide to AI-Ready APIs</title><style>  :root{--green:#14532d;--green2:#0e3a20;--gold:#c6a25a;--dgold:#c9950a;--ink:#1f2a24;--mut:#5f7268;--soft:#f4f8f5;--line:#e2ece8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--ink);background:var(--soft);line-height:1.6}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+  header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:40px 0 34px;border-bottom:5px solid var(--dgold)}
+  header .lbl{color:var(--gold);letter-spacing:3px;font-size:13px;font-weight:700;text-transform:uppercase}
+  header h1{margin:8px 0 12px;font-size:33px;line-height:1.15}
+  header p.sub{margin:0;color:#e7efe9;font-size:16px;max-width:640px}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#eafff2;font-size:13px;padding:5px 12px;border-radius:999px}
+  main{padding:30px 0 60px}
+  h2{font-size:23px;margin:32px 0 8px;color:var(--green);border-bottom:3px solid var(--dgold);padding-bottom:8px}
+  h3{font-size:18px;margin:14px 0 4px;color:var(--green)}
+  p{margin:8px 0}
+  .lead{font-size:16px;color:var(--green);font-weight:600}
+  .card{border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0;background:#fff;box-shadow:0 3px 12px rgba(20,83,45,.05)}
+  .card .n{display:inline-block;background:var(--green);color:#fff;font-weight:800;font-size:12px;padding:2px 11px;border-radius:999px;margin-bottom:8px}
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+  .tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:2px 9px;border-radius:6px;display:inline-block;margin-bottom:4px}
+  .tag.no{background:#fde8e8;color:#b03535} .tag.ok{background:#e2f3e8;color:#14532d}
+  pre{background:#0f2f22;color:#e9f3ec;border-radius:9px;padding:12px 14px;font-family:Consolas,monospace;font-size:12.5px;line-height:1.5;white-space:pre-wrap;margin:6px 0}
+  .why{background:#fbf7ea;border-left:4px solid var(--dgold);border-radius:8px;padding:10px 14px;font-size:13.5px;color:#5c4a12;margin-top:8px}
+  .why b{color:#8a6a08}
+  ul.chk{list-style:none;padding:0;margin:10px 0}
+  ul.chk li{padding:9px 0 9px 30px;position:relative;border-bottom:1px solid var(--line);font-size:14.5px}
+  ul.chk li:before{content:"\2713";position:absolute;left:0;color:var(--dgold);font-weight:800;font-size:17px}
+  ul.chk li b{color:var(--green)}
+  .build{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;border-radius:16px;padding:24px;margin:26px 0;border-top:5px solid var(--dgold)}
+  .build h3{color:#fff;margin-top:0}
+  .build p{color:#dbe8df;font-size:14.5px}
+  .build .prompt{background:#0b2a1e;color:#eafff2;border-radius:10px;padding:14px;font-family:Consolas,monospace;font-size:12.5px;line-height:1.5;white-space:pre-wrap;margin-top:10px;position:relative}
+  .build .copy{position:absolute;top:10px;right:10px;background:var(--dgold);color:#14532d;border:0;border-radius:8px;padding:5px 11px;font-weight:700;cursor:pointer;font-size:12px}
+  footer{color:var(--mut);font-size:13px;text-align:center;padding:24px 0 50px}
+  .backlink{display:inline-block;margin-top:14px;color:var(--green);font-weight:700;text-decoration:none;border:2px solid var(--green);padding:9px 16px;border-radius:9px}</style></head><body>
+<header><div class="wrap"><div class="lbl">AI Academy · Resource 1 of 4</div>
+<h1>The Learner's Guide to AI-Ready APIs</h1>
+<p class="sub">From <i>using</i> AI to <i>building</i> with it — a plain-English companion to Lesson 2.</p>
+<div class="meta"><span class="chip">Guide</span><span class="chip">~15 min read</span><span class="chip">Supports Lesson 2 · APIs</span></div></div></header>
+<main class="wrap">
+<p class="lead">What makes an API "AI-ready"? Simply: easy for an AI agent to find, understand and use on its own.</p>
+<p>AI agents are starting to do the integrating themselves — reading docs, building the request, wiring up the login, shipping working code with no human in the loop. When that happens, the APIs an agent <i>can</i> use win, and the ones it gets stuck on get skipped. That's <b>deployment knowledge</b>: the difference between an API a clever human can figure out and one an AI can use without help.</p>
+<div class="why"><b>Plain-English reminder:</b> an <b>API</b> is how two programs talk — like a waiter carrying your order to the kitchen and bringing food back. An <b>agent</b> is an AI that takes several steps on its own to reach a goal. This guide is about making the "waiter" easy for an agent to work with.</div>
+
+<h2>The six pillars of an AI-ready API</h2>
+
+<div class="card"><span class="n">Pillar 1</span><h3>A clear map, not a story</h3>
+<p>A human can read "this endpoint gets the order details" and fill in the gaps. An AI can't — it needs the exact shape: the path, the inputs, and what comes back.</p>
+<div class="ba"><div><span class="tag no">Vague (hard for AI)</span><pre>"Send a request to get an
+order and it returns the details."</pre></div>
+<div><span class="tag ok">Clear map (AI-ready)</span><pre>GET /orders/{orderId}
+  orderId: string (required)
+returns 200:
+  { "id":"A1B2",
+    "status":"shipped",
+    "total":42.50 }</pre></div></div>
+<div class="why"><b>Why the AI cares:</b> with a clear map it knows exactly what to send and what it'll get — no guessing, no hallucinating.</div></div>
+
+<div class="card"><span class="n">Pillar 2</span><h3>Errors that explain themselves</h3>
+<p>A vague error leaves the AI stuck. A rich error tells it <i>what</i> went wrong and <i>how</i> to fix it.</p>
+<div class="ba"><div><span class="tag no">Unhelpful</span><pre>{ "error": "failed" }</pre></div>
+<div><span class="tag ok">Rich &amp; fixable</span><pre>{ "error": {
+   "code":"INVALID_PARAMETER",
+   "field":"orderId",
+   "message":"orderId must look
+     like 'A1B2', got '12345'" }}</pre></div></div>
+<div class="why"><b>Why the AI cares:</b> the second error basically says "here's how to solve it" — so the agent recovers instead of giving up.</div></div>
+
+<div class="card"><span class="n">Pillar 3</span><h3>Say it the same way every time</h3>
+<p>If one response calls it <code>orderId</code> and another calls it <code>order_id</code>, or the shape changes between calls, the AI can't rely on it. Consistency and predictability are everything.</p>
+<div class="why"><b>Why the AI cares:</b> agents learn your API's shape from examples. Same input → same shape, every time = reliable behaviour.</div></div>
+
+<div class="card"><span class="n">Pillar 4</span><h3>Teach the agent (docs &amp; examples)</h3>
+<p>Good documentation with worked examples acts like <i>training material</i> for an agent. The clearer the examples, the better it performs.</p>
+<div class="why"><b>Why the AI cares:</b> examples show the real shape of requests and responses, which plain descriptions often miss.</div></div>
+
+<div class="card"><span class="n">Pillar 5</span><h3>Be findable</h3>
+<p>An agent can't ask a colleague for a link. If your API isn't published with clear, machine-readable information, an agent may never find it — and can't use what it can't find.</p>
+<div class="why"><b>Why the AI cares:</b> discovery is the new front door. Findable and readable beats hidden-but-brilliant.</div></div>
+
+<div class="card"><span class="n">Pillar 6</span><h3>Be fast and dependable</h3>
+<p>Agents make many calls in a row, quickly. A slow or flaky API breaks the chain — the agent times out and the task fails.</p>
+<div class="why"><b>Why the AI cares:</b> an agent is only as good as the APIs it depends on. If yours can't keep up, the agent can't either.</div></div>
+
+<h2>The 10-point AI-Ready check</h2>
+<p>Run any API against these — the more you can tick honestly, the more ready it is for AI agents.</p>
+<ul class="chk">
+<li><b>Clear map:</b> every endpoint states its path, inputs and exact response shape.</li>
+<li><b>Typed fields:</b> each field says what type it is (string, number, true/false).</li>
+<li><b>Rich errors:</b> failures include a code, the field, and how to fix it.</li>
+<li><b>Consistent names:</b> the same thing is named the same way everywhere.</li>
+<li><b>Predictable shape:</b> the same request always returns the same structure.</li>
+<li><b>Worked examples:</b> real request/response examples, not just descriptions.</li>
+<li><b>Open docs:</b> documentation is public and easy to read.</li>
+<li><b>Discoverable:</b> the API is published where agents and tools can find it.</li>
+<li><b>Auth is clear:</b> how to log in / use a key is documented and simple.</li>
+<li><b>Fast &amp; reliable:</b> it responds quickly and behaves the same every time.</li>
+</ul>
+
+<div class="build"><h3>Build your own version — with AI</h3>
+<p>You don't need any vendor to make a resource like this. With the AI skills from this Academy, you can generate your own guide, checklist or template. Try this prompt in any free AI app:</p>
+<div class="prompt"><button class="copy">Copy</button>Act as an API expert and teacher. Write a plain-English, one-page guide explaining what makes an API "AI-ready" for AI agents. Use 6 short pillars, each with a simple before/after example and a "why the AI cares" line. Keep it beginner-friendly.</div>
+<p style="margin-top:10px">That's the real lesson: understand the concept, then use AI to recreate and adapt it for anything you need.</p></div>
+
+<footer>British School of Outdoor Education · AI Academy · Original learner resource. Concepts are industry-standard; verify specific tools on their official docs.</footer>
+</main><script>document.querySelectorAll(".copy").forEach(function(b){b.addEventListener("click",function(){var t=b.parentNode.textContent.replace(/^Copy/,"").trim();navigator.clipboard.writeText(t);b.textContent="Copied";setTimeout(function(){b.textContent="Copy";},1400);});});</script></body></html>
