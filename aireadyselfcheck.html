@@ -1,0 +1,88 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI-Ready API Self-Check</title><style>
+  :root{--green:#14532d;--green2:#0e3a20;--gold:#c6a25a;--dgold:#c9950a;--ink:#1f2a24;--mut:#5f7268;--soft:#f4f8f5;--line:#e2ece8}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;background:var(--soft);color:var(--ink);line-height:1.6}
+  header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:36px 0 30px;border-bottom:5px solid var(--dgold)}
+  .wrap{max-width:820px;margin:0 auto;padding:0 20px}
+  header .lbl{color:var(--gold);letter-spacing:3px;font-size:13px;font-weight:700;text-transform:uppercase}
+  header h1{margin:8px 0 6px;font-size:29px} header p{margin:0;color:#e7efe9;font-size:15px}
+  main{padding:24px 0 60px}
+  .intro{background:#0f2f22;color:#eafff2;border-radius:14px;padding:16px 20px;margin-bottom:18px;font-size:14.5px}
+  .item{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px;display:flex;gap:12px;align-items:flex-start;cursor:pointer;transition:border-color .15s}
+  .item:hover{border-color:var(--dgold)}
+  .item input{margin-top:4px;width:20px;height:20px;accent-color:#14532d;cursor:pointer}
+  .item .t{font-size:14.5px} .item .t b{color:var(--green)}
+  button{background:linear-gradient(135deg,#e0ab12,#c9950a);color:var(--green);border:0;padding:15px 24px;font-size:16px;font-weight:800;border-radius:12px;cursor:pointer;width:100%;box-shadow:0 4px 12px rgba(201,149,10,.35);margin-top:8px}
+  #result{display:none;margin-top:22px;padding:26px;background:#fff;border:2px solid var(--dgold);border-radius:16px;text-align:center}
+  #grade{font-size:56px;font-weight:800;margin:0}
+  #score{font-size:16px;color:var(--mut)}
+  .bar{height:16px;border-radius:999px;background:#eef4f0;overflow:hidden;margin:16px 0}
+  .bar > div{height:100%;background:linear-gradient(90deg,#14532d,#c9950a);width:0;transition:width .6s}
+  #verdict{font-size:15px;margin-top:8px}
+  #gaps{text-align:left;margin-top:16px;background:var(--soft);border-radius:10px;padding:14px 16px;font-size:14px}
+  #gaps b{color:var(--green)}
+  .build{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;border-radius:16px;padding:22px;margin-top:22px}
+  .build h3{margin-top:0;color:#fff} .build p{color:#dbe8df;font-size:14px}
+  .build .prompt{background:#0b2a1e;color:#eafff2;border-radius:10px;padding:14px;font-family:Consolas,monospace;font-size:12.5px;white-space:pre-wrap;position:relative;margin-top:8px}
+  .build .copy{position:absolute;top:10px;right:10px;background:var(--dgold);color:#14532d;border:0;border-radius:8px;padding:5px 11px;font-weight:700;cursor:pointer;font-size:12px}
+  footer{color:var(--mut);font-size:13px;text-align:center;padding:24px 0 50px}
+</style></head><body>
+<header><div class="wrap"><div class="lbl">AI Academy · Resource 3 of 4</div>
+<h1>AI-Ready API Self-Check</h1><p>Score any API against the 10 pillars — get an instant grade.</p></div></header>
+<main class="wrap">
+<div class="intro"><b>How to use it:</b> pick a real API you can read the docs for, then tick each item that's honestly true. You'll get a grade out of 100 and see exactly what to improve. This is a learning tool — a simpler, open version of the "score your API" idea, built to teach, not to sell.</div>
+<form id="f">
+  <div id="items"></div>
+  <button type="button" onclick="score()">Get my AI-readiness grade</button>
+</form>
+<div id="result">
+  <p id="grade">–</p>
+  <div class="bar"><div id="fill"></div></div>
+  <p id="score"></p>
+  <p id="verdict"></p>
+  <div id="gaps"></div>
+</div>
+<div class="build"><h3>Build your own scoring tool — with AI</h3>
+<p>This whole page is something you could create yourself. Ask an AI to build it:</p>
+<div class="prompt"><button class="copy">Copy</button>Build a single-file HTML self-check tool where users tick 10 checklist items about their API's AI-readiness, click a button, and get a score out of 100 with a letter grade and a list of which items to improve. No libraries.</div>
+</div>
+<footer>British School of Outdoor Education · AI Academy · Original learner resource.</footer>
+</main>
+<script>
+  const CHECKS=[
+    ["Clear map","every endpoint states its path, inputs and exact response shape"],
+    ["Typed fields","each field says its type (string, number, true/false)"],
+    ["Rich errors","failures include a code, the field, and how to fix it"],
+    ["Consistent names","the same thing is named the same way everywhere"],
+    ["Predictable shape","the same request always returns the same structure"],
+    ["Worked examples","real request/response examples, not just descriptions"],
+    ["Open docs","documentation is public and easy to read"],
+    ["Discoverable","published where agents and tools can find it"],
+    ["Clear auth","how to log in / use a key is documented and simple"],
+    ["Fast & reliable","responds quickly and behaves the same every time"]
+  ];
+  const box=document.getElementById('items');
+  CHECKS.forEach(function(c,i){
+    const l=document.createElement('label'); l.className='item';
+    l.innerHTML='<input type="checkbox" data-i="'+i+'"><span class="t"><b>'+c[0]+'</b> — '+c[1]+'</span>';
+    box.appendChild(l);
+  });
+  function score(){
+    const boxes=[...document.querySelectorAll('#items input')];
+    const got=boxes.filter(b=>b.checked);
+    const pct=Math.round(got.length/CHECKS.length*100);
+    let grade='D', verdict='Not AI-ready yet — plenty to fix.';
+    if(pct>=90){grade='A';verdict='Excellent — an agent could use this with ease.';}
+    else if(pct>=75){grade='B';verdict='Good — a few gaps to close.';}
+    else if(pct>=55){grade='C';verdict='Getting there — several important gaps.';}
+    document.getElementById('grade').innerText=grade;
+    document.getElementById('score').innerText=pct+'/100 · '+got.length+' of 10 pillars met';
+    document.getElementById('verdict').innerText=verdict;
+    document.getElementById('fill').style.width=pct+'%';
+    const missing=boxes.map((b,i)=>b.checked?null:CHECKS[i][0]).filter(Boolean);
+    document.getElementById('gaps').innerHTML = missing.length? '<b>Improve these first:</b> '+missing.join(' · ') : '<b>Perfect score — every pillar met.</b>';
+    const r=document.getElementById('result'); r.style.display='block'; r.scrollIntoView({behavior:'smooth'});
+  }
+  document.querySelectorAll('.copy').forEach(function(b){b.addEventListener('click',function(){var t=b.parentNode.textContent.replace(/^Copy/,'').trim();navigator.clipboard.writeText(t);b.textContent='Copied';setTimeout(function(){b.textContent='Copy';},1400);});});
+</script></body></html>
