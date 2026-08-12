@@ -1,0 +1,90 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Example AI-Readiness Report</title><style>  :root{--green:#14532d;--green2:#0e3a20;--gold:#c6a25a;--dgold:#c9950a;--ink:#1f2a24;--mut:#5f7268;--soft:#f4f8f5;--line:#e2ece8;--card:#fff}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,'Segoe UI',Roboto,Arial,sans-serif;color:var(--ink);background:var(--soft);line-height:1.6}
+  .wrap{max-width:900px;margin:0 auto;padding:0 20px}
+  header{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;padding:40px 0 34px;border-bottom:5px solid var(--dgold)}
+  header .lbl{color:var(--gold);letter-spacing:3px;font-size:13px;font-weight:700;text-transform:uppercase}
+  header h1{margin:8px 0 12px;font-size:33px;line-height:1.15}
+  header p.sub{margin:0;color:#e7efe9;font-size:16px;max-width:640px}
+  .meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+  .chip{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#eafff2;font-size:13px;padding:5px 12px;border-radius:999px}
+  main{padding:30px 0 60px}
+  h2{font-size:23px;margin:32px 0 8px;color:var(--green);border-bottom:3px solid var(--dgold);padding-bottom:8px}
+  h3{font-size:18px;margin:14px 0 4px;color:var(--green)}
+  p{margin:8px 0}
+  .lead{font-size:16px;color:var(--green);font-weight:600}
+  .card{border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:14px 0;background:#fff;box-shadow:0 3px 12px rgba(20,83,45,.05)}
+  .card .n{display:inline-block;background:var(--green);color:#fff;font-weight:800;font-size:12px;padding:2px 11px;border-radius:999px;margin-bottom:8px}
+  .ba{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:10px 0}
+  .tag{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.5px;padding:2px 9px;border-radius:6px;display:inline-block;margin-bottom:4px}
+  .tag.no{background:#fde8e8;color:#b03535} .tag.ok{background:#e2f3e8;color:#14532d}
+  pre{background:#0f2f22;color:#e9f3ec;border-radius:9px;padding:12px 14px;font-family:Consolas,monospace;font-size:12.5px;line-height:1.5;white-space:pre-wrap;margin:6px 0}
+  .why{background:#fbf7ea;border-left:4px solid var(--dgold);border-radius:8px;padding:10px 14px;font-size:13.5px;color:#5c4a12;margin-top:8px}
+  .why b{color:#8a6a08}
+  ul.chk{list-style:none;padding:0;margin:10px 0}
+  ul.chk li{padding:9px 0 9px 30px;position:relative;border-bottom:1px solid var(--line);font-size:14.5px}
+  ul.chk li:before{content:"\2713";position:absolute;left:0;color:var(--dgold);font-weight:800;font-size:17px}
+  ul.chk li b{color:var(--green)}
+  .build{background:linear-gradient(135deg,var(--green),var(--green2));color:#fff;border-radius:16px;padding:24px;margin:26px 0;border-top:5px solid var(--dgold)}
+  .build h3{color:#fff;margin-top:0}
+  .build p{color:#dbe8df;font-size:14.5px}
+  .build .prompt{background:#0b2a1e;color:#eafff2;border-radius:10px;padding:14px;font-family:Consolas,monospace;font-size:12.5px;line-height:1.5;white-space:pre-wrap;margin-top:10px;position:relative}
+  .build .copy{position:absolute;top:10px;right:10px;background:var(--dgold);color:#14532d;border:0;border-radius:8px;padding:5px 11px;font-weight:700;cursor:pointer;font-size:12px}
+  footer{color:var(--mut);font-size:13px;text-align:center;padding:24px 0 50px}
+  .backlink{display:inline-block;margin-top:14px;color:var(--green);font-weight:700;text-decoration:none;border:2px solid var(--green);padding:9px 16px;border-radius:9px}
+  .scorecard{display:flex;gap:20px;align-items:center;background:#0f2f22;color:#eafff2;border-radius:16px;padding:22px 24px;margin:14px 0}
+  .scorecard .big{font-size:54px;font-weight:800;color:#e0ab12;line-height:1}
+  .scorecard .g{font-size:20px;font-weight:800;background:#e0ab12;color:#14532d;padding:3px 14px;border-radius:999px}
+  .cat{border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;background:#fff}
+  .cat .head{display:flex;justify-content:space-between;align-items:center}
+  .cat h3{margin:0}
+  .pill{font-size:12px;font-weight:800;padding:2px 12px;border-radius:999px}
+  .pass{background:#e2f3e8;color:#14532d} .warn{background:#fbf2d3;color:#8a6a08} .fail{background:#fde8e8;color:#b03535}
+  .cat ul{margin:8px 0 0;padding-left:20px} .cat li{font-size:13.5px;margin:4px 0}
+</style></head><body>
+<header><div class="wrap"><div class="lbl">AI Academy · Resource 4 of 4</div>
+<h1>Example AI-Readiness Report</h1>
+<p class="sub">What a finished audit looks like — a worked example you can learn from and copy.</p>
+<div class="meta"><span class="chip">Worked example</span><span class="chip">Fictional API</span></div></div></header>
+<main class="wrap">
+<p class="lead">This is a sample report for a made-up "ShopEasy Orders API", scored with the 10-pillar check.</p>
+<p>It shows what a professional AI-readiness audit looks like — the kind of deliverable you could produce for a business (or your own project) after completing the API lessons.</p>
+
+<div class="scorecard"><div class="big">78</div><div><div class="g">Grade B</div><div style="margin-top:6px;font-size:14px">ShopEasy Orders API · 7 of 10 pillars met</div></div></div>
+
+<h2>Findings by area</h2>
+
+<div class="cat"><div class="head"><h3>API design</h3><span class="pill pass">Strong</span></div>
+<ul><li>Clear map: endpoints list path, inputs and response shape.</li>
+<li>Typed fields throughout.</li>
+<li>Consistent naming (camelCase everywhere).</li></ul></div>
+
+<div class="cat"><div class="head"><h3>Agent understanding</h3><span class="pill warn">Needs work</span></div>
+<ul><li>Predictable shape: mostly, but the "search" endpoint returns a different structure — fix this.</li>
+<li>Worked examples: present for the main endpoints, missing for errors.</li></ul></div>
+
+<div class="cat"><div class="head"><h3>Error handling</h3><span class="pill fail">Weak</span></div>
+<ul><li>Rich errors: several endpoints return only <code>{"error":"failed"}</code> — no code or fix hint.</li>
+<li>Recommended fix: add a <code>code</code>, <code>field</code> and <code>message</code> to every error.</li></ul></div>
+
+<div class="cat"><div class="head"><h3>Discovery &amp; docs</h3><span class="pill pass">Strong</span></div>
+<ul><li>Open, public documentation that's easy to read.</li>
+<li>Clear authentication instructions.</li>
+<li>Published where tools can find it.</li></ul></div>
+
+<div class="cat"><div class="head"><h3>Reliability</h3><span class="pill warn">Needs work</span></div>
+<ul><li>Fast on most calls, but the "reports" endpoint is slow (5–8s) and would time agents out.</li></ul></div>
+
+<h2>Summary</h2>
+<p><b>Top 3 strengths:</b> clear map, consistent naming, and great public docs.<br>
+<b>Top 3 gaps:</b> weak error messages, one inconsistent response shape, and a slow endpoint.<br>
+<b>Biggest quick win:</b> upgrade error responses — it lifts the grade most for the least effort.</p>
+
+<div class="build"><h3>Generate reports like this — with AI</h3>
+<p>Once you can read an API's docs, AI can help you produce a polished audit. Try:</p>
+<div class="prompt"><button class="copy">Copy</button>Act as an API reviewer. I'll paste an API's documentation. Score it out of 100 against these 10 AI-readiness pillars [paste the 10], give a letter grade, group findings by area as Strong/Needs work/Weak, and end with the top 3 strengths, top 3 gaps, and the single biggest quick win.</div>
+<p style="margin-top:10px">This is a real, sellable skill — an "AI-readiness audit" you can offer businesses, produced with tools you already know.</p></div>
+
+<footer>British School of Outdoor Education · AI Academy · Original learner resource. The API and scores here are fictional, for teaching.</footer>
+</main><script>document.querySelectorAll(".copy").forEach(function(b){b.addEventListener("click",function(){var t=b.parentNode.textContent.replace(/^Copy/,"").trim();navigator.clipboard.writeText(t);b.textContent="Copied";setTimeout(function(){b.textContent="Copy";},1400);});});</script></body></html>
