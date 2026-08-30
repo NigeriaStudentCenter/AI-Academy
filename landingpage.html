@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BSOE AI Academy — From AI Foundations to Agentic AI</title>
+<meta name="description" content="A complete practical AI learning journey: foundations, leading AI tools, workplace applications, business and marketing, automation, Agentic AI, monetisation, community learning and BSOE certification." />
+<style>
+:root{
+  --ink:#102218;--forest:#153f2a;--forest2:#215e3e;--cream:#f7f2e7;--paper:#fffdf8;
+  --gold:#c89442;--gold2:#f1d398;--muted:#607167;--line:#dbe1dc;--white:#fff;
+  --shadow:0 24px 70px rgba(16,34,24,.13);--radius:28px;--max:1180px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.58} body.modal-open{overflow:hidden}
+h1,h2,h3,p{margin-top:0} h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.038em} a{text-decoration:none;color:inherit} button,input,select{font:inherit} .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:900;color:var(--forest2)} .eyebrow.light{color:var(--gold2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 24px;border:0;border-radius:999px;background:var(--forest);color:white;font-weight:850;cursor:pointer;box-shadow:0 12px 30px rgba(21,63,42,.18);transition:.2s transform,.2s background}.btn:hover{transform:translateY(-2px);background:#0f3020}.btn.gold{background:linear-gradient(135deg,#b97c2c,#dfbc74);color:#122419}.btn.outline{background:transparent;color:var(--forest);border:1px solid rgba(21,63,42,.24);box-shadow:none}.btn.white{background:white;color:var(--forest)}
+.topbar{background:#0b2a1b;color:#fff;text-align:center;padding:11px 16px;font-size:.85rem;font-weight:750}.topbar span{color:var(--gold2)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,253,248,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,34,24,.08)}.nav-in{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:11px;font-weight:900}.brand-mark{width:39px;height:39px;border-radius:13px;background:radial-gradient(circle at 38% 34%,#fff4b8 0 8%,#d6a44c 17%,#1c4b33 44%,#0f2f20 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35),0 8px 20px rgba(21,63,42,.2);position:relative}.brand-mark:after{content:"✦";position:absolute;inset:0;display:grid;place-items:center;color:#fff2c6}.nav-links{display:flex;gap:22px;align-items:center;font-size:.84rem;font-weight:760;color:#334a3c}.nav-cta{display:flex;gap:10px;align-items:center}
+.hero{padding:72px 0 84px;background:radial-gradient(circle at 82% 10%,rgba(200,148,66,.19),transparent 31%),linear-gradient(180deg,#fffdf8 0%,#f5efe2 100%)}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:58px;align-items:center}.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;border:1px solid rgba(21,63,42,.15);background:rgba(255,255,255,.72);font-size:.78rem;font-weight:900;letter-spacing:.04em}.dot{width:8px;height:8px;border-radius:50%;background:#e33d3d;box-shadow:0 0 0 5px rgba(227,61,61,.10)}.hero h1{font-size:clamp(3.45rem,7vw,6.55rem);line-height:.9;margin:18px 0 25px}.hero h1 em{font-style:normal;color:var(--forest2)}.hero-copy{font-size:1.16rem;color:#496054;max-width:690px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 18px}.micro{font-size:.82rem;color:var(--muted)}
+.hero-card{min-height:600px;border-radius:38px;background:linear-gradient(150deg,#1e5739,#102d20 67%,#0b2117);box-shadow:var(--shadow);position:relative;overflow:hidden;padding:30px}.hero-glow{position:absolute;width:430px;height:430px;border-radius:50%;background:rgba(233,187,99,.23);filter:blur(42px);top:-240px;right:-100px}.journey-card{position:absolute;inset:36px 34px 36px 34px;border:1px solid rgba(255,255,255,.15);border-radius:28px;background:rgba(255,255,255,.06);backdrop-filter:blur(10px);padding:28px;color:white}.journey-card h3{font-family:Georgia,serif;font-size:2.2rem;line-height:1.04;margin:10px 0 22px}.path{display:grid;gap:10px}.path-step{display:grid;grid-template-columns:42px 1fr auto;gap:12px;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);padding:10px 12px;border-radius:14px}.path-no{width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,#d7aa58,#f2d89d);display:grid;place-items:center;color:#193223;font-weight:900}.path-step strong{display:block;font-size:.9rem}.path-step small{display:block;color:#c8d5cd;font-size:.7rem}.path-step span{font-size:.72rem;color:#f3d99c;font-weight:850}.hero-ribbon{position:absolute;right:25px;bottom:22px;background:white;color:var(--forest);padding:11px 14px;border-radius:13px;font-size:.76rem;font-weight:900;transform:rotate(-2deg);box-shadow:0 14px 30px rgba(0,0,0,.22)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{text-align:center;padding:32px 22px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat b{font-family:Georgia,serif;font-size:2.35rem;display:block}.stat span{font-size:.83rem;color:var(--muted);font-weight:720}
+.section{padding:96px 0}.section.alt{background:var(--cream)}.section.dark{background:var(--forest);color:white}.section-head{max-width:830px;margin:0 auto 50px;text-align:center}.section-head h2{font-size:clamp(2.45rem,5vw,4.5rem);line-height:.98;margin:12px 0 18px}.section-head p{font-size:1.08rem;color:var(--muted)}.dark .section-head p{color:#d4e0d8}
+.video-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}.video-shell{aspect-ratio:16/9;border-radius:30px;background:linear-gradient(145deg,#122e21,#091c14);position:relative;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.1)}.video-shell iframe{width:100%;height:100%;border:0}.video-placeholder{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:32px;color:white;background:radial-gradient(circle at 50% 40%,rgba(211,166,79,.25),transparent 30%)}.play{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;margin:0 auto 18px;background:linear-gradient(135deg,#d3a550,#f1d497);color:#173522;font-size:1.8rem;box-shadow:0 14px 35px rgba(0,0,0,.26)}.video-placeholder strong{font-family:Georgia,serif;font-size:2rem;display:block;line-height:1.05;margin-bottom:8px}.video-copy h3{font-family:Georgia,serif;font-size:3.2rem;line-height:1;margin:10px 0 18px}.video-copy p{color:var(--muted)}
+.promise{border-radius:34px;background:#102b1e;color:white;padding:52px;display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center;box-shadow:var(--shadow)}.promise h2{font-size:clamp(2.6rem,5vw,4.5rem);line-height:.96;margin:10px 0}.promise p{color:#d0ddd5}.promise-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}.promise-item{padding:18px;border-radius:18px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06)}.promise-item b{display:block;color:var(--gold2);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}.promise-item strong{display:block;font-size:1.02rem}
+.pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.pillar{background:white;border:1px solid #e4e9e5;border-radius:24px;padding:28px;box-shadow:0 14px 32px rgba(16,34,24,.05);position:relative;overflow:hidden}.pillar:after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;background:rgba(200,148,66,.08);right:-45px;top:-45px}.pillar-no{width:46px;height:46px;border-radius:14px;background:var(--forest);color:white;display:grid;place-items:center;font-family:Georgia,serif;font-size:1.35rem;margin-bottom:18px}.pillar h3{font-family:Georgia,serif;font-size:1.9rem;line-height:1.06;margin-bottom:10px}.pillar p{color:var(--muted);margin-bottom:14px}.mini-tags{display:flex;flex-wrap:wrap;gap:7px}.mini-tags span{font-size:.72rem;background:#f4f6f3;border:1px solid #e2e8e3;border-radius:999px;padding:6px 9px;font-weight:720;color:#3d5045}
+.tools-band{background:#122f21;color:white;border-radius:34px;padding:48px}.tools-band h3{font-family:Georgia,serif;font-size:3.1rem;line-height:1;margin:8px 0 16px}.tools-band p{color:#cbd8d0;max-width:760px}.tools-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;margin-top:30px}.tool{min-height:100px;padding:14px;border-radius:17px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;justify-content:space-between}.tool b{font-size:.96rem}.tool span{font-size:.68rem;color:#c8d5cd}.tool i{font-style:normal;font-size:1.45rem;color:var(--gold2)}
+.functions{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.function{background:white;border:1px solid #e1e7e2;border-radius:18px;padding:21px;min-height:140px}.function b{font-family:Georgia,serif;font-size:1.28rem;display:block;margin-bottom:7px}.function p{font-size:.83rem;color:var(--muted);margin:0}.function .ico{font-size:1.4rem;margin-bottom:14px}
+.flow{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;align-items:stretch}.flow-step{background:white;border:1px solid #dfe5e0;border-radius:18px;padding:18px 14px;text-align:center;min-height:170px;position:relative}.flow-step b{width:40px;height:40px;border-radius:12px;background:var(--forest);color:white;display:grid;place-items:center;margin:0 auto 12px}.flow-step strong{display:block;font-size:.88rem;line-height:1.2}.flow-step span{display:block;font-size:.72rem;color:var(--muted);margin-top:7px}.flow-step:not(:last-child):after{content:"→";position:absolute;right:-11px;top:45%;font-size:1.2rem;font-weight:900;color:var(--gold);z-index:2}
+.readiness{display:grid;grid-template-columns:1fr .86fr;gap:50px;align-items:center;background:linear-gradient(135deg,#efe5d1,#fbf7ef);border:1px solid #e6dcc8;border-radius:34px;padding:54px}.score-card{background:white;border-radius:26px;padding:28px;box-shadow:var(--shadow)}.meter{height:15px;border-radius:999px;background:#e5e9e5;overflow:hidden;margin:20px 0 8px}.meter span{display:block;width:68%;height:100%;background:linear-gradient(90deg,#b47d2e,#e4c075)}.score-points{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}.score-point{padding:12px;border-radius:14px;background:#f6f8f5;font-size:.78rem;font-weight:740}.readiness h2{font-size:clamp(2.6rem,5vw,4.35rem);line-height:.96;margin:10px 0 18px}.readiness p{color:var(--muted)}
+.community-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}.community-card{border-radius:30px;padding:38px;min-height:360px;position:relative;overflow:hidden}.community-card.dark{background:#112f21;color:white}.community-card.light{background:#efe7d8}.community-card h3{font-family:Georgia,serif;font-size:2.6rem;line-height:1;margin:10px 0 15px}.community-card.dark p{color:#d0dcd4}.community-card.light p{color:var(--muted)}.checklist{list-style:none;padding:0;margin:22px 0}.checklist li{margin:11px 0;padding-left:27px;position:relative}.checklist li:before{content:"✓";position:absolute;left:0;font-weight:900;color:var(--gold)}.certificate{position:absolute;right:-15px;bottom:-22px;width:58%;aspect-ratio:1.35;background:white;border:9px solid #efe5d2;border-radius:10px;box-shadow:0 22px 42px rgba(0,0,0,.18);transform:rotate(-5deg);padding:20px;color:#173522}.certificate .seal{width:58px;height:58px;border-radius:50%;background:radial-gradient(circle,#f0cf8d 0 28%,#bb842f 29% 60%,#173b29 61%);margin-bottom:12px}.certificate strong{font-family:Georgia,serif;font-size:1.22rem;display:block}.certificate small{font-size:.63rem;color:#66766d}
+.quote-band{text-align:center;padding:70px 20px;background:#0f2c1f;color:white}.quote-band blockquote{font-family:Georgia,serif;font-size:clamp(2.1rem,4vw,3.7rem);line-height:1.05;max-width:1000px;margin:0 auto 22px}.quote-band p{color:#cbd9d0;margin:0 auto;max-width:760px}
+.faq{max-width:900px;margin:auto}.faq-item{border-top:1px solid #d4ddd7}.faq-item:last-child{border-bottom:1px solid #d4ddd7}.faq-q{width:100%;border:0;background:transparent;padding:22px 4px;display:flex;justify-content:space-between;align-items:center;text-align:left;font-weight:850;color:var(--ink);cursor:pointer}.faq-a{display:none;padding:0 4px 20px;color:var(--muted)}.faq-item.open .faq-a{display:block}
+.final{padding:92px 0;text-align:center;background:radial-gradient(circle at 50% 15%,rgba(227,187,103,.20),transparent 26%),#102e20;color:white}.final h2{font-size:clamp(3rem,6vw,5.4rem);line-height:.93;max-width:940px;margin:10px auto 20px}.final p{color:#cddad2;max-width:760px;margin:0 auto 28px}.final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer.site{padding:30px 0;background:#091d14;color:#becbc3;font-size:.79rem}.foot{display:flex;align-items:center;justify-content:space-between;gap:24px}.foot .brand{color:white}.foot-links{display:flex;gap:18px}
+.modal{display:none;position:fixed;inset:0;z-index:100;background:rgba(5,18,12,.75);padding:22px;place-items:center}.modal.show{display:grid}.modal-card{width:min(720px,100%);max-height:92vh;overflow:auto;background:#fffdf8;border-radius:28px;box-shadow:0 30px 90px rgba(0,0,0,.35)}.modal-head{padding:28px 30px 18px;display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid var(--line)}.modal-head h3{font-family:Georgia,serif;font-size:2rem;margin:5px 0 0}.close{border:0;background:#f0f2ef;width:38px;height:38px;border-radius:50%;font-size:1.4rem;cursor:pointer}.modal-body{padding:28px 30px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:.78rem;font-weight:850}.field input,.field select{width:100%;padding:13px 14px;border:1px solid #d6ded8;border-radius:12px;background:white}.secure-box{background:#f3f7f3;border:1px solid #dce6de;border-radius:13px;padding:13px;margin:18px 0;font-size:.79rem;color:#516359}
+.notice{display:none;margin-top:12px;padding:11px 13px;border-radius:12px;background:#fff4db;color:#62460d;font-size:.78rem;border:1px solid #f0d7a2}.notice.show{display:block}
+@media(max-width:1000px){.nav-links{display:none}.hero-grid,.video-grid,.promise,.readiness,.community-grid{grid-template-columns:1fr}.pillars{grid-template-columns:1fr}.tools-grid{grid-template-columns:repeat(2,1fr)}.functions{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:repeat(2,1fr)}.flow-step:not(:last-child):after{display:none}.hero-card{min-height:580px}.promise-list{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:680px){.wrap{width:min(100% - 24px,var(--max))}.nav-in{height:68px}.nav-cta .btn.outline{display:none}.nav .btn{padding:11px 14px;font-size:.76rem}.hero{padding-top:44px}.hero h1{font-size:3.45rem}.hero-card{min-height:610px;padding:15px}.journey-card{inset:20px}.hero-ribbon{right:12px;bottom:10px}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.section{padding:72px 0}.video-copy h3,.tools-band h3{font-size:2.5rem}.promise,.tools-band,.readiness{padding:28px 20px}.promise-list,.tools-grid,.functions,.flow,.score-points{grid-template-columns:1fr}.community-card{padding:28px;min-height:420px}.certificate{width:72%}.final-actions .btn,.hero-actions .btn{width:100%}.foot{flex-direction:column;align-items:flex-start}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+</style>
+</head>
+<body>
+<div class="topbar">BSOE AI Academy · <span>From AI foundations to Agentic AI, automation and income creation</span></div>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="#top"><span class="brand-mark"></span><span>BSOE AI Academy</span></a>
+    <div class="nav-links"><a href="#overview">Overview</a><a href="#structure">Academy Structure</a><a href="#tools">10 AI Tools</a><a href="#readiness">AI Readiness</a><a href="#certificate">Certificate</a><a href="#faq">FAQ</a></div>
+    <div class="nav-cta"><a class="btn outline readiness-link" href="#readiness">Take Assessment</a><button class="btn open-modal">Join Academy</button></div>
+  </div>
+</nav>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill"><span class="dot"></span> A COMPLETE PRACTICAL AI LEARNING JOURNEY</span>
+      <h1>Go from AI beginner to <em>AI-powered professional, creator and builder.</em></h1>
+      <p class="hero-copy">BSOE AI Academy is designed to set a world-class standard for practical AI education. You do not learn one chatbot or one set of prompts. You build the knowledge, tools, workplace skills, business applications, automation capability, Agentic AI understanding and commercial confidence to use AI in the real world.</p>
+      <div class="hero-actions"><a class="btn gold" href="#academy-video">▶ Watch Academy Overview</a><a class="btn outline readiness-link" href="#readiness">Complete AI Readiness Assessment →</a></div>
+      <p class="micro">Start at your current level. Progress through a structured pathway. Apply what you learn immediately.</p>
+    </div>
+    <div class="hero-card" aria-label="BSOE AI Academy learning pathway">
+      <div class="hero-glow"></div>
+      <div class="journey-card">
+        <div class="eyebrow light">Your AI progression</div>
+        <h3>One Academy. Seven levels of practical capability.</h3>
+        <div class="path">
+          <div class="path-step"><div class="path-no">1</div><div><strong>Foundations</strong><small>Understand AI and use it safely</small></div><span>START</span></div>
+          <div class="path-step"><div class="path-no">2</div><div><strong>Essential AI Tools</strong><small>Master the platforms that matter</small></div><span>TOOLS</span></div>
+          <div class="path-step"><div class="path-no">3</div><div><strong>Workplace AI</strong><small>Apply AI across functional areas</small></div><span>APPLY</span></div>
+          <div class="path-step"><div class="path-no">4</div><div><strong>Business & Marketing</strong><small>Create, sell, communicate and grow</small></div><span>GROW</span></div>
+          <div class="path-step"><div class="path-no">5</div><div><strong>Automation</strong><small>Build and deploy AI-enabled processes</small></div><span>BUILD</span></div>
+          <div class="path-step"><div class="path-no">6</div><div><strong>Agentic AI</strong><small>Move from assistants to AI agents</small></div><span>ADVANCE</span></div>
+          <div class="path-step"><div class="path-no">7</div><div><strong>AI to Make Money</strong><small>Turn capability into economic value</small></div><span>EARN</span></div>
+        </div>
+      </div>
+      <div class="hero-ribbon">+ Community Learning · + BSOE Certificate</div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><b>7</b><span>progressive learning stages</span></div>
+  <div class="stat"><b>10</b><span>essential AI tools to master</span></div>
+  <div class="stat"><b>All</b><span>major workplace functions covered</span></div>
+  <div class="stat"><b>1</b><span>learning community + BSOE certificate</span></div>
+</div>
+
+<section class="section" id="academy-video">
+  <div class="wrap video-grid">
+    <div class="video-shell" id="videoShell">
+      <div class="video-placeholder" id="videoPlaceholder"><div><div class="play">▶</div><strong>Academy Overview Video</strong><span>Add your YouTube, Vimeo or hosted video embed here.</span></div></div>
+    </div>
+    <div class="video-copy">
+      <div class="eyebrow">See the whole Academy in minutes</div>
+      <h3>Understand where you start, what you learn and what you can become.</h3>
+      <p>This video section is positioned early because visitors should quickly understand that BSOE AI Academy is not another short “how to prompt ChatGPT” course. It is an end-to-end AI capability journey.</p>
+      <ul class="checklist"><li>See the seven-stage learning pathway.</li><li>Understand how workplace, business and automation training connect.</li><li>See how community learning and certification support your progress.</li></ul>
+      <a class="btn readiness-link" href="#readiness">Take the AI Readiness Assessment →</a>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="overview">
+  <div class="wrap">
+    <div class="promise">
+      <div><div class="eyebrow light">The BSOE difference</div><h2>Not just AI knowledge. AI capability.</h2><p>Most AI courses teach isolated tools. BSOE AI Academy is structured around what people ultimately want AI to help them do: work better, create faster, automate intelligently, build new solutions and generate value.</p></div>
+      <div class="promise-list">
+        <div class="promise-item"><b>Not just prompts</b><strong>Understand the thinking behind effective AI use.</strong></div>
+        <div class="promise-item"><b>Not just one tool</b><strong>Build confidence across an AI toolset.</strong></div>
+        <div class="promise-item"><b>Not just theory</b><strong>Apply AI to real workplace and business tasks.</strong></div>
+        <div class="promise-item"><b>Not just learning</b><strong>Automate, deploy, create agents and generate value.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="structure">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">How the Academy is structured</div><h2>From first principles to practical AI advantage.</h2><p>Each stage builds on the one before it. Learners can begin with the fundamentals and progress toward advanced automation, Agentic AI and commercial application.</p></div>
+    <div class="pillars">
+      <article class="pillar"><div class="pillar-no">1</div><h3>Foundational Knowledge & Practical AI Application</h3><p>Understand what AI is, what generative AI can and cannot do, how to prompt effectively, how to verify outputs, and how to use AI responsibly and confidently.</p><div class="mini-tags"><span>AI literacy</span><span>Prompting</span><span>Critical thinking</span><span>Responsible AI</span><span>Data privacy</span></div></article>
+      <article class="pillar"><div class="pillar-no">2</div><h3>Master 10 Essential AI Tools</h3><p>Learn how leading AI platforms differ, where each tool is strongest and how to select the right tool for writing, research, analysis, content, meetings, productivity and automation.</p><div class="mini-tags"><span>ChatGPT</span><span>Gemini</span><span>Claude</span><span>Copilot</span><span>Perplexity</span></div></article>
+      <article class="pillar"><div class="pillar-no">3</div><h3>AI Across Every Workplace Function</h3><p>Move from generic AI knowledge to role-based application. Learn how AI can support HR, Finance, Sales, Operations, Administration, Procurement, Customer Service, Leadership and more.</p><div class="mini-tags"><span>HR</span><span>Finance</span><span>Operations</span><span>Sales</span><span>Leadership</span><span>Admin</span></div></article>
+      <article class="pillar"><div class="pillar-no">4</div><h3>AI for Business, Marketing & Social Media</h3><p>Use AI to understand markets, sharpen offers, generate campaign ideas, build content systems, improve customer communication, create social media assets and accelerate business growth.</p><div class="mini-tags"><span>Strategy</span><span>Marketing</span><span>Social media</span><span>Content</span><span>Customer acquisition</span></div></article>
+      <article class="pillar"><div class="pillar-no">5</div><h3>AI Automation, Process Design & Deployment</h3><p>Identify repetitive work, redesign processes, connect tools and deploy AI-enabled workflows that reduce manual effort and improve speed, consistency and service delivery.</p><div class="mini-tags"><span>Workflow mapping</span><span>No-code automation</span><span>Integrations</span><span>Deployment</span><span>Governance</span></div></article>
+      <article class="pillar"><div class="pillar-no">6</div><h3>Agentic AI</h3><p>Progress from asking AI for answers to designing AI systems that can plan, use tools, take actions and complete multi-step goals with appropriate human oversight.</p><div class="mini-tags"><span>AI agents</span><span>Tool use</span><span>Multi-step tasks</span><span>Human oversight</span><span>Agent workflows</span></div></article>
+      <article class="pillar"><div class="pillar-no">7</div><h3>Use AI to Make Money</h3><p>Turn AI capability into economic opportunity. Explore AI-enabled services, freelancing, content, productivity offers, digital products, consulting, automation services and business opportunities.</p><div class="mini-tags"><span>Freelancing</span><span>Digital products</span><span>Consulting</span><span>AI services</span><span>New ventures</span></div></article>
+      <article class="pillar"><div class="pillar-no">8</div><h3>Learn in Community. Finish with Evidence.</h3><p>Learn alongside other learners, exchange ideas, see how others are applying AI and build momentum through shared learning. Complete the pathway and receive a BSOE Certificate of Achievement.</p><div class="mini-tags"><span>Community</span><span>Peer learning</span><span>Practice</span><span>Portfolio evidence</span><span>BSOE Certificate</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="tools">
+  <div class="wrap">
+    <div class="tools-band">
+      <div class="eyebrow light">The AI toolset</div>
+      <h3>Learn 10 of the AI tools shaping modern work.</h3>
+      <p>The exact toolset can evolve as the market changes. The Academy teaches transferable skills so learners understand both the tools and the principles that sit behind them.</p>
+      <div class="tools-grid">
+        <div class="tool"><i>01</i><b>ChatGPT</b><span>Reasoning, writing, analysis, creation</span></div>
+        <div class="tool"><i>02</i><b>Google Gemini</b><span>Research, multimodal work, Workspace</span></div>
+        <div class="tool"><i>03</i><b>Claude</b><span>Documents, writing, deep analysis</span></div>
+        <div class="tool"><i>04</i><b>Microsoft Copilot</b><span>Microsoft 365 workplace productivity</span></div>
+        <div class="tool"><i>05</i><b>Perplexity</b><span>AI-assisted research and discovery</span></div>
+        <div class="tool"><i>06</i><b>NotebookLM</b><span>Source-grounded learning and synthesis</span></div>
+        <div class="tool"><i>07</i><b>Canva AI</b><span>Design, marketing and visual content</span></div>
+        <div class="tool"><i>08</i><b>CapCut AI</b><span>Short-form video and social content</span></div>
+        <div class="tool"><i>09</i><b>Notion AI</b><span>Knowledge, planning and team workflows</span></div>
+        <div class="tool"><i>10</i><b>Zapier / Make</b><span>Automation and cross-app workflows</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">AI where work actually happens</div><h2>Learn how AI applies across the workplace.</h2><p>Different roles need different use cases. The Academy makes AI relevant by showing how the same technology can be applied to the decisions, documents, processes and outcomes of each function.</p></div>
+    <div class="functions">
+      <div class="function"><div class="ico">👥</div><b>Human Resources</b><p>Job design, recruitment support, onboarding, policy drafts, learning and workforce insight.</p></div>
+      <div class="function"><div class="ico">📊</div><b>Finance</b><p>Analysis, forecasting support, commentary, reconciliations, reporting and controls.</p></div>
+      <div class="function"><div class="ico">📣</div><b>Marketing</b><p>Research, positioning, campaigns, content, customer journeys and performance ideas.</p></div>
+      <div class="function"><div class="ico">🤝</div><b>Sales</b><p>Prospecting, discovery preparation, proposals, follow-ups and pipeline productivity.</p></div>
+      <div class="function"><div class="ico">⚙️</div><b>Operations</b><p>SOPs, process improvement, workflow analysis, service design and automation.</p></div>
+      <div class="function"><div class="ico">🧾</div><b>Administration</b><p>Emails, minutes, scheduling support, records, documentation and recurring tasks.</p></div>
+      <div class="function"><div class="ico">🛒</div><b>Procurement</b><p>Market research, specifications, supplier comparison, document review and planning.</p></div>
+      <div class="function"><div class="ico">🎯</div><b>Leadership</b><p>Decision support, scenario thinking, communication, strategy and organisational adoption.</p></div>
+      <div class="function"><div class="ico">💬</div><b>Customer Service</b><p>Knowledge support, response drafting, service analysis and assisted resolution.</p></div>
+      <div class="function"><div class="ico">📅</div><b>Project Management</b><p>Planning, risk logs, status reports, requirements, stakeholder communication and reviews.</p></div>
+      <div class="function"><div class="ico">🎓</div><b>Learning & Development</b><p>Training design, assessments, learning content, coaching and personalised support.</p></div>
+      <div class="function"><div class="ico">🚀</div><b>Entrepreneurship</b><p>Idea validation, offers, marketing, content, customer acquisition and AI-enabled services.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The learner journey</div><h2>You always know what comes next.</h2><p>The Academy is deliberately sequenced so learners move from understanding AI to applying it, building with it and creating economic value with it.</p></div>
+    <div class="flow">
+      <div class="flow-step"><b>1</b><strong>Assess</strong><span>Know your current AI readiness.</span></div>
+      <div class="flow-step"><b>2</b><strong>Understand</strong><span>Build strong AI foundations.</span></div>
+      <div class="flow-step"><b>3</b><strong>Use</strong><span>Master the essential tools.</span></div>
+      <div class="flow-step"><b>4</b><strong>Apply</strong><span>Use AI across work and business.</span></div>
+      <div class="flow-step"><b>5</b><strong>Automate</strong><span>Build and deploy workflows.</span></div>
+      <div class="flow-step"><b>6</b><strong>Agentise</strong><span>Create advanced AI agent workflows.</span></div>
+      <div class="flow-step"><b>7</b><strong>Monetise</strong><span>Turn AI skill into opportunity.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="readiness">
+  <div class="wrap">
+    <div class="readiness">
+      <div>
+        <div class="eyebrow">Before you begin</div>
+        <h2>Discover your AI Readiness Score.</h2>
+        <p>Every learner should know their starting point. The AI Readiness Assessment helps identify current confidence, knowledge, workplace use, automation maturity and the areas that deserve the greatest attention.</p>
+        <ul class="checklist"><li>Understand your current level.</li><li>Identify your most important capability gaps.</li><li>Use the result to choose where to focus first.</li><li>Repeat the assessment later to evidence progress.</li></ul>
+        <a class="btn gold readiness-link" href="#readiness">Complete the AI Readiness Assessment →</a>
+        <div class="notice" id="assessmentNotice">Add your live AI Readiness Assessment URL in the page configuration before publishing.</div>
+      </div>
+      <div class="score-card"><div class="eyebrow">Example learner profile</div><h3 class="serif" style="font-size:2.2rem;margin:8px 0">Your AI capability snapshot</h3><div style="display:flex;justify-content:space-between;font-weight:900"><span>AI Readiness</span><span>68%</span></div><div class="meter"><span></span></div><div class="micro">Illustrative visual only — connect this CTA to your live assessment.</div><div class="score-points"><div class="score-point">✓ AI foundations</div><div class="score-point">✓ Tool confidence</div><div class="score-point">✓ Workplace use</div><div class="score-point">✓ Automation maturity</div><div class="score-point">✓ Responsible AI</div><div class="score-point">✓ Commercial application</div></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="certificate">
+  <div class="wrap community-grid">
+    <div class="community-card dark"><div class="eyebrow light">Learn with other people</div><h3>Progress faster in a learning community.</h3><p>AI moves too quickly for learning to be isolated. Members learn alongside other learners, compare use cases, ask questions, share wins and see how people in different roles are applying AI.</p><ul class="checklist"><li>Peer learning and shared practice.</li><li>Questions and practical problem-solving.</li><li>New ideas from different industries and roles.</li><li>Accountability to keep using what you learn.</li></ul></div>
+    <div class="community-card light"><div class="eyebrow">Evidence what you have achieved</div><h3>Earn your BSOE Certificate.</h3><p>Complete the learning requirements and receive a British School of Outdoor Education Certificate of Achievement to evidence your AI learning and professional development.</p><ul class="checklist"><li>Evidence of structured AI learning.</li><li>Supports your CV and professional profile.</li><li>Demonstrates commitment to practical AI capability.</li></ul><div class="certificate"><div class="seal"></div><small>BRITISH SCHOOL OF OUTDOOR EDUCATION</small><strong>Certificate of Achievement</strong><small>AI Academy · awarded on successful completion</small></div></div>
+  </div>
+</section>
+
+<section class="quote-band"><blockquote>“The goal is not simply to know more about AI. It is to become capable of using AI to create better work, better systems and better opportunities.”</blockquote><p>That is the organising idea behind the BSOE AI Academy: learn, apply, automate, advance and create value.</p></section>
+
+<section class="section alt" id="faq">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Questions before you join</div><h2>Frequently asked questions</h2></div>
+    <div class="faq">
+      <div class="faq-item open"><button class="faq-q"><span>What makes BSOE AI Academy different from a normal AI course?</span><span>+</span></button><div class="faq-a"><p>It is designed as a complete progression rather than a single-topic course. Learners move from AI foundations and core tools into workplace application, business and marketing, automation, Agentic AI and monetisation, while learning in a community and working toward a BSOE certificate.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span>Do I need any previous AI or coding experience?</span><span>+</span></button><div class="faq-a"><p>No. The pathway begins with foundational AI literacy and practical application. More advanced modules build on that foundation step by step.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span>Which AI tools will I learn?</span><span>+</span></button><div class="faq-a"><p>The current toolset includes ChatGPT, Gemini, Claude, Microsoft Copilot, Perplexity, NotebookLM, Canva AI, CapCut AI, Notion AI and automation platforms such as Zapier or Make. The Academy can refresh the toolset as the market changes.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span>Will I learn AI specifically for my job?</span><span>+</span></button><div class="faq-a"><p>Yes. The Academy includes role-based and functional application across areas such as HR, Finance, Sales, Marketing, Operations, Administration, Procurement, Customer Service, Project Management and Leadership.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span>Does the Academy include automation and AI agents?</span><span>+</span></button><div class="faq-a"><p>Yes. The pathway progresses from productivity use into process automation and deployment, then into Agentic AI concepts and practical agent workflows with appropriate human oversight.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span>Can the Academy help me use AI to create income?</span><span>+</span></button><div class="faq-a"><p>Yes. One stage focuses on turning AI capability into economic opportunity through AI-enabled services, freelancing, consulting, digital products, automation services and business applications.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span>Do I receive a certificate?</span><span>+</span></button><div class="faq-a"><p>Learners who complete the required Academy learning and completion criteria can receive a British School of Outdoor Education Certificate of Achievement.</p></div></div>
+      <div class="faq-item"><button class="faq-q"><span>What should I do first?</span><span>+</span></button><div class="faq-a"><p>Start with the AI Readiness Assessment. It gives you a clearer picture of your current capability and where you should focus first.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap"><div class="eyebrow light">Your AI journey needs a structure</div><h2>Start where you are. Build the capability the future of work demands.</h2><p>Take the AI Readiness Assessment, understand your starting point and then move through a practical Academy designed to take you from foundational knowledge to advanced AI application.</p><div class="final-actions"><a class="btn gold readiness-link" href="#readiness">Complete AI Readiness Assessment →</a><button class="btn white open-modal">Explore Academy Enrolment →</button></div><div class="notice" id="finalAssessmentNotice">Add your live AI Readiness Assessment URL before publishing.</div></div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap foot"><div class="brand"><span class="brand-mark"></span><span>BSOE AI Academy</span></div><div class="foot-links"><a href="#overview">About</a><a href="#structure">Curriculum</a><a href="#readiness">Assessment</a><a href="#faq">FAQ</a></div><div>© 2026 BSOE LTD.</div></div></footer>
+
+<div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinTitle"><div class="modal-card"><div class="modal-head"><div><div class="eyebrow">Academy registration</div><h3 id="joinTitle">Register your interest</h3></div><button class="close" id="closeModal" aria-label="Close">×</button></div><div class="modal-body"><form id="leadForm"><div class="form-grid"><div class="field"><label for="first">First name</label><input id="first" name="first" required></div><div class="field"><label for="last">Last name</label><input id="last" name="last" required></div><div class="field full"><label for="email">Email address</label><input id="email" name="email" type="email" required></div><div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel"></div><div class="field"><label for="interest">Main interest</label><select id="interest" name="interest"><option>General AI capability</option><option>AI for the workplace</option><option>AI automation</option><option>Agentic AI</option><option>AI for business</option><option>Using AI to make money</option></select></div></div><div class="secure-box"><strong>Publishing note:</strong> connect this form to your approved CRM, registration or checkout workflow. The page does not collect payment-card information.</div><button class="btn gold" type="submit">Continue →</button></form></div></div></div>
+
+<script>
+/* =========================================================
+   PAGE CONFIGURATION — replace these two values before launch
+   ========================================================= */
+const AI_READINESS_ASSESSMENT_URL = "https://nigeriastudentcenter.github.io/AI-Academy/AIreadiness.html#how-it-works";
+const ACADEMY_VIDEO_EMBED_URL = "https://www.youtube.com/embed/eyhDNOHZop8";
+
+// Readiness Assessment links
+const readinessLinks = document.querySelectorAll('.readiness-link');
+const assessmentConfigured = /^https?:\/\//i.test(AI_READINESS_ASSESSMENT_URL);
+readinessLinks.forEach(link => {
+  if (assessmentConfigured) {
+    link.href = AI_READINESS_ASSESSMENT_URL;
+    link.target = '_blank';
+    link.rel = 'noopener';
+  } else {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      document.getElementById('readiness').scrollIntoView({behavior:'smooth'});
+      document.querySelectorAll('#assessmentNotice,#finalAssessmentNotice').forEach(n=>n.classList.add('show'));
+    });
+  }
+});
+
+// Video embed slot
+if (/^https?:\/\//i.test(ACADEMY_VIDEO_EMBED_URL)) {
+  const shell = document.getElementById('videoShell');
+  shell.innerHTML = `<iframe src="${ACADEMY_VIDEO_EMBED_URL}" title="BSOE AI Academy overview video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+}
+
+// Modal
+const modal=document.getElementById('joinModal');
+document.querySelectorAll('.open-modal').forEach(b=>b.addEventListener('click',()=>{modal.classList.add('show');document.body.classList.add('modal-open')}));
+document.getElementById('closeModal').addEventListener('click',()=>{modal.classList.remove('show');document.body.classList.remove('modal-open')});
+modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('show');document.body.classList.remove('modal-open')}});
+document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
+document.getElementById('leadForm').addEventListener('submit',e=>{e.preventDefault();alert('Connect this form to your live registration, CRM or checkout workflow before publishing.');});
+</script>
+</body>
+</html>
