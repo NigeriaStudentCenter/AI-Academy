@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Agents &amp; the Future of Customer Engagement | BSOE AI Academy</title>
+<meta name="description" content="An interactive BSOE AI Academy ebook exploring AI agents and the future of customer engagement.">
+<style>
+:root{
+  --green:#0B3D2E; --green2:#145744; --gold:#D4B06A; --cream:#F8FAF7;
+  --ink:#17221e; --muted:#66736d; --white:#fff; --line:#dfe8e3;
+  --shadow:0 18px 50px rgba(11,61,46,.12);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);line-height:1.7}
+a{color:inherit}
+.nav{position:sticky;top:0;z-index:50;background:rgba(11,61,46,.96);backdrop-filter:blur(12px);color:#fff;border-bottom:1px solid rgba(255,255,255,.12)}
+.nav-inner{max-width:1180px;margin:auto;display:flex;align-items:center;justify-content:space-between;padding:14px 22px;gap:20px}
+.brand{font-weight:800;letter-spacing:.02em}.brand span{color:var(--gold)}
+.navlinks{display:flex;gap:15px;flex-wrap:wrap;font-size:.88rem}
+.navlinks a{text-decoration:none;opacity:.9}.navlinks a:hover{color:var(--gold)}
+.hero{background:linear-gradient(135deg,var(--green),#08291f);color:#fff;min-height:720px;display:flex;align-items:center;overflow:hidden;position:relative}
+.hero:before{content:"";position:absolute;width:600px;height:600px;border:1px solid rgba(212,176,106,.25);border-radius:50%;right:-150px;top:-80px;box-shadow:0 0 0 80px rgba(212,176,106,.035),0 0 0 160px rgba(212,176,106,.025)}
+.hero:after{content:"AI";position:absolute;right:9%;bottom:-90px;font-size:19rem;font-weight:900;color:rgba(255,255,255,.035)}
+.wrap{max-width:1180px;margin:auto;padding:0 22px}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:center;position:relative;z-index:2}
+.kicker{color:var(--gold);font-weight:800;letter-spacing:.15em;text-transform:uppercase;font-size:.82rem}
+h1{font-size:clamp(3rem,7vw,6.4rem);line-height:.96;margin:18px 0 25px;letter-spacing:-.055em}
+.hero h2{font-size:clamp(1.2rem,2.2vw,1.7rem);font-weight:400;color:#dbe9e3;margin:0 0 30px;max-width:720px}
+.meta{display:flex;gap:12px;flex-wrap:wrap}.pill{border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:8px 14px;font-size:.85rem}
+.agent-graphic{height:430px;position:relative;display:grid;place-items:center}
+.core{width:150px;height:150px;border-radius:38px;background:linear-gradient(145deg,#fff,var(--gold));color:var(--green);display:grid;place-items:center;font-size:2.4rem;font-weight:900;box-shadow:0 25px 70px rgba(0,0,0,.25);position:relative;z-index:3}
+.orbit{position:absolute;border:1px solid rgba(212,176,106,.55);border-radius:50%}
+.o1{width:290px;height:290px}.o2{width:410px;height:410px}
+.node{position:absolute;background:#fff;color:var(--green);padding:11px 15px;border-radius:14px;font-size:.8rem;font-weight:800;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.n1{top:5%;left:7%}.n2{top:13%;right:4%}.n3{bottom:10%;left:2%}.n4{bottom:4%;right:9%}
+section{padding:85px 0}.section-alt{background:#fff}
+.section-head{max-width:800px;margin-bottom:42px}.section-head h2{font-size:clamp(2rem,4vw,3.3rem);line-height:1.08;margin:8px 0 12px;color:var(--green);letter-spacing:-.03em}
+.chapter{scroll-margin-top:80px}.chapter-label{font-size:.8rem;text-transform:uppercase;letter-spacing:.14em;color:var(--gold);font-weight:900}
+.lead{font-size:1.18rem;color:#46534e;max-width:850px}
+.card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:27px;box-shadow:var(--shadow)}.card h3{color:var(--green);margin-top:0}
+.section-alt .card{background:var(--cream)}
+.quote{border-left:5px solid var(--gold);padding:22px 28px;margin:30px 0;background:#f0f5f1;border-radius:0 18px 18px 0;font-size:1.3rem;font-weight:650;color:var(--green)}
+.agent-model{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:35px 0}.step{background:var(--green);color:#fff;border-radius:16px;padding:20px 12px;text-align:center;font-weight:800;position:relative}.step:not(:last-child):after{content:"→";position:absolute;right:-14px;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.4rem;z-index:2}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:20px}.compare .bad,.compare .good{padding:28px;border-radius:22px}.bad{background:#f4efed;border:1px solid #eadbd5}.good{background:#edf5f0;border:1px solid #d7e8dd}.bad h3{color:#7d4d43}.good h3{color:var(--green)}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.timeline .card{position:relative}.number{font-size:2.4rem;color:var(--gold);font-weight:900}
+.checklist{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.check{background:#fff;border:1px solid var(--line);border-radius:15px;padding:16px 18px}.check:before{content:"✓";display:inline-grid;place-items:center;width:25px;height:25px;border-radius:50%;background:var(--green);color:#fff;font-weight:800;margin-right:10px}
+.prompt{background:#102d24;color:#eaf3ee;border-radius:20px;padding:24px 26px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.92rem;overflow:auto;border:1px solid #254d40}
+.challenge{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.day{background:var(--green);color:#fff;padding:25px;border-radius:20px}.day h3{color:var(--gold);margin-top:0}
+.toc{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.toc a{text-decoration:none;padding:13px 16px;background:#fff;border:1px solid var(--line);border-radius:12px;color:var(--green);font-weight:700}.toc a:hover{border-color:var(--gold);transform:translateY(-2px)}
+footer{background:var(--green);color:#d9e6e0;padding:55px 0;text-align:center}.footer-title{font-size:1.5rem;font-weight:900;color:#fff}
+.btn{display:inline-block;background:var(--gold);color:var(--green);text-decoration:none;font-weight:900;padding:12px 18px;border-radius:999px;margin-top:15px}
+@media(max-width:850px){.hero-grid,.compare{grid-template-columns:1fr}.agent-graphic{height:350px}.card-grid{grid-template-columns:1fr}.timeline,.challenge{grid-template-columns:1fr 1fr}.agent-model{grid-template-columns:1fr 1fr}.step:not(:last-child):after{display:none}.checklist,.toc{grid-template-columns:1fr}}
+@media(max-width:520px){section{padding:60px 0}.timeline,.challenge{grid-template-columns:1fr}.navlinks{display:none}h1{font-size:3.25rem}.agent-graphic{transform:scale(.82);margin-left:-30px;margin-right:-30px}}
+@media print{.nav{display:none}.hero{min-height:auto;padding:70px 0}.hero:after,.hero:before{display:none}section{padding:45px 0}.card{box-shadow:none}.btn{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="brand">BSOE <span>AI ACADEMY</span></div>
+    <div class="navlinks">
+      <a href="#contents">Contents</a>
+      <a href="#agents">AI Agents</a>
+      <a href="#journey">Customer Journey</a>
+      <a href="#readiness">Readiness</a>
+      <a href="#challenge">30-Day Challenge</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">BSOE Institute of Artificial Intelligence, Employability &amp; Workforce Development</div>
+      <h1>AI Agents &amp; the Future of Customer Engagement</h1>
+      <h2>How intelligent digital workers are transforming sales, service, marketing and customer experience.</h2>
+      <div class="meta">
+        <div class="pill">Learn • Build • Work • Lead • Transform</div>
+        <div class="pill">Executive &amp; Practitioner Edition</div>
+      </div>
+    </div>
+    <div class="agent-graphic" aria-label="Illustration of an AI agent connected to customer engagement functions">
+      <div class="orbit o2"></div><div class="orbit o1"></div>
+      <div class="core">AI<br>AGENT</div>
+      <div class="node n1">CUSTOMER</div><div class="node n2">CRM</div>
+      <div class="node n3">SALES</div><div class="node n4">SERVICE</div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="contents">
+<div class="wrap">
+  <div class="section-head">
+    <div class="chapter-label">The ebook</div>
+    <h2>From conversation to action</h2>
+    <p class="lead">AI agents are moving organisations beyond systems that simply answer questions. The emerging opportunity is to create intelligent digital workers that can understand context, use tools, complete defined tasks and know when a human should take over.</p>
+  </div>
+  <div class="toc">
+    <a href="#ch1">01 · The Customer Is Changing</a>
+    <a href="#ch2">02 · What Exactly Is an AI Agent?</a>
+    <a href="#ch3">03 · From Chatbots to Digital Workers</a>
+    <a href="#ch4">04 · How AI Agents Actually Work</a>
+    <a href="#ch5">05 · The New Customer Engagement Model</a>
+    <a href="#ch6">06 · AI Agents in Customer Service</a>
+    <a href="#ch7">07 · AI Agents in Sales</a>
+    <a href="#ch8">08 · AI Agents in Marketing</a>
+    <a href="#ch9">09 · AI Agents and Personalisation</a>
+    <a href="#ch10">10 · The 24/7 Customer</a>
+    <a href="#ch11">11 · AI Agents Across the Customer Journey</a>
+    <a href="#ch12">12 · Designing an AI-Powered System</a>
+    <a href="#ch13">13 · Human + AI</a>
+    <a href="#ch14">14 · The Future of Jobs</a>
+    <a href="#ch15">15 · Risks, Ethics &amp; Governance</a>
+    <a href="#ch16">16 · Build Your First Agent</a>
+    <a href="#ch17">17 · AI Agent Readiness</a>
+    <a href="#ch18">18 · Autonomous Customer Experience</a>
+    <a href="#ch19">19 · Practical Agent Prompts</a>
+    <a href="#ch20">20 · The 30-Day Challenge</a>
+    <a href="#ch21">21 · Conclusion</a>
+  </div>
+</div>
+</section>
+
+<section class="section-alt chapter" id="ch1"><div class="wrap">
+<div class="chapter-label">Chapter 01</div><div class="section-head"><h2>The Customer Is Changing</h2><p class="lead">Modern customers increasingly expect immediate answers, personalised experiences, multiple channels, simple transactions, proactive assistance and 24/7 availability.</p></div>
+<div class="compare">
+<div class="bad"><h3>Traditional model</h3><p><strong>Customer → Website → Contact Centre → Agent → Department → Manager</strong></p><p>Every additional hand-off can create delay, repetition and friction.</p></div>
+<div class="good"><h3>Agentic model</h3><p><strong>Customer → AI Agent → Information + Systems + Actions → Resolution</strong></p><p>When judgement, empathy or authority is required, the agent escalates to a human.</p></div>
+</div>
+<div class="quote">The objective is not necessarily to eliminate people. The objective is to eliminate unnecessary friction.</div>
+</div></section>
+
+<section id="ch2" class="chapter"><div class="wrap">
+<div class="chapter-label">Chapter 02</div><div class="section-head"><h2>What Exactly Is an AI Agent?</h2><p class="lead">A basic AI system may generate an answer. An AI agent is designed to pursue a goal within defined boundaries.</p></div>
+<div class="agent-model">
+<div class="step">Goal</div><div class="step">Context</div><div class="step">Reasoning</div><div class="step">Tools</div><div class="step">Action</div><div class="step">Feedback</div>
+</div>
+<p>Imagine a customer saying, “My order hasn't arrived.” A simple chatbot might direct the customer elsewhere. An agent could identify the customer, locate the order, check delivery status, communicate the result, initiate an approved resolution and record the interaction.</p>
+<div class="quote">The difference is agency. The system is not merely producing language. It is participating in a business process.</div>
+</div></section>
+
+<section class="section-alt chapter" id="ch3"><div class="wrap">
+<div class="chapter-label">Chapter 03</div><div class="section-head"><h2>From Chatbots to Digital Workers</h2></div>
+<div class="timeline">
+<div class="card"><div class="number">01</div><h3>FAQ</h3><p>Predefined answers to common questions.</p></div>
+<div class="card"><div class="number">02</div><h3>Chatbot</h3><p>Conversational interaction across common scenarios.</p></div>
+<div class="card"><div class="number">03</div><h3>AI Assistant</h3><p>Context-aware support for employees and customers.</p></div>
+<div class="card"><div class="number">04</div><h3>AI Agent</h3><p>Defined tasks completed through connected tools and workflows.</p></div>
+</div>
+<p style="margin-top:28px">Think of an agent as a digital worker with instructions, knowledge, context, tools, authority, procedures, guardrails and escalation rules.</p>
+</div></section>
+
+<section id="ch4" class="chapter"><div class="wrap">
+<div class="chapter-label">Chapter 04</div><div class="section-head"><h2>How AI Agents Actually Work</h2><p class="lead">The most useful mental model is not “a clever chatbot” but “a controlled business process.”</p></div>
+<div class="card-grid">
+<div class="card"><h3>Instructions</h3><p>What is the agent supposed to accomplish?</p></div>
+<div class="card"><h3>Knowledge</h3><p>What approved information can it use?</p></div>
+<div class="card"><h3>Context</h3><p>What does it know about the customer and current situation?</p></div>
+<div class="card"><h3>Tools</h3><p>Which CRM, email, database, calendar or service systems can it use?</p></div>
+<div class="card"><h3>Guardrails</h3><p>What is the agent allowed—and not allowed—to do?</p></div>
+<div class="card"><h3>Escalation</h3><p>When must a human take over?</p></div>
+</div>
+</div></section>
+
+<section class="section-alt chapter" id="ch5"><div class="wrap">
+<div class="chapter-label">Chapter 05</div><div class="section-head"><h2>The New Customer Engagement Model</h2><p class="lead">Traditional engagement is often reactive. AI creates the possibility of proactive, contextual engagement.</p></div>
+<div class="agent-model">
+<div class="step">Sense</div><div class="step">Understand</div><div class="step">Engage</div><div class="step">Assist</div><div class="step">Act</div><div class="step">Learn</div>
+</div>
+<p>A customer repeatedly visits a product page. An agent identifies the signal, offers assistance, answers a question, recognises interest and helps arrange the next step. A salesperson becomes involved when human expertise is valuable.</p>
+</div></section>
+
+<section id="ch6" class="chapter"><div class="wrap">
+<div class="chapter-label">Chapter 06</div><div class="section-head"><h2>AI Agents in Customer Service</h2><p class="lead">The strongest early use cases are usually repetitive, rules-based and information-intensive.</p></div>
+<div class="card-grid">
+<div class="card"><h3>Strong candidates</h3><p>Order tracking, appointment information, account enquiries, product information, returns guidance, FAQs, troubleshooting and onboarding.</p></div>
+<div class="card"><h3>Human-led situations</h3><p>Serious complaints, vulnerable customers, high-value disputes, unusual circumstances, ethical decisions and complex negotiations.</p></div>
+<div class="card"><h3>The goal</h3><p>Let AI handle routine work so customer service professionals can concentrate on high-value human interactions.</p></div>
+</div>
+</div></section>
+
+<section class="section-alt chapter" id="ch7"><div class="wrap">
+<div class="chapter-label">Chapter 07</div><div class="section-head"><h2>AI Agents in Sales</h2><p class="lead">AI can take over much of the administrative work surrounding a sales opportunity, allowing people to focus on relationships and decisions.</p></div>
+<div class="checklist">
+<div class="check">Monitor incoming leads</div><div class="check">Classify prospects</div><div class="check">Research relevant information</div><div class="check">Answer initial questions</div><div class="check">Recommend appropriate solutions</div><div class="check">Schedule meetings</div><div class="check">Update CRM records</div><div class="check">Prepare salesperson briefing notes</div><div class="check">Follow up with prospects</div><div class="check">Identify opportunities requiring human intervention</div>
+</div>
+<div class="quote">The salesperson spends less time finding, qualifying, researching and updating—and more time understanding, advising, negotiating and building relationships.</div>
+</div></section>
+
+<section id="ch8" class="chapter"><div class="wrap">
+<div class="chapter-label">Chapter 08</div><div class="section-head"><h2>AI Agents in Marketing</h2><p class="lead">Marketing can move from one-way campaign management toward continuous relationship intelligence.</p></div>
+<div class="card-grid">
+<div class="card"><h3>Listen</h3><p>Analyse customer questions, feedback and emerging interests.</p></div>
+<div class="card"><h3>Personalise</h3><p>Recommend relevant information and content based on context.</p></div>
+<div class="card"><h3>Coordinate</h3><p>Qualify prospects, trigger follow-up and support campaigns.</p></div>
+</div>
+</div></section>
+
+<section class="section-alt chapter" id="ch9"><div class="wrap">
+<div class="chapter-label">Chapter 09</div><div class="section-head"><h2>AI Agents &amp; Personalisation</h2><p class="lead">True personalisation is not simply using a customer's name. It means understanding intent, context, history, preferences, constraints and stage in the journey.</p></div>
+<div class="quote">Personalisation should mean helping the customer achieve what they are actually trying to achieve.</div>
+</div></section>
+
+<section id="ch10" class="chapter"><div class="wrap">
+<div class="chapter-label">Chapter 10</div><div class="section-head"><h2>The 24/7 Customer</h2><p class="lead">AI agents can potentially provide continuous assistance across time zones and outside conventional working hours.</p></div>
+<div class="card-grid">
+<div class="card"><h3>Availability</h3><p>Customers do not always operate on your working hours.</p></div>
+<div class="card"><h3>Reliability</h3><p>24/7 availability is valuable only when information is accurate.</p></div>
+<div class="card"><h3>Escalation</h3><p>When the situation requires judgement, the system should know when to stop and involve a human.</p></div>
+</div>
+</div></section>
+
+<section class="section-alt chapter" id="ch11"><div class="wrap">
+<div class="chapter-label">Chapter 11</div><div class="section-head"><h2>AI Agents Across the Customer Journey</h2></div>
+<div class="timeline">
+<div class="card"><div class="number">01</div><h3>Awareness</h3><p>Help customers discover relevant information.</p></div>
+<div class="card"><div class="number">02</div><h3>Consideration</h3><p>Answer questions and compare options.</p></div>
+<div class="card"><div class="number">03</div><h3>Purchase</h3><p>Assist with transactions and next steps.</p></div>
+<div class="card"><div class="number">04</div><h3>Onboarding</h3><p>Guide customers through setup.</p></div>
+</div>
+<div class="timeline" style="margin-top:18px">
+<div class="card"><div class="number">05</div><h3>Usage</h3><p>Provide assistance during product use.</p></div>
+<div class="card"><div class="number">06</div><h3>Support</h3><p>Diagnose routine problems.</p></div>
+<div class="card"><div class="number">07</div><h3>Retention</h3><p>Identify opportunities to improve the relationship.</p></div>
+<div class="card"><div class="number">08</div><h3>Advocacy</h3><p>Help satisfied customers engage with the organisation.</p></div>
+</div>
+<div class="quote">The Agentic Customer Journey connects previously disconnected interactions into a more continuous relationship.</div>
+</div></section>
+
+<section id="ch12" class="chapter"><div class="wrap">
+<div class="chapter-label">Chapter 12</div><div class="section-head"><h2>Designing an AI-Powered Customer Engagement System</h2></div>
+<div class="checklist">
+<div class="check">Where do customers currently experience friction?</div>
+<div class="check">Which interactions are repetitive?</div>
+<div class="check">Which questions appear most frequently?</div>
+<div class="check">Which employee tasks repeatedly retrieve information?</div>
+<div class="check">Which actions could safely be automated?</div>
+<div class="check">Where is human judgement essential?</div>
+<div class="check">What systems would the agent need to access?</div>
+<div class="check">What information must never be exposed?</div>
+<div class="check">What happens when the agent is uncertain?</div>
+<div class="check">How will success be measured?</div>
+</div>
+<div class="quote">Start with the customer problem—not the technology.</div>
+</div></section>
+
+<section class="section-alt chapter" id="ch13"><div class="wrap">
+<div class="chapter-label">Chapter 13</div><div class="section-head"><h2>Human + AI: The New Customer Service Team</h2></div>
+<div class="compare">
+<div class="good"><h3>AI strengths</h3><p>Speed · scale · consistency · searching · summarising · pattern recognition · routine processes · continuous availability</p></div>
+<div class="good"><h3>Human strengths</h3><p>Empathy · complex judgement · relationships · negotiation · creativity · leadership · accountability · exceptional situations</p></div>
+</div>
+<div class="quote">The future customer engagement professional needs AI orchestration: the ability to manage and collaborate with intelligent systems.</div>
+</div></section>
+
+<section id="ch14" class="chapter"><div class="wrap">
+<div class="chapter-label">Chapter 14</div><div class="section-head"><h2>AI Agents &amp; the Future of Jobs</h2><p class="lead">A better question than “Will AI take jobs?” is “Which tasks will AI take, and which new tasks will emerge?”</p></div>
+<div class="card-grid">
+<div class="card"><h3>Routine tasks may decline</h3><p>Repetitive data entry, basic information retrieval, simple status enquiries and routine scheduling.</p></div>
+<div class="card"><h3>New responsibilities emerge</h3><p>AI agent supervision, conversation design, agent performance analysis, workflow design and AI governance.</p></div>
+<div class="card"><h3>Job redesign</h3><p>The workforce transformation is not simply about elimination. It is about redesigning work around human strengths and intelligent digital workers.</p></div>
+</div>
+</div></section>
+
+<section class="section-alt chapter" id="ch15"><div class="wrap">
+<div class="chapter-label">Chapter 15</div><div class="section-head"><h2>Risks, Ethics &amp; Governance</h2></div>
+<div class="card-grid">
+<div class="card"><h3>Accuracy</h3><p>Agents must not confidently provide incorrect information.</p></div>
+<div class="card"><h3>Privacy</h3><p>Customer information must be protected and appropriately governed.</p></div>
+<div class="card"><h3>Security</h3><p>Connections to business systems must be carefully controlled.</p></div>
+<div class="card"><h3>Bias</h3><p>AI-supported decisions should be monitored for unfair outcomes.</p></div>
+<div class="card"><h3>Transparency</h3><p>Customers should understand when they are interacting with AI where appropriate.</p></div>
+<div class="card"><h3>Accountability</h3><p>Organisational responsibility does not disappear when a task is delegated to AI.</p></div>
+</div>
+<div class="quote">Delegating a task to an AI agent does not delegate organisational responsibility.</div>
+</div></section>
+
+<section id="ch16" class="chapter"><div class="wrap">
+<div class="chapter-label">Chapter 16</div><div class="section-head"><h2>Build Your First Customer Engagement Agent</h2><p class="lead">Start with a manageable Customer Enquiry Agent.</p></div>
+<div class="timeline">
+<div class="card"><div class="number">01</div><h3>Objective</h3><p>Help customers resolve common enquiries accurately and efficiently.</p></div>
+<div class="card"><div class="number">02</div><h3>Knowledge</h3><p>Use approved FAQs, product information, policies and service information.</p></div>
+<div class="card"><div class="number">03</div><h3>Instructions</h3><p>Define role, scope, communication style and escalation rules.</p></div>
+<div class="card"><div class="number">04</div><h3>Evaluate</h3><p>Measure accuracy, resolution rate, satisfaction, escalation and response time.</p></div>
+</div>
+<div class="quote">Not every AI project should continue. Good AI leadership includes knowing when not to automate.</div>
+</div></section>
+
+<section class="section-alt chapter" id="ch17"><div class="wrap">
+<div class="chapter-label">Chapter 17</div><div class="section-head"><h2>The AI Agent Readiness Framework</h2><p class="lead">Assess your organisation before deploying agents.</p></div>
+<div class="card-grid">
+<div class="card"><h3>01 · Strategy</h3><p>Do you know why you want AI agents?</p></div>
+<div class="card"><h3>02 · Customer Experience</h3><p>Are there clearly identified customer problems to solve?</p></div>
+<div class="card"><h3>03 · Data</h3><p>Is the required information accurate and accessible?</p></div>
+<div class="card"><h3>04 · Technology</h3><p>Can agents connect safely to relevant systems?</p></div>
+<div class="card"><h3>05 · People</h3><p>Do employees understand how to work with AI?</p></div>
+<div class="card"><h3>06 · Governance</h3><p>Are privacy, security, accountability and escalation rules clear?</p></div>
+</div>
+</div></section>
+
+<section id="ch18" class="chapter"><div class="wrap">
+<div class="chapter-label">Chapter 18</div><div class="section-head"><h2>From Customer Service to Autonomous Customer Experience</h2><p class="lead">The long-term possibility is an ecosystem of specialised agents coordinating across functions while the customer experiences one coherent relationship.</p></div>
+<div class="agent-model">
+<div class="step">Customer</div><div class="step">CX Agent</div><div class="step">Sales Agent</div><div class="step">Service Agent</div><div class="step">Operations</div><div class="step">Human Expert</div>
+</div>
+<div class="quote">The organisation becomes an ecosystem of humans and intelligent digital workers. Customer experience becomes the interface through which that ecosystem operates.</div>
+</div></section>
+
+<section class="section-alt chapter" id="ch19"><div class="wrap">
+<div class="chapter-label">Chapter 19</div><div class="section-head"><h2>Practical AI Agent Prompts</h2></div>
+<h3>Customer Service Agent</h3>
+<div class="prompt">You are a customer service AI agent. Help customers resolve routine enquiries accurately and efficiently. Use only approved organisational information. If the information required is unavailable or the situation requires human judgement, explain this clearly and escalate the issue.</div>
+<h3>Sales Qualification Agent</h3>
+<div class="prompt">Assess each incoming enquiry against the organisation's approved qualification criteria. Identify likely needs, summarise the opportunity and recommend whether the enquiry should be transferred to a human salesperson.</div>
+<h3>Customer Experience Analyst</h3>
+<div class="prompt">Analyse the following customer interactions. Identify recurring complaints, unmet needs, points of friction and opportunities to improve the customer journey. Separate evidence from assumptions and prioritise findings by potential customer impact.</div>
+<h3>Agent Improvement</h3>
+<div class="prompt">Review the previous AI-agent interaction. Identify where the agent performed well, where it failed to meet its objective and what changes to its instructions, knowledge or workflow could improve the next interaction.</div>
+</div></section>
+
+<section id="challenge" class="chapter"><div class="wrap">
+<div class="chapter-label">Chapter 20</div><div class="section-head"><h2>The 30-Day AI Customer Engagement Challenge</h2><p class="lead">Turn the ideas in this ebook into a practical prototype.</p></div>
+<div class="challenge">
+<div class="day"><h3>Week 1 · Discover</h3><p>Map the customer journey. Identify the top questions, friction points and repetitive employee tasks.</p></div>
+<div class="day"><h3>Week 2 · Design</h3><p>Choose one problem. Define the objective, customer, information, actions and human escalation points.</p></div>
+<div class="day"><h3>Week 3 · Build</h3><p>Create a simple agent prototype and test it with realistic and difficult scenarios.</p></div>
+<div class="day"><h3>Week 4 · Evaluate</h3><p>Measure accuracy, speed, customer experience, employee experience, escalation and risk.</p></div>
+</div>
+</div></section>
+
+<section class="section-alt chapter" id="ch21"><div class="wrap">
+<div class="chapter-label">Chapter 21 · Conclusion</div><div class="section-head"><h2>The Organisation That Learns to Engage Intelligently</h2><p class="lead">AI agents represent more than another technological development. They represent a change in how organisations can work.</p></div>
+<p>The first era of digital transformation moved information online. The second connected people and systems. The next era is beginning to connect intelligence, action and relationships.</p>
+<p>Customer engagement sits at the centre of this transformation. The organisations that succeed will not necessarily be those with the most AI. They will be those that understand where AI creates value, where humans create value, and how the two can work together.</p>
+<div class="quote">The future is not simply about artificial intelligence. It is about intelligent engagement.</div>
+<h3>A final challenge</h3>
+<p>Take one customer interaction in your organisation and ask:</p>
+<div class="checklist">
+<div class="check">What is the customer actually trying to achieve?</div>
+<div class="check">Why is the current process difficult?</div>
+<div class="check">Which parts require human judgement?</div>
+<div class="check">Which parts could an AI agent safely handle?</div>
+<div class="check">What would an exceptional experience look like if humans and AI worked together?</div>
+</div>
+<p style="margin-top:30px"><strong>That is where the journey toward agentic customer engagement begins.</strong></p>
+</div></section>
+
+<section id="learning-path"><div class="wrap">
+<div class="section-head"><div class="chapter-label">BSOE AI Academy</div><h2>Turn this ebook into a learning experience</h2><p class="lead">The next step is a practical course that takes learners from understanding AI agents to designing, building, testing and governing a customer engagement agent.</p></div>
+<div class="card-grid">
+<div class="card"><h3>Understand</h3><p>Learn the foundations of AI agents, agentic workflows and customer engagement.</p></div>
+<div class="card"><h3>Explore</h3><p>Examine real customer journeys and identify high-value automation opportunities.</p></div>
+<div class="card"><h3>Design</h3><p>Create an agent blueprint including purpose, knowledge, tools, guardrails and escalation.</p></div>
+<div class="card"><h3>Build</h3><p>Develop a working customer engagement agent prototype.</p></div>
+<div class="card"><h3>Test</h3><p>Challenge the agent with realistic customer scenarios and evaluate performance.</p></div>
+<div class="card"><h3>Govern</h3><p>Apply responsible AI, privacy, security and human oversight principles.</p></div>
+</div>
+</div></section>
+</main>
+
+<footer>
+<div class="wrap">
+<div class="footer-title">BSOE AI Academy</div>
+<p>Learn • Build • Work • Lead • Transform</p>
+<p>AI Agents &amp; the Future of Customer Engagement</p>
+<a class="btn" href="#contents">Return to the beginning ↑</a>
+</div>
+</footer>
+
+</body>
+</html>
