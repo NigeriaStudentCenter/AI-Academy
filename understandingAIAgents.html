@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BSOE AI Academy — Module 2: Understanding AI Agents</title>
+<style>
+:root{--green:#0B3D2E;--gold:#D4B06A;--light:#F8FAF7;--ink:#17221E;--muted:#64736c;--line:#dbe6e0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--light);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}
+nav{background:var(--green);color:#fff;padding:14px 5%;position:sticky;top:0;z-index:9}nav b{color:var(--gold)}nav a{color:#fff;text-decoration:none;margin-left:18px;font-size:.85rem}
+.hero{background:linear-gradient(135deg,var(--green),#08271f);color:white;padding:70px 7%;min-height:500px;display:flex;align-items:center}.hero>div{max-width:1000px}
+.eyebrow,.label{color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:.13em;font-size:.78rem}
+h1{font-size:clamp(3rem,7vw,6rem);line-height:.95;letter-spacing:-.055em;margin:18px 0}
+h2{color:var(--green);font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;letter-spacing:-.03em}
+.hero p{font-size:1.2rem;color:#dce8e3}.pill{display:inline-block;border:1px solid #ffffff44;border-radius:50px;padding:7px 13px;margin:4px;font-size:.82rem}
+section{padding:70px 7%}.wrap{max-width:1150px;margin:auto}.alt{background:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card,.box{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}.alt .card{background:var(--light)}
+h3{color:var(--green)}.flow{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:25px 0}.flow div{background:var(--green);color:white;padding:16px 7px;border-radius:12px;text-align:center;font-weight:900;font-size:.78rem}
+.quote{background:#edf4f0;border-left:5px solid var(--gold);padding:20px;border-radius:0 15px 15px 0;color:var(--green);font-weight:800;margin:25px 0}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}.green{background:#edf4f0}.grey{background:#f5efed}
+table{width:100%;border-collapse:collapse;background:#fff}th,td{padding:13px;border:1px solid var(--line);text-align:left}th{background:var(--green);color:#fff}
+.activity{background:var(--green);color:white;border-radius:22px;padding:30px}.activity h3{color:white}.activity label{display:block;font-weight:800;margin:14px 0 5px}.activity input,.activity textarea{width:100%;padding:11px;border:0;border-radius:9px}.activity textarea{min-height:80px}.btn{background:var(--gold);color:var(--green);border:0;border-radius:50px;padding:11px 18px;font-weight:900;margin:15px 6px 0 0;cursor:pointer}
+.prompt{background:#102d24;color:#e8f1ed;padding:20px;border-radius:14px;white-space:pre-wrap;font:14px/1.6 monospace}
+.q{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin:14px 0}.option{display:block;background:#f4f7f5;padding:8px;border-radius:8px;margin:5px 0}.result{display:none;background:#edf4f0;padding:20px;border-radius:15px;margin-top:18px}
+.next{background:var(--green);color:#fff;padding:32px;border-radius:22px}.next h2{color:white}footer{background:#08291f;color:white;text-align:center;padding:40px}.gold{color:var(--gold)}
+@media(max-width:800px){.grid,.compare{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}nav a{display:none}}
+</style>
+</head>
+<body>
+<nav><strong>BSOE <b>AI ACADEMY</b></strong><span style="float:right"><a href="#lesson">Lesson</a><a href="#case">Case Study</a><a href="#assessment">Assessment</a></span></nav>
+
+<header class="hero"><div>
+<div class="eyebrow">BSOE Institute of Artificial Intelligence, Employability & Workforce Development</div>
+<h1>Module 2<br>Understanding AI Agents</h1>
+<p>Move from the idea of an AI agent to its anatomy: goals, context, knowledge, tools, actions, guardrails and human oversight.</p>
+<span class="pill">75–90 minutes</span><span class="pill">Intermediate</span><span class="pill">Stage: UNDERSTAND → EXPLORE</span>
+</div></header>
+
+<section id="lesson"><div class="wrap">
+<div class="label">1 · Lesson Page</div><h2>What Exactly Is an AI Agent?</h2>
+<p>An AI agent is not simply a smarter chatbot. It is a system designed to pursue a defined objective, use relevant context and knowledge, interact with approved tools, take permitted actions, and operate within boundaries.</p>
+<div class="flow"><div>GOAL</div><div>CONTEXT</div><div>KNOWLEDGE</div><div>TOOLS</div><div>ACTIONS</div><div>GUARDRAILS</div><div>HUMAN OVERSIGHT</div></div>
+<div class="grid">
+<div class="card"><h3>Goal</h3><p>What outcome is the agent responsible for? A useful goal is specific enough to guide behaviour and narrow enough to manage safely.</p></div>
+<div class="card"><h3>Context</h3><p>What does the agent know about the current customer, conversation, transaction and situation?</p></div>
+<div class="card"><h3>Knowledge</h3><p>Which trusted information sources can the agent use, and how is that information kept current?</p></div>
+<div class="card"><h3>Tools</h3><p>What systems can it query or interact with — for example CRM, order management, appointment systems or knowledge bases?</p></div>
+<div class="card"><h3>Actions</h3><p>What can it actually do? Actions should be explicit, testable and permissioned.</p></div>
+<div class="card"><h3>Guardrails & humans</h3><p>What must the agent refuse, verify, escalate or hand over to a person?</p></div>
+</div>
+<h3>Learning objectives</h3>
+<table><tr><th>By the end of this module, learners can…</th><th>Evidence</th></tr>
+<tr><td>Define an AI agent in practical terms.</td><td>Write an agent definition for a real use case.</td></tr>
+<tr><td>Explain the seven core components.</td><td>Complete the Agent Anatomy Map.</td></tr>
+<tr><td>Distinguish knowledge from tools.</td><td>Classify system requirements.</td></tr>
+<tr><td>Identify appropriate permissions.</td><td>Design an authority boundary.</td></tr>
+<tr><td>Explain when human oversight is required.</td><td>Create an escalation rule.</td></tr>
+</table>
+</div></section>
+
+<section class="alt"><div class="wrap">
+<div class="label">The Agent Anatomy</div><h2>Think of an agent as a digital worker</h2>
+<div class="compare">
+<div class="box green"><h3>What the agent needs</h3><ul>
+<li><strong>Purpose:</strong> a defined job to accomplish.</li>
+<li><strong>Context:</strong> information about the current situation.</li>
+<li><strong>Knowledge:</strong> trusted information it can rely on.</li>
+<li><strong>Tools:</strong> controlled access to systems.</li>
+</ul></div>
+<div class="box"><h3>What makes it safe</h3><ul>
+<li><strong>Actions:</strong> explicit permitted operations.</li>
+<li><strong>Guardrails:</strong> boundaries and refusal rules.</li>
+<li><strong>Oversight:</strong> escalation and accountability.</li>
+</ul></div>
+</div>
+<div class="quote">A useful design question is: “What does this agent need to know, what does it need to do, and what must it never do?”</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="label">2 · Short Teaching Video / HeyGen Script</div><h2>The Anatomy of an AI Agent</h2>
+<div class="card">
+<p><strong>Recommended length:</strong> 6–8 minutes · <strong>Presenter:</strong> professional educator.</p>
+<p>Welcome back to the BSOE AI Academy. In Module 1, we explored the agentic revolution and the shift from AI that answers to AI that can take authorised action.</p>
+<p>Now we need to answer a practical question: <strong>what actually makes an AI agent an agent?</strong></p>
+<p>Think about a human customer-service employee. They have a job to do. They understand the situation. They have access to information. They use business systems. They take certain actions. And they operate under policies, permissions and supervision.</p>
+<p>A well-designed AI agent follows a similar pattern.</p>
+<p><strong>First: Goal.</strong> What is the agent responsible for achieving? “Help customers” is too broad. “Help customers track and resolve standard delivery enquiries” is much more useful.</p>
+<p><strong>Second: Context.</strong> The agent needs to understand the current conversation and relevant customer situation. Without context, an agent may give technically correct but practically useless answers.</p>
+<p><strong>Third: Knowledge.</strong> Knowledge is the information the agent can use — such as approved policies, product information, procedures or FAQs. Knowledge is not the same as a tool.</p>
+<p><strong>Fourth: Tools.</strong> Tools allow the agent to interact with systems. A CRM lookup, order-status system or appointment calendar can turn a conversation into a useful service.</p>
+<p><strong>Fifth: Actions.</strong> We must define what the agent is allowed to do. Looking up an order is different from cancelling an order. Drafting a refund is different from issuing a refund.</p>
+<p><strong>Sixth: Guardrails.</strong> Guardrails define the boundaries. They can include authentication requirements, financial limits, prohibited actions, confidence thresholds and escalation rules.</p>
+<p><strong>Seventh: Human oversight.</strong> Some situations should move to a person. This is not a failure of the agent. It is part of responsible design.</p>
+<p>So remember the model: <strong>Goal, Context, Knowledge, Tools, Actions, Guardrails and Human Oversight.</strong></p>
+<p>In the next activities, you will use this model to take apart a real customer-service scenario and then design your first agent anatomy map.</p>
+<p><strong>The better you understand the anatomy, the better you will design the agent.</strong></p>
+</div></div></section>
+
+<section class="alt"><div class="wrap">
+<div class="label">3 · Ebook Reading</div><h2>Read, Reflect and Connect</h2>
+<div class="card">
+<h3>Required reading</h3><p><strong>AI Agents & the Future of Customer Engagement</strong></p>
+<ul><li>Chapter 4 — The Anatomy of an AI Agent</li><li>Chapter 5 — Knowledge, Context and Memory</li><li>Chapter 6 — Tools, Actions and Permissions</li><li>Chapter 7 — Guardrails and Human-in-the-Loop Design</li></ul>
+<h3>Reading reflection</h3>
+<p>As you read, ask: <em>Which component would be most dangerous to design badly?</em> Explain why in three to five sentences.</p>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="label">4 · Interactive Example</div><h2>Build the agent in your head</h2>
+<p>Imagine a university customer-service agent whose job is to help students with routine enquiries.</p>
+<table><tr><th>Component</th><th>Example</th><th>Design question</th></tr>
+<tr><td>Goal</td><td>Resolve routine student-service enquiries.</td><td>What counts as “routine”?</td></tr>
+<tr><td>Context</td><td>Student's current enquiry and authenticated profile.</td><td>What information is appropriate to use?</td></tr>
+<tr><td>Knowledge</td><td>Approved university policies and service information.</td><td>How do we keep it current?</td></tr>
+<tr><td>Tools</td><td>Student portal and appointment system.</td><td>What access is necessary?</td></tr>
+<tr><td>Actions</td><td>Book an appointment; update selected requests.</td><td>Which actions need confirmation?</td></tr>
+<tr><td>Guardrails</td><td>No academic misconduct decisions; no unauthorised disclosure.</td><td>What must be blocked?</td></tr>
+<tr><td>Human oversight</td><td>Complex welfare, appeals or disciplinary matters.</td><td>When must a person take over?</td></tr>
+</table>
+<div class="quote">Notice how “AI agent” becomes much clearer when you specify the job, access, actions and boundaries.</div>
+</div></section>
+
+<section class="alt" id="case"><div class="wrap">
+<div class="label">5 · Case Study</div><h2>Case Study: The Insurance Claims Agent</h2>
+<div class="compare">
+<div class="box green"><h3>The situation</h3><p>An insurer wants to use an AI agent to improve the first stage of motor-claim handling. Customers report incidents through a digital channel. The organisation wants faster triage and fewer repetitive tasks for claims staff.</p>
+<h3>Potential agent role</h3><p>Collect initial information, check whether required fields are complete, retrieve policy information, request permitted documents, summarise the case and route it to the appropriate claims workflow.</p></div>
+<div class="box"><h3>The boundary</h3><p>The organisation does not want the agent making unrestricted final decisions on complex or high-value claims.</p><h3>Why?</h3><p>Claims may involve disputed facts, vulnerable customers, legal considerations, fraud indicators and significant financial consequences.</p></div>
+</div>
+<h3>Agent Anatomy Challenge</h3>
+<table><tr><th>Component</th><th>Possible design</th></tr>
+<tr><td>Goal</td><td>Collect and triage standard claim information efficiently.</td></tr>
+<tr><td>Knowledge</td><td>Approved claims procedures and policy information.</td></tr>
+<tr><td>Tools</td><td>CRM, policy system, document-management system.</td></tr>
+<tr><td>Action</td><td>Open a claim record and request standard documents.</td></tr>
+<tr><td>Guardrail</td><td>Do not make final complex/high-value decisions.</td></tr>
+<tr><td>Escalation</td><td>Route disputed, vulnerable, suspicious or high-impact cases to a trained employee.</td></tr>
+</table>
+<div class="quote"><strong>Case lesson:</strong> The agent's value is not determined by how much authority it has. It is determined by how effectively its authority matches its purpose.</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="label">6 · Learner Activity</div><h2>Agent Anatomy Map</h2>
+<p>Use the organisation and customer problem you identified in Module 1. Now turn the opportunity into a preliminary agent specification.</p>
+<div class="activity">
+<h3>Your Agent Anatomy Map</h3>
+<label>Agent name</label><input id="name" placeholder="e.g. Student Support Agent">
+<label>Agent goal — what outcome should it achieve?</label><textarea id="goal"></textarea>
+<label>Context — what should it know about the current customer situation?</label><textarea id="context"></textarea>
+<label>Knowledge — which trusted information sources should it use?</label><textarea id="knowledge"></textarea>
+<label>Tools — which systems would it need to access?</label><textarea id="tools"></textarea>
+<label>Actions — what should it be allowed to do?</label><textarea id="actions"></textarea>
+<label>Guardrails — what should it never do or what requires verification?</label><textarea id="guardrails"></textarea>
+<label>Human oversight — when should it escalate?</label><textarea id="human"></textarea>
+<button class="btn" onclick="saveA()">Save activity</button><button class="btn" onclick="clearA()">Clear</button><p id="saved"></p>
+</div></div></section>
+
+<section class="alt"><div class="wrap">
+<div class="label">7 · AI Practical Exercise</div><h2>Ask AI to challenge your agent design</h2>
+<div class="card">
+<p>Give your Agent Anatomy Map to an AI system and use this prompt:</p>
+<div class="prompt">Act as a critical AI-agent architect.
+
+Review the following proposed customer-engagement AI agent.
+
+Analyse:
+1. Is the goal specific enough?
+2. What context does the agent need?
+3. Which knowledge sources are trustworthy?
+4. Which tools are actually necessary?
+5. Which proposed actions create risk?
+6. What permissions should be removed or limited?
+7. What guardrails are missing?
+8. Which situations require human escalation?
+9. What could cause customer harm or a poor experience?
+10. What would you test before deployment?
+
+Do not redesign it simply to make it more powerful.
+Optimise for customer value, reliability, minimum necessary access, safety and human accountability.
+
+AGENT:
+[PASTE YOUR AGENT ANATOMY MAP HERE]</div>
+<h3>Second challenge</h3>
+<div class="prompt">Now act as a hostile tester.
+
+Try to find 10 realistic ways a customer could cause this agent to behave incorrectly, exceed its authority, disclose inappropriate information, or make a poor decision.
+
+For each scenario, propose one guardrail or human-escalation rule.</div>
+</div></div></section>
+
+<section id="assessment"><div class="wrap">
+<div class="label">8 · Marked Assessment</div><h2>Module 2 Knowledge Check</h2>
+<p>Eight questions · 1 mark each · Recommended pass: 6/8 (75%). Your score is calculated automatically.</p>
+<div id="quiz">
+<div class="q"><h3>1. Which component defines what the agent is responsible for achieving?</h3><label class="option"><input type="radio" name="q1" value="A"> A. Goal</label><label class="option"><input type="radio" name="q1" value="B"> B. Tool</label><label class="option"><input type="radio" name="q1" value="C"> C. Interface</label><label class="option"><input type="radio" name="q1" value="D"> D. Database</label></div>
+<div class="q"><h3>2. What is the best description of agent knowledge?</h3><label class="option"><input type="radio" name="q2" value="A"> A. Every piece of information on the internet</label><label class="option"><input type="radio" name="q2" value="B"> B. Trusted information the agent is permitted to use</label><label class="option"><input type="radio" name="q2" value="C"> C. Only customer names</label><label class="option"><input type="radio" name="q2" value="D"> D. The agent's personality</label></div>
+<div class="q"><h3>3. Which is a tool?</h3><label class="option"><input type="radio" name="q3" value="A"> A. A refund policy document</label><label class="option"><input type="radio" name="q3" value="B"> B. A customer-service goal</label><label class="option"><input type="radio" name="q3" value="C"> C. An order-management system the agent can query</label><label class="option"><input type="radio" name="q3" value="D"> D. A guardrail</label></div>
+<div class="q"><h3>4. Why should an agent have limited permissions?</h3><label class="option"><input type="radio" name="q4" value="A"> A. To make it slower</label><label class="option"><input type="radio" name="q4" value="B"> B. To match authority to purpose and reduce risk</label><label class="option"><input type="radio" name="q4" value="C"> C. Because agents cannot use systems</label><label class="option"><input type="radio" name="q4" value="D"> D. To remove the need for testing</label></div>
+<div class="q"><h3>5. Which is the strongest example of a guardrail?</h3><label class="option"><input type="radio" name="q5" value="A"> A. “Be helpful.”</label><label class="option"><input type="radio" name="q5" value="B"> B. “Use a friendly tone.”</label><label class="option"><input type="radio" name="q5" value="C"> C. “Never disclose another customer's information.”</label><label class="option"><input type="radio" name="q5" value="D"> D. “Answer quickly.”</label></div>
+<div class="q"><h3>6. When should human oversight be designed into an agent?</h3><label class="option"><input type="radio" name="q6" value="A"> A. Only after something goes wrong</label><label class="option"><input type="radio" name="q6" value="B"> B. When situations exceed the agent's authority, confidence or risk tolerance</label><label class="option"><input type="radio" name="q6" value="C"> C. Never</label><label class="option"><input type="radio" name="q6" value="D"> D. Only when the customer asks for it</label></div>
+<div class="q"><h3>7. Which statement about actions is correct?</h3><label class="option"><input type="radio" name="q7" value="A"> A. Every tool automatically gives unlimited authority</label><label class="option"><input type="radio" name="q7" value="B"> B. Actions should be explicit and permissioned</label><label class="option"><input type="radio" name="q7" value="C"> C. Actions do not need testing</label><label class="option"><input type="radio" name="q7" value="D"> D. Agents should decide their own permissions</label></div>
+<div class="q"><h3>8. Which question best captures responsible agent design?</h3><label class="option"><input type="radio" name="q8" value="A"> A. How can we give the agent maximum access?</label><label class="option"><input type="radio" name="q8" value="B"> B. How can we remove all human involvement?</label><label class="option"><input type="radio" name="q8" value="C"> C. What does it need to know, do and never do?</label><label class="option"><input type="radio" name="q8" value="D"> D. How can we make it sound human?</label></div>
+<button class="btn" onclick="mark()">Mark Assessment</button><div id="result" class="result"></div>
+</div>
+
+<h2 style="margin-top:55px">9 · Marked Assignment</h2>
+<p>Submit a <strong>Customer Engagement AI Agent Anatomy Map</strong> based on the opportunity you identified in Module 1.</p>
+<table><tr><th>Criterion</th><th>Marks</th><th>Full-mark evidence</th></tr>
+<tr><td>Agent goal</td><td>5</td><td>Specific, measurable and customer-centred purpose.</td></tr>
+<tr><td>Context</td><td>4</td><td>Relevant customer and interaction context identified.</td></tr>
+<tr><td>Knowledge</td><td>5</td><td>Appropriate trusted information sources.</td></tr>
+<tr><td>Tools</td><td>5</td><td>Necessary systems identified with rationale.</td></tr>
+<tr><td>Actions</td><td>6</td><td>Clear permitted actions and confirmation points.</td></tr>
+<tr><td>Guardrails</td><td>6</td><td>Specific boundaries, refusal and verification rules.</td></tr>
+<tr><td>Human oversight</td><td>5</td><td>Clear escalation triggers and human role.</td></tr>
+<tr><td>Professional clarity</td><td>4</td><td>Logical, concise and understandable design.</td></tr>
+<tr><th>Total</th><th>40</th><th></th></tr></table>
+<div class="quote"><strong>Achievement guide:</strong> 34–40 Distinction · 30–33 Merit · 24–29 Pass · 0–23 Rework required.</div>
+</div></section>
+
+<section><div class="wrap"><div class="next">
+<div class="label">10 · Progress to Next Module</div><h2>Module 2 Complete</h2>
+<p>You have now moved from understanding the idea of an AI agent to understanding its architecture and boundaries.</p>
+<h3>Next: Module 3 — Designing the Customer Engagement Agent</h3>
+<p>You will transform your Agent Anatomy Map into a complete customer journey and agent design: <strong>customer need → journey → agent role → workflow → decision points → escalation → success measures.</strong></p>
+</div></div></section>
+
+<footer>BSOE <span class="gold">AI ACADEMY</span><br>AI Agents & the Future of Customer Engagement · Module 2</footer>
+
+<script>
+const answers={q1:"A",q2:"B",q3:"C",q4:"B",q5:"C",q6:"B",q7:"B",q8:"C"};
+function mark(){
+ let s=0;for(const q in answers){const x=document.querySelector('input[name="'+q+'"]:checked');if(x&&x.value===answers[q])s++}
+ const pct=Math.round(s/8*100),r=document.getElementById("result");r.style.display="block";
+ r.innerHTML="<strong>Score: "+s+"/8 ("+pct+"%)</strong><br>"+(s>=6?"PASS — you have demonstrated a strong understanding of AI-agent anatomy.":"REVIEW REQUIRED — revisit the module and retake the assessment.");
+ r.scrollIntoView({behavior:"smooth",block:"center"})
+}
+const ids=["name","goal","context","knowledge","tools","actions","guardrails","human"];
+function saveA(){let d={};ids.forEach(i=>d[i]=document.getElementById(i).value);localStorage.setItem("bsoe_m2",JSON.stringify(d));document.getElementById("saved").textContent="✓ Activity saved in this browser."}
+function clearA(){localStorage.removeItem("bsoe_m2");ids.forEach(i=>document.getElementById(i).value="");document.getElementById("saved").textContent="Activity cleared."}
+try{const d=JSON.parse(localStorage.getItem("bsoe_m2")||"null");if(d)ids.forEach(i=>{if(d[i])document.getElementById(i).value=d[i]})}catch(e){}
+</script>
+</body>
+</html>
