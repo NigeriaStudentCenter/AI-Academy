@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BSOE AI Academy | Module 3 — Discovering Customer Opportunities</title>
+<style>
+:root{--g:#0B3D2E;--gold:#D4B06A;--bg:#F8FAF7;--ink:#17221E;--line:#dbe6e0}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,sans-serif}
+nav{position:sticky;top:0;z-index:5;background:var(--g);color:#fff;padding:15px 6%}nav b{color:var(--gold)}nav a{color:#fff;text-decoration:none;margin-left:20px;font-size:.85rem}
+.hero{background:linear-gradient(135deg,var(--g),#08271f);color:#fff;padding:80px 7%;min-height:500px;display:flex;align-items:center}.hero>div,.wrap{max-width:1120px;margin:auto;width:100%}
+.eyebrow,.label{color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:.13em;font-size:.78rem}
+h1{font-size:clamp(3rem,7vw,6rem);line-height:.95;letter-spacing:-.055em;margin:18px 0}h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;color:var(--g)}h3{color:var(--g)}
+.hero p{max-width:850px;font-size:1.2rem;color:#dce8e3}.pill{display:inline-block;border:1px solid #ffffff44;border-radius:50px;padding:7px 13px;margin:4px;font-size:.82rem}
+section{padding:70px 7%}.alt{background:#fff}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card,.box{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}.alt .card{background:var(--bg)}
+.flow{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:28px 0}.flow div{background:var(--g);color:#fff;padding:15px 6px;border-radius:12px;text-align:center;font-weight:900;font-size:.76rem}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}.green{background:#edf4f0}.quote{background:#edf4f0;border-left:5px solid var(--gold);padding:20px;border-radius:0 15px 15px 0;color:var(--g);font-weight:800;margin:25px 0}
+table{width:100%;border-collapse:collapse;background:#fff;margin:20px 0}th,td{border:1px solid var(--line);padding:12px;text-align:left}th{background:var(--g);color:#fff}
+.activity{background:var(--g);color:#fff;border-radius:22px;padding:30px}.activity h3{color:#fff}.activity label{display:block;font-weight:800;margin:13px 0 5px}.activity input,.activity textarea{width:100%;padding:11px;border:0;border-radius:9px}.activity textarea{min-height:75px}.btn{background:var(--gold);color:var(--g);border:0;border-radius:50px;padding:11px 18px;font-weight:900;margin:15px 6px 0 0;cursor:pointer}
+.prompt{background:#102d24;color:#e8f1ed;padding:20px;border-radius:14px;white-space:pre-wrap;font:14px/1.6 monospace}.q{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin:14px 0}.option{display:block;background:#f4f7f5;padding:8px;border-radius:8px;margin:5px 0}.result{display:none;background:#edf4f0;padding:20px;border-radius:15px;margin-top:18px}.next{background:var(--g);color:#fff;padding:32px;border-radius:22px}.next h2,.next h3{color:#fff}footer{background:#08291f;color:#fff;text-align:center;padding:40px}.gold{color:var(--gold)}
+@media(max-width:800px){.grid,.compare{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}nav a{display:none}}
+</style>
+</head>
+<body>
+<nav><strong>BSOE <b>AI ACADEMY</b></strong><span style="float:right"><a href="#lesson">Lesson</a><a href="#case">Case Study</a><a href="#assessment">Assessment</a></span></nav>
+
+<header class="hero"><div>
+<div class="eyebrow">BSOE Institute of Artificial Intelligence, Employability & Workforce Development</div>
+<h1>Module 3<br>Discovering Customer Opportunities</h1>
+<p>Learn to find the right problems for AI agents by studying customer needs, journeys, friction, repetition, value and risk before designing a solution.</p>
+<span class="pill">75–90 minutes</span><span class="pill">Intermediate</span><span class="pill">Stage: EXPLORE</span>
+</div></header>
+
+<section id="lesson"><div class="wrap">
+<div class="label">1 · Lesson Page</div><h2>Don't Start With the AI. Start With the Customer.</h2>
+<p>The most common mistake in AI-agent projects is asking <strong>“Where can we use AI?”</strong> before asking <strong>“Where are customers experiencing unnecessary friction?”</strong></p>
+<p>Good agent design begins with discovery. Investigate the customer journey, identify pain points and repetitive work, understand the business outcome, and then decide whether an agent is appropriate.</p>
+<div class="flow"><div>CUSTOMER NEED</div><div>JOURNEY</div><div>FRICTION</div><div>ROOT CAUSE</div><div>AI OPPORTUNITY</div><div>VALUE</div><div>RISK</div></div>
+<div class="grid">
+<div class="card"><h3>Customer need</h3><p>What is the customer actually trying to accomplish? Focus on the desired outcome, not the internal process.</p></div>
+<div class="card"><h3>Journey</h3><p>Map the steps from starting point to outcome, including channels, hand-offs and waiting points.</p></div>
+<div class="card"><h3>Friction</h3><p>Find confusion, repetition, delays, unnecessary forms, repeated explanations and avoidable transfers.</p></div>
+<div class="card"><h3>Root cause</h3><p>Do not automatically treat every pain point as an AI problem. The cause may be policy, process, data or system design.</p></div>
+<div class="card"><h3>Opportunity</h3><p>Identify where an agent could understand, retrieve, coordinate, recommend or take an authorised action.</p></div>
+<div class="card"><h3>Value & risk</h3><p>Balance customer and organisational value against accuracy, privacy, financial, legal and reputational risk.</p></div>
+</div>
+<h3>Learning objectives</h3>
+<table><tr><th>Learner can…</th><th>Evidence</th></tr>
+<tr><td>Map a customer journey.</td><td>Stages, channels and hand-offs.</td></tr>
+<tr><td>Identify customer friction.</td><td>Friction inventory.</td></tr>
+<tr><td>Separate symptoms from root causes.</td><td>Root-cause explanation.</td></tr>
+<tr><td>Identify suitable AI-agent opportunities.</td><td>Use-case prioritisation.</td></tr>
+<tr><td>Consider value and risk together.</td><td>Opportunity matrix.</td></tr></table>
+</div></section>
+
+<section class="alt"><div class="wrap"><div class="label">Discovery Principle</div><h2>AI should solve a meaningful problem</h2>
+<div class="compare"><div class="box"><h3>Weak: technology-first</h3><p>“We have AI. Let's build a customer chatbot.”</p><p>This may create a clever system without solving an important customer problem.</p></div>
+<div class="box green"><h3>Stronger: problem-first</h3><p>“Customers repeatedly struggle to understand delivery status, and staff spend significant time answering the same questions.”</p><p>Now there is a problem worth investigating.</p></div></div>
+<div class="quote">The discovery question is not “What can AI do?” It is “What customer outcome could be meaningfully improved, and is an AI agent an appropriate way to improve it?”</div>
+</div></section>
+
+<section><div class="wrap"><div class="label">2 · Short Teaching Video / HeyGen Script</div><h2>Finding the Right Problem</h2>
+<div class="card">
+<p><strong>Recommended length: 6–8 minutes.</strong></p>
+<p>Welcome to Module 3 of the BSOE AI Academy.</p>
+<p>In Module 2, you learned the anatomy of an AI agent: goal, context, knowledge, tools, actions, guardrails and human oversight.</p>
+<p>Now we face an even more important question: <strong>What should we build?</strong></p>
+<p>A powerful AI agent solving the wrong problem is still a bad investment. So in this module, we start with the customer.</p>
+<p>Think about a normal customer journey. A person has a need. They search for information. They contact an organisation. They provide details. They wait. They may be transferred to another department. They may repeat information. Eventually, the problem is resolved — or it isn't.</p>
+<p>Our job is to find the friction. Friction can be waiting, repetition, confusion, unnecessary effort, poor hand-offs, lack of information or inconsistent service.</p>
+<p>But not every friction point should be automated. Suppose customers are waiting three days because staff manually copy information between two systems. An AI agent might help coordinate information. But if the delay exists because an outdated policy requires three approvals, AI alone may not solve the root cause.</p>
+<p>This is why we distinguish the <strong>symptom</strong> from the <strong>root cause.</strong></p>
+<p>Once we understand the problem, we can identify possible AI-agent opportunities. Perhaps the agent could answer routine questions, retrieve information, coordinate systems or prepare a case for a human employee.</p>
+<p>Then ask four questions: <strong>Does it create customer value? Does it create organisational value? Is it technically feasible? And is the risk acceptable?</strong></p>
+<p>This module is about discovery, not building. By the end, you will have a prioritised opportunity that can become the foundation for your agent design in the next stage.</p>
+<p><strong>Start with the customer. Find the friction. Understand the cause. Then decide where AI belongs.</strong></p>
+</div></div></section>
+
+<section class="alt"><div class="wrap"><div class="label">3 · Ebook Reading</div><h2>Read, Reflect and Connect</h2>
+<div class="card"><h3>Required reading</h3><p><strong>AI Agents & the Future of Customer Engagement</strong></p>
+<ul><li>Chapter 8 — The Customer Journey</li><li>Chapter 9 — Finding Friction and Moments That Matter</li><li>Chapter 10 — From Pain Point to AI Opportunity</li><li>Chapter 11 — Prioritising Agent Use Cases</li></ul>
+<h3>Reflection</h3><p>Choose one customer journey. Identify one moment where the customer waits, repeats information, searches unnecessarily or moves between channels. Is the problem really caused by a lack of intelligence, or is there a deeper process/system problem?</p>
+</div></div></section>
+
+<section><div class="wrap"><div class="label">4 · Interactive Example</div><h2>From friction to opportunity</h2>
+<p>Consider an online retailer:</p><div class="flow"><div>ORDER</div><div>WAIT</div><div>TRACK</div><div>PROBLEM</div><div>CONTACT</div><div>TRANSFER</div><div>RESOLVE</div></div>
+<table><tr><th>Friction</th><th>Possible cause</th><th>Agent opportunity?</th></tr>
+<tr><td>Customer cannot find delivery status.</td><td>Status exists but is difficult to locate.</td><td><strong>Yes</strong> — retrieve approved status.</td></tr>
+<tr><td>Customer repeats order number to three staff members.</td><td>Systems do not share context.</td><td><strong>Potentially</strong> — maintain context and route.</td></tr>
+<tr><td>Refund takes 10 days due to mandatory approval.</td><td>Policy/process constraint.</td><td><strong>Maybe</strong> — AI does not remove approval rules.</td></tr>
+<tr><td>Customer has a complex complaint.</td><td>Needs judgement and empathy.</td><td><strong>Human-led</strong>, with AI support.</td></tr></table>
+<div class="quote">The best opportunity is often where customer value, business value, feasibility and manageable risk intersect.</div>
+</div></section>
+
+<section class="alt" id="case"><div class="wrap"><div class="label">5 · Case Study</div><h2>A University Admissions Journey</h2>
+<div class="compare"><div class="box green"><h3>The customer</h3><p>A prospective student wants to apply to a university and needs to understand requirements, deadlines, documents, fees and the application process.</p><h3>The journey</h3><p>Search → programme page → eligibility questions → application → document submission → status enquiry → admissions decision.</p></div>
+<div class="box"><h3>The friction</h3><ul><li>Requirements are difficult to interpret.</li><li>Applicants repeatedly ask whether documents arrived.</li><li>International applicants have additional questions.</li><li>Admissions staff answer repetitive enquiries.</li><li>Some cases involve complex individual circumstances.</li></ul></div></div>
+<table><tr><th>Opportunity</th><th>Potential agent role</th><th>Risk</th></tr>
+<tr><td>Explain published requirements</td><td>Answer from approved admissions knowledge.</td><td>Low–medium; accuracy matters.</td></tr>
+<tr><td>Check application status</td><td>Retrieve status for authenticated applicant.</td><td>Medium; access controls required.</td></tr>
+<tr><td>Tell applicant they definitely qualify</td><td>Make final eligibility judgement.</td><td>High; not casually automated.</td></tr>
+<tr><td>Handle unusual circumstances</td><td>Collect information and route to staff.</td><td>Medium–high; judgement required.</td></tr></table>
+<div class="quote"><strong>Case lesson:</strong> The agent can support the journey without becoming the decision-maker.</div>
+</div></section>
+
+<section><div class="wrap"><div class="label">6 · Learner Activity</div><h2>Customer Journey & Friction Map</h2>
+<p>Use the organisation and agent idea from Modules 1 and 2.</p>
+<div class="activity"><h3>Part A — Journey</h3>
+<label>Customer goal</label><input id="goal" placeholder="What is the customer trying to achieve?">
+<label>Journey stages — list 5–8 steps</label><textarea id="journey"></textarea>
+<label>Channels involved</label><input id="channels" placeholder="Website, email, phone, app, branch...">
+<label>Hand-offs or waiting points</label><textarea id="handoffs"></textarea>
+<h3>Part B — Friction</h3>
+<label>Top three customer pain points</label><textarea id="friction"></textarea>
+<label>Top repetitive employee tasks</label><textarea id="repetition"></textarea>
+<label>Likely root cause of the biggest problem</label><textarea id="root"></textarea>
+<label>Potential AI-agent opportunity</label><textarea id="opportunity"></textarea>
+<label>Why would customers value this?</label><textarea id="value"></textarea>
+<label>What risk or reason might make this unsuitable for automation?</label><textarea id="risk"></textarea>
+<button class="btn" onclick="saveA()">Save activity</button><button class="btn" onclick="clearA()">Clear</button><p id="saved"></p>
+</div></div></section>
+
+<section class="alt"><div class="wrap"><div class="label">7 · AI Practical Exercise</div><h2>Use AI as a Discovery Partner</h2>
+<div class="card"><p>Do not ask AI to build an agent yet. Ask it to challenge your understanding of the customer problem.</p>
+<div class="prompt">Act as a customer-experience discovery consultant.
+
+I will provide a customer journey.
+
+Your task is NOT to design an AI agent yet.
+
+1. Identify the customer's desired outcome.
+2. Map the major journey stages.
+3. Identify customer friction at each stage.
+4. Identify repetitive employee work.
+5. Separate symptoms from possible root causes.
+6. Identify whether causes are process, policy, data, system or communication problems.
+7. Identify which problems might genuinely benefit from an AI agent.
+8. Identify which problems should NOT be solved with an AI agent.
+9. Explain what evidence is needed before recommending automation.
+10. Rank the top three opportunities.
+
+Be critical. Do not assume AI is the answer.
+
+CUSTOMER JOURNEY:
+[PASTE YOUR JOURNEY HERE]</div>
+<h3>Second prompt — prioritisation</h3>
+<div class="prompt">Score each proposed AI-agent opportunity from 1–5 for:
+
+Customer value
+Business value
+Frequency
+Technical feasibility
+Data/knowledge readiness
+Risk manageability
+Potential for measurable improvement
+
+Calculate a total score and recommend:
+A. Build now
+B. Investigate further
+C. Do not automate
+
+Explain every recommendation.</div></div></div></section>
+
+<section id="assessment"><div class="wrap"><div class="label">8 · Marked Assessment</div><h2>Module 3 Knowledge Check</h2>
+<p>8 questions · 1 mark each · Recommended pass: 6/8 (75%).</p>
+<div id="quiz">
+<div class="q"><h3>1. What should normally come first in agent discovery?</h3><label class="option"><input type="radio" name="q1" value="A"> Select a chatbot platform</label><label class="option"><input type="radio" name="q1" value="B"> Identify a meaningful customer problem</label><label class="option"><input type="radio" name="q1" value="C"> Give AI access to all systems</label><label class="option"><input type="radio" name="q1" value="D"> Choose an avatar</label></div>
+<div class="q"><h3>2. What is customer friction?</h3><label class="option"><input type="radio" name="q2" value="A"> Any use of technology</label><label class="option"><input type="radio" name="q2" value="B"> Unnecessary difficulty, delay, repetition or confusion in a journey</label><label class="option"><input type="radio" name="q2" value="C"> Only a complaint</label><label class="option"><input type="radio" name="q2" value="D"> A software error</label></div>
+<div class="q"><h3>3. Why distinguish symptoms from root causes?</h3><label class="option"><input type="radio" name="q3" value="A"> To avoid solving a deeper process problem with the wrong technology</label><label class="option"><input type="radio" name="q3" value="B"> To make the project longer</label><label class="option"><input type="radio" name="q3" value="C"> Because AI cannot solve problems</label><label class="option"><input type="radio" name="q3" value="D"> To remove customer research</label></div>
+<div class="q"><h3>4. Which is the strongest AI-agent opportunity?</h3><label class="option"><input type="radio" name="q4" value="A"> Automate a task simply because it is repetitive</label><label class="option"><input type="radio" name="q4" value="B"> Improve a meaningful customer outcome with manageable risk</label><label class="option"><input type="radio" name="q4" value="C"> Give AI maximum permissions</label><label class="option"><input type="radio" name="q4" value="D"> Replace all human contact</label></div>
+<div class="q"><h3>5. Which factor should be included when prioritising an opportunity?</h3><label class="option"><input type="radio" name="q5" value="A"> Customer value</label><label class="option"><input type="radio" name="q5" value="B"> Risk manageability</label><label class="option"><input type="radio" name="q5" value="C"> Feasibility</label><label class="option"><input type="radio" name="q5" value="D"> All of the above</label></div>
+<div class="q"><h3>6. What should happen with a complex customer situation requiring judgement?</h3><label class="option"><input type="radio" name="q6" value="A"> Automatically decide</label><label class="option"><input type="radio" name="q6" value="B"> Ignore it</label><label class="option"><input type="radio" name="q6" value="C"> Consider AI support with appropriate human involvement</label><label class="option"><input type="radio" name="q6" value="D"> Give the agent unlimited access</label></div>
+<div class="q"><h3>7. Which question is most useful during discovery?</h3><label class="option"><input type="radio" name="q7" value="A"> Which AI model is fashionable?</label><label class="option"><input type="radio" name="q7" value="B"> Where can we buy the most expensive AI?</label><label class="option"><input type="radio" name="q7" value="C"> What customer outcome could be meaningfully improved?</label><label class="option"><input type="radio" name="q7" value="D"> How can we remove all staff?</label></div>
+<div class="q"><h3>8. Why might an apparently good automation opportunity be rejected?</h3><label class="option"><input type="radio" name="q8" value="A"> Risk, data, process or policy conditions may make it unsuitable</label><label class="option"><input type="radio" name="q8" value="B"> AI is never useful</label><label class="option"><input type="radio" name="q8" value="C"> Customers dislike all automation</label><label class="option"><input type="radio" name="q8" value="D"> Repetitive work should always remain manual</label></div>
+<button class="btn" onclick="mark()">Mark Assessment</button><div id="result" class="result"></div></div>
+
+<h2 style="margin-top:55px">9 · Marked Assignment</h2>
+<p>Submit a <strong>Customer Opportunity Discovery Report</strong>. This becomes the evidence base for Module 4.</p>
+<table><tr><th>Criterion</th><th>Marks</th><th>Evidence expected</th></tr>
+<tr><td>Customer goal & persona</td><td>5</td><td>Clear customer and desired outcome.</td></tr>
+<tr><td>Journey map</td><td>7</td><td>Logical stages, channels and hand-offs.</td></tr>
+<tr><td>Friction analysis</td><td>7</td><td>Specific customer pain points and evidence.</td></tr>
+<tr><td>Root-cause analysis</td><td>5</td><td>Symptoms distinguished from underlying causes.</td></tr>
+<tr><td>AI opportunities</td><td>6</td><td>At least three plausible opportunities and alternatives where appropriate.</td></tr>
+<tr><td>Prioritisation</td><td>5</td><td>Value, feasibility and risk used to select a lead opportunity.</td></tr>
+<tr><td>Professional clarity</td><td>5</td><td>Clear, structured and evidence-based.</td></tr>
+<tr><th>Total</th><th>40</th><th></th></tr></table>
+<div class="quote"><strong>Achievement guide:</strong> 34–40 Distinction · 30–33 Merit · 24–29 Pass · 0–23 Rework required.</div>
+</div></section>
+
+<section><div class="wrap"><div class="next"><div class="label">10 · Progress to Next Module</div><h2>Module 3 Complete</h2>
+<p>You have moved from “we should use AI” to a defensible customer problem and a prioritised opportunity.</p>
+<h3>Next: Module 4 — Designing the Agent Experience</h3>
+<p>Next you will turn the chosen opportunity into a customer-centred design: <strong>persona → journey → agent role → conversation → workflow → decision points → escalation → success measures.</strong></p>
+</div></div></section>
+<footer>BSOE <span class="gold">AI ACADEMY</span><br>AI Agents & the Future of Customer Engagement · Module 3</footer>
+<script>
+const answers={q1:"B",q2:"B",q3:"A",q4:"B",q5:"D",q6:"C",q7:"C",q8:"A"};
+function mark(){let s=0;for(const q in answers){const x=document.querySelector('input[name="'+q+'"]:checked');if(x&&x.value===answers[q])s++}let r=document.getElementById("result");r.style.display="block";r.innerHTML="<strong>Score: "+s+"/8 ("+Math.round(s/8*100)+"%)</strong><br>"+(s>=6?"PASS — strong understanding of customer opportunity discovery.":"REVIEW REQUIRED — revisit the module and retake the assessment.");r.scrollIntoView({behavior:"smooth",block:"center"})}
+const ids=["goal","journey","channels","handoffs","friction","repetition","root","opportunity","value","risk"];
+function saveA(){let d={};ids.forEach(i=>d[i]=document.getElementById(i).value);localStorage.setItem("bsoe_m3",JSON.stringify(d));document.getElementById("saved").textContent="✓ Activity saved in this browser."}
+function clearA(){localStorage.removeItem("bsoe_m3");ids.forEach(i=>document.getElementById(i).value="");document.getElementById("saved").textContent="Activity cleared."}
+try{let d=JSON.parse(localStorage.getItem("bsoe_m3")||"null");if(d)ids.forEach(i=>{if(d[i])document.getElementById(i).value=d[i]})}catch(e){}
+</script>
+</body>
+</html>
