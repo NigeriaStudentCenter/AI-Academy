@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Tutor Academy — the unfair advantage, for a fraction of a tutor's price</title>
+<meta name="description" content="A private academy for students aged 8–16 on the Nigerian (NERDC) and British (UK) curricula. Cheaper than traditional tutoring, vastly more valuable: critical thinking, source verification, independent study — plus the human skills school skips.">
+<meta property="og:title" content="AI Tutor Academy — cheaper than tutoring, worth far more">
+<meta property="og:description" content="Private training for students 8–16. Master AI as an honest study partner, and the human skills school never teaches — for a fraction of a tutor's price.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,540;0,9..144,600;0,9..144,660;1,9..144,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
+<style>
+:root{
+  --paper:#f6f7f3; --paper-2:#edf0e9; --card:#ffffff;
+  --ink:#15201c; --ink-2:#42504a; --ink-3:#6b7a72;
+  --line:#dde3da; --line-2:#c7d1c4;
+  --accent:#1f7a5c; --accent-bright:#2fa07a; --accent-ink:#0f4a38;
+  --gold:#b28636; --gold-soft:#d9bd88;
+  --flag:#a5392f; --flag-bg:#f7e8e5;
+  --ng:#bd6c26; --uk:#2b6f8c; --stage-olive:#5a7a2e;
+  --deep:#123c2f; --deep-2:#0e3227; --deep-line:#2c5647; --on-deep:#eaf1ec; --on-deep-2:#a9c4ba;
+  --code-bg:#eef2ec;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#101613; --paper-2:#161e1a; --card:#1a221e;
+    --ink:#e9efea; --ink-2:#aebbb3; --ink-3:#8a978f;
+    --line:#28322c; --line-2:#374238;
+    --accent:#4fbf97; --accent-bright:#63d3ac; --accent-ink:#bfe9d9;
+    --gold:#cfa85c; --gold-soft:#e6cf9f;
+    --flag:#e79488; --flag-bg:#2f211e;
+    --ng:#db9a5f; --uk:#7bbcd7; --stage-olive:#9ec46a;
+    --deep:#0d2c23; --deep-2:#0a231c; --deep-line:#26463a; --on-deep:#e7efe9; --on-deep-2:#9db8ae;
+    --code-bg:#131b18;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#101613; --paper-2:#161e1a; --card:#1a221e;
+  --ink:#e9efea; --ink-2:#aebbb3; --ink-3:#8a978f;
+  --line:#28322c; --line-2:#374238;
+  --accent:#4fbf97; --accent-bright:#63d3ac; --accent-ink:#bfe9d9;
+  --gold:#cfa85c; --gold-soft:#e6cf9f;
+  --flag:#e79488; --flag-bg:#2f211e;
+  --ng:#db9a5f; --uk:#7bbcd7; --stage-olive:#9ec46a;
+  --deep:#0d2c23; --deep-2:#0a231c; --deep-line:#26463a; --on-deep:#e7efe9; --on-deep-2:#9db8ae;
+  --code-bg:#131b18;
+}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+img{max-width:100%}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:"Public Sans",system-ui,-apple-system,sans-serif;
+  font-size:17px; line-height:1.62; -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:"Fraunces","Fraunces Fallback",Georgia,serif;font-weight:600;line-height:1.12;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2rem)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-3)}
+.lede{font-size:clamp(1.05rem,2.2vw,1.2rem);color:var(--ink-2);max-width:60ch}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:.5rem;font:inherit;font-weight:700;cursor:pointer;
+  text-decoration:none;border-radius:999px;padding:.85rem 1.5rem;border:1.5px solid transparent;
+  transition:transform .12s ease, box-shadow .12s ease, background .12s}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.06)}
+.btn-primary:hover{background:var(--accent-bright);transform:translateY(-1px);box-shadow:0 6px 20px -8px var(--accent)}
+.btn-ghost{background:transparent;border-color:currentColor;color:inherit}
+.btn-ghost:hover{transform:translateY(-1px)}
+.btn-gold{background:transparent;border-color:var(--gold);color:var(--gold)}
+.btn-gold:hover{background:var(--gold);color:#1c1204;transform:translateY(-1px)}
+.btn-gold-fill{background:var(--gold);color:#1c1204}
+.btn-gold-fill:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.btn-lg{padding:1rem 1.8rem;font-size:1.05rem}
+.pay-note{margin-top:.9rem;font-size:.82rem;color:var(--on-deep-2);font-family:"IBM Plex Mono",monospace;letter-spacing:.02em}
+
+/* ---------- top bar ---------- */
+.topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 88%,transparent);
+  backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar .row{display:flex;align-items:center;gap:1.2rem;height:60px}
+.brand{display:flex;align-items:center;gap:.55rem;font-family:"Fraunces",serif;font-weight:600;font-size:1.05rem;text-decoration:none;color:var(--ink)}
+.brand svg{flex:none}
+.topbar nav{display:flex;gap:1.4rem;margin-left:auto;font-size:.9rem}
+.topbar nav a{text-decoration:none;color:var(--ink-2)}
+.topbar nav a:hover{color:var(--ink)}
+.topbar .btn{margin-left:1rem;padding:.55rem 1.1rem;font-size:.9rem}
+@media (max-width:860px){.topbar nav{display:none}.topbar .btn{margin-left:auto}}
+
+/* ---------- sections ---------- */
+section{padding:clamp(3.5rem,8vw,6rem) 0}
+.sec-head{max-width:64ch}
+.sec-head .eyebrow{margin-bottom:.9rem}
+.sec-head h2{font-size:clamp(1.8rem,4.4vw,2.9rem);font-weight:660;letter-spacing:-.01em}
+.sec-head p{margin-top:1rem}
+
+.on-deep{background:linear-gradient(180deg,var(--deep),var(--deep-2));color:var(--on-deep)}
+.on-deep .eyebrow{color:var(--gold-soft)}
+.on-deep .lede,.on-deep .sec-head p{color:var(--on-deep-2)}
+.tint{background:var(--paper-2)}
+
+/* ---------- hero ---------- */
+.hero{background:radial-gradient(1200px 600px at 78% -10%, #1a5643 0%, var(--deep) 45%, var(--deep-2) 100%);color:var(--on-deep);
+  padding:clamp(2.5rem,6vw,4.5rem) 0 clamp(3rem,7vw,5rem);overflow:hidden;position:relative}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(600px 300px at 12% 110%, rgba(178,134,54,.10), transparent 70%)}
+.hero .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5
