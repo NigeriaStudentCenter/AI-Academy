@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BSOE AI Academy — Module 8: Governing the Agent</title>
+<style>
+:root{--g:#0B3D2E;--gold:#D4B06A;--bg:#F8FAF7;--ink:#17221E;--line:#dbe6e0;--soft:#edf4f0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}
+nav{position:sticky;top:0;z-index:5;background:var(--g);color:#fff;padding:15px 6%}nav b,.gold{color:var(--gold)}nav a{color:#fff;text-decoration:none;margin-left:20px;font-size:.85rem}
+.hero{background:linear-gradient(135deg,var(--g),#06271f);color:#fff;padding:80px 7%;min-height:520px;display:flex;align-items:center}.wrap{max-width:1120px;margin:auto;width:100%}
+.hero h1{font-size:clamp(3rem,7vw,6rem);line-height:.92;letter-spacing:-.05em;margin:18px 0}.hero p{max-width:900px;font-size:1.2rem;color:#dce8e3}
+.eyebrow,.label{color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:.13em;font-size:.78rem}.pill{display:inline-block;border:1px solid #ffffff44;border-radius:50px;padding:7px 13px;margin:4px;font-size:.82rem}
+section{padding:70px 7%}.alt{background:#fff}h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;color:var(--g);letter-spacing:-.03em}h3{color:var(--g)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card,.box{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}.alt .card{background:var(--bg)}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:28px 0}.flow div{background:var(--g);color:#fff;padding:15px 5px;border-radius:12px;text-align:center;font-weight:900;font-size:.72rem}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}.green{background:var(--soft)}
+.quote{background:var(--soft);border-left:5px solid var(--gold);padding:20px;border-radius:0 15px 15px 0;color:var(--g);font-weight:800;margin:25px 0}
+table{width:100%;border-collapse:collapse;background:#fff;margin:20px 0}th,td{border:1px solid var(--line);padding:12px;text-align:left;vertical-align:top}th{background:var(--g);color:#fff}
+.activity{background:var(--g);color:#fff;border-radius:22px;padding:30px}.activity h3{color:#fff}.activity label{display:block;font-weight:800;margin:13px 0 5px}.activity input,.activity textarea,.activity select{width:100%;padding:11px;border:0;border-radius:9px}.activity textarea{min-height:68px}
+.btn{background:var(--gold);color:var(--g);border:0;border-radius:50px;padding:11px 18px;font-weight:900;margin:15px 6px 0 0;cursor:pointer}.prompt{background:#102d24;color:#e8f1ed;padding:20px;border-radius:14px;white-space:pre-wrap;font:14px/1.6 monospace}
+.q{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin:14px 0}.option{display:block;background:#f4f7f5;padding:8px;border-radius:8px;margin:5px 0}.result{display:none;background:var(--soft);padding:20px;border-radius:15px;margin-top:18px}
+.next{background:var(--g);color:#fff;padding:34px;border-radius:22px}.next h2,.next h3{color:#fff}
+footer{background:#08291f;color:#fff;text-align:center;padding:40px}@media(max-width:850px){.grid,.compare{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}nav a{display:none}}
+</style>
+</head>
+<body>
+<nav><strong>BSOE <b>AI ACADEMY</b></strong><span style="float:right"><a href="#lesson">Lesson</a><a href="#case">Case Study</a><a href="#assessment">Assessment</a></span></nav>
+
+<header class="hero"><div class="wrap">
+<div class="eyebrow">BSOE Institute of Artificial Intelligence, Employability & Workforce Development</div>
+<h1>Module 8<br>Governing the Agent</h1>
+<p>Build the governance system that keeps an AI customer-engagement agent trustworthy, accountable, secure, transparent and continuously improving after deployment.</p>
+<span class="pill">120–150 minutes</span><span class="pill">Intermediate / Advanced</span><span class="pill">Stage: GOVERN</span>
+</div></header>
+
+<section id="lesson"><div class="wrap">
+<div class="label">Lesson Page</div><h2>AI Agents Need Governance, Not Just Guardrails</h2>
+<p>Deployment is not the end of the agent lifecycle. Once an agent interacts with customers, governance becomes an ongoing management responsibility. Organisations need to know who owns the agent, what it is allowed to do, how decisions are reviewed, how incidents are handled and how changes are approved.</p>
+<div class="quote">Good governance does not ask only, <strong>“Can the agent do this?”</strong> It also asks, <strong>“Should it do this, who is accountable, what evidence do we keep, and what happens when it gets it wrong?”</strong></div>
+<div class="flow"><div>OWN</div><div>ASSESS</div><div>CONTROL</div><div>MONITOR</div><div>AUDIT</div><div>IMPROVE</div></div>
+<div class="grid">
+<div class="card"><h3>Accountability</h3><p>Assign named ownership for the agent, its data, actions, outcomes and incidents.</p></div>
+<div class="card"><h3>Risk</h3><p>Identify foreseeable harms and apply proportionate controls before and during operation.</p></div>
+<div class="card"><h3>Privacy & security</h3><p>Protect customer information and control access to data, tools and systems.</p></div>
+<div class="card"><h3>Transparency</h3><p>Make the agent's role clear and provide appropriate routes to human support.</p></div>
+<div class="card"><h3>Auditability</h3><p>Keep appropriate records so important interactions, changes and incidents can be investigated.</p></div>
+<div class="card"><h3>Continuous improvement</h3><p>Use evidence from real-world operation to improve the agent without weakening controls.</p></div>
+</div>
+<h3>Learning objectives</h3>
+<table>
+<tr><th>By the end of this module, learners can…</th><th>Evidence</th></tr>
+<tr><td>Explain why governance continues after deployment.</td><td>Governance framework.</td></tr>
+<tr><td>Map ownership and accountability.</td><td>RACI-style responsibility map.</td></tr>
+<tr><td>Identify customer, operational and AI risks.</td><td>Risk register.</td></tr>
+<tr><td>Design controls for privacy, security, transparency and human oversight.</td><td>Control plan.</td></tr>
+<tr><td>Create monitoring, audit and change-management arrangements.</td><td>Governance operating model.</td></tr>
+</table>
+</div></section>
+
+<section class="alt"><div class="wrap">
+<div class="label">Governance Framework</div><h2>The 8-Part Agent Governance Model</h2>
+<table>
+<tr><th>Governance area</th><th>Key question</th><th>Example control</th></tr>
+<tr><td>Purpose & scope</td><td>Why does the agent exist and where is it allowed to operate?</td><td>Approved purpose statement and scope boundary.</td></tr>
+<tr><td>Ownership</td><td>Who is accountable?</td><td>Named business owner, technical owner and escalation owner.</td></tr>
+<tr><td>Risk management</td><td>What could go wrong?</td><td>Risk register with severity, likelihood and mitigations.</td></tr>
+<tr><td>Data & privacy</td><td>What information is processed and why?</td><td>Data minimisation, access controls and approved retention approach.</td></tr>
+<tr><td>Security & permissions</td><td>What can the agent access or change?</td><td>Least privilege, authentication and controlled tools.</td></tr>
+<tr><td>Human oversight</td><td>When must a person intervene?</td><td>Escalation rules and accountable human decision-maker.</td></tr>
+<tr><td>Monitoring & audit</td><td>How do we know what is happening?</td><td>Performance indicators, incident logs and appropriate records.</td></tr>
+<tr><td>Change management</td><td>How are prompts, knowledge, tools and policies changed?</td><td>Versioning, testing, approval and rollback before release.</td></tr>
+</table>
+<div class="quote"><strong>Governance principle:</strong> The more consequential the agent's actions, the stronger the evidence, controls and human accountability should be.</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="label">1 · Short Teaching Video / HeyGen Script</div><h2>Who Is Responsible When the Agent Is Wrong?</h2>
+<div class="card">
+<p><strong>Recommended length: 9–11 minutes.</strong></p>
+<p>Welcome to Module 8, the final stage of our AI Agents and Customer Engagement learning journey.</p>
+<p>Your agent is now deployed. But deployment does not transfer responsibility to the machine. The organisation remains responsible for how the system is designed, used, monitored and changed.</p>
+<p>Governance starts with ownership. Someone must be accountable for the business purpose. Someone must understand the technical operation. Someone must own escalation and incident response.</p>
+<p>Next comes risk. Ask what could cause harm: inaccurate information, inappropriate disclosure, unfair treatment, unsafe recommendations, unauthorised actions, poor escalation or failures in connected systems.</p>
+<p>Controls should match the risk. A simple FAQ agent may need relatively light controls. An agent that changes accounts, handles sensitive information or takes consequential actions requires much stronger controls and human oversight.</p>
+<p>Governance also requires transparency. Customers should understand when they are interacting with an AI system where that information matters, and they should have an appropriate route to human assistance.</p>
+<p>Then consider monitoring and auditability. You need enough evidence to understand what the agent is doing, identify patterns, investigate incidents and evaluate whether changes improve performance.</p>
+<p>Finally, govern change. Agents evolve. Prompts change. Knowledge changes. Tools change. Policies change. Every meaningful change can alter behaviour, so important changes should go through an appropriate review, testing and release process.</p>
+<p><strong>The goal of governance is not to stop innovation. It is to make responsible innovation repeatable.</strong></p>
+</div></div></section>
+
+<section class="alt"><div class="wrap">
+<div class="label">2 · Ebook Reading</div><h2>Read, Reflect and Connect</h2>
+<div class="card">
+<h3>Required reading</h3>
+<p><strong>AI Agents & the Future of Customer Engagement</strong></p>
+<ul><li>Chapter 26 — AI Agent Governance & Accountability</li><li>Chapter 27 — Privacy, Security, Transparency & Human Oversight</li><li>Chapter 28 — Monitoring, Auditability & Continuous Improvement</li></ul>
+<h3>Reflection</h3>
+<p>Think about your agent blueprint. If the agent gave a customer harmful or materially incorrect information tomorrow, who would discover it, who would investigate it, who could stop the agent, and who would approve the fix?</p>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="label">3 · Interactive Example</div><h2>Should the Agent Be Allowed to Act?</h2>
+<div class="card">
+<p>Imagine a customer says: <strong>“I need to change my account details. Please do it for me.”</strong></p>
+<table>
+<tr><th>Agent capability</th><th>Governance decision</th><th>Why?</th></tr>
+<tr><td>Explain the process</td><td>Generally suitable.</td><td>Low-risk informational support when based on approved knowledge.</td></tr>
+<tr><td>Show the customer's existing details</td><td>Require appropriate authentication.</td><td>Customer information should not be exposed to an unauthorised person.</td></tr>
+<tr><td>Change the details automatically</td><td>Depends on the process and risk.</td><td>Identity, permissions, confirmation and auditability matter.</td></tr>
+<tr><td>Override a security control because the customer insists</td><td>No.</td><td>Customer pressure should not bypass a control.</td></tr>
+<tr><td>Escalate an exceptional case</td><td>Yes, where defined by policy.</td><td>Human judgement can handle cases outside the agent's authorised scope.</td></tr>
+</table>
+<div class="quote">Governance turns “What can the technology do?” into the more useful question: <strong>“What is the technology authorised and equipped to do safely?”</strong></div>
+</div></div></section>
+
+<section class="alt" id="case"><div class="wrap">
+<div class="label">4 · Case Study</div><h2>Retail Banking Support Agent</h2>
+<p>A fictional retail bank introduces an AI customer-service agent. It can answer product questions, explain transaction processes, retrieve authenticated account information and initiate selected service requests.</p>
+<table>
+<tr><th>Risk</th><th>Governance response</th><th>Evidence / monitoring</th></tr>
+<tr><td>Incorrect financial information</td><td>Use approved knowledge sources and escalation for uncertain/high-impact questions.</td><td>Accuracy reviews, complaints and escalation patterns.</td></tr>
+<tr><td>Unauthorised access</td><td>Require appropriate identity verification and role-based permissions.</td><td>Access logs and security alerts.</td></tr>
+<tr><td>Customer disputes an agent action</td><td>Provide human escalation and preserve appropriate interaction context.</td><td>Incident and complaint review.</td></tr>
+<tr><td>Agent behaviour changes after an update</td><td>Version changes, test before release and retain rollback capability.</td><td>Release records and post-release monitoring.</td></tr>
+<tr><td>Agent receives an unusual request</td><td>Stay within scope and escalate rather than improvise.</td><td>Out-of-scope and escalation reporting.</td></tr>
+</table>
+<h3>Governance board decision</h3>
+<p>The bank does not approve the agent simply because it passed functional tests. It reviews purpose, scope, risks, access, human oversight, monitoring, incident response and change management. The agent is approved for defined services, with stronger controls around consequential actions.</p>
+<div class="quote"><strong>Case lesson:</strong> Governance should be designed into the operating model, not added as a document after the agent is already live.</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="label">5 · Learner Activity</div><h2>Build Your Agent Governance Charter</h2>
+<div class="activity">
+<label>Agent purpose statement</label><textarea id="purpose"></textarea>
+<label>Named business owner / accountable role</label><input id="owner">
+<label>Top 5 risks</label><textarea id="risks"></textarea>
+<label>What customer data may be processed?</label><textarea id="data"></textarea>
+<label>What data or actions are explicitly prohibited?</label><textarea id="prohibited"></textarea>
+<label>Human escalation triggers and owner</label><textarea id="handoff"></textarea>
+<label>How will customers be informed about AI involvement?</label><textarea id="transparency"></textarea>
+<label>Five monitoring indicators</label><textarea id="metrics"></textarea>
+<label>What events require an incident review?</label><textarea id="incident"></textarea>
+<label>How will prompts, knowledge and tools be changed safely?</label><textarea id="change"></textarea>
+<label>Who can approve a production change?</label><input id="approver">
+<button class="btn" onclick="saveG()">Save governance charter</button><button class="btn" onclick="clearG()">Clear</button><p id="saved"></p>
+</div></div></section>
+
+<section class="alt"><div class="wrap">
+<div class="label">6 · AI Practical Exercise</div><h2>AI Governance Red-Team Review</h2>
+<div class="card">
+<p>Give an AI assistant your completed Module 7 deployment plan and your Module 8 governance charter. Ask it to challenge the design. The AI should identify questions and gaps, but the learner must make the final governance judgement.</p>
+<div class="prompt">Act as a critical AI-agent governance reviewer.
+
+Review the agent purpose, deployment plan and governance charter below.
+
+Assess:
+1. Purpose and scope
+2. Accountability and ownership
+3. Customer and operational risks
+4. Privacy and data minimisation
+5. Security and permissions
+6. Human oversight and escalation
+7. Transparency
+8. Monitoring and auditability
+9. Incident response
+10. Change management and rollback
+11. Customer harm scenarios
+12. Evidence required for ongoing approval
+
+Return:
+- Top 10 governance weaknesses
+- Why each matters
+- Recommended control
+- Owner who should resolve it
+- Evidence that would demonstrate the control works
+- Questions that require a human decision
+- Overall rating: Ready / Conditional / Not Ready
+
+Do not invent laws, policies, facts or technical capabilities.
+
+PURPOSE:
+[PASTE]
+
+DEPLOYMENT PLAN:
+[PASTE]
+
+GOVERNANCE CHARTER:
+[PASTE]</div>
+<h3>Second exercise: Scenario testing</h3>
+<p>Ask AI to create ten realistic “what if?” scenarios involving your agent. For each, identify the likely harm, existing control, missing control, escalation route and evidence that should be retained.</p>
+</div></div></section>
+
+<section id="assessment"><div class="wrap">
+<div class="label">7 · Automatically Marked Knowledge Check</div><h2>Module 8 Knowledge Check</h2>
+<p>10 questions · 1 mark each · Pass: 8/10.</p><div id="quiz"></div>
+<button class="btn" onclick="mark()">Mark Assessment</button><div id="result" class="result"></div>
+
+<h2 style="margin-top:55px">8 · 40-Mark Assessed Assignment</h2>
+<p><strong>Assignment: AI Agent Governance & Accountability Framework.</strong> Using the customer-engagement agent you developed across the course, create a governance framework that could be presented to a business owner or AI governance review group. Your work must show how the organisation will manage risk and accountability throughout the agent's operational life.</p>
+<table>
+<tr><th>Criterion</th><th>Marks</th><th>Evidence expected</th></tr>
+<tr><td>Purpose, scope and accountability</td><td>6</td><td>Clear purpose, boundaries, ownership and decision rights.</td></tr>
+<tr><td>Risk assessment and controls</td><td>7</td><td>Relevant risks, severity/likelihood reasoning and proportionate mitigations.</td></tr>
+<tr><td>Privacy, security and permissions</td><td>6</td><td>Data boundaries, access controls, tool permissions and protection measures.</td></tr>
+<tr><td>Human oversight, transparency and escalation</td><td>6</td><td>Clear human roles, escalation triggers and customer-facing transparency approach.</td></tr>
+<tr><td>Monitoring, audit and incident management</td><td>5</td><td>Useful indicators, review arrangements, incident process and appropriate records.</td></tr>
+<tr><td>Change management and continuous improvement</td><td>5</td><td>Versioning, testing, approval, rollback and improvement cycle.</td></tr>
+<tr><td>Professional presentation and judgement</td><td>5</td><td>Coherent, evidence-led and realistic governance proposal.</td></tr>
+<tr><th>Total</th><th>40</th><th></th></tr>
+</table>
+<div class="quote"><strong>Grade guide:</strong> 34–40 = Distinction · 30–33 = Merit · 24–29 = Pass · 0–23 = Rework required.</div>
+<h3>Pass / Merit / Distinction rubric</h3>
+<table>
+<tr><th>Grade</th><th>Standard</th></tr>
+<tr><td><strong>Pass</strong></td><td>Produces a workable governance framework covering ownership, major risks, access, human escalation, monitoring and basic change control.</td></tr>
+<tr><td><strong>Merit</strong></td><td>Produces a coherent and evidence-led framework with proportionate controls, clear accountability, meaningful monitoring and a credible incident and change-management process.</td></tr>
+<tr><td><strong>Distinction</strong></td><td>Produces an implementation-ready governance operating model that demonstrates mature judgement across customer value, risk, privacy, security, human accountability, auditability and continuous improvement.</td></tr>
+</table>
+<h3>Suggested submission structure</h3>
+<ol><li>Executive summary</li><li>Agent purpose and scope</li><li>Governance roles and accountability</li><li>Risk register</li><li>Privacy, security and permissions</li><li>Human oversight and escalation</li><li>Transparency and customer communication</li><li>Monitoring and audit plan</li><li>Incident response</li><li>Change management and continuous improvement</li><li>Final governance recommendation</li></ol>
+</div></section>
+
+<section><div class="wrap"><div class="next">
+<div class="label">Course Completion</div><h2>You Have Reached the GOVERN Stage</h2>
+<p>Across the programme, you have moved from understanding AI agents to designing, building, testing, deploying and governing a customer-engagement agent.</p>
+<h3>Your final portfolio should now contain:</h3>
+<ul><li>Customer opportunity discovery</li><li>Customer journey and agent blueprint</li><li>Knowledge base and tools</li><li>Workflow and guardrails</li><li>Testing and improvement evidence</li><li>Deployment readiness plan</li><li>Governance charter and accountability framework</li></ul>
+<p><strong>UNDERSTAND → EXPLORE → DISCOVER → DESIGN → BUILD → TEST → DEPLOY → GOVERN</strong></p>
+<p>This final module should be treated as the foundation for a professional <strong>Customer Engagement AI Agent Blueprint</strong> and portfolio project.</p>
+</div></div></section>
+
+<footer>BSOE <span class="gold">AI ACADEMY</span><br>AI Agents & the Future of Customer Engagement · Module 8 · GOVERN</footer>
+
+<script>
+const qs=[
+["Why does governance continue after deployment?",["Because deployed agents never change","Because ownership, risk, monitoring and change management remain ongoing responsibilities","Because testing is unnecessary","Because customers cannot use deployed agents"],"B"],
+["What is accountability primarily about?",["Giving the AI a job title","Assigning people/roles responsible for decisions, operation, risks and outcomes","Removing human involvement","Measuring website traffic"],"B"],
+["What should risk controls be based on?",["The colour of the interface","The potential consequences and likelihood of relevant risks","The number of prompts","The agent's marketing slogan"],"B"],
+["What is least privilege?",["Maximum access for maximum convenience","Only the access and capabilities required for the authorised task","No access to anything","Customer administrator access"],"B"],
+["Why is transparency important?",["It makes the AI more intelligent","Customers may need to understand the role of AI and how to obtain human support","It eliminates all risks","It replaces authentication"],"B"],
+["What is a key purpose of auditability?",["To make the agent slower","To support investigation, accountability and learning from important events","To avoid monitoring","To increase the number of features"],"B"],
+["Why should important changes be tested before release?",["Changes can alter agent behaviour and introduce new risks","Testing makes every AI system perfect","Customers prefer longer release cycles","It removes the need for ownership"],"A"],
+["When should stronger governance generally be applied?",["When the agent performs more consequential actions","Only when the agent says hello","Only during marketing campaigns","Never"],"A"],
+["What should an agent do when a request is outside its authorised scope?",["Invent an answer","Bypass controls","Follow the defined refusal or escalation route","Give itself new permissions"],"C"],
+["What is the central governance question?",["Can we automate everything?","Can the AI replace all staff?","How do we make responsible AI-agent operation accountable, controlled and continuously improved?","How can we remove all human oversight?"],"C"]
+];
+const quiz=document.getElementById("quiz");
+quiz.innerHTML=qs.map((q,i)=>'<div class="q"><h3>'+(i+1)+'. '+q[0]+'</h3>'+q[1].map((o,j)=>'<label class="option"><input type="radio" name="q'+(i+1)+'" value="'+String.fromCharCode(65+j)+'"> '+o+'</label>').join('')+'</div>').join('');
+function mark(){let s=0;qs.forEach((q,i)=>{const x=document.querySelector('input[name="q'+(i+1)+'"]:checked');if(x&&x.value===q[2])s++});const r=document.getElementById("result");r.style.display="block";r.innerHTML="<strong>Score: "+s+"/10 ("+(s*10)+"%)</strong><br>"+(s>=8?"PASS — you have demonstrated a strong understanding of AI-agent governance.":"REVIEW REQUIRED — revisit the module and retake the assessment.");r.scrollIntoView({behavior:"smooth",block:"center"})}
+const ids=["purpose","owner","risks","data","prohibited","handoff","transparency","metrics","incident","change","approver"];
+function saveG(){let d={};ids.forEach(i=>d[i]=document.getElementById(i).value);localStorage.setItem("bsoe_m8",JSON.stringify(d));document.getElementById("saved").textContent="✓ Governance charter saved in this browser."}
+function clearG(){localStorage.removeItem("bsoe_m8");ids.forEach(i=>document.getElementById(i).value="");document.getElementById("saved").textContent="Governance charter cleared."}
+try{let d=JSON.parse(localStorage.getItem("bsoe_m8")||"null");if(d)ids.forEach(i=>{if(d[i])document.getElementById(i).value=d[i]})}catch(e){}
+</script>
+</body>
+</html>
