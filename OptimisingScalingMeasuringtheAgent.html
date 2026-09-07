@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BSOE AI Academy — Module 9: Optimising, Scaling & Measuring the Agent</title>
+<style>
+:root{--g:#0B3D2E;--gold:#D4B06A;--bg:#F8FAF7;--ink:#17221E;--line:#dbe6e0;--soft:#edf4f0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}
+nav{position:sticky;top:0;z-index:5;background:var(--g);color:#fff;padding:15px 6%}nav b,.gold{color:var(--gold)}nav a{color:#fff;text-decoration:none;margin-left:20px;font-size:.85rem}
+.hero{background:linear-gradient(135deg,var(--g),#06271f);color:#fff;padding:80px 7%;min-height:520px;display:flex;align-items:center}.wrap{max-width:1120px;margin:auto;width:100%}
+.hero h1{font-size:clamp(3rem,7vw,6rem);line-height:.92;letter-spacing:-.05em;margin:18px 0}.hero p{max-width:900px;font-size:1.2rem;color:#dce8e3}
+.eyebrow,.label{color:var(--gold);font-weight:900;text-transform:uppercase;letter-spacing:.13em;font-size:.78rem}.pill{display:inline-block;border:1px solid #ffffff44;border-radius:50px;padding:7px 13px;margin:4px;font-size:.82rem}
+section{padding:70px 7%}.alt{background:#fff}h2{font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;color:var(--g);letter-spacing:-.03em}h3{color:var(--g)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card,.box{background:#fff;border:1px solid var(--line);border-radius:20px;padding:24px}.alt .card{background:var(--bg)}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin:28px 0}.flow div{background:var(--g);color:#fff;padding:15px 5px;border-radius:12px;text-align:center;font-weight:900;font-size:.72rem}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:18px}.green{background:var(--soft)}
+.quote{background:var(--soft);border-left:5px solid var(--gold);padding:20px;border-radius:0 15px 15px 0;color:var(--g);font-weight:800;margin:25px 0}
+table{width:100%;border-collapse:collapse;background:#fff;margin:20px 0}th,td{border:1px solid var(--line);padding:12px;text-align:left;vertical-align:top}th{background:var(--g);color:#fff}
+.activity{background:var(--g);color:#fff;border-radius:22px;padding:30px}.activity h3{color:#fff}.activity label{display:block;font-weight:800;margin:13px 0 5px}.activity input,.activity textarea,.activity select{width:100%;padding:11px;border:0;border-radius:9px}.activity textarea{min-height:68px}
+.btn{background:var(--gold);color:var(--g);border:0;border-radius:50px;padding:11px 18px;font-weight:900;margin:15px 6px 0 0;cursor:pointer}.prompt{background:#102d24;color:#e8f1ed;padding:20px;border-radius:14px;white-space:pre-wrap;font:14px/1.6 monospace}
+.q{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px;margin:14px 0}.option{display:block;background:#f4f7f5;padding:8px;border-radius:8px;margin:5px 0}.result{display:none;background:var(--soft);padding:20px;border-radius:15px;margin-top:18px}
+.next{background:var(--g);color:#fff;padding:34px;border-radius:22px}.next h2,.next h3{color:#fff}
+footer{background:#08291f;color:#fff;text-align:center;padding:40px}@media(max-width:850px){.grid,.compare{grid-template-columns:1fr}.flow{grid-template-columns:1fr 1fr}nav a{display:none}}
+</style>
+</head>
+<body>
+<nav><strong>BSOE <b>AI ACADEMY</b></strong><span style="float:right"><a href="#lesson">Lesson</a><a href="#case">Case Study</a><a href="#assessment">Assessment</a></span></nav>
+
+<header class="hero"><div class="wrap">
+<div class="eyebrow">BSOE Institute of Artificial Intelligence, Employability & Workforce Development</div>
+<h1>Module 9<br>Optimising, Scaling & Measuring the Agent</h1>
+<p>Learn how to turn a governed AI customer-engagement agent into a continuously improving business capability — using evidence, customer outcomes, experimentation, performance measurement and controlled scaling.</p>
+<span class="pill">120–150 minutes</span><span class="pill">Advanced</span><span class="pill">Stage: OPTIMISE & SCALE</span>
+</div></header>
+
+<section id="lesson"><div class="wrap">
+<div class="label">Lesson Page</div><h2>Going Live Is Not the Finish Line</h2>
+<p>Once an AI agent is governed and operating safely, the next challenge is improvement. A mature organisation does not simply ask whether the agent is working. It asks whether customer outcomes are improving, whether the agent is reducing unnecessary effort, whether employees are being supported, whether risks are changing and whether expansion is justified by evidence.</p>
+<div class="quote">The objective is not to make the agent <strong>do more</strong>. The objective is to make it <strong>create more value, safely and measurably</strong>.</div>
+<div class="flow"><div>MEASURE</div><div>DIAGNOSE</div><div>EXPERIMENT</div><div>IMPROVE</div><div>VALIDATE</div><div>SCALE</div></div>
+<div class="grid">
+<div class="card"><h3>Customer outcomes</h3><p>Measure whether customers actually get better, faster and clearer outcomes.</p></div>
+<div class="card"><h3>Agent performance</h3><p>Track accuracy, completion, escalation, tool failures and unsupported requests.</p></div>
+<div class="card"><h3>Business value</h3><p>Connect the agent to meaningful measures such as service cost, conversion, retention or employee productivity.</p></div>
+<div class="card"><h3>Experimentation</h3><p>Change one meaningful element at a time where practical and compare evidence.</p></div>
+<div class="card"><h3>Continuous improvement</h3><p>Use failure patterns and feedback to improve knowledge, workflows, prompts and controls.</p></div>
+<div class="card"><h3>Scaling</h3><p>Expand channels, audiences or capabilities only when the evidence and governance support it.</p></div>
+</div>
+<h3>Learning objectives</h3>
+<table>
+<tr><th>By the end of this module, learners can…</th><th>Evidence</th></tr>
+<tr><td>Define a balanced AI-agent performance scorecard.</td><td>Measurement framework.</td></tr>
+<tr><td>Diagnose underperformance using evidence.</td><td>Performance diagnosis.</td></tr>
+<tr><td>Design controlled improvement experiments.</td><td>Experiment plan.</td></tr>
+<tr><td>Connect agent performance to customer and business outcomes.</td><td>Value case.</td></tr>
+<tr><td>Recommend evidence-based scaling decisions.</td><td>Scale recommendation.</td></tr>
+</table>
+</div></section>
+
+<section class="alt"><div class="wrap">
+<div class="label">Course Content</div><h2>The Agent Performance Scorecard</h2>
+<table>
+<tr><th>Dimension</th><th>Questions to ask</th><th>Example measures</th></tr>
+<tr><td>Customer</td><td>Did the customer achieve the intended outcome?</td><td>Resolution, satisfaction, repeat contact, customer effort.</td></tr>
+<tr><td>Quality</td><td>Was the response useful and appropriate?</td><td>Accuracy, groundedness review, failure rate, escalation quality.</td></tr>
+<tr><td>Operations</td><td>Is the service reliable?</td><td>Latency, availability, tool errors, handoff completion.</td></tr>
+<tr><td>Business</td><td>Is it creating measurable organisational value?</td><td>Cost-to-serve, conversion, retention, productivity.</td></tr>
+<tr><td>Safety & governance</td><td>Are controls continuing to work?</td><td>Policy exceptions, incidents, access events, high-risk escalations.</td></tr>
+<tr><td>Adoption</td><td>Are people using the service appropriately?</td><td>Eligible-user adoption, repeat usage, successful self-service.</td></tr>
+</table>
+<div class="quote"><strong>Avoid vanity metrics.</strong> High conversation volume does not automatically mean customer value. A mature scorecard connects activity to outcomes.</div>
+<h3>Diagnosing a weak result</h3>
+<p>If resolution falls, do not immediately rewrite the prompt. First identify the cause. The problem might be missing knowledge, ambiguous customer journeys, poor retrieval, a failing tool, inadequate escalation, authentication friction or an unrealistic scope.</p>
+</div></section>
+
+<section><div class="wrap">
+<div class="label">1 · Short Teaching Video / HeyGen Script</div><h2>Measure Before You Scale</h2>
+<div class="card">
+<p><strong>Recommended length: 9–11 minutes.</strong></p>
+<p>Welcome to Module 9 of the BSOE AI Academy.</p>
+<p>Your agent is governed and live. What happens next?</p>
+<p>The answer is not simply “add more features.” Mature AI operations begin with measurement.</p>
+<p>Start with the customer. Did the customer actually achieve the outcome they wanted? Did the agent resolve the issue, reduce effort and provide a clear next step?</p>
+<p>Then examine quality. Was the answer accurate? Was it grounded in approved knowledge? Did the agent know when to escalate?</p>
+<p>Look at operations. Were tools available? Did the agent respond within an acceptable time? Did handoffs reach the right team?</p>
+<p>Then connect performance to business value. Depending on the use case, that might mean lower service costs, faster resolution, higher conversion, improved retention or employee productivity.</p>
+<p>Now comes optimisation. When a metric is weak, diagnose the underlying cause before changing the system. A prompt change will not fix missing source information or a broken workflow.</p>
+<p>Use controlled experiments where possible. Make a defined change, identify the expected result, measure the effect and check that safety and quality have not deteriorated.</p>
+<p>Finally, scale based on evidence. Expansion might mean more customers, another channel, a new language, additional knowledge sources or carefully controlled actions.</p>
+<p><strong>The mature mindset is simple: measure, diagnose, improve, validate — then scale.</strong></p>
+</div></div></section>
+
+<section class="alt"><div class="wrap">
+<div class="label">2 · Ebook Reading</div><h2>Read, Reflect and Connect</h2>
+<div class="card">
+<h3>Required reading</h3>
+<p><strong>AI Agents & the Future of Customer Engagement</strong></p>
+<ul><li>Chapter 29 — Measuring AI-Agent Performance</li><li>Chapter 30 — Optimisation, Experimentation & Continuous Improvement</li><li>Chapter 31 — Scaling AI Customer Engagement Responsibly</li></ul>
+<h3>Reflection</h3>
+<p>Look at the agent you developed in Modules 1–8. Which three measures would tell you whether it is genuinely improving the customer experience rather than simply generating more conversations?</p>
+</div></div></section>
+
+<section><div class="wrap">
+<div class="label">3 · Interactive Example</div><h2>Why Did Resolution Fall?</h2>
+<div class="compare">
+<div class="box"><h3>What the dashboard says</h3><p>Customer resolution fell from 78% to 64% after a new service was introduced.</p><p><strong>Bad response:</strong> immediately change the system prompt.</p></div>
+<div class="box green"><h3>What a mature team investigates</h3><ul><li>Did the new service have complete knowledge coverage?</li><li>Did the connected tool fail more often?</li><li>Did customer requests become more complex?</li><li>Did escalation rules change?</li><li>Did authentication introduce friction?</li></ul></div>
+</div>
+<table>
+<tr><th>Evidence</th><th>Possible diagnosis</th></tr>
+<tr><td>Resolution falls only for the new service.</td><td>Likely capability or knowledge gap.</td></tr>
+<tr><td>Tool errors rise at the same time.</td><td>Integration reliability may be the cause.</td></tr>
+<tr><td>Escalations rise but successful human resolution remains high.</td><td>The agent may be appropriately identifying complex cases.</td></tr>
+<tr><td>Customer complaints rise despite high resolution.</td><td>Resolution alone may not capture quality or customer effort.</td></tr>
+</table>
+</div></section>
+
+<section class="alt" id="case"><div class="wrap">
+<div class="label">4 · Case Study</div><h2>Telecom Customer Engagement Agent</h2>
+<p>A fictional telecom company has deployed an AI agent that handles billing questions, package information, appointment queries and selected service requests. After three months, leadership wants to expand the agent to additional customer journeys.</p>
+<table>
+<tr><th>Finding</th><th>Evidence</th><th>Decision</th></tr>
+<tr><td>Billing FAQ resolution is high.</td><td>Strong customer outcomes and low escalation.</td><td>Consider expansion within this journey.</td></tr>
+<tr><td>Appointment changes have frequent tool failures.</td><td>Operational error logs show integration instability.</td><td>Fix and retest before expanding.</td></tr>
+<tr><td>Customers often ask questions outside the knowledge base.</td><td>High unsupported-intent rate.</td><td>Analyse demand before adding content.</td></tr>
+<tr><td>Customer satisfaction is lower for complex complaints.</td><td>Long conversations and late escalation.</td><td>Improve escalation and handoff rather than forcing automation.</td></tr>
+<tr><td>Cost-to-serve has decreased.</td><td>Fewer routine contacts reach human teams.</td><td>Useful business evidence, but not sufficient on its own.</td></tr>
+</table>
+<div class="quote"><strong>Case lesson:</strong> Scaling is a portfolio decision. Expand what works, repair what fails, redesign what creates friction and keep human service where automation does not create a better outcome.</div>
+</div></section>
+
+<section><div class="wrap">
+<div class="label">5 · Learner Activity</div><h2>Build Your Agent Performance Scorecard</h2>
+<div class="activity">
+<label>Primary customer outcome</label><textarea id="customer"></textarea>
+<label>Three customer metrics</label><textarea id="cm"></textarea>
+<label>Three quality metrics</label><textarea id="qm"></textarea>
+<label>Three operational metrics</label><textarea id="om"></textarea>
+<label>Three business-value metrics</label><textarea id="bm"></textarea>
+<label>Two safety / governance indicators</label><textarea id="sm"></textarea>
+<label>What result would make you investigate immediately?</label><textarea id="trigger"></textarea>
+<label>What result would justify expanding the pilot?</label><textarea id="expand"></textarea>
+<label>What result would make you restrict or pause the agent?</label><textarea id="pause"></textarea>
+<label>How often should the scorecard be reviewed?</label><input id="review">
+<button class="btn" onclick="saveS()">Save scorecard</button><button class="btn" onclick="clearS()">Clear</button><p id="saved"></p>
+</div></div></section>
+
+<section class="alt"><div class="wrap">
+<div class="label">6 · AI Practical Exercise</div><h2>Use AI as a Performance Analyst</h2>
+<div class="card">
+<p>Provide your AI assistant with anonymised or fictional performance data. Ask it to diagnose patterns, propose experiments and challenge your assumptions.</p>
+<div class="prompt">Act as an AI-agent performance analyst.
+
+Review the following customer-engagement agent performance data.
+
+Analyse:
+- customer outcomes
+- quality
+- operations
+- business value
+- safety/governance
+- adoption
+
+Identify:
+1. strongest performing areas
+2. weakest areas
+3. statistically or operationally interesting patterns, where supported
+4. plausible root causes
+5. evidence that is still missing
+6. three improvement experiments
+7. risks that could worsen while improving another metric
+8. recommended priority order
+9. conditions for scaling
+
+Do not claim causation from correlation alone.
+Do not invent missing data.
+
+PERFORMANCE DATA:
+[PASTE]</div>
+<h3>Experiment design</h3>
+<div class="prompt">Design one controlled improvement experiment for this AI customer-engagement agent.
+
+Include:
+- problem statement
+- hypothesis
+- change being tested
+- baseline
+- primary success metric
+- secondary metrics
+- safety/quality guardrails
+- duration or sample logic
+- decision thresholds
+- rollback condition
+- what would count as inconclusive evidence</div>
+</div></div></section>
+
+<section id="assessment"><div class="wrap">
+<div class="label">7 · Automatically Marked Knowledge Check</div><h2>Module 9 Knowledge Check</h2>
+<p>10 questions · 1 mark each · Pass: 8/10.</p><div id="quiz"></div>
+<button class="btn" onclick="mark()">Mark Assessment</button><div id="result" class="result"></div>
+
+<h2 style="margin-top:55px">8 · 40-Mark Assessed Assignment</h2>
+<p><strong>Assignment: AI Agent Performance, Optimisation & Scale Strategy.</strong> Using the customer-engagement agent you developed throughout this course, produce a practical strategy for measuring performance, identifying improvement opportunities, running controlled experiments and deciding whether the agent should be scaled.</p>
+<table>
+<tr><th>Criterion</th><th>Marks</th><th>Evidence expected</th></tr>
+<tr><td>Performance scorecard</td><td>7</td><td>Balanced customer, quality, operational, business and governance measures.</td></tr>
+<tr><td>Performance diagnosis</td><td>6</td><td>Evidence-based analysis of weaknesses and plausible root causes.</td></tr>
+<tr><td>Customer and business value</td><td>6</td><td>Clear link between agent activity, customer outcomes and organisational value.</td></tr>
+<tr><td>Improvement experiments</td><td>7</td><td>Well-designed experiments with hypotheses, metrics, guardrails and decision rules.</td></tr>
+<tr><td>Scaling strategy</td><td>6</td><td>Clear conditions for expansion, restriction and continued human service.</td></tr>
+<tr><td>Governance-aware optimisation</td><td>4</td><td>Demonstrates that improvements will not weaken safety, privacy, security or accountability.</td></tr>
+<tr><td>Professional presentation</td><td>4</td><td>Clear, structured and decision-ready proposal.</td></tr>
+<tr><th>Total</th><th>40</th><th></th></tr>
+</table>
+<div class="quote"><strong>Grade guide:</strong> 34–40 = Distinction · 30–33 = Merit · 24–29 = Pass · 0–23 = Rework required.</div>
+<h3>Pass / Merit / Distinction rubric</h3>
+<table>
+<tr><th>Grade</th><th>Standard</th></tr>
+<tr><td><strong>Pass</strong></td><td>Produces a workable performance and improvement plan with meaningful metrics, basic diagnosis and a realistic approach to controlled scaling.</td></tr>
+<tr><td><strong>Merit</strong></td><td>Produces an evidence-led optimisation strategy that connects customer outcomes to business value, uses credible experiments and applies appropriate governance controls.</td></tr>
+<tr><td><strong>Distinction</strong></td><td>Produces an implementation-ready continuous-improvement and scaling strategy demonstrating mature analytical judgement, balanced metrics, experimental discipline, customer-centred thinking and governance-aware decision-making.</td></tr>
+</table>
+<h3>Suggested submission structure</h3>
+<ol><li>Executive summary</li><li>Agent purpose and current operating context</li><li>Performance scorecard</li><li>Current performance diagnosis</li><li>Customer and business value analysis</li><li>Improvement experiment plan</li><li>Risk and governance considerations</li><li>Scaling criteria</li><li>90-day optimisation roadmap</li><li>Final recommendation</li></ol>
+</div></section>
+
+<section><div class="wrap"><div class="next">
+<div class="label">Module 9 Completion</div><h2>From Agent to AI Capability</h2>
+<p>You have now moved beyond building a single AI agent. You have learned how to operate, measure, improve and scale an AI customer-engagement capability using evidence.</p>
+<h3>Your professional portfolio should now demonstrate:</h3>
+<ul><li>A clearly defined customer opportunity</li><li>A Customer Engagement AI Agent Blueprint</li><li>Knowledge, tools, workflows and guardrails</li><li>Testing evidence</li><li>Deployment readiness</li><li>Governance and accountability</li><li>Performance scorecard</li><li>Optimisation and scaling strategy</li></ul>
+<p><strong>UNDERSTAND → EXPLORE → DISCOVER → DESIGN → BUILD → TEST → DEPLOY → GOVERN → OPTIMISE & SCALE</strong></p>
+<p><strong>Next recommended stage:</strong> the learner brings the complete portfolio together as a professional AI Customer Engagement Agent Blueprint and presents it as an implementation proposal.</p>
+</div></div></section>
+
+<footer>BSOE <span class="gold">AI ACADEMY</span><br>AI Agents & the Future of Customer Engagement · Module 9</footer>
+
+<script>
+const qs=[
+["What is the main purpose of optimisation after deployment?",["To add as many features as possible","To create more value safely and measurably","To remove human oversight","To increase conversation volume"],"B"],
+["Which is a customer outcome metric?",["Resolution of the customer's intended issue","Number of prompts written","Number of buttons","Model name"],"A"],
+["Why should a team diagnose before changing a prompt?",["The prompt is always irrelevant","Weak performance may be caused by knowledge, tools, workflow, scope or other factors","Prompts cannot be changed","Diagnosis is only for marketing"],"B"],
+["What is a vanity metric?",["A metric that looks impressive but does not meaningfully demonstrate value","A safety metric","A customer outcome","A business KPI"],"A"],
+["What should a good experiment include?",["A hypothesis, baseline, success measures and guardrails","Only a new prompt","No baseline","No decision rule"],"A"],
+["What should scaling be based on?",["Evidence that performance and controls support expansion","A desire to automate everything","The number of competitors","The launch anniversary"],"A"],
+["If tool failures rise sharply, what should the team investigate?",["Integration reliability and operational causes","Only the colour scheme","More marketing","Customer names"],"A"],
+["Why use both customer and business metrics?",["Customer and organisational value can differ","One metric is always enough","Business metrics are irrelevant","Customer metrics cannot be measured"],"A"],
+["What should happen if an optimisation improves resolution but worsens safety?",["Scale immediately","Ignore safety","Review, restrict or roll back the change as appropriate","Remove monitoring"],"C"],
+["What is the mature improvement cycle?",["Measure → diagnose → experiment → improve → validate → scale","Build → launch → forget","Prompt → market → stop","Scale → measure → test"],"A"]
+];
+const quiz=document.getElementById("quiz");
+quiz.innerHTML=qs.map((q,i)=>'<div class="q"><h3>'+(i+1)+'. '+q[0]+'</h3>'+q[1].map((o,j)=>'<label class="option"><input type="radio" name="q'+(i+1)+'" value="'+String.fromCharCode(65+j)+'"> '+o+'</label>').join('')+'</div>').join('');
+function mark(){let s=0;qs.forEach((q,i)=>{const x=document.querySelector('input[name="q'+(i+1)+'"]:checked');if(x&&x.value===q[2])s++});const r=document.getElementById("result");r.style.display="block";r.innerHTML="<strong>Score: "+s+"/10 ("+(s*10)+"%)</strong><br>"+(s>=8?"PASS — you have demonstrated a strong understanding of AI-agent optimisation and scaling.":"REVIEW REQUIRED — revisit the module and retake the assessment.");r.scrollIntoView({behavior:"smooth",block:"center"})}
+const ids=["customer","cm","qm","om","bm","sm","trigger","expand","pause","review"];
+function saveS(){let d={};ids.forEach(i=>d[i]=document.getElementById(i).value);localStorage.setItem("bsoe_m9",JSON.stringify(d));document.getElementById("saved").textContent="✓ Performance scorecard saved in this browser."}
+function clearS(){localStorage.removeItem("bsoe_m9");ids.forEach(i=>document.getElementById(i).value="");document.getElementById("saved").textContent="Performance scorecard cleared."}
+try{let d=JSON.parse(localStorage.getItem("bsoe_m9")||"null");if(d)ids.forEach(i=>{if(d[i])document.getElementById(i).value=d[i]})}catch(e){}
+</script>
+</body>
+</html>
