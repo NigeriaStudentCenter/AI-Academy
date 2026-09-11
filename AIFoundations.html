@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Foundations Course — BSOE AI Academy</title>
+<meta name="description" content="Course 1 of the BSOE AI Academy: AI Foundations. Understand what AI is, how generative AI works, how to prompt effectively, verify outputs and use AI responsibly." />
+<style>
+:root{
+  --ink:#102218;--forest:#153f2a;--forest2:#215e3e;--cream:#f7f2e7;--paper:#fffdf8;
+  --gold:#c89442;--gold2:#f1d398;--muted:#607167;--line:#dbe1dc;--white:#fff;
+  --shadow:0 24px 70px rgba(16,34,24,.13);--max:1180px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.58}
+h1,h2,h3,p{margin-top:0} h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.038em} a{text-decoration:none;color:inherit} .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:900;color:var(--forest2)} .eyebrow.light{color:var(--gold2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 24px;border:0;border-radius:999px;background:var(--forest);color:white;font-weight:850;cursor:pointer;box-shadow:0 12px 30px rgba(21,63,42,.18);transition:.2s transform,.2s background}.btn:hover{transform:translateY(-2px);background:#0f3020}.btn.gold{background:linear-gradient(135deg,#b97c2c,#dfbc74);color:#122419}.btn.outline{background:transparent;color:var(--forest);border:1px solid rgba(21,63,42,.24);box-shadow:none}
+.topbar{background:#0b2a1b;color:#fff;text-align:center;padding:11px 16px;font-size:.85rem;font-weight:750}.topbar span{color:var(--gold2)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,253,248,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,34,24,.08)}.nav-in{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:11px;font-weight:900}.brand-mark{width:39px;height:39px;border-radius:13px;background:radial-gradient(circle at 38% 34%,#fff4b8 0 8%,#d6a44c 17%,#1c4b33 44%,#0f2f20 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35),0 8px 20px rgba(21,63,42,.2);position:relative}.brand-mark:after{content:"✦";position:absolute;inset:0;display:grid;place-items:center;color:#fff2c6}.nav-links{display:flex;gap:22px;align-items:center;font-size:.84rem;font-weight:760;color:#334a3c}.nav-cta{display:flex;gap:10px;align-items:center}
+.hero{padding:64px 0 76px;background:radial-gradient(circle at 82% 10%,rgba(200,148,66,.19),transparent 31%),linear-gradient(180deg,#fffdf8 0%,#f5efe2 100%)}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;border:1px solid rgba(21,63,42,.15);background:rgba(255,255,255,.72);font-size:.78rem;font-weight:900;letter-spacing:.04em}.hero h1{font-size:clamp(2.9rem,5.6vw,4.9rem);line-height:1.0;margin:18px 0 22px}.hero h1 em{font-style:normal;color:var(--forest2)}.hero-copy{font-size:1.12rem;color:#496054;max-width:640px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:28px 0 16px}.micro{font-size:.82rem;color:var(--muted)}
+.hero-card{border-radius:34px;background:linear-gradient(150deg,#1e5739,#102d20 67%,#0b2117);box-shadow:var(--shadow);position:relative;overflow:hidden;padding:30px}.hero-glow{position:absolute;width:380px;height:380px;border-radius:50%;background:rgba(233,187,99,.23);filter:blur(42px);top:-220px;right:-90px}.lesson-list{position:relative;border:1px solid rgba(255,255,255,.15);border-radius:26px;background:rgba(255,255,255,.06);backdrop-filter:blur(10px);padding:26px;color:white}.lesson-list h3{font-family:Georgia,serif;font-size:1.7rem;line-height:1.1;margin:8px 0 18px}.path{display:grid;gap:9px}.path-step{display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:center;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.1);padding:10px 12px;border-radius:13px}.path-no{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,#d7aa58,#f2d89d);display:grid;place-items:center;color:#193223;font-weight:900;font-size:.85rem}.path-step strong{display:block;font-size:.86rem}.path-step small{display:block;color:#c8d5cd;font-size:.68rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{text-align:center;padding:28px 18px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat b{font-family:Georgia,serif;font-size:2rem;display:block}.stat span{font-size:.8rem;color:var(--muted);font-weight:720}
+.section{padding:88px 0}.section.alt{background:var(--cream)}.section.dark{background:var(--forest);color:white}.section-head{max-width:780px;margin:0 auto 46px;text-align:center}.section-head h2{font-size:clamp(2.2rem,4.6vw,3.8rem);line-height:1.02;margin:12px 0 16px}.section-head p{font-size:1.05rem;color:var(--muted)}.dark .section-head p{color:#d4e0d8}
+.promise{border-radius:32px;background:#102b1e;color:white;padding:46px;display:grid;grid-template-columns:.85fr 1.15fr;gap:44px;align-items:center;box-shadow:var(--shadow)}.promise h2{font-size:clamp(2.2rem,4.2vw,3.6rem);line-height:1;margin:10px 0}.promise p{color:#d0ddd5}.reason-list{display:grid;gap:12px}.reason-item{padding:16px 18px;border-radius:16px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06);display:flex;gap:12px;align-items:flex-start}.reason-item b{color:var(--gold2)}
+.lessons{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.lesson{background:white;border:1px solid #e4e9e5;border-radius:22px;padding:26px;box-shadow:0 14px 32px rgba(16,34,24,.05);position:relative;overflow:hidden}.lesson:after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;background:rgba(200,148,66,.08);right:-40px;top:-40px}.lesson-no{width:42px;height:42px;border-radius:13px;background:var(--forest);color:white;display:grid;place-items:center;font-family:Georgia,serif;font-size:1.2rem;margin-bottom:16px}.lesson h3{font-family:Georgia,serif;font-size:1.55rem;line-height:1.1;margin-bottom:9px}.lesson p{color:var(--muted);margin-bottom:12px}.mini-tags{display:flex;flex-wrap:wrap;gap:7px}.mini-tags span{font-size:.72rem;background:#f4f6f3;border:1px solid #e2e8e3;border-radius:999px;padding:6px 9px;font-weight:720;color:#3d5045}
+.outcomes-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}.checklist{list-style:none;padding:0;margin:0}.checklist li{margin:13px 0;padding-left:29px;position:relative;font-size:1.02rem}.checklist li:before{content:"✓";position:absolute;left:0;font-weight:900;color:var(--gold)}
+.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.who-card{background:white;border:1px solid #e1e7e2;border-radius:18px;padding:22px;min-height:150px}.who-card .ico{font-size:1.4rem;margin-bottom:12px}.who-card b{font-family:Georgia,serif;font-size:1.14rem;display:block;margin-bottom:6px}.who-card p{font-size:.85rem;color:var(--muted);margin:0}
+.faq{max-width:880px;margin:auto}details{border-top:1px solid #d4ddd7;padding:18px 4px}details:last-child{border-bottom:1px solid #d4ddd7}summary{cursor:pointer;font-weight:850;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}summary::-webkit-details-marker{display:none}summary:after{content:"+";font-size:1.3rem;color:var(--forest2);flex:0 0 auto}details[open] summary:after{content:"−"}details p{color:var(--muted);margin:14px 0 4px}
+.final{padding:84px 0;text-align:center;background:radial-gradient(circle at 50% 15%,rgba(227,187,103,.20),transparent 26%),#102e20;color:white}.final h2{font-size:clamp(2.6rem,5.2vw,4.6rem);line-height:.98;max-width:880px;margin:10px auto 18px}.final p{color:#cddad2;max-width:700px;margin:0 auto 26px}.final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer.site{padding:30px 0;background:#091d14;color:#becbc3;font-size:.79rem}.foot{display:flex;align-items:center;justify-content:space-between;gap:24px}.foot .brand{color:white}.foot-links{display:flex;gap:18px}
+@media(max-width:1000px){.nav-links{display:none}.hero-grid,.promise,.outcomes-grid{grid-template-columns:1fr}.lessons{grid-template-columns:1fr}.who-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:680px){.wrap{width:min(100% - 24px,var(--max))}.nav-in{height:68px}.nav .btn{padding:11px 14px;font-size:.76rem}.hero{padding-top:40px}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.section{padding:64px 0}.promise{padding:26px 20px}.who-grid{grid-template-columns:1fr}.final-actions .btn,.hero-actions .btn{width:100%}.foot{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="topbar">BSOE AI Academy · <span>Course 1 of 7 — AI Foundations</span></div>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="landingpage.html"><span class="brand-mark"></span><span>BSOE AI Academy</span></a>
+    <div class="nav-links"><a href="#overview">Why It Comes First</a><a href="#curriculum">What You'll Learn</a><a href="#outcomes">Outcomes</a><a href="#who">Who It's For</a><a href="#faq">FAQ</a></div>
+    <div class="nav-cta"><a class="btn outline" href="landingpage.html">Back to Academy</a><a class="btn gold" href="landingpage.html#readiness">Join the Academy</a></div>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="pill">COURSE 1 OF 7 · AI FOUNDATIONS</span>
+      <h1>Understand AI properly <em>before you rely on it.</em></h1>
+      <p class="hero-copy">AI Foundations is the starting point of the BSOE AI Academy. Before you touch a single tool, you'll build a clear, honest understanding of what AI actually is, how generative AI works, how to prompt it well, how to check its answers, and how to use it safely and responsibly — at work and in life.</p>
+      <div class="hero-actions"><a class="btn gold" href="#curriculum">See What's Inside ↓</a><a class="btn outline" href="landingpage.html#readiness">Join the Academy →</a></div>
+      <p class="micro">7 lessons · Beginner friendly · No prior experience required · Counts toward your BSOE Certificate</p>
+    </div>
+    <div class="hero-card" aria-label="AI Foundations lesson list">
+      <div class="hero-glow"></div>
+      <div class="lesson-list">
+        <div class="eyebrow light">Inside this course</div>
+        <h3>Seven lessons. One solid foundation.</h3>
+        <div class="path">
+          <div class="path-step"><div class="path-no">1</div><div><strong>What AI Actually Is</strong><small>Cut through the hype</small></div></div>
+          <div class="path-step"><div class="path-no">2</div><div><strong>How Generative AI Works</strong><small>In plain English</small></div></div>
+          <div class="path-step"><div class="path-no">3</div><div><strong>Prompting Fundamentals</strong><small>Ask well, get more</small></div></div>
+          <div class="path-step"><div class="path-no">4</div><div><strong>Verifying AI Output</strong><small>Spot hallucinations</small></div></div>
+          <div class="path-step"><div class="path-no">5</div><div><strong>Responsible & Ethical Use</strong><small>Use AI with judgement</small></div></div>
+          <div class="path-step"><div class="path-no">6</div><div><strong>Data Privacy & Security</strong><small>Know what not to share</small></div></div>
+          <div class="path-step"><div class="path-no">7</div><div><strong>Your First AI Task</strong><small>Apply it for real</small></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><b>7</b><span>focused lessons</span></div>
+  <div class="stat"><b>0</b><span>prior experience needed</span></div>
+  <div class="stat"><b>1</b><span>practical task, marked</span></div>
+  <div class="stat"><b>✓</b><span>counts toward BSOE Certificate</span></div>
+</div>
+
+<section class="section" id="overview">
+  <div class="wrap">
+    <div class="promise">
+      <div><div class="eyebrow light">Why this course comes first</div><h2>Every other course assumes you already know this.</h2><p>Tool tutorials and automation courses move fast because they assume you understand what AI is, what it gets wrong, and how to check its work. AI Foundations makes sure that's true before you go further — so nothing later in the Academy feels like a leap.</p></div>
+      <div class="reason-list">
+        <div class="reason-item"><b>01</b><div>You'll stop treating AI as magic and start understanding it as a tool with real strengths and real limits.</div></div>
+        <div class="reason-item"><b>02</b><div>You'll learn to catch confident-sounding wrong answers before they cause a problem.</div></div>
+        <div class="reason-item"><b>03</b><div>You'll build habits — privacy, verification, responsible use — that protect you for the rest of the Academy.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="curriculum">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The curriculum</div><h2>What you'll learn in AI Foundations.</h2><p>Seven short, focused lessons — each one building directly on the last.</p></div>
+    <div class="lessons">
+      <article class="lesson"><div class="lesson-no">1</div><h3>What AI Actually Is</h3><p>A plain-language grounding in what AI, machine learning and generative AI are — and how they differ from the science-fiction version. You'll leave with an accurate mental model, not a hyped-up one.</p><div class="mini-tags"><span>AI vs ML vs generative AI</span><span>Capabilities</span><span>Limits</span></div></article>
+      <article class="lesson"><div class="lesson-no">2</div><h3>How Generative AI Works</h3><p>A non-technical explanation of how tools like ChatGPT, Gemini and Claude generate answers — enough to understand why they're powerful, and why they sometimes confidently make things up.</p><div class="mini-tags"><span>Large language models</span><span>Training data</span><span>Why AI hallucinates</span></div></article>
+      <article class="lesson"><div class="lesson-no">3</div><h3>Prompting Fundamentals</h3><p>The core skill behind every good AI result. Learn how to give an AI enough context, structure and clarity to get a genuinely useful answer on your first attempt.</p><div class="mini-tags"><span>Clear instructions</span><span>Context</span><span>Iteration</span></div></article>
+      <article class="lesson"><div class="lesson-no">4</div><h3>Verifying AI Output</h3><p>Practical techniques for checking AI-generated work before you use it: spotting hallucinations, cross-checking facts, and knowing when to trust an answer and when to double-check it.</p><div class="mini-tags"><span>Fact-checking</span><span>Source checking</span><span>Critical thinking</span></div></article>
+      <article class="lesson"><div class="lesson-no">5</div><h3>Responsible & Ethical AI Use</h3><p>How to use AI in a way that's fair, transparent and accountable — covering bias, appropriate disclosure, and where AI use crosses a line at work, in study, or in public.</p><div class="mini-tags"><span>Bias awareness</span><span>Disclosure</span><span>Appropriate use</span></div></article>
+      <article class="lesson"><div class="lesson-no">6</div><h3>Data Privacy & Security</h3><p>What you should never paste into an AI tool, how AI providers use your data, and simple habits that keep you, your employer and your customers safe.</p><div class="mini-tags"><span>Sensitive data</span><span>Confidentiality</span><span>Safe habits</span></div></article>
+      <article class="lesson"><div class="lesson-no">7</div><h3>Your First Practical AI Task</h3><p>Put everything together in one guided, marked exercise — from prompt to verified output — so you finish this course with real evidence of what you can now do.</p><div class="mini-tags"><span>Applied practice</span><span>Marked activity</span><span>Evidence for your record</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="outcomes">
+  <div class="wrap outcomes-grid">
+    <div>
+      <div class="eyebrow">By the end of this course</div>
+      <h2 style="font-size:clamp(2.1rem,4vw,3.2rem);line-height:1.05;margin:10px 0 18px">You'll be ready for everything that follows.</h2>
+      <p style="color:var(--muted);max-width:520px">AI Foundations is deliberately short and practical. It exists to get you to a genuinely useful, confident starting point — fast.</p>
+    </div>
+    <ul class="checklist">
+      <li>Explain, in plain language, what AI can and cannot reliably do.</li>
+      <li>Write a clear, well-structured prompt that gets a useful answer first time.</li>
+      <li>Recognise the signs of an AI hallucination and know how to check it.</li>
+      <li>Apply a simple responsible-AI checklist before sharing AI-assisted work.</li>
+      <li>Follow safe data-privacy habits when using any AI tool.</li>
+      <li>Move into Course 2, Essential AI Tools, with real confidence.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section alt" id="who">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Who this course is for</div><h2>Built for a genuine beginner.</h2><p>If you've never used AI, or you use it a little but aren't sure you're doing it well, this course is calibrated for you.</p></div>
+    <div class="who-grid">
+      <div class="who-card"><div class="ico">🌱</div><b>Complete beginners</b><p>Never used an AI tool before? This is exactly where to start.</p></div>
+      <div class="who-card"><div class="ico">💼</div><b>Working professionals</b><p>Use AI a little at work but want to actually understand it, not just copy prompts.</p></div>
+      <div class="who-card"><div class="ico">🎓</div><b>Students</b><p>Building AI literacy that will matter in every course, job and industry ahead.</p></div>
+      <div class="who-card"><div class="ico">🧭</div><b>Leaders & managers</b><p>Need to guide a team's AI use responsibly, even without being hands-on daily.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Before you start</div><h2>Frequently asked questions</h2></div>
+    <div class="faq">
+      <details open><summary>Do I need any technical background?</summary><p>No. AI Foundations assumes no prior experience with AI, coding or technical tools. Every concept is explained in plain language first.</p></details>
+      <details><summary>How long does this course take?</summary><p>Most learners complete the seven lessons and the practical task in a few focused hours, spread across as many sessions as you like.</p></details>
+      <details><summary>Is there an assessment?</summary><p>Yes — a short practical task at the end, marked to confirm you can apply what you've learned before moving on to Course 2.</p></details>
+      <details><summary>What do I take after this course?</summary><p>AI Foundations leads directly into Course 2 of the Academy, Essential AI Tools, where you put these foundations into practice across ten leading AI platforms.</p></details>
+      <details><summary>Is this course included in the BSOE Certificate?</summary><p>Yes. Completing AI Foundations counts toward the full BSOE AI Academy Certificate of Achievement, awarded on completion of the full pathway.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap"><div class="eyebrow light">Course 1 of 7</div><h2>Start with a real foundation, not a shortcut.</h2><p>Join the BSOE AI Academy and begin with AI Foundations — the seven lessons every other course in the Academy builds on.</p><div class="final-actions"><a class="btn gold" href="landingpage.html#readiness">Join the Academy →</a><a class="btn outline" style="color:white;border-color:rgba(255,255,255,.35)" href="landingpage.html">Explore the Full Academy</a></div></div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap foot"><div class="brand"><span class="brand-mark"></span><span>BSOE AI Academy</span></div><div class="foot-links"><a href="landingpage.html">Academy Home</a><a href="LearnerGuide.html">Learner Guide</a><a href="#curriculum">Curriculum</a><a href="#faq">FAQ</a></div><div>© 2026 BSOE LTD.</div></div></footer>
+</body>
+</html>
