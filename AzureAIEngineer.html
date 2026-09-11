@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Azure AI Engineer Certification Pathway — BSOE AI Academy</title>
+<meta name="description" content="Become a Microsoft Certified Azure AI Engineer. A hands-on, four-stage pathway from Azure AI fundamentals through agentic orchestration, production RAG and security, to the official AI-103 certification exam." />
+<style>
+:root{
+  --ink:#102218;--forest:#153f2a;--forest2:#215e3e;--cream:#f7f2e7;--paper:#fffdf8;
+  --gold:#c89442;--gold2:#f1d398;--muted:#607167;--line:#dbe1dc;--white:#fff;
+  --shadow:0 24px 70px rgba(16,34,24,.13);--max:1180px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.58}
+h1,h2,h3,p{margin-top:0} h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.038em} a{text-decoration:none;color:inherit} .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:900;color:var(--forest2)} .eyebrow.light{color:var(--gold2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 24px;border:0;border-radius:999px;background:var(--forest);color:white;font-weight:850;cursor:pointer;box-shadow:0 12px 30px rgba(21,63,42,.18);transition:.2s transform,.2s background}.btn:hover{transform:translateY(-2px);background:#0f3020}.btn.gold{background:linear-gradient(135deg,#b97c2c,#dfbc74);color:#122419}.btn.outline{background:transparent;color:var(--forest);border:1px solid rgba(21,63,42,.24);box-shadow:none}
+.topbar{background:#0b2a1b;color:#fff;text-align:center;padding:11px 16px;font-size:.85rem;font-weight:750}.topbar span{color:var(--gold2)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,253,248,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,34,24,.08)}.nav-in{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:11px;font-weight:900}.brand-mark{width:39px;height:39px;border-radius:13px;background:radial-gradient(circle at 38% 34%,#fff4b8 0 8%,#d6a44c 17%,#1c4b33 44%,#0f2f20 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35),0 8px 20px rgba(21,63,42,.2);position:relative}.brand-mark:after{content:"✦";position:absolute;inset:0;display:grid;place-items:center;color:#fff2c6}.nav-links{display:flex;gap:20px;align-items:center;font-size:.83rem;font-weight:760;color:#334a3c}.nav-cta{display:flex;gap:10px;align-items:center}
+.hero{padding:64px 0 70px;background:radial-gradient(circle at 82% 10%,rgba(200,148,66,.19),transparent 31%),linear-gradient(180deg,#fffdf8 0%,#f5efe2 100%);text-align:center}.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;border:1px solid rgba(21,63,42,.15);background:rgba(255,255,255,.72);font-size:.78rem;font-weight:900;letter-spacing:.04em}.hero h1{font-size:clamp(2.7rem,6.4vw,5.2rem);line-height:1.03;margin:20px auto 20px;max-width:920px}.hero-copy{font-size:1.14rem;color:#496054;max-width:720px;margin:0 auto}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 16px;justify-content:center}.micro{font-size:.82rem;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{text-align:center;padding:28px 18px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat b{font-family:Georgia,serif;font-size:1.9rem;display:block}.stat span{font-size:.79rem;color:var(--muted);font-weight:720}
+.section{padding:84px 0}.section.alt{background:var(--cream)}.section.dark{background:var(--forest);color:white}.section-head{max-width:800px;margin:0 auto 44px;text-align:center}.section-head h2{font-size:clamp(2.1rem,4.4vw,3.6rem);line-height:1.03;margin:12px 0 16px}.section-head p{font-size:1.05rem;color:var(--muted)}.dark .section-head p{color:#d4e0d8}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.why-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:24px}.why-card b{color:var(--gold2);display:block;font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}.why-card p{color:#dbe7e0;margin:0;font-size:.96rem}
+.route{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;position:relative}
+.route-step{background:white;border:1px solid #e4e9e5;border-radius:20px;padding:22px;box-shadow:0 14px 32px rgba(16,34,24,.05);position:relative}
+.route-step:not(:last-child):after{content:"→";position:absolute;right:-18px;top:50%;transform:translateY(-50%);font-size:1.3rem;font-weight:900;color:var(--gold);z-index:2}
+.route-step .route-tag{display:inline-block;font-size:.68rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:var(--forest2);background:var(--cream);border:1px solid #e6dcc8;border-radius:999px;padding:5px 10px;margin-bottom:12px}
+.route-step h3{font-family:Georgia,serif;font-size:1.16rem;line-height:1.15;margin-bottom:8px}
+.route-step p{color:var(--muted);font-size:.86rem;margin:0}
+.route-step.credential{background:var(--forest);color:white;border-color:var(--forest)}
+.route-step.credential .route-tag{background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.2);color:var(--gold2)}
+.route-step.credential p{color:#d6e3db}
+.orient-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.orient-card{background:white;border:1px solid #e4e9e5;border-radius:18px;padding:20px}
+.orient-card .type-tag{margin-bottom:10px}
+.orient-card b{display:block;font-family:Georgia,serif;font-size:1.05rem;line-height:1.25;margin-bottom:4px}
+.goal-box{background:white;border:1px dashed #cddccf;border-radius:18px;padding:22px;margin-top:24px;color:var(--muted);font-size:.94rem}
+.goal-box strong{color:var(--ink);display:block;margin-bottom:6px;font-size:.95rem}
+.stage-track{border:1px solid var(--line);border-radius:20px;background:white;margin-bottom:16px;overflow:hidden}
+.stage-track summary{cursor:pointer;list-style:none;padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--cream)}
+.stage-track summary::-webkit-details-marker{display:none}
+.stage-track summary:after{content:"+";font-size:1.5rem;color:var(--forest2);flex:0 0 auto}
+.stage-track[open] summary:after{content:"−"}
+.stage-title{display:flex;flex-direction:column;gap:4px}
+.stage-title b{font-family:Georgia,serif;font-size:1.28rem;color:var(--ink)}
+.stage-title span{font-size:.85rem;color:var(--muted);font-weight:600}
+.stage-body{padding:24px 26px 28px}
+.subsection{margin-bottom:22px}
+.subsection:last-child{margin-bottom:0}
+.subsection h4{font-size:1.02rem;color:var(--forest);margin-bottom:3px}
+.sub-desc{font-size:.85rem;color:var(--muted);margin-bottom:10px}
+.lesson-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:10px 0;border-top:1px solid #eef1ee;flex-wrap:wrap}
+.subsection .lesson-row:first-of-type{border-top:0}
+.lesson-title{font-weight:750;font-size:.9rem;color:var(--ink)}
+.lesson-meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center;flex:0 0 auto}
+.type-tag{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);background:#f1f3f1;border-radius:999px;padding:4px 8px}
+.level-tag{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;border-radius:999px;padding:4px 8px}
+.level-tag.beginner{background:#EDF4FF;color:#2F7DE1}
+.level-tag.intermediate{background:#F5ECFB;color:#8246AF}
+.level-tag.advanced{background:var(--gold2);color:#6b4a12}
+.duration-tag{font-size:.74rem;color:var(--muted);font-weight:700}
+.faq{max-width:880px;margin:auto}details.faq-item{border-top:1px solid #d4ddd7;padding:18px 4px}details.faq-item:last-child{border-bottom:1px solid #d4ddd7}details.faq-item summary{cursor:pointer;font-weight:850;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}details.faq-item summary::-webkit-details-marker{display:none}details.faq-item summary:after{content:"+";font-size:1.3rem;color:var(--forest2);flex:0 0 auto}details.faq-item[open] summary:after{content:"−"}details.faq-item p{color:var(--muted);margin:14px 0 4px}
+.final{padding:84px 0;text-align:center;background:radial-gradient(circle at 50% 15%,rgba(227,187,103,.20),transparent 26%),#102e20;color:white}.final h2{font-size:clamp(2.5rem,5vw,4.4rem);line-height:.98;max-width:880px;margin:10px auto 18px}.final p{color:#cddad2;max-width:700px;margin:0 auto 26px}.final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer.site{padding:30px 0;background:#091d14;color:#becbc3;font-size:.79rem}.foot{display:flex;align-items:center;justify-content:space-between;gap:24px}.foot .brand{color:white}.foot-links{display:flex;gap:18px}
+@media(max-width:1000px){.nav-links{display:none}.why-grid,.orient-grid{grid-template-columns:1fr}.route{grid-template-columns:1fr 1fr}.route-step:nth-child(2):after{content:"↓";right:auto;left:50%;top:auto;bottom:-18px;transform:translateX(-50%)}.route-step:nth-child(1):after,.route-step:nth-child(3):after{content:"→"}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:680px){.wrap{width:min(100% - 24px,var(--max))}.nav-in{height:68px}.nav .btn{padding:11px 14px;font-size:.76rem}.hero{padding-top:40px}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.section{padding:60px 0}.route{grid-template-columns:1fr}.route-step:after{content:"↓ "!important;right:auto!important;left:50%!important;top:auto!important;bottom:-18px!important;transform:translateX(-50%)!important}.stage-track summary{padding:18px}.stage-body{padding:18px}.lesson-row{flex-direction:column;align-items:flex-start}.final-actions .btn,.hero-actions .btn{width:100%}.foot{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="topbar">BSOE AI Academy · <span>Professional Certification Pathway — Azure AI Engineer</span></div>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="landingpage.html"><span class="brand-mark"></span><span>BSOE AI Academy</span></a>
+    <div class="nav-links"><a href="#why">Why It Matters</a><a href="#route">Certification Path</a><a href="#curriculum">Curriculum</a><a href="#faq">FAQ</a></div>
+    <div class="nav-cta"><a class="btn outline" href="landingpage.html">Back to Academy</a><a class="btn gold" href="landingpage.html#readiness">Join the Academy</a></div>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="pill">MICROSOFT CERTIFICATION PATHWAY</span>
+    <h1>Become a Microsoft Certified Azure AI Engineer.</h1>
+    <p class="hero-copy">This is BSOE's entry point into an industry-recognised Microsoft credential. You'll move from Azure AI fundamentals through hands-on prompt engineering, RAG, secure deployment and multi-agent orchestration — all the way to the official AI-103 certification exam and the <strong>Azure AI Apps and Agents Developer Associate</strong> credential.</p>
+    <div class="hero-actions"><a class="btn gold" href="#route">See the Certification Path ↓</a><a class="btn outline" href="landingpage.html#readiness">Join the Academy →</a></div>
+    <p class="micro">4 progressive stages · 40+ hands-on modules, labs and videos · Every section capped at ≤2 hours · Leads to an official Microsoft exam</p>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><b>4</b><span>progressive stages</span></div>
+  <div class="stat"><b>40+</b><span>modules, labs &amp; videos</span></div>
+  <div class="stat"><b>≤2h</b><span>per section, always</span></div>
+  <div class="stat"><b>1</b><span>official Microsoft exam: AI-103</span></div>
+</div>
+
+<section class="section dark" id="why">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow light">Why this matters</div><h2>A credential the job market recognises — not just BSOE.</h2><p>AI skills are everywhere on job listings. A Microsoft certification is proof an employer can verify independently, on top of everything you build in the Academy.</p></div>
+    <div class="why-grid">
+      <div class="why-card"><b>Enterprise scale</b><p>Microsoft Azure is one of the world's leading enterprise cloud platforms, and Azure OpenAI is how a huge number of organisations deploy generative AI safely and at scale.</p></div>
+      <div class="why-card"><b>Beyond the chatbot</b><p>As companies move from experimenting with AI to shipping real products, they need engineers who can build secure, retrieval-grounded, multi-agent systems — not just write a good prompt.</p></div>
+      <div class="why-card"><b>Third-party validation</b><p>The Azure AI Apps and Agents Developer Associate credential is independently issued by Microsoft — evidence you can put on your CV and LinkedIn that speaks for itself.</p></div>
+      <div class="why-card"><b>Built to transfer</b><p>Every section here is hands-on and capped at two hours, built around real labs in real Azure services — so what you learn transfers directly into a working environment.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="route">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Where this certification starts</div><h2>From your first concept to a Microsoft credential.</h2><p>No prior Azure experience required. The path starts with plain-language AI fundamentals and builds, stage by stage, toward the official exam.</p></div>
+    <div class="route">
+      <div class="route-step"><span class="route-tag">Start here</span><h3>AI-901 Fundamentals</h3><p>Begin with Azure AI Fundamentals concepts — no coding or Azure experience assumed.</p></div>
+      <div class="route-step"><span class="route-tag">Build</span><h3>Hands-On Engineering</h3><p>Progress through prompt engineering, RAG, agents and secure deployment across four stages.</p></div>
+      <div class="route-step"><span class="route-tag">Prepare</span><h3>AI-103 Exam Prep</h3><p>Consolidate everything with certification-oriented labs and an official exam-prep session.</p></div>
+      <div class="route-step credential"><span class="route-tag">Certify</span><h3>Azure AI Apps &amp; Agents Developer Associate</h3><p>Sit Microsoft's official AI-103 exam independently and earn the credential.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="orientation">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Before you begin</div><h2>Start here: orientation.</h2><p>A short set of grounding videos, plus a moment to set your own learning goal before diving into Stage 1.</p></div>
+    <div class="orient-grid">
+      <div class="orient-card"><span class="type-tag">Video · 24 mins</span><b>Introduction to AI Concepts</b><span class="duration-tag">AI-901 · Episode 2</span></div>
+      <div class="orient-card"><span class="type-tag">Video · 2 mins</span><b>AI in Action: Using AI Thoughtfully</b></div>
+      <div class="orient-card"><span class="type-tag">Video · 1 min</span><b>Quick Overview of AI Skills</b></div>
+    </div>
+    <div class="goal-box"><strong>Set your learning goal.</strong>Before you start Stage 1, describe your learning goals, target completion date, or outcomes you hope to achieve. Keeping this in view keeps a 40-plus-item curriculum feel like a clear path instead of a long list.</div>
+  </div>
+</section>
+
+<section class="section" id="curriculum">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The full curriculum</div><h2>Four stages, start to certification.</h2><p>Select a stage to see everything inside it — every item is hands-on, and every section is capped at two hours.</p></div>
+
+    <details class="stage-track" open>
+      <summary><div class="stage-title"><b>Stage 1 · Beginner Foundations</b><span>Hands-on, ≤2h sections — fundamentals, prompt engineering, RAG, and secure/responsible deployment.</span></div></summary>
+      <div class="stage-body">
+        <div class="subsection">
+          <h4>Azure AI &amp; Azure OpenAI Fundamentals</h4>
+          <p class="sub-desc">Provisioning, models, SDKs, and core AI concepts to start building.</p>
+          <div class="lesson-row"><span class="lesson-title">Get Started with AI in Azure</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">22 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">AI-901 Microsoft Azure AI Fundamentals Study Cram</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">1 hr 6 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Introduction to AI Technical Concepts</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">25 mins</span></span></div>
+        </div>
+        <div class="subsection">
+          <h4>Prompt Engineering &amp; Orchestration</h4>
+          <p class="sub-desc">Prompt patterns and Azure OpenAI workflows for reliable outputs.</p>
+          <div class="lesson-row"><span class="lesson-title">Forging Voices from Data — Custom AI Training with Azure OpenAI Studio</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">1 hr 10 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Create a large language model deployment</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">47 mins</span></span></div>
+        </div>
+        <div class="subsection">
+          <h4>RAG Basics with Azure AI Search</h4>
+          <p class="sub-desc">Grounding concepts and a hands-on module to wire data into prompts.</p>
+          <div class="lesson-row"><span class="lesson-title">Build Smarter Agents with Azure AI Search</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">9 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Implement advanced RAG pipelines with Azure AI Search and Microsoft Foundry</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag advanced">Advanced</span><span class="duration-tag">41 mins</span></span></div>
+        </div>
+        <div class="subsection">
+          <h4>Secure &amp; Responsible AI on Azure</h4>
+          <p class="sub-desc">Identity, secrets, monitoring, and governance for safe deployments.</p>
+          <div class="lesson-row"><span class="lesson-title">Understand identity architecture for AI workloads</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">38 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Zero-Trust AI Agents: Secure Microsoft Foundry Workflows</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">23 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Unlock governance for your AI workforce with Microsoft Agent 365</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">25 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Protect Azure Key Vault with Microsoft Defender for Cloud</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">32 mins</span></span></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="stage-track">
+      <summary><div class="stage-title"><b>Stage 2 · Intermediate to Advanced</b><span>Hands-on, ≤2h sections — orchestration, production RAG, vector data, and secure operations.</span></div></summary>
+      <div class="stage-body">
+        <div class="subsection">
+          <h4>Agentic Orchestration &amp; Tool Use</h4>
+          <p class="sub-desc">Multi-agent patterns, tool/function calling, supervision, and SDK choices.</p>
+          <div class="lesson-row"><span class="lesson-title">Automatic function calling</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">36 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Implement advanced multi-agent orchestration patterns in Microsoft Foundry</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag advanced">Advanced</span><span class="duration-tag">48 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Agent Framework: Building Blocks for the Next Generation of AI Agents</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">30 mins</span></span></div>
+        </div>
+        <div class="subsection">
+          <h4>Production RAG Design &amp; Evaluation</h4>
+          <p class="sub-desc">High-precision RAG design and evaluation for relevance, faithfulness, and safety.</p>
+          <div class="lesson-row"><span class="lesson-title">Implement advanced RAG pipelines with Azure AI Search and Microsoft Foundry</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag advanced">Advanced</span><span class="duration-tag">41 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Evaluation-Driven Development: Turning AI Demos into Real Products</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">49 mins</span></span></div>
+        </div>
+        <div class="subsection">
+          <h4>Vector Data Management at Scale</h4>
+          <p class="sub-desc">Operate vector indexes, ingestion, hybrid search, and cost-performance tradeoffs.</p>
+          <div class="lesson-row"><span class="lesson-title">Search Azure Cosmos DB for NoSQL data with Azure Cognitive Search</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">32 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Agentic Coding with Azure Cosmos DB: From Idea to Working App</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">37 mins</span></span></div>
+        </div>
+        <div class="subsection">
+          <h4>Secure Ops, CI/CD, Monitoring, Cost</h4>
+          <p class="sub-desc">App Insights monitoring, semantic caching, and FinOps for predictable costs.</p>
+          <div class="lesson-row"><span class="lesson-title">Troubleshoot solutions by using Application Insights</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">59 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Manage &amp; optimize the cost of your AI workloads</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">44 mins</span></span></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="stage-track">
+      <summary><div class="stage-title"><b>Stage 3 · Certification Prep + Labs</b><span>≤2h sections — certification-oriented track with hands-on labs and exam prep.</span></div></summary>
+      <div class="stage-body">
+        <div class="subsection">
+          <h4>Certification Orientation &amp; Exam Roadmap</h4>
+          <p class="sub-desc">Understand exam scope and expectations, plan your prep path.</p>
+          <div class="lesson-row"><span class="lesson-title">Prepare for Microsoft Certification Exam AI-103: Developing AI Apps and Agents on Azure</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">42 mins</span></span></div>
+        </div>
+        <div class="subsection">
+          <h4>Azure OpenAI Hands-on: Prompts, Functions, GitOps</h4>
+          <p class="sub-desc">Practice function calling and prompt lifecycle with engineering workflows.</p>
+          <div class="lesson-row"><span class="lesson-title">Manage prompts for agents in Microsoft Foundry with GitHub</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">53 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Automatic function calling</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">36 mins</span></span></div>
+        </div>
+        <div class="subsection">
+          <h4>RAG &amp; Vector: Retrieval and Deployment Labs</h4>
+          <p class="sub-desc">Build hybrid retrieval and deploy a vector-enabled copilot.</p>
+          <div class="lesson-row"><span class="lesson-title">Implement advanced RAG pipelines with Azure AI Search and Microsoft Foundry</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag advanced">Advanced</span><span class="duration-tag">41 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Deploy your AI Copilot with Azure Kubernetes</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">39 mins</span></span></div>
+        </div>
+        <div class="subsection">
+          <h4>Responsible AI &amp; Guardrails (Hands-on)</h4>
+          <p class="sub-desc">Implement content safety and Foundry guardrails for compliant apps.</p>
+          <div class="lesson-row"><span class="lesson-title">Configure and manage guardrails in Microsoft Foundry</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">48 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Implement generative AI guardrails in Azure AI Foundry</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">40 mins</span></span></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="stage-track">
+      <summary><div class="stage-title"><b>Stage 4 · Cert Focus, Extra Labs &amp; Exam Prep</b><span>≤2h sections — certification target, additional hands-on labs, and an official exam-prep session.</span></div></summary>
+      <div class="stage-body">
+        <div class="subsection">
+          <h4>Certification Target</h4>
+          <p class="sub-desc">Primary certification focus for study scope and milestones.</p>
+          <div class="lesson-row"><span class="lesson-title">Microsoft Certified: Azure AI Apps and Agents Developer Associate</span><span class="lesson-meta"><span class="type-tag">Credential</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">2 hrs</span></span></div>
+        </div>
+        <div class="subsection">
+          <h4>Azure OpenAI Agent Build Lab</h4>
+          <p class="sub-desc">Build agents and shape outputs with prompt techniques.</p>
+          <div class="lesson-row"><span class="lesson-title">Utilize an Azure OpenAI model to create an Agent</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag advanced">Advanced</span><span class="duration-tag">34 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Generate AI-powered agent responses using generative answers in Microsoft Copilot Studio</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">57 mins</span></span></div>
+        </div>
+        <div class="subsection">
+          <h4>Knowledge Grounding Labs (RAG)</h4>
+          <p class="sub-desc">Ground agents with enterprise data and deploy vector-enabled copilots.</p>
+          <div class="lesson-row"><span class="lesson-title">Ground agents with enterprise knowledge using connectors and Azure AI Search in Microsoft Copilot Studio</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag advanced">Advanced</span><span class="duration-tag">50 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Deploy your AI Copilot with Azure Kubernetes</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">39 mins</span></span></div>
+        </div>
+        <div class="subsection">
+          <h4>Responsible AI Guardrails (Hands-on)</h4>
+          <p class="sub-desc">Implement and validate safety controls in Azure AI Foundry.</p>
+          <div class="lesson-row"><span class="lesson-title">Implement generative AI guardrails with Azure AI Content Safety</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">38 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Implement generative AI guardrails in Azure AI Foundry</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">40 mins</span></span></div>
+        </div>
+        <div class="subsection">
+          <h4>SDK Authentication Mini-Labs</h4>
+          <p class="sub-desc">Use managed identities with Azure OpenAI across languages.</p>
+          <div class="lesson-row"><span class="lesson-title">Introduction to Azure OpenAI managed identity authentication with JavaScript</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">29 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Introduction to Azure OpenAI managed identity authentication with Python</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">29 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Introduction to using Managed Identity to authenticate to Azure OpenAI in Microsoft Foundry Models with .NET</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">13 mins</span></span></div>
+        </div>
+        <div class="subsection">
+          <h4>Retrieval Evaluation &amp; Synthetic Data</h4>
+          <p class="sub-desc">Evaluate RAG quality and generate synthetic datasets.</p>
+          <div class="lesson-row"><span class="lesson-title">Implement advanced RAG pipelines with Azure AI Search and Microsoft Foundry</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag advanced">Advanced</span><span class="duration-tag">41 mins</span></span></div>
+          <div class="lesson-row"><span class="lesson-title">Run evaluations and generate synthetic datasets</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">58 mins</span></span></div>
+        </div>
+        <div class="subsection">
+          <h4>Official Exam Prep Session</h4>
+          <p class="sub-desc">Get official guidance on exam scope and expectations. Specific past exam questions are not available from Microsoft — this plan uses official prep resources only.</p>
+          <div class="lesson-row"><span class="lesson-title">Prepare for Microsoft Certification Exam AI-103: Developing AI Apps and Agents on Azure</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">42 mins</span></span></div>
+        </div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section alt" id="faq">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Before you enrol</div><h2>Frequently asked questions</h2></div>
+    <div class="faq">
+      <details class="faq-item" open><summary>Do I need coding experience to start?</summary><p>No. The path starts with AI-901 fundamentals, which assume no prior Azure or coding experience. Later stages introduce SDKs and code samples in JavaScript, Python and .NET, so basic familiarity with any programming language helps as you progress — but it isn't required to begin.</p></details>
+      <details class="faq-item"><summary>What is the AI-103 exam?</summary><p>AI-103, "Developing AI Apps and Agents on Azure," is Microsoft's official certification exam for this pathway. Passing it earns the Microsoft Certified: Azure AI Apps and Agents Developer Associate credential.</p></details>
+      <details class="faq-item"><summary>Does BSOE cover the cost of the exam?</summary><p>This pathway prepares you fully for the exam through hands-on labs and an official exam-prep session, but you sit Microsoft's AI-103 exam independently once you feel ready.</p></details>
+      <details class="faq-item"><summary>How is this different from AI Foundations or the AI Toolbox course?</summary><p>AI Foundations and the AI Toolbox build broad, practical AI literacy across many tools. The Azure AI Engineer pathway is a specialised, certification-focused track that builds on that foundation toward one specific, independently-verified Microsoft credential.</p></details>
+      <details class="faq-item"><summary>How long will the full pathway take?</summary><p>Every section is capped at two hours by design. Pace yourself against the learning goal you set in the orientation step — most learners move through one stage at a time rather than trying to complete all four at once.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap"><div class="eyebrow light">Microsoft Certification Pathway</div><h2>Start where every Azure AI Engineer starts.</h2><p>Join the BSOE AI Academy and begin Stage 1 of the Azure AI Engineer pathway — fundamentals first, certification at the end.</p><div class="final-actions"><a class="btn gold" href="landingpage.html#readiness">Join the Academy →</a><a class="btn outline" style="color:white;border-color:rgba(255,255,255,.35)" href="AIFoundations.html">Start with AI Foundations</a></div></div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap foot"><div class="brand"><span class="brand-mark"></span><span>BSOE AI Academy</span></div><div class="foot-links"><a href="landingpage.html">Academy Home</a><a href="AIFoundations.html">AI Foundations</a><a href="AIToolbox.html">AI Toolbox</a><a href="LearnerGuide.html">Learner Guide</a></div><div>© 2026 BSOE LTD.</div></div></footer>
+</body>
+</html>
