@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Engineering &amp; Agentic Systems Mastery Programme — BSOE AI Academy</title>
+<meta name="description" content="A 24-week, applied beginner-to-advanced pathway: build, deploy, govern and monetise enterprise AI solutions across 8 phases, 14 assessed units, 12 portfolio projects and 3 enterprise capstone pathways." />
+<style>
+:root{
+  --ink:#102218;--forest:#153f2a;--forest2:#215e3e;--cream:#f7f2e7;--paper:#fffdf8;
+  --gold:#c89442;--gold2:#f1d398;--muted:#607167;--line:#dbe1dc;--white:#fff;
+  --shadow:0 24px 70px rgba(16,34,24,.13);--max:1180px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.58}
+h1,h2,h3,p{margin-top:0} h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.038em} a{text-decoration:none;color:inherit} .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:900;color:var(--forest2)} .eyebrow.light{color:var(--gold2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 24px;border:0;border-radius:999px;background:var(--forest);color:white;font-weight:850;cursor:pointer;box-shadow:0 12px 30px rgba(21,63,42,.18);transition:.2s transform,.2s background}.btn:hover{transform:translateY(-2px);background:#0f3020}.btn.gold{background:linear-gradient(135deg,#b97c2c,#dfbc74);color:#122419}.btn.outline{background:transparent;color:var(--forest);border:1px solid rgba(21,63,42,.24);box-shadow:none}
+.topbar{background:#0b2a1b;color:#fff;text-align:center;padding:11px 16px;font-size:.85rem;font-weight:750}.topbar span{color:var(--gold2)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,253,248,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,34,24,.08)}.nav-in{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:11px;font-weight:900}.brand-mark{width:39px;height:39px;border-radius:13px;background:radial-gradient(circle at 38% 34%,#fff4b8 0 8%,#d6a44c 17%,#1c4b33 44%,#0f2f20 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35),0 8px 20px rgba(21,63,42,.2);position:relative}.brand-mark:after{content:"✦";position:absolute;inset:0;display:grid;place-items:center;color:#fff2c6}.nav-links{display:flex;gap:18px;align-items:center;font-size:.81rem;font-weight:760;color:#334a3c}.nav-cta{display:flex;gap:10px;align-items:center}
+.hero{padding:64px 0 70px;background:radial-gradient(circle at 82% 10%,rgba(200,148,66,.19),transparent 31%),linear-gradient(180deg,#fffdf8 0%,#f5efe2 100%);text-align:center}.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;border:1px solid rgba(21,63,42,.15);background:rgba(255,255,255,.72);font-size:.78rem;font-weight:900;letter-spacing:.04em}.hero h1{font-size:clamp(2.4rem,5.6vw,4.6rem);line-height:1.06;margin:20px auto 14px;max-width:920px}.byline{font-size:.9rem;color:var(--forest2);font-weight:800;margin-bottom:18px}.hero-copy{font-size:1.14rem;color:#496054;max-width:740px;margin:0 auto}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 16px;justify-content:center}.micro{font-size:.82rem;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{text-align:center;padding:26px 18px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat b{font-family:Georgia,serif;font-size:1.7rem;display:block}.stat span{font-size:.78rem;color:var(--muted);font-weight:720}
+.section{padding:80px 0}.section.alt{background:var(--cream)}.section.dark{background:var(--forest);color:white}.section-head{max-width:820px;margin:0 auto 44px;text-align:center}.section-head h2{font-size:clamp(2.1rem,4.4vw,3.6rem);line-height:1.03;margin:12px 0 16px}.section-head p{font-size:1.05rem;color:var(--muted)}.dark .section-head p{color:#d4e0d8}
+.outcome-box{max-width:900px;margin:0 auto 36px;background:white;border:1px solid var(--line);border-radius:22px;padding:30px 34px;box-shadow:0 14px 32px rgba(16,34,24,.05)}.outcome-box p{font-size:1.05rem;color:var(--ink);margin:0}
+.checklist-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;max-width:900px;margin:0 auto}.checklist-grid div{background:white;border:1px solid var(--line);border-radius:12px;padding:12px 16px;font-size:.88rem;display:flex;gap:10px;align-items:flex-start}.checklist-grid div:before{content:"✓";color:var(--gold);font-weight:900;flex:0 0 auto}
+.flow{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}.flow-step{background:white;border:1px solid #dfe5e0;border-radius:16px;padding:14px 8px;text-align:center;min-height:100px;position:relative;display:flex;flex-direction:column;justify-content:center}.flow-step strong{display:block;font-size:.78rem;line-height:1.2}.flow-step:not(:last-child):after{content:"→";position:absolute;right:-10px;top:42%;font-size:1rem;font-weight:900;color:var(--gold);z-index:2}
+.safety-bar{background:#fff4db;border:1px solid #f0d7a2;border-radius:18px;padding:18px 22px;max-width:900px;margin:28px auto 0;display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:#62460d}.safety-bar b{flex:0 0 auto}
+.ladder{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.ladder-step{background:white;border:1px solid var(--line);border-radius:18px;padding:20px 14px;text-align:center;position:relative}.ladder-step .lv-no{width:36px;height:36px;border-radius:50%;background:var(--forest);color:white;display:grid;place-items:center;margin:0 auto 10px;font-weight:900;font-size:.9rem}.ladder-step strong{display:block;font-family:Georgia,serif;font-size:1rem;line-height:1.2}.ladder-step:not(:last-child):after{content:"→";position:absolute;right:-13px;top:38px;font-size:1.1rem;font-weight:900;color:var(--gold);z-index:2}
+.phase-track{border:1px solid var(--line);border-radius:22px;background:white;margin-bottom:16px;overflow:hidden}
+.phase-track summary{cursor:pointer;list-style:none;padding:24px 28px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--cream)}
+.phase-track summary::-webkit-details-marker{display:none}
+.phase-track summary:after{content:"+";font-size:1.6rem;color:var(--forest2);flex:0 0 auto}
+.phase-track[open] summary:after{content:"−"}
+.phase-title{display:flex;flex-direction:column;gap:4px}
+.phase-title .ph-tag{font-size:.7rem;font-weight:900;letter-spacing:.06em;text-transform:uppercase;color:var(--forest2);background:var(--green-050,#EAF6EF);border:1px solid #cde8d7;border-radius:999px;padding:4px 10px;width:fit-content;margin-bottom:4px}
+.phase-title b{font-family:Georgia,serif;font-size:1.4rem;color:var(--ink)}
+.phase-body{padding:8px 28px 28px}
+.unit-block{margin-bottom:22px;padding-bottom:22px;border-bottom:1px solid #eef1ee}
+.unit-block:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.unit-block h4{font-family:Georgia,serif;font-size:1.16rem;color:var(--forest);margin-bottom:8px}
+.unit-block p{color:var(--muted);font-size:.94rem;margin:0}
+.portfolio-box{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:.82rem}
+.portfolio-box b{color:#6b4a12;text-transform:uppercase;letter-spacing:.04em;font-size:.68rem;font-weight:900}
+.portfolio-pill{background:var(--gold2);color:#6b4a12;border-radius:999px;padding:5px 11px;font-weight:750}
+.gate-box{background:var(--forest);color:white;border-radius:16px;padding:18px 22px;margin-top:6px}
+.gate-box b{display:block;color:var(--gold2);text-transform:uppercase;letter-spacing:.06em;font-size:.7rem;margin-bottom:6px}
+.gate-box p{margin:0;font-size:.92rem}
+.pathway-card{background:white;border:1px solid var(--line);border-radius:16px;padding:18px 20px;margin-bottom:10px}
+.pathway-card .pw-tag{font-size:.68rem;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--forest2);margin-bottom:4px}
+.pathway-card h5{font-family:Georgia,serif;font-size:1.06rem;margin:0 0 6px}
+.pathway-card p{margin:0;color:var(--muted);font-size:.88rem}
+.rubric-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}.rubric-card{background:white;border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}.rubric-card b{display:block;font-family:Georgia,serif;font-size:1.5rem;color:var(--forest)}.rubric-card span{font-size:.78rem;color:var(--muted)}
+.grade-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.grade-card{border-radius:16px;padding:18px;text-align:center}.grade-card b{display:block;font-family:Georgia,serif;font-size:1.15rem;margin-bottom:4px}.grade-card span{font-size:.8rem}
+.grade-card.pass{background:#F2F4F7;color:#31363B}.grade-card.merit{background:#EDF4FF;color:#1c4d8c}.grade-card.distinction{background:var(--gold2);color:#6b4a12}.grade-card.fail{background:#FFF0F1;color:#8c2f36}
+.faq{max-width:880px;margin:auto}details.faq-item{border-top:1px solid #d4ddd7;padding:18px 4px}details.faq-item:last-child{border-bottom:1px solid #d4ddd7}details.faq-item summary{cursor:pointer;font-weight:850;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}details.faq-item summary::-webkit-details-marker{display:none}details.faq-item summary:after{content:"+";font-size:1.3rem;color:var(--forest2);flex:0 0 auto}details.faq-item[open] summary:after{content:"−"}details.faq-item p{color:var(--muted);margin:14px 0 4px}
+.final{padding:84px 0;text-align:center;background:radial-gradient(circle at 50% 15%,rgba(227,187,103,.20),transparent 26%),#102e20;color:white}.final h2{font-size:clamp(2.4rem,5vw,4.2rem);line-height:.98;max-width:880px;margin:10px auto 18px}.final p{color:#cddad2;max-width:700px;margin:0 auto 26px}.final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer.site{padding:30px 0;background:#091d14;color:#becbc3;font-size:.79rem}.foot{display:flex;align-items:center;justify-content:space-between;gap:24px}.foot .brand{color:white}.foot-links{display:flex;gap:18px;flex-wrap:wrap}
+@media(max-width:1000px){.nav-links{display:none}.checklist-grid,.grade-grid{grid-template-columns:1fr}.flow,.ladder,.rubric-grid{grid-template-columns:repeat(3,1fr)}.flow-step:nth-child(3n):after,.ladder-step:nth-child(3n):after{display:none}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:680px){.wrap{width:min(100% - 24px,var(--max))}.nav-in{height:68px}.nav .btn{padding:11px 14px;font-size:.76rem}.hero{padding-top:40px}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.section{padding:56px 0}.flow,.ladder,.rubric-grid{grid-template-columns:1fr 1fr}.flow-step:after,.ladder-step:after{display:none!important}.phase-track summary{padding:18px}.phase-body{padding:0 18px 18px}.outcome-box{padding:22px 20px}.final-actions .btn,.hero-actions .btn{width:100%}.foot{flex-direction:column;align-items:flex-start}.safety-bar{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="topbar">BSOE AI Academy · <span>Flagship Programme — AI Engineering &amp; Agentic Systems Mastery</span></div>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="landingpage.html"><span class="brand-mark"></span><span>BSOE AI Academy</span></a>
+    <div class="nav-links"><a href="#outcome">Outcome</a><a href="#progression">Progression</a><a href="#phases">The 8 Phases</a><a href="#assessment">Assessment</a><a href="#faq">FAQ</a></div>
+    <div class="nav-cta"><a class="btn outline" href="landingpage.html">Back to Academy</a><a class="btn gold" href="landingpage.html#readiness">Join the Academy</a></div>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="pill">FLAGSHIP PROGRAMME · 24 WEEKS · 6 MONTHS</span>
+    <h1>Build, deploy, govern and monetise enterprise AI solutions.</h1>
+    <p class="byline">Led by John Aikeremiokha, Programme Director</p>
+    <p class="hero-copy">Move from modern AI foundations to production-grade knowledge systems, agent orchestration, enterprise deployment and responsible innovation — an applied, beginner-to-advanced pathway.</p>
+    <div class="hero-actions"><a class="btn gold" href="#phases">See the 8 Phases ↓</a><a class="btn outline" href="landingpage.html#readiness">Join the Academy →</a></div>
+    <p class="micro">8 phases · 14 assessed units · 24 weeks · 12 portfolio projects · 3 enterprise capstone pathways</p>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><b>8</b><span>phases</span></div>
+  <div class="stat"><b>14</b><span>assessed units</span></div>
+  <div class="stat"><b>12</b><span>portfolio projects</span></div>
+  <div class="stat"><b>3</b><span>capstone pathways</span></div>
+</div>
+
+<section class="section" id="outcome">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Programme outcome</div><h2>Twelve projects. Three capstones. One professional portfolio.</h2><p>Every module is a complete lesson page — not a video and a quiz.</p></div>
+    <div class="outcome-box"><p>By completion you will have produced 12 portfolio projects, three enterprise capstone options, a reusable AI consulting framework and an AI-startup blueprint.</p></div>
+    <div class="checklist-grid">
+      <div>HeyGen-ready teaching script</div>
+      <div>Ebook reading</div>
+      <div>Interactive worked example</div>
+      <div>Detailed workplace case study</div>
+      <div>Learner activity</div>
+      <div>Guided AI practical lab</div>
+      <div>Automatically marked ten-question knowledge check</div>
+      <div>Forty-mark assessed capstone</div>
+      <div>Pass, Merit and Distinction rubric</div>
+      <div>Final portfolio evidence requirements</div>
+      <div>Professional completion and next-step section</div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="learning-mode">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Learning mode</div><h2>Learn → observe → practise → build → assess → reflect → evidence.</h2><p>The same seven-step cycle runs through every single unit.</p></div>
+    <div class="flow">
+      <div class="flow-step"><strong>Learn</strong></div>
+      <div class="flow-step"><strong>Observe</strong></div>
+      <div class="flow-step"><strong>Practise</strong></div>
+      <div class="flow-step"><strong>Build</strong></div>
+      <div class="flow-step"><strong>Assess</strong></div>
+      <div class="flow-step"><strong>Reflect</strong></div>
+      <div class="flow-step"><strong>Evidence</strong></div>
+    </div>
+    <div class="safety-bar"><b>⚠ Data rule.</b><span>Use approved or synthetic data in every lab. Never paste credentials, personal records or confidential organisational information into an unapproved AI service.</span></div>
+  </div>
+</section>
+
+<section class="section" id="progression">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Progression</div><h2>Five levels, one career pathway.</h2></div>
+    <div class="ladder">
+      <div class="ladder-step"><div class="lv-no">1</div><strong>AI Practitioner</strong></div>
+      <div class="ladder-step"><div class="lv-no">2</div><strong>Generative AI Developer</strong></div>
+      <div class="ladder-step"><div class="lv-no">3</div><strong>Agentic AI Engineer</strong></div>
+      <div class="ladder-step"><div class="lv-no">4</div><strong>Enterprise AI Architect</strong></div>
+      <div class="ladder-step"><div class="lv-no">5</div><strong>AI Innovation Strategist</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="phases">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Programme at a glance</div><h2>Eight phases, in order.</h2><p>Select a phase to see its units, portfolio projects, and the gate you must clear before moving on.</p></div>
+
+    <details class="phase-track" open>
+      <summary><div class="phase-title"><span class="ph-tag">3 weeks</span><b>Phase 1 · AI Foundations</b></div></summary>
+      <div class="phase-body">
+        <div class="unit-block">
+          <h4>Unit 1 · Understanding Modern AI</h4>
+          <p>Distinguish AI, machine learning, deep learning, generative AI, foundation models and large language models. Compare major enterprise ecosystems and build a small, transparent career-adviser prototype with an open model.</p>
+          <div class="portfolio-box"><b>Portfolio Project</b><span class="portfolio-pill">AI Career Advisor</span></div>
+        </div>
+        <div class="unit-block">
+          <h4>Unit 2 · Prompt Engineering Mastery</h4>
+          <p>Design role, context, examples, constraints, output schemas and evaluation criteria. Replace hidden chain-of-thought requests with auditable task decomposition, evidence and concise reasoning summaries.</p>
+          <div class="portfolio-box"><b>Portfolio Project</b><span class="portfolio-pill">Prompt Marketplace Generator</span></div>
+        </div>
+        <div class="gate-box"><b>Phase gate</b><p>Explain model limitations, produce a reusable prompt specification and demonstrate safe handling of source material.</p></div>
+      </div>
+    </details>
+
+    <details class="phase-track">
+      <summary><div class="phase-title"><span class="ph-tag">4 weeks</span><b>Phase 2 · Generative AI Development</b></div></summary>
+      <div class="phase-body">
+        <div class="unit-block">
+          <h4>Unit 3 · Building AI Applications</h4>
+          <p>Build secure Python applications with Streamlit or Gradio, expose validated services with FastAPI and use an approved model endpoint. Practise configuration, secrets, structured output, testing, accessibility and safe failure.</p>
+          <div class="portfolio-box"><b>Portfolio Project</b><span class="portfolio-pill">Production-ready AI productivity application</span></div>
+        </div>
+        <div class="unit-block">
+          <h4>Unit 4 · Multimodal AI</h4>
+          <p>Combine text, images, audio, video and OCR without losing provenance. Build an accessible meeting summariser or voice assistant using consented or synthetic media.</p>
+          <div class="portfolio-box"><b>Portfolio Project</b><span class="portfolio-pill">Multimodal meeting intelligence prototype</span></div>
+        </div>
+        <div class="gate-box"><b>Phase gate</b><p>Deploy a usable application with input validation, a model disclosure, test evidence and a human review route.</p></div>
+      </div>
+    </details>
+
+    <details class="phase-track">
+      <summary><div class="phase-title"><span class="ph-tag">3 weeks</span><b>Phase 3 · Knowledge Systems and RAG</b></div></summary>
+      <div class="phase-body">
+        <div class="unit-block">
+          <h4>Unit 5 · Retrieval-Augmented Generation</h4>
+          <p>Design ingestion, chunking, embeddings, vector and hybrid retrieval, citations and evaluation. Compare Azure AI Search, Chroma and an approved managed vector service.</p>
+          <div class="portfolio-box"><b>Portfolio Project</b><span class="portfolio-pill">Corporate Knowledge Assistant</span></div>
+        </div>
+        <div class="unit-block">
+          <h4>Unit 6 · Advanced RAG</h4>
+          <p>Add query planning, filters, memory boundaries, graph relationships and agentic retrieval. Connect approved SharePoint content without over-permissioning or exposing sources.</p>
+          <div class="portfolio-box"><b>Portfolio Project</b><span class="portfolio-pill">AI Policy Advisor</span></div>
+        </div>
+        <div class="gate-box"><b>Phase gate</b><p>Pass a grounded-answer evaluation covering relevance, faithfulness, citation accuracy, latency, cost, privacy and retrieval failure.</p></div>
+      </div>
+    </details>
+
+    <details class="phase-track">
+      <summary><div class="phase-title"><span class="ph-tag">4 weeks</span><b>Phase 4 · Agentic AI Systems</b></div></summary>
+      <div class="phase-body">
+        <div class="unit-block">
+          <h4>Unit 7 · Introduction to AI Agents</h4>
+          <p>Model an agent as goals, instructions, tools, state, memory, policies, approvals and termination. Build a bounded research or service agent with a visible plan and safe stop conditions.</p>
+        </div>
+        <div class="unit-block">
+          <h4>Unit 8 · Multi-Agent Systems</h4>
+          <p>Compare sequential, concurrent, handoff, group-chat and manager-worker orchestration. Prototype with Microsoft Agent Framework or Semantic Kernel, LangGraph, AutoGen or CrewAI and justify the choice.</p>
+        </div>
+        <div class="unit-block">
+          <h4>Unit 9 · MCP and Tool Integration</h4>
+          <p>Implement Model Context Protocol concepts, tool schemas, consent, OAuth, audience-bound tokens, least privilege and audit. Connect only sandbox services in the lab.</p>
+          <div class="portfolio-box"><b>Portfolio Projects</b><span class="portfolio-pill">Customer Support Agent</span><span class="portfolio-pill">Sales Agent</span><span class="portfolio-pill">AI Consulting Firm Simulator</span><span class="portfolio-pill">Universal Enterprise Agent</span></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="phase-track">
+      <summary><div class="phase-title"><span class="ph-tag">3 weeks</span><b>Phase 5 · Enterprise AI Architecture</b></div></summary>
+      <div class="phase-body">
+        <div class="unit-block">
+          <h4>Unit 10 · AI Solution Architecture</h4>
+          <p>Design identity, network, data, model, agent, integration, observability and governance layers. Choose managed services, containers or Kubernetes by workload evidence rather than fashion.</p>
+        </div>
+        <div class="unit-block">
+          <h4>Unit 11 · Deploying Production AI</h4>
+          <p>Build a release pipeline with tests, evaluations, model and prompt versioning, monitoring, incident response, cost controls and rollback. Deploy a safe synthetic-data solution to an approved Azure environment.</p>
+          <div class="portfolio-box"><b>Portfolio Project</b><span class="portfolio-pill">Enterprise AI Platform Architecture and Production Deployment</span></div>
+        </div>
+        <div class="gate-box"><b>Phase gate</b><p>Defend architecture decisions using security, reliability, performance, accessibility, sustainability, cost and operational ownership.</p></div>
+      </div>
+    </details>
+
+    <details class="phase-track">
+      <summary><div class="phase-title"><span class="ph-tag">2 weeks</span><b>Phase 6 · AI Automation</b></div></summary>
+      <div class="phase-body">
+        <div class="unit-block">
+          <h4>Unit 12 · AI Business Process Automation</h4>
+          <p>Map a process before automating it. Build approval-first flows with Power Automate or an approved orchestration platform for onboarding, invoice triage, lead qualification or content operations. Add idempotency, exception queues, service accounts and measurable controls.</p>
+          <div class="portfolio-box"><b>Portfolio Project</b><span class="portfolio-pill">AI Automation Platform</span></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="phase-track">
+      <summary><div class="phase-title"><span class="ph-tag">2 weeks</span><b>Phase 7 · Responsible AI and Governance</b></div></summary>
+      <div class="phase-body">
+        <div class="unit-block">
+          <h4>Unit 13 · Responsible AI, Risk and Governance</h4>
+          <p>Create an AI inventory, impact assessment, data and model cards, risk register, control map, red-team plan, human-oversight design, incident process and retirement criteria. Apply UK GDPR, copyright, security and sector obligations with appropriate specialist review.</p>
+          <div class="portfolio-box"><b>Portfolio Project</b><span class="portfolio-pill">Responsible AI Governance Framework</span></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="phase-track">
+      <summary><div class="phase-title"><span class="ph-tag">3 weeks</span><b>Phase 8 · Industry Capstones</b></div></summary>
+      <div class="phase-body">
+        <div class="unit-block">
+          <h4>Unit 14 · Enterprise Capstone Studio</h4>
+          <p>Choose one principal pathway and document how its architecture could support the other two.</p>
+          <div class="pathway-card"><div class="pw-tag">Pathway A</div><h5>Enterprise AI Assistant</h5><p>Grounded email search, meeting summaries, Teams integration and SharePoint retrieval with permission-aware citations and human approval.</p></div>
+          <div class="pathway-card"><div class="pw-tag">Pathway B</div><h5>AI Startup Accelerator</h5><p>Design the product, website, marketing, sales and support system; validate need, pricing, operations and a compliant route to the first paying customer.</p></div>
+          <div class="pathway-card"><div class="pw-tag">Pathway C</div><h5>University AI Transformation</h5><p>Prototype admissions assistance, student support, course recommendation and a grounded learning assistant with accessibility and safeguarding controls.</p></div>
+        </div>
+        <div class="gate-box"><b>Final defence</b><p>Demonstrate the solution, evidence, evaluation, governance, cost model, incident response and professional reflection to a review panel.</p></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section dark" id="assessment">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow light">Assessment, portfolio and completion</div><h2>Every unit is marked. Every capstone is defended.</h2><p>Ten-question knowledge checks per unit, recommended threshold 80%, with feedback and retry allowed.</p></div>
+
+    <div class="section-head" style="margin-bottom:20px"><h3 style="color:white;font-size:1.4rem;margin:0">The forty-mark capstone</h3></div>
+    <div class="rubric-grid">
+      <div class="rubric-card"><b>8</b><span>Problem framing &amp; user outcome</span></div>
+      <div class="rubric-card"><b>8</b><span>Technical design &amp; implementation</span></div>
+      <div class="rubric-card"><b>8</b><span>Evaluation, evidence &amp; reliability</span></div>
+      <div class="rubric-card"><b>8</b><span>Security, responsible AI &amp; governance</span></div>
+      <div class="rubric-card"><b>8</b><span>Communication, reflection &amp; handoff</span></div>
+    </div>
+
+    <div class="section-head" style="margin:44px 0 20px"><h3 style="color:white;font-size:1.4rem;margin:0">Grade boundaries</h3></div>
+    <div class="grade-grid">
+      <div class="grade-card pass"><b>Pass</b><span>20–27 · working solution and essential evidence</span></div>
+      <div class="grade-card merit"><b>Merit</b><span>28–33 · well-tested solution, strong rationale, complete controls</span></div>
+      <div class="grade-card distinction"><b>Distinction</b><span>34–40 · production-minded, excellent evidence, transferable insight</span></div>
+      <div class="grade-card fail"><b>Below 20</b><span>Revise and resubmit</span></div>
+    </div>
+
+    <div class="section-head" style="margin:44px 0 20px"><h3 style="color:white;font-size:1.4rem;margin:0">Final portfolio</h3></div>
+    <div class="checklist-grid">
+      <div>Architecture diagrams</div>
+      <div>Source or low-code package</div>
+      <div>Prompt and tool specifications</div>
+      <div>Test and evaluation report</div>
+      <div>Model/data cards</div>
+      <div>Security and privacy record</div>
+      <div>Cost and sustainability note</div>
+      <div>User guide</div>
+      <div>Demonstration</div>
+      <div>Reflection and named approval</div>
+    </div>
+
+    <div class="safety-bar" style="margin-top:36px;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.18);color:#f0e2c0"><b>🛡 Professional completion.</b><span>Complete all unit gates, submit portfolio evidence, pass the final defence, record continuing-development goals, and publish only work that is safe, authorised, accessible and non-confidential — including named human approval for any solution capable of acting on organisational systems.</span></div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Before you enrol</div><h2>Frequently asked questions</h2></div>
+    <div class="faq">
+      <details class="faq-item" open><summary>Do I need coding experience to start?</summary><p>The programme is an applied beginner-to-advanced pathway — Phase 1 starts with foundational AI concepts, and Python/application-building begins in Phase 2. Some comfort with technical concepts helps, but you don't need professional coding experience on day one.</p></details>
+      <details class="faq-item"><summary>Why doesn't Phase 4 have a stated phase gate?</summary><p>Unlike the other phases, the source curriculum for Phase 4 (Agentic AI Systems) moves straight from Unit 9's portfolio projects into Phase 5 with no separate gate assessment listed — its four portfolio projects (Customer Support Agent, Sales Agent, AI Consulting Firm Simulator, Universal Enterprise Agent) serve as that phase's evidence instead.</p></details>
+      <details class="faq-item"><summary>What happens if I score below 20 on a capstone?</summary><p>You revise and resubmit. The grade boundaries are designed around demonstrating a genuinely working, evidenced solution — not a single pass/fail attempt.</p></details>
+      <details class="faq-item"><summary>What is the "named human approval" requirement?</summary><p>Any solution you build that is capable of acting on real organisational systems — sending something, changing a record, triggering a process — must have a named person sign off on it before completion. This is a core governance discipline of the programme, not a formality.</p></details>
+      <details class="faq-item"><summary>How is this different from the shorter role-based courses in the Academy?</summary><p>Those courses build focused, tool-specific skill in a few hours to a few weeks. This is the Academy's flagship, 24-week applied pathway — culminating in a defended, enterprise-grade portfolio and a genuine progression from AI Practitioner to AI Innovation Strategist.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap"><div class="eyebrow light">AI Engineering &amp; Agentic Systems Mastery</div><h2>Six months. Twelve projects. One defended portfolio.</h2><p>Join the BSOE AI Academy and start with Phase 1 — AI Foundations.</p><div class="final-actions"><a class="btn gold" href="landingpage.html#readiness">Join the Academy →</a><a class="btn outline" style="color:white;border-color:rgba(255,255,255,.35)" href="AzureAIEngineer.html">See the Azure AI Engineer Pathway</a></div></div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap foot"><div class="brand"><span class="brand-mark"></span><span>BSOE AI Academy</span></div><div class="foot-links"><a href="landingpage.html">Academy Home</a><a href="AIFoundations.html">AI Foundations</a><a href="AIToolbox.html">AI Toolbox</a><a href="AzureAIEngineer.html">Azure AI Engineer</a><a href="AIForAdmins.html">AI for Admins</a><a href="AIHealthcare.html">AI in Healthcare</a><a href="AIForITDevelopers.html">AI for IT &amp; Developers</a><a href="AIForProductManagers.html">AI for Product Managers</a><a href="AIForBusinessAnalysts.html">AI for Business Analysts</a><a href="AIForDataAnalysts.html">AI for Data Analysts</a><a href="AIForBusinessMarketingSales.html">AI for Business, Marketing &amp; Sales</a><a href="AIEnabledProjectManagement.html">AI-Enabled Project Management</a><a href="LegalAIAccelerator.html">Legal AI Accelerator</a><a href="LegalAIFastTrack.html">Legal AI Fast-Track</a><a href="AISkillsPortfolio.html">AI Skills Portfolio</a><a href="ResearchCompanyBeforeInterview.html">Interview Research</a><a href="HumanAIIntelligenceInSales.html">Human and AI Intelligence in Sales</a><a href="LearnerGuide.html">Learner Guide</a></div><div>© 2026 BSOE LTD.</div></div></footer>
+</body>
+</html>
