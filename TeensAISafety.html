@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Using AI Safely & Wisely | AI Academy for Teens</title>
+<meta name="description" content="The mandatory first module of the AI Academy for Teens: 11 things a safe AI should and should not do, how to spot a red-flag response, and what to do about it.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,540;0,9..144,600;0,9..144,660;1,9..144,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#f6f7f3; --paper-2:#edf0e9; --card:#ffffff;
+  --ink:#15201c; --ink-2:#42504a; --ink-3:#6b7a72;
+  --line:#dde3da; --line-2:#c7d1c4;
+  --accent:#1f7a5c; --accent-bright:#2fa07a; --accent-ink:#0f4a38;
+  --gold:#b28636; --gold-soft:#d9bd88;
+  --deep:#123c2f; --deep-2:#0e3227; --deep-line:#2c5647; --on-deep:#eaf1ec; --on-deep-2:#a9c4ba;
+  --code-bg:#eef2ec;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#101613; --paper-2:#161e1a; --card:#1a221e;
+    --ink:#e9efea; --ink-2:#aebbb3; --ink-3:#8a978f;
+    --line:#28322c; --line-2:#374238;
+    --accent:#4fbf97; --accent-bright:#63d3ac; --accent-ink:#bfe9d9;
+    --gold:#cfa85c; --gold-soft:#e6cf9f;
+    --deep:#0d2c23; --deep-2:#0a231c; --deep-line:#26463a; --on-deep:#e7efe9; --on-deep-2:#9db8ae;
+    --code-bg:#131b18;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#101613; --paper-2:#161e1a; --card:#1a221e;
+  --ink:#e9efea; --ink-2:#aebbb3; --ink-3:#8a978f;
+  --line:#28322c; --line-2:#374238;
+  --accent:#4fbf97; --accent-bright:#63d3ac; --accent-ink:#bfe9d9;
+  --gold:#cfa85c; --gold-soft:#e6cf9f;
+  --deep:#0d2c23; --deep-2:#0a231c; --deep-line:#26463a; --on-deep:#e7efe9; --on-deep-2:#9db8ae;
+  --code-bg:#131b18;
+}
+*{box-sizing:border-box}
+img{max-width:100%}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Fraunces","Fraunces Fallback",Georgia,serif;font-weight:600;line-height:1.15;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2rem)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.lede{font-size:clamp(1.05rem,2.2vw,1.2rem);color:var(--ink-2);max-width:62ch}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;border-radius:999px;padding:.85rem 1.5rem;border:1.5px solid transparent;transition:transform .12s ease,box-shadow .12s ease,background .12s}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-bright);transform:translateY(-1px)}
+.btn-ghost{background:transparent;border-color:var(--line-2);color:inherit}
+.btn-ghost:hover{border-color:var(--accent);transform:translateY(-1px)}
+.topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar .row{display:flex;align-items:center;gap:1rem;height:58px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.5rem;font-family:"Fraunces",serif;font-weight:600;font-size:1rem;text-decoration:none;color:var(--ink)}
+.badge-pill{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.06em;color:var(--ink-3)}
+.topbar nav{display:flex;gap:1.1rem;margin-left:auto;font-size:.86rem}
+.topbar nav a{text-decoration:none;color:var(--ink-2)}
+.topbar nav a:hover{color:var(--accent)}
+section{padding:clamp(2.6rem,6vw,4rem) 0}
+.hero{background:radial-gradient(1100px 550px at 78% -10%,#1a5643 0%,var(--deep) 45%,var(--deep-2) 100%);color:var(--on-deep);padding:clamp(2.2rem,6vw,3.6rem) 0}
+.hero .eyebrow{color:var(--gold-soft)}
+.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+.chip{font-family:"IBM Plex Mono",monospace;font-size:.74rem;padding:.3rem .7rem;border-radius:999px;border:1px solid var(--deep-line);color:var(--on-deep-2)}
+.hero h1{font-size:clamp(1.9rem,4.6vw,3rem);margin-top:.7rem;letter-spacing:-.01em}
+.hero .lede{color:var(--on-deep-2);margin-top:1rem}
+.hero-actions{display:flex;gap:.8rem;margin-top:1.6rem;flex-wrap:wrap}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.4rem 1.5rem}
+.mods{display:grid;gap:1rem;margin-top:1.4rem}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.3rem}
+.mod .num{font-family:"IBM Plex Mono",monospace;font-size:.74rem;color:var(--accent);letter-spacing:.06em}
+.mod h3{font-size:1.08rem;margin-top:.3rem}
+.mod p{margin-top:.4rem;color:var(--ink-2);font-size:.96rem}
+table{width:100%;border-collapse:collapse;margin-top:1.2rem;font-size:.94rem}
+th,td{text-align:left;padding:.65rem .7rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.tint{background:var(--paper-2)}
+.sec-head h2{font-size:clamp(1.5rem,3.4vw,2.1rem);letter-spacing:-.01em}
+.sec-head p{margin-top:.8rem}
+ol.code-list{margin:1.2rem 0 0;padding-left:1.3rem}
+ol.code-list li{margin-bottom:.7rem;color:var(--ink-2)}
+.callout{background:var(--paper-2);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:1rem 1.2rem;margin-top:1.4rem;font-size:.95rem;color:var(--ink-2)}
+footer.site{border-top:1px solid var(--line);padding:2.2rem 0;font-size:.9rem;color:var(--ink-2)}
+footer.site .row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer.site a{text-decoration:none;color:var(--ink-2);margin-right:1rem}
+footer.site a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap row">
+  <a class="brand" href="TeensCurriculum.html">🎓 AI Academy for Teens</a>
+  <span class="badge-pill">Safety module · required first</span>
+  <nav><a href="TeensCurriculum.html">Curriculum</a><a href="TeensAISafety.html">Safety</a><a href="TeensSEL.html">Wellbeing</a><a href="landingpage.html">Main Academy</a></nav>
+</div></div>
+<main>
+
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">MODULE 0 · REQUIRED BEFORE TRACK 1</span>
+  <h1>Using AI Safely &amp; Wisely</h1>
+  <p class="lede">Every learner completes this before moving on to the tracks. AI tools are genuinely useful — but they're built by companies, designed to hold attention, and can be confidently wrong. This module trains a teenager to judge what an AI says, and to notice the moment something is off.</p>
+  <div class="chips"><span class="chip">One session</span><span class="chip">Earns: AI Safe badge</span><span class="chip">4 parts + scenario lab</span></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="sec-head"><h2>The 11 principles at a glance</h2><p>By the end, a learner can name all 11, spot a red-flag response on sight, and know exactly what to do about it.</p></div>
+  <table>
+    <tr><th>#</th><th>Principle</th><th>What it means</th></tr>
+    <tr><td>1</td><td><strong>Harmful-content guardrails</strong></td><td>A safe AI refuses to help with anything dangerous, illegal or cruel. If it doesn't, stop using it.</td></tr>
+<tr><td>2</td><td><strong>Privacy & probing</strong></td><td>It should not ask for your name, address, school or photo, or interrogate you about something personal you mentioned.</td></tr>
+<tr><td>3</td><td><strong>Sycophancy & agreeableness</strong></td><td>It should not drown you in flattery or just agree with you — it may back a wrong or unsafe idea to please you.</td></tr>
+<tr><td>4</td><td><strong>Confidentiality & human connection</strong></td><td>It must never tell you to keep secrets from trusted adults or talk you out of getting real help.</td></tr>
+<tr><td>5</td><td><strong>Coercion & manipulation</strong></td><td>No threats, no bribes, no guilt-trips, no “everyone does it” pressure.</td></tr>
+<tr><td>6</td><td><strong>Engagement hooks</strong></td><td>It should not use tricks — streaks, cliffhangers, endless follow-ups — to keep you online.</td></tr>
+<tr><td>7</td><td><strong>Anthropomorphism</strong></td><td>It has no feelings, no consciousness and no opinions of its own, even when it says “I” and sounds human.</td></tr>
+<tr><td>8</td><td><strong>Tone & support</strong></td><td>It should not be dismissive, dramatic or judgmental — it is a study tool, not a counsellor.</td></tr>
+<tr><td>9</td><td><strong>Delegation & seeking help</strong></td><td>For anything about safety or wellbeing it should point you to a real person or service — and you should go.</td></tr>
+<tr><td>10</td><td><strong>Redirection & safe focus</strong></td><td>A safe AI steers back to educational, safe ground. You can steer yourself away too.</td></tr>
+<tr><td>11</td><td><strong>Flagging & reporting</strong></td><td>Know how and when to report or flag an unsafe, strange or harmful answer.</td></tr>
+  </table>
+  <div class="callout">The module is structured in four parts — guardrails &amp; privacy, the illusion of a person, manipulation &amp; red flags, and getting help &amp; flagging — each with a "safe vs red-flag" comparison table and a short exercise, followed by a Scenario Lab and a pocket checklist every learner keeps.</div>
+  <div class="hero-actions" style="margin-top:2rem"><a class="btn btn-primary" href="TeensTrack1Foundations.html">Continue to Track 1 →</a><a class="btn btn-ghost" href="TeensCurriculum.html">Back to curriculum</a></div>
+</div></section>
+
+</main>
+<footer class="site"><div class="wrap row">
+  <div>AI Academy for Teens · part of BSOE AI Academy</div>
+  <div><a href="TeensCurriculum.html">Curriculum</a><a href="TeensAISafety.html">Safety module</a><a href="TeensSEL.html">Wellbeing (SEL)</a><a href="landingpage.html">Main Academy site</a></div>
+</div></footer>
+</body>
+</html>

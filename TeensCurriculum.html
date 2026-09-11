@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Academy for Teens — Curriculum | BSOE AI Academy</title>
+<meta name="description" content="A four-track AI programme for teenagers: AI Foundations, Prompt Engineering, Build with AI, and AI for Creativity — safety-first, badge-based, with a capstone project and certificate.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,540;0,9..144,600;0,9..144,660;1,9..144,400&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --paper:#f6f7f3; --paper-2:#edf0e9; --card:#ffffff;
+  --ink:#15201c; --ink-2:#42504a; --ink-3:#6b7a72;
+  --line:#dde3da; --line-2:#c7d1c4;
+  --accent:#1f7a5c; --accent-bright:#2fa07a; --accent-ink:#0f4a38;
+  --gold:#b28636; --gold-soft:#d9bd88;
+  --deep:#123c2f; --deep-2:#0e3227; --deep-line:#2c5647; --on-deep:#eaf1ec; --on-deep-2:#a9c4ba;
+  --code-bg:#eef2ec;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#101613; --paper-2:#161e1a; --card:#1a221e;
+    --ink:#e9efea; --ink-2:#aebbb3; --ink-3:#8a978f;
+    --line:#28322c; --line-2:#374238;
+    --accent:#4fbf97; --accent-bright:#63d3ac; --accent-ink:#bfe9d9;
+    --gold:#cfa85c; --gold-soft:#e6cf9f;
+    --deep:#0d2c23; --deep-2:#0a231c; --deep-line:#26463a; --on-deep:#e7efe9; --on-deep-2:#9db8ae;
+    --code-bg:#131b18;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#101613; --paper-2:#161e1a; --card:#1a221e;
+  --ink:#e9efea; --ink-2:#aebbb3; --ink-3:#8a978f;
+  --line:#28322c; --line-2:#374238;
+  --accent:#4fbf97; --accent-bright:#63d3ac; --accent-ink:#bfe9d9;
+  --gold:#cfa85c; --gold-soft:#e6cf9f;
+  --deep:#0d2c23; --deep-2:#0a231c; --deep-line:#26463a; --on-deep:#e7efe9; --on-deep-2:#9db8ae;
+  --code-bg:#131b18;
+}
+*{box-sizing:border-box}
+img{max-width:100%}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Public Sans",system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:"Fraunces","Fraunces Fallback",Georgia,serif;font-weight:600;line-height:1.15;margin:0;text-wrap:balance}
+p{margin:0}
+a{color:inherit}
+.wrap{max-width:960px;margin:0 auto;padding:0 clamp(1.1rem,4vw,2rem)}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.lede{font-size:clamp(1.05rem,2.2vw,1.2rem);color:var(--ink-2);max-width:62ch}
+.btn{display:inline-flex;align-items:center;gap:.5rem;font:inherit;font-weight:700;cursor:pointer;text-decoration:none;border-radius:999px;padding:.85rem 1.5rem;border:1.5px solid transparent;transition:transform .12s ease,box-shadow .12s ease,background .12s}
+.btn-primary{background:var(--accent);color:#fff}
+.btn-primary:hover{background:var(--accent-bright);transform:translateY(-1px)}
+.btn-ghost{background:transparent;border-color:var(--line-2);color:inherit}
+.btn-ghost:hover{border-color:var(--accent);transform:translateY(-1px)}
+.topbar{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--paper) 90%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.topbar .row{display:flex;align-items:center;gap:1rem;height:58px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.5rem;font-family:"Fraunces",serif;font-weight:600;font-size:1rem;text-decoration:none;color:var(--ink)}
+.badge-pill{font-family:"IBM Plex Mono",monospace;font-size:.72rem;letter-spacing:.06em;color:var(--ink-3)}
+.topbar nav{display:flex;gap:1.1rem;margin-left:auto;font-size:.86rem}
+.topbar nav a{text-decoration:none;color:var(--ink-2)}
+.topbar nav a:hover{color:var(--accent)}
+section{padding:clamp(2.6rem,6vw,4rem) 0}
+.hero{background:radial-gradient(1100px 550px at 78% -10%,#1a5643 0%,var(--deep) 45%,var(--deep-2) 100%);color:var(--on-deep);padding:clamp(2.2rem,6vw,3.6rem) 0}
+.hero .eyebrow{color:var(--gold-soft)}
+.chips{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+.chip{font-family:"IBM Plex Mono",monospace;font-size:.74rem;padding:.3rem .7rem;border-radius:999px;border:1px solid var(--deep-line);color:var(--on-deep-2)}
+.hero h1{font-size:clamp(1.9rem,4.6vw,3rem);margin-top:.7rem;letter-spacing:-.01em}
+.hero .lede{color:var(--on-deep-2);margin-top:1rem}
+.hero-actions{display:flex;gap:.8rem;margin-top:1.6rem;flex-wrap:wrap}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:1.4rem 1.5rem}
+.mods{display:grid;gap:1rem;margin-top:1.4rem}
+.mod{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1.1rem 1.3rem}
+.mod .num{font-family:"IBM Plex Mono",monospace;font-size:.74rem;color:var(--accent);letter-spacing:.06em}
+.mod h3{font-size:1.08rem;margin-top:.3rem}
+.mod p{margin-top:.4rem;color:var(--ink-2);font-size:.96rem}
+table{width:100%;border-collapse:collapse;margin-top:1.2rem;font-size:.94rem}
+th,td{text-align:left;padding:.65rem .7rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:"IBM Plex Mono",monospace;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.tint{background:var(--paper-2)}
+.sec-head h2{font-size:clamp(1.5rem,3.4vw,2.1rem);letter-spacing:-.01em}
+.sec-head p{margin-top:.8rem}
+ol.code-list{margin:1.2rem 0 0;padding-left:1.3rem}
+ol.code-list li{margin-bottom:.7rem;color:var(--ink-2)}
+.callout{background:var(--paper-2);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:10px;padding:1rem 1.2rem;margin-top:1.4rem;font-size:.95rem;color:var(--ink-2)}
+footer.site{border-top:1px solid var(--line);padding:2.2rem 0;font-size:.9rem;color:var(--ink-2)}
+footer.site .row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer.site a{text-decoration:none;color:var(--ink-2);margin-right:1rem}
+footer.site a:hover{color:var(--accent)}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap row">
+  <a class="brand" href="TeensCurriculum.html">🎓 AI Academy for Teens</a>
+  <span class="badge-pill">Curriculum</span>
+  <nav><a href="TeensCurriculum.html">Curriculum</a><a href="TeensAISafety.html">Safety</a><a href="TeensSEL.html">Wellbeing</a><a href="landingpage.html">Main Academy</a></nav>
+</div></div>
+<main>
+
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">AI ACADEMY FOR TEENS</span>
+  <h1>Applied AI, taught as an honest study co-pilot — not a shortcut.</h1>
+  <p class="lede">A four-track programme that teaches teenagers the prompt frameworks, working routines and checking habits that turn a chatbot into a real learning partner — plus the judgement to use it without cheating themselves. Every learner starts with a mandatory safety module before touching a single tool.</p>
+  <div class="chips"><span class="chip">Ages 10–17</span><span class="chip">~12 weeks + capstone</span><span class="chip">4 badges + certificate</span><span class="chip">Works on any phone</span></div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="callout"><strong>⚠ Start here — required for every learner.</strong> Before Track 1, every learner completes <a href="TeensAISafety.html">Using AI Safely &amp; Wisely</a> — the 11 things a safe AI should and should not do, how to spot a red-flag response, and what to do when they see one. It takes one session and earns the AI Safe badge.</div>
+
+  <div class="sec-head" style="margin-top:2.4rem"><h2>The four tracks</h2><p>Taken in order, because each one builds on the last. Everyone starts in Track 1.</p></div>
+  <table>
+    <tr><th>Track</th><th>They'll be able to…</th><th>Badge</th><th>Project</th></tr>
+    <tr><td><a href="TeensTrack1Foundations.html"><strong>1 · AI Foundations</strong></a></td><td>Explain what a language model is, spot a guess, use AI safely and honestly</td><td>AI Ready</td><td>AI Myth-Buster</td></tr>
+    <tr><td><a href="TeensTrack2PromptEngineering.html"><strong>2 · Prompt Engineering &amp; Chatbots</strong></a></td><td>Write strong prompts with a repeatable framework; build a study assistant</td><td>Prompt Builder</td><td>Ship one study assistant</td></tr>
+    <tr><td><a href="TeensTrack3BuildWithAI.html"><strong>3 · Build with AI (no-code)</strong></a></td><td>Turn a real local problem into a working tool, no coding — holds the capstone</td><td>Builder</td><td>Capstone: a working tool</td></tr>
+    <tr><td><a href="TeensTrack4Creativity.html"><strong>4 · AI for Creativity</strong></a></td><td>Prompt images, video and music with structure; handle likeness &amp; consent</td><td>Creator</td><td>A 3-piece creative set</td></tr>
+  </table>
+
+  <div class="sec-head" style="margin-top:2.6rem"><h2>The Academy Code</h2><p>Four rules, graded on every submission — the whole point is honesty, not shortcuts.</p></div>
+  <ol class="code-list">
+    <li><strong>Add your value.</strong> Change, cut or build on at least 40% of anything an AI gives you. If a learner can't explain a sentence in their work, it doesn't go in.</li>
+    <li><strong>Check before you trust.</strong> No fact from an AI enters the work without a second source the learner found themselves — a textbook, a named website, a teacher.</li>
+    <li><strong>Guard what's private.</strong> Never paste full essays, other people's personal details, a home address, or photos of real people into a public AI tool.</li>
+    <li><strong>Say when you used AI.</strong> Tell the teacher how AI helped — "to plan", "to check my grammar", "to make flashcards". Honesty is the whole point.</li>
+  </ol>
+
+  <div class="sec-head" style="margin-top:2.6rem"><h2>How a term runs</h2><p>Roughly twelve teaching weeks plus capstone time. The tracks are fixed; the pace adjusts to the cohort.</p></div>
+  <table>
+    <tr><th>Weeks</th><th>Focus</th><th>Live session</th></tr>
+    <tr><td>1–3</td><td>Track 1 — AI Foundations</td><td>Model basics, spotting guesses, the Academy Code</td></tr>
+    <tr><td>4–6</td><td>Track 2 — Prompt Engineering</td><td>Prompt framework practice, building an assistant</td></tr>
+    <tr><td>7–10</td><td>Track 3 — Build with AI</td><td>Spec clinic, build support, test day</td></tr>
+    <tr><td>11–13</td><td>Track 4 — AI for Creativity</td><td>Layered prompting, refinement, ethics discussion</td></tr>
+    <tr><td>14</td><td>Capstone showcase</td><td>Live demos, badges &amp; certificates</td></tr>
+  </table>
+
+  <div class="sec-head" style="margin-top:2.6rem"><h2>Earning the certificate</h2><p>Awarded for all four badges plus an accepted capstone.</p></div>
+  <div class="mods">
+    <div class="mod"><span class="num">AI READY</span><h3>Track 1</h3><p>Explains what a language model does and one weakness; knows and applies the Academy Code; Myth-Buster posted with two independent sources.</p></div>
+    <div class="mod"><span class="num">PROMPT BUILDER</span><h3>Track 2</h3><p>Can write a strong prompt from a blank page; has a working study-tutor prompt they can explain; shipped one custom assistant.</p></div>
+    <div class="mod"><span class="num">BUILDER</span><h3>Track 3</h3><p>Shipped a working no-code tool a real user used unaided; delivered spec, instructions, user guide and a live demo.</p></div>
+    <div class="mod"><span class="num">CREATOR</span><h3>Track 4</h3><p>Can build and refine a layered image prompt; produced the 3-piece set, each item labelled "Made with AI"; can explain likeness and consent.</p></div>
+  </div>
+
+  <div class="callout" style="margin-top:2.4rem"><strong>Every learner gets a Microsoft 365 account on enrolment</strong>, including Microsoft Copilot — signed in with the Academy account, a learner's own work stays inside the school's tenant, the safe default for anything involving their own writing. Assessment is a portfolio, not an exam: each badge is earned by producing something real, a short written check, and being able to explain how it was made.</div>
+
+  <div class="hero-actions" style="margin-top:2rem"><a class="btn btn-primary" href="TeensAISafety.html">Start with the safety module →</a><a class="btn btn-ghost" href="TeensSEL.html">See the wellbeing course</a></div>
+</div></section>
+
+</main>
+<footer class="site"><div class="wrap row">
+  <div>AI Academy for Teens · part of BSOE AI Academy</div>
+  <div><a href="TeensCurriculum.html">Curriculum</a><a href="TeensAISafety.html">Safety module</a><a href="TeensSEL.html">Wellbeing (SEL)</a><a href="landingpage.html">Main Academy site</a></div>
+</div></footer>
+</body>
+</html>
