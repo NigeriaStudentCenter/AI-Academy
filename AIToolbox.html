@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI Toolbox Course — BSOE AI Academy</title>
+<meta name="description" content="Course 2 of the BSOE AI Academy: the AI Toolbox. Ten tool-specific pathways from Microsoft Copilot to Runway ML, each moving from beginner foundations to governed, advanced AI systems." />
+<style>
+:root{
+  --ink:#102218;--forest:#153f2a;--forest2:#215e3e;--cream:#f7f2e7;--paper:#fffdf8;
+  --gold:#c89442;--gold2:#f1d398;--muted:#607167;--line:#dbe1dc;--white:#fff;
+  --shadow:0 24px 70px rgba(16,34,24,.13);--max:1180px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.58}
+h1,h2,h3,p{margin-top:0} h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.038em} a{text-decoration:none;color:inherit} .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:900;color:var(--forest2)} .eyebrow.light{color:var(--gold2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 24px;border:0;border-radius:999px;background:var(--forest);color:white;font-weight:850;cursor:pointer;box-shadow:0 12px 30px rgba(21,63,42,.18);transition:.2s transform,.2s background}.btn:hover{transform:translateY(-2px);background:#0f3020}.btn.gold{background:linear-gradient(135deg,#b97c2c,#dfbc74);color:#122419}.btn.outline{background:transparent;color:var(--forest);border:1px solid rgba(21,63,42,.24);box-shadow:none}
+.btn.small{padding:10px 16px;font-size:.82rem;font-weight:800;box-shadow:none}
+.topbar{background:#0b2a1b;color:#fff;text-align:center;padding:11px 16px;font-size:.85rem;font-weight:750}.topbar span{color:var(--gold2)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,253,248,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,34,24,.08)}.nav-in{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:11px;font-weight:900}.brand-mark{width:39px;height:39px;border-radius:13px;background:radial-gradient(circle at 38% 34%,#fff4b8 0 8%,#d6a44c 17%,#1c4b33 44%,#0f2f20 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35),0 8px 20px rgba(21,63,42,.2);position:relative}.brand-mark:after{content:"✦";position:absolute;inset:0;display:grid;place-items:center;color:#fff2c6}.nav-links{display:flex;gap:22px;align-items:center;font-size:.84rem;font-weight:760;color:#334a3c}.nav-cta{display:flex;gap:10px;align-items:center}
+.hero{padding:64px 0 70px;background:radial-gradient(circle at 82% 10%,rgba(200,148,66,.19),transparent 31%),linear-gradient(180deg,#fffdf8 0%,#f5efe2 100%);text-align:center}.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;border:1px solid rgba(21,63,42,.15);background:rgba(255,255,255,.72);font-size:.78rem;font-weight:900;letter-spacing:.04em}.hero h1{font-size:clamp(3rem,7vw,5.6rem);line-height:1.0;margin:20px auto 20px;max-width:920px}.hero-copy{font-size:1.14rem;color:#496054;max-width:680px;margin:0 auto}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 16px;justify-content:center}.micro{font-size:.82rem;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{text-align:center;padding:28px 18px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat b{font-family:Georgia,serif;font-size:2rem;display:block}.stat span{font-size:.8rem;color:var(--muted);font-weight:720}
+.section{padding:88px 0}.section.alt{background:var(--cream)}.section-head{max-width:800px;margin:0 auto 46px;text-align:center}.section-head h2{font-size:clamp(2.2rem,4.6vw,3.8rem);line-height:1.02;margin:12px 0 16px}.section-head p{font-size:1.05rem;color:var(--muted)}
+.stage-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:stretch;position:relative}
+.stage{background:white;border:1px solid #e4e9e5;border-radius:22px;padding:28px;box-shadow:0 14px 32px rgba(16,34,24,.05);position:relative}
+.stage:not(:last-child):after{content:"→";position:absolute;right:-19px;top:50%;transform:translateY(-50%);font-size:1.4rem;font-weight:900;color:var(--gold);z-index:2}
+.stage .stage-tag{display:inline-block;font-size:.72rem;font-weight:900;letter-spacing:.08em;text-transform:uppercase;padding:6px 11px;border-radius:999px;margin-bottom:14px}
+.stage.beginner .stage-tag{background:var(--blue-100,#EDF4FF);color:#2F7DE1}
+.stage.intermediate .stage-tag{background:#F5ECFB;color:#8246AF}
+.stage.advanced .stage-tag{background:var(--gold2);color:#6b4a12}
+.stage h3{font-family:Georgia,serif;font-size:1.4rem;line-height:1.15;margin-bottom:10px}
+.stage p{color:var(--muted);font-size:.95rem;margin:0}
+.matrix-head{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:32px}
+.matrix{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.tool-card{background:white;border:1px solid #e4e9e5;border-radius:22px;padding:26px;box-shadow:0 14px 32px rgba(16,34,24,.05);display:flex;flex-direction:column;gap:12px}
+.tool-badge{display:inline-block;font-size:.7rem;font-weight:900;letter-spacing:.06em;color:var(--forest2);background:var(--green-050,#EAF6EF);border:1px solid #cde8d7;border-radius:999px;padding:6px 10px;width:fit-content}
+.tool-card h3{font-family:Georgia,serif;font-size:1.4rem;line-height:1.15;margin:0}
+.tool-card p{color:var(--muted);font-size:.93rem;margin:0;flex:1}
+.tool-card .explore{align-self:flex-start;color:var(--forest);font-weight:850;font-size:.88rem;border-bottom:2px solid var(--gold)}
+.tool-card .explore:hover{color:#0f3020}
+.note-box{background:var(--cream);border:1px solid #e6dcc8;border-radius:18px;padding:18px 22px;margin-top:26px;font-size:.88rem;color:var(--muted)}
+.final{padding:84px 0;text-align:center;background:radial-gradient(circle at 50% 15%,rgba(227,187,103,.20),transparent 26%),#102e20;color:white}.final h2{font-size:clamp(2.6rem,5.2vw,4.6rem);line-height:.98;max-width:880px;margin:10px auto 18px}.final p{color:#cddad2;max-width:700px;margin:0 auto 26px}.final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer.site{padding:30px 0;background:#091d14;color:#becbc3;font-size:.79rem}.foot{display:flex;align-items:center;justify-content:space-between;gap:24px}.foot .brand{color:white}.foot-links{display:flex;gap:18px}
+@media(max-width:1000px){.nav-links{display:none}.stage-grid,.matrix{grid-template-columns:1fr}.stage:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-19px;transform:translateX(-50%)}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:680px){.wrap{width:min(100% - 24px,var(--max))}.nav-in{height:68px}.nav .btn{padding:11px 14px;font-size:.76rem}.hero{padding-top:40px}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.section{padding:64px 0}.final-actions .btn,.hero-actions .btn{width:100%}.foot{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="topbar">BSOE AI Academy · <span>Course 2 of 7 — AI Toolbox</span></div>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="landingpage.html"><span class="brand-mark"></span><span>BSOE AI Academy</span></a>
+    <div class="nav-links"><a href="#path">Learning Path</a><a href="#matrix">Course Matrix</a><a href="AIFoundations.html">AI Foundations</a></div>
+    <div class="nav-cta"><a class="btn outline" href="landingpage.html">Back to Academy</a><a class="btn gold" href="landingpage.html#readiness">Join the Academy</a></div>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="pill">COURSE 2 OF 7 · AI TOOLBOX</span>
+    <h1>Choose a tool. Build practical confidence.</h1>
+    <p class="hero-copy">Progress from first steps to governed AI systems. The AI Toolbox is ten focused, tool-specific pathways — each one taking you from a guided first login to advanced, agent-driven, enterprise-governed use.</p>
+    <div class="hero-actions"><a class="btn gold" href="#matrix">Explore the Course Matrix ↓</a><a class="btn outline" href="landingpage.html#readiness">Join the Academy →</a></div>
+    <p class="micro">10 tool pathways · 68 hours of content in total · Every pathway runs Beginner → Advanced</p>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><b>10</b><span>tool-specific pathways</span></div>
+  <div class="stat"><b>3</b><span>levels per pathway</span></div>
+  <div class="stat"><b>68</b><span>hours of content</span></div>
+  <div class="stat"><b>✓</b><span>counts toward BSOE Certificate</span></div>
+</div>
+
+<section class="section" id="path">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Your progressive learning path</div><h2>Beginner → Intermediate → Advanced.</h2><p>Every tool pathway in the AI Toolbox follows the same three-stage progression, so once you know the shape of one course, you know the shape of all ten.</p></div>
+    <div class="stage-grid">
+      <div class="stage beginner"><span class="stage-tag">Beginner</span><h3>Foundations & Features</h3><p>Guided interface walkthroughs, core capabilities, standard prompting, basic workflow integration and explicit safety boundaries.</p></div>
+      <div class="stage intermediate"><span class="stage-tag">Intermediate</span><h3>Applied Workflows & Automation</h3><p>Data integration, cross-app automation, context chaining, dynamic templates and task-stream management.</p></div>
+      <div class="stage advanced"><span class="stage-tag">Advanced · Agents &amp; Governance</span><h3>Systems, Orchestration &amp; Custom Agents</h3><p>Declarative agents, low-code and pro-code logic, API tool calling, identity management, enterprise governance and autonomous execution loops.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="matrix">
+  <div class="wrap">
+    <div class="matrix-head">
+      <div><div class="eyebrow">The course matrix</div><h2 style="font-size:clamp(2rem,4vw,3.2rem);line-height:1.05;margin:10px 0 8px">Explore the 10-tool course matrix.</h2><p style="color:var(--muted);max-width:560px;margin:0">Every pathway moves from Beginner to Advanced. Select a card to enter the course catalogue.</p></div>
+    </div>
+    <div class="matrix">
+      <article class="tool-card"><span class="tool-badge">MODULE 01 · 9 HOURS · BEGINNER → ADVANCED</span><h3>Microsoft Copilot</h3><p>Master Microsoft 365 workflows across Word, Excel and Teams, then progress to cross-app automation and declarative agents in Copilot Studio.</p><a class="explore" href="#">Explore course →</a></article>
+      <article class="tool-card"><span class="tool-badge">MODULE 02 · 10 HOURS · BEGINNER → ADVANCED</span><h3>ChatGPT (OpenAI)</h3><p>Master prompting, Projects, research, data analysis, multimodal work and governed specialised GPTs.</p><a class="explore" href="#">Explore course →</a></article>
+      <article class="tool-card"><span class="tool-badge">MODULE 03 · 8 HOURS · BEGINNER → ADVANCED</span><h3>Claude (Anthropic)</h3><p>Use long-context analysis, rapid Artifact prototyping and tool-enabled agent workflows for complex knowledge work.</p><a class="explore" href="#">Explore course →</a></article>
+      <article class="tool-card"><span class="tool-badge">MODULE 05 · 8 HOURS · BEGINNER → ADVANCED</span><h3>Google Gemini</h3><p>Master multimodal prompting, long-context analysis, Connected Apps, evidence checking and governed custom Gems.</p><a class="explore" href="#">Explore course →</a></article>
+      <article class="tool-card"><span class="tool-badge">MODULE 06 · 5 HOURS · BEGINNER → ADVANCED</span><h3>NotebookLM</h3><p>Build trusted source collections, audit citations, create Studio outputs and run governed research workflows.</p><a class="explore" href="#">Explore course →</a></article>
+      <article class="tool-card"><span class="tool-badge">MODULE 07 · 4 HOURS · BEGINNER → ADVANCED</span><h3>Gamma</h3><p>Transform approved briefs into polished presentations, documents and webpages using responsive cards, reusable themes, purposeful media and governed publishing workflows.</p><a class="explore" href="#">Explore course →</a></article>
+      <article class="tool-card"><span class="tool-badge">MODULE 08 · 6 HOURS · BEGINNER → ADVANCED</span><h3>Adobe Firefly</h3><p>Create commercially safer visuals, use Generative Fill and Expand, and connect assets to Creative Cloud production pipelines.</p><a class="explore" href="#">Explore course →</a></article>
+      <article class="tool-card"><span class="tool-badge">MODULE 09 · 5 HOURS · BEGINNER → ADVANCED</span><h3>ElevenLabs</h3><p>Direct natural speech, produce Studio audio, clone voices with verified consent, localise media and build secure real-time agents.</p><a class="explore" href="#">Explore course →</a></article>
+      <article class="tool-card"><span class="tool-badge">MODULE 04 · 6 HOURS · BEGINNER → ADVANCED</span><h3>Perplexity AI</h3><p>Build reliable research practice using focus filters, cited synthesis, advanced reasoning and repeatable intelligence pipelines.</p><a class="explore" href="#">Explore course →</a></article>
+      <article class="tool-card"><span class="tool-badge">MODULE 10 · 8 HOURS · BEGINNER → ADVANCED</span><h3>Runway ML</h3><p>Produce cinematic AI video with camera controls, Motion Brush, keying and video-to-video generation workflows.</p><a class="explore" href="#">Explore course →</a></article>
+    </div>
+    <div class="note-box"><strong>Coming soon:</strong> each "Explore course" card will link to its own full tool pathway page as those are built. For now, this page is the master catalogue for all ten AI Toolbox courses.</div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap"><div class="eyebrow light">Course 2 of 7</div><h2>Pick your first tool. Start building real fluency.</h2><p>Join the BSOE AI Academy to unlock the full AI Toolbox — ten pathways, each moving from your first login to governed, advanced AI systems.</p><div class="final-actions"><a class="btn gold" href="landingpage.html#readiness">Join the Academy →</a><a class="btn outline" style="color:white;border-color:rgba(255,255,255,.35)" href="AIFoundations.html">Start with AI Foundations</a></div></div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap foot"><div class="brand"><span class="brand-mark"></span><span>BSOE AI Academy</span></div><div class="foot-links"><a href="landingpage.html">Academy Home</a><a href="AIFoundations.html">AI Foundations</a><a href="LearnerGuide.html">Learner Guide</a><a href="#matrix">Course Matrix</a></div><div>© 2026 BSOE LTD.</div></div></footer>
+</body>
+</html>
