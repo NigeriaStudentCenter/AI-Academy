@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Agents & the Future of Customer Engagement | BSOE AI Academy</title>
+<meta name="description" content="A practical AI agent programme for student employability, entrepreneurship and the future of customer engagement.">
+<style>
+:root{
+--green:#0B3D2E;--deep:#06271F;--gold:#D4B06A;--cream:#F8FAF7;
+--ink:#14221C;--muted:#63736B;--line:#DCE6E1;--white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6}
+a{text-decoration:none;color:inherit}
+nav{position:sticky;top:0;z-index:20;background:rgba(11,61,46,.97);color:#fff;padding:15px 6%;display:flex;align-items:center;justify-content:space-between}
+nav strong{letter-spacing:.04em}
+nav strong span{color:var(--gold)}
+nav .links{display:flex;gap:24px;align-items:center;font-size:.9rem}
+.nav-cta{border:1px solid #ffffff55;border-radius:30px;padding:8px 15px}
+.hero{background:radial-gradient(circle at 85% 15%,#1e7255 0,#0B3D2E 33%,#06271F 80%);color:#fff;padding:95px 7% 85px;min-height:680px;display:flex;align-items:center;overflow:hidden;position:relative}
+.hero:after{content:"AI";position:absolute;right:2%;bottom:-130px;font-size:30rem;font-weight:1000;line-height:1;color:#ffffff05}
+.wrap{max-width:1180px;margin:auto;width:100%;position:relative;z-index:1}
+.eyebrow,.kicker{color:var(--gold);font-size:.77rem;font-weight:900;text-transform:uppercase;letter-spacing:.16em}
+.hero h1{font-size:clamp(3.1rem,7.5vw,7rem);line-height:.9;letter-spacing:-.065em;max-width:1020px;margin:20px 0}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero .intro{max-width:820px;font-size:1.18rem;color:#dce9e3}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0}
+.btn{display:inline-block;border-radius:40px;padding:14px 23px;font-weight:900}
+.primary{background:var(--gold);color:var(--green)}
+.secondary{border:1px solid #ffffff55;color:#fff}
+.chips{display:flex;gap:9px;flex-wrap:wrap}
+.chip{border:1px solid #ffffff28;background:#ffffff09;border-radius:30px;padding:7px 12px;font-size:.8rem}
+.section{padding:82px 7%}
+.alt{background:#fff}
+.split{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+.section h2{font-size:clamp(2.3rem,5vw,4.5rem);line-height:.98;letter-spacing:-.05em;color:var(--green);margin:12px 0 20px}
+.lead{font-size:1.15rem;color:var(--muted);max-width:820px}
+.visual{height:410px;border-radius:30px;background:linear-gradient(145deg,#dfebe6,#fff);border:1px solid var(--line);position:relative;overflow:hidden}
+.orbit{position:absolute;width:340px;height:340px;border:1px solid #b7cec2;border-radius:50%;right:-45px;top:25px}
+.orbit2{position:absolute;width:230px;height:230px;border:1px solid #b7cec2;border-radius:50%;right:10px;top:80px}
+.agent{position:absolute;left:30px;top:95px;width:270px;background:var(--green);color:#fff;border-radius:20px;padding:24px;box-shadow:0 20px 45px #0b3d2e22}
+.agent b{color:var(--gold)}
+.mini{position:absolute;background:#fff;border:1px solid var(--line);border-radius:13px;padding:10px 14px;font-size:.78rem;font-weight:850}
+.m1{right:30px;top:55px}.m2{right:58px;bottom:65px}.m3{left:55px;bottom:40px}
+.audience{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:38px}
+.aud{padding:38px;border-radius:26px}
+.student{background:var(--green);color:#fff}.student h3{color:var(--gold)}
+.entre{background:#e9f1ed}
+.aud h3{font-size:2rem;line-height:1.1;margin:0 0 12px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
+.card{background:var(--cream);border:1px solid var(--line);border-radius:22px;padding:28px}
+.icon{width:44px;height:44px;border-radius:13px;background:var(--green);color:var(--gold);display:grid;place-items:center;font-weight:1000;margin-bottom:18px}
+.card h3{color:var(--green);margin:0 0 8px}.card p{color:var(--muted)}
+.path{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin-top:32px}
+.step{background:var(--green);color:#fff;border-radius:15px;text-align:center;padding:18px 8px;font-weight:900}
+.step small{display:block;color:var(--gold);font-size:.68rem;margin-top:4px}
+.modules{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-top:30px}
+.module{display:flex;gap:15px;padding:18px;background:#fff;border:1px solid var(--line);border-radius:17px}
+.num{min-width:38px;height:38px;border-radius:50%;background:var(--gold);color:var(--green);display:grid;place-items:center;font-weight:1000}
+.module h4{margin:0;color:var(--green)}.module p{margin:4px 0 0;color:var(--muted);font-size:.9rem}
+.feature{background:var(--green);color:#fff;border-radius:30px;padding:55px}
+.feature h2{color:#fff}.feature p{color:#dce9e3}
+.featuregrid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:25px}
+.featurebox{border:1px solid #ffffff25;background:#ffffff08;border-radius:17px;padding:20px}
+.quote{border-left:5px solid var(--gold);background:var(--cream);padding:20px;border-radius:0 15px 15px 0;color:var(--green);font-weight:850}
+.cta{background:linear-gradient(135deg,var(--deep),var(--green));color:#fff;text-align:center}
+.cta h2{color:#fff}.cta p{max-width:720px;margin:auto;color:#dce9e3}
+.form{max-width:650px;margin:30px auto;display:grid;grid-template-columns:1fr 1fr;gap:12px;text-align:left}
+.form input,.form select{padding:14px;border:0;border-radius:10px;font:inherit}
+.full{grid-column:1/-1}.form button{border:0;cursor:pointer;grid-column:1/-1}
+.thanks{text-align:center;margin-top:10px;color:var(--gold)}
+footer{background:#041C16;color:#b9c9c2;text-align:center;padding:36px 7%;font-size:.85rem}
+footer strong{color:#fff}
+@media(max-width:800px){
+nav .links{display:none}.hero{padding:70px 7%;min-height:620px}
+.split,.audience,.featuregrid{grid-template-columns:1fr}
+.cards,.modules{grid-template-columns:1fr}.path{grid-template-columns:1fr 1fr}
+.form{grid-template-columns:1fr}.full,.form button{grid-column:auto}.visual{height:330px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<strong>BSOE <span>AI ACADEMY</span></strong>
+<div class="links">
+<a href="#why">Why AI?</a><a href="#course">Course</a><a href="#outcomes">Outcomes</a><a class="nav-cta" href="#join">Start</a>
+</div>
+</nav>
+
+<header class="hero">
+<div class="wrap">
+<div class="eyebrow">BSOE Institute of Artificial Intelligence, Employability & Workforce Development</div>
+<h1>Don't just <em>learn AI.</em><br>Build something with it.</h1>
+<p class="intro"><strong>AI Agents & the Future of Customer Engagement</strong> is a practical programme for students, graduates and entrepreneurs who want to turn AI capability into employability, business opportunity and real-world solutions.</p>
+<div class="actions">
+<a class="btn primary" href="#join">Start Your AI Journey</a>
+<a class="btn secondary" href="#course">Explore the Course</a>
+</div>
+<div class="chips">
+<span class="chip">Student employability</span><span class="chip">Entrepreneurship</span>
+<span class="chip">AI agent design</span><span class="chip">Portfolio evidence</span><span class="chip">Practical learning</span>
+</div>
+</div>
+</header>
+
+<section class="section" id="why">
+<div class="wrap split">
+<div>
+<div class="kicker">The opportunity</div>
+<h2>The next advantage isn't knowing AI exists. It's knowing what to do with it.</h2>
+<p class="lead">AI is changing how organisations attract customers, answer questions, sell, support users and deliver services. That creates an opportunity for people who can connect AI capability to real customer and business problems.</p>
+<p>For entrepreneurs, that can mean smarter services, new propositions and more efficient customer engagement. For students and graduates, it means developing practical evidence that can be taken into interviews, applications, placements and entrepreneurial projects.</p>
+</div>
+<div class="visual">
+<div class="orbit"></div><div class="orbit2"></div>
+<div class="agent"><b>AI AGENT</b><h3>Customer Engagement</h3><p>Understand → Discover → Design → Build → Test → Deploy → Govern</p></div>
+<div class="mini m1">Customer need</div><div class="mini m2">Human escalation</div><div class="mini m3">Business value</div>
+</div>
+</div>
+</section>
+
+<section class="section alt">
+<div class="wrap">
+<div class="kicker">Built for two ambitions</div>
+<h2>Whether you want a job, a business — or both.</h2>
+<div class="audience">
+<div class="aud student">
+<h3>For Students & Graduates</h3><p>Turn AI learning into employability evidence.</p>
+<ul>
+<li>Identify real customer and business problems.</li>
+<li>Discover where AI can create useful value.</li>
+<li>Design an AI agent and customer journey.</li>
+<li>Practise professional problem-solving and communication.</li>
+<li>Build an assessed portfolio project you can discuss with employers.</li>
+</ul>
+</div>
+<div class="aud entre">
+<h3>For Entrepreneurs</h3><p>Turn AI capability into customer value.</p>
+<ul>
+<li>Find AI opportunities inside customer journeys.</li>
+<li>Design AI-enabled products and services.</li>
+<li>Map knowledge, tools, workflows and actions.</li>
+<li>Build guardrails and human escalation into your idea.</li>
+<li>Create a blueprint that can become a pilot or proposition.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+
+<section class="section" id="course">
+<div class="wrap">
+<div class="kicker">The learning journey</div>
+<h2>From AI curiosity to AI agent capability.</h2>
+<p class="lead">You don't simply consume content. You apply what you learn and progressively build towards a professional capstone.</p>
+<div class="path">
+<div class="step">01<small>UNDERSTAND</small></div><div class="step">02<small>EXPLORE</small></div><div class="step">03<small>DISCOVER</small></div><div class="step">04<small>DESIGN</small></div><div class="step">05<small>BUILD</small></div>
+</div>
+<div class="path">
+<div class="step">06<small>TEST</small></div><div class="step">07<small>DEPLOY</small></div><div class="step">08<small>GOVERN</small></div><div class="step">09<small>OPTIMISE</small></div><div class="step">10<small>CAPSTONE</small></div>
+</div>
+<div class="modules">
+<div class="module"><div class="num">1</div><div><h4>Understanding AI Agents</h4><p>What agents are and where they create value.</p></div></div>
+<div class="module"><div class="num">2</div><div><h4>The New Customer Engagement Landscape</h4><p>How AI is reshaping service, sales and support.</p></div></div>
+<div class="module"><div class="num">3</div><div><h4>Discovering Customer Opportunities</h4><p>Identify problems worth solving with AI.</p></div></div>
+<div class="module"><div class="num">4</div><div><h4>Designing the AI Agent</h4><p>Move from opportunity to purpose, scope and journey.</p></div></div>
+<div class="module"><div class="num">5</div><div><h4>Knowledge, Tools & Actions</h4><p>Give the agent information and capabilities.</p></div></div>
+<div class="module"><div class="num">6</div><div><h4>Building the Agent Workflow</h4><p>Design how the agent reasons, acts and hands off.</p></div></div>
+<div class="module"><div class="num">7</div><div><h4>Testing the Customer Experience</h4><p>Challenge the agent before customers do.</p></div></div>
+<div class="module"><div class="num">8</div><div><h4>Deploying Responsible AI Agents</h4><p>Move towards a controlled real-world launch.</p></div></div>
+<div class="module"><div class="num">9</div><div><h4>Governance, Measurement & Scaling</h4><p>Control risk, measure value and improve.</p></div></div>
+<div class="module"><div class="num">10</div><div><h4>The AI Agent Capstone</h4><p>Create and defend your Customer Engagement AI Agent Blueprint.</p></div></div>
+</div>
+</div>
+</section>
+
+<section class="section alt" id="outcomes">
+<div class="wrap">
+<div class="kicker">What you leave with</div>
+<h2>Learn by producing evidence, not just completing lessons.</h2>
+<div class="cards">
+<div class="card"><div class="icon">01</div><h3>Portfolio evidence</h3><p>A substantial AI Agent Blueprint demonstrating how you approach a real customer problem.</p></div>
+<div class="card"><div class="icon">02</div><h3>Employability capability</h3><p>Analysis, communication, digital transformation, problem solving and professional judgement.</p></div>
+<div class="card"><div class="icon">03</div><h3>Entrepreneurial thinking</h3><p>Opportunity discovery, proposition design and value-focused AI decision making.</p></div>
+<div class="card"><div class="icon">04</div><h3>AI agent design</h3><p>Purpose, customer journey, knowledge, tools, workflow, actions and escalation.</p></div>
+<div class="card"><div class="icon">05</div><h3>Responsible AI</h3><p>Testing, guardrails, human oversight, governance and controlled deployment.</p></div>
+<div class="card"><div class="icon">06</div><h3>Professional confidence</h3><p>Learn to explain an AI solution to employers, clients, partners and decision makers.</p></div>
+</div>
+</div>
+</section>
+
+<section class="section">
+<div class="wrap">
+<div class="feature">
+<div class="kicker">Your final challenge</div>
+<h2>Design an AI agent that an organisation could actually evaluate.</h2>
+<p>Your capstone is not simply “write a chatbot prompt”. You will create a professional <strong>Customer Engagement AI Agent Blueprint</strong>.</p>
+<div class="featuregrid">
+<div class="featurebox"><strong>THE AGENT</strong><p>Customer problem → journey → purpose → knowledge → tools → workflow → guardrails → human escalation.</p></div>
+<div class="featurebox"><strong>THE BUSINESS CASE</strong><p>Testing → deployment → governance → KPIs → customer value → operational value → responsible scaling.</p></div>
+</div>
+<div class="actions"><a class="btn primary" href="#join">Build Your Blueprint</a></div>
+</div>
+</div>
+</section>
+
+<section class="section alt">
+<div class="wrap split">
+<div>
+<div class="kicker">Imagine the outcome</div>
+<h2>Walk into an interview with something to show.</h2>
+<p class="lead">Instead of simply saying “I am interested in AI”, you can demonstrate how you think and what you can create.</p>
+<div class="quote">“I identified a customer-engagement problem, designed an AI agent to address it, mapped its knowledge and tools, built the workflow, defined guardrails and escalation, designed testing and created measures for customer and business value.”</div>
+</div>
+<div class="card">
+<h3>Skills you can demonstrate</h3>
+<ul><li>AI literacy</li><li>Customer experience design</li><li>Problem discovery</li><li>AI agent design</li><li>Workflow thinking</li><li>Digital transformation</li><li>Responsible AI awareness</li><li>Business analysis</li><li>Entrepreneurial opportunity identification</li><li>Professional communication</li></ul>
+</div>
+</div>
+</section>
+
+<section class="section cta" id="join">
+<div class="wrap">
+<div class="kicker">Ready to build?</div>
+<h2>Build the skill. Build the portfolio. Build the opportunity.</h2>
+<p>Start the AI Agents & the Future of Customer Engagement learning journey through the BSOE AI Academy.</p>
+<form class="form" onsubmit="event.preventDefault();document.getElementById('thanks').textContent='Thank you. Your interest has been captured on this demo form.'">
+<input placeholder="First name" required>
+<input placeholder="Last name" required>
+<input class="full" type="email" placeholder="Email address" required>
+<select class="full"><option value="">I am joining as…</option><option>Student / Graduate</option><option>Entrepreneur / Business Owner</option><option>Professional / Career Changer</option><option>Organisation / Employer</option></select>
+<button class="btn primary">I Want to Build My AI Future</button>
+<div id="thanks" class="thanks"></div>
+</form>
+</div>
+</section>
+
+<footer><strong>BSOE AI ACADEMY</strong><br>Institute of Artificial Intelligence, Employability & Workforce Development<br><br>AI Agents & the Future of Customer Engagement</footer>
+</body>
+</html>
