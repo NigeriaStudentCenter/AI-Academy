@@ -269,12 +269,26 @@ if (/^https?:\/\//i.test(ACADEMY_VIDEO_EMBED_URL)) {
 }
 
 // Modal
-const modal=document.getElementById('joinModal');
-document.querySelectorAll('.open-modal').forEach(b=>b.addEventListener('click',()=>{modal.classList.add('show');document.body.classList.add('modal-open')}));
-document.getElementById('closeModal').addEventListener('click',()=>{modal.classList.remove('show');document.body.classList.remove('modal-open')});
-modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('show');document.body.classList.remove('modal-open')}});
-document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
-document.getElementById('leadForm').addEventListener('submit',e=>{e.preventDefault();alert('');});
+cmodal.addEventListener('click', event => {
+  if (event.target === modal) {
+    modal.classList.remove('show');
+    document.body.classList.remove('modal-open');
+  }
+});
+
+document.querySelectorAll('.faq-q').forEach(question => {
+  question.addEventListener('click', () => {
+    question.parentElement.classList.toggle('open');
+  });
+});
+
+/* JOIN THE ACADEMY FORM */
+document.getElementById('leadForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+
+  // Send the user to the BSOE AI Academy Paystack subscription page
+  window.location.href = 'https://paystack.shop/pay/bsoeaiacademy';
+});
 </script>
 </body>
 </html>
