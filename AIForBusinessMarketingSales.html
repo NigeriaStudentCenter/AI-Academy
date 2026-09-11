@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI for Business, Marketing & Sales Course — BSOE AI Academy</title>
+<meta name="description" content="AI for Business, Marketing & Sales: generate leads, win customers, grow revenue using Microsoft 365 Copilot, Dynamics 365 Sales, Power Platform and Power BI across the full commercial lifecycle." />
+<style>
+:root{
+  --ink:#102218;--forest:#153f2a;--forest2:#215e3e;--cream:#f7f2e7;--paper:#fffdf8;
+  --gold:#c89442;--gold2:#f1d398;--muted:#607167;--line:#dbe1dc;--white:#fff;
+  --shadow:0 24px 70px rgba(16,34,24,.13);--max:1180px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.58}
+h1,h2,h3,p{margin-top:0} h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.038em} a{text-decoration:none;color:inherit} .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:900;color:var(--forest2)} .eyebrow.light{color:var(--gold2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 24px;border:0;border-radius:999px;background:var(--forest);color:white;font-weight:850;cursor:pointer;box-shadow:0 12px 30px rgba(21,63,42,.18);transition:.2s transform,.2s background}.btn:hover{transform:translateY(-2px);background:#0f3020}.btn.gold{background:linear-gradient(135deg,#b97c2c,#dfbc74);color:#122419}.btn.outline{background:transparent;color:var(--forest);border:1px solid rgba(21,63,42,.24);box-shadow:none}
+.topbar{background:#0b2a1b;color:#fff;text-align:center;padding:11px 16px;font-size:.85rem;font-weight:750}.topbar span{color:var(--gold2)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,253,248,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,34,24,.08)}.nav-in{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:11px;font-weight:900}.brand-mark{width:39px;height:39px;border-radius:13px;background:radial-gradient(circle at 38% 34%,#fff4b8 0 8%,#d6a44c 17%,#1c4b33 44%,#0f2f20 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35),0 8px 20px rgba(21,63,42,.2);position:relative}.brand-mark:after{content:"✦";position:absolute;inset:0;display:grid;place-items:center;color:#fff2c6}.nav-links{display:flex;gap:20px;align-items:center;font-size:.83rem;font-weight:760;color:#334a3c}.nav-cta{display:flex;gap:10px;align-items:center}
+.hero{padding:64px 0 70px;background:radial-gradient(circle at 82% 10%,rgba(200,148,66,.19),transparent 31%),linear-gradient(180deg,#fffdf8 0%,#f5efe2 100%);text-align:center}.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;border:1px solid rgba(21,63,42,.15);background:rgba(255,255,255,.72);font-size:.78rem;font-weight:900;letter-spacing:.04em}.hero h1{font-size:clamp(2.6rem,5.8vw,4.6rem);line-height:1.05;margin:20px auto 20px;max-width:900px}.hero-copy{font-size:1.14rem;color:#496054;max-width:730px;margin:0 auto}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 16px;justify-content:center}.micro{font-size:.82rem;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{text-align:center;padding:28px 18px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat b{font-family:Georgia,serif;font-size:1.8rem;display:block}.stat span{font-size:.78rem;color:var(--muted);font-weight:720}
+.section{padding:84px 0}.section.alt{background:var(--cream)}.section.dark{background:var(--forest);color:white}.section-head{max-width:800px;margin:0 auto 44px;text-align:center}.section-head h2{font-size:clamp(2.1rem,4.4vw,3.6rem);line-height:1.03;margin:12px 0 16px}.section-head p{font-size:1.05rem;color:var(--muted)}.dark .section-head p{color:#d4e0d8}
+.flow{display:grid;grid-template-columns:repeat(6,1fr);gap:9px}.flow-step{background:white;border:1px solid #dfe5e0;border-radius:16px;padding:16px 10px;text-align:center;min-height:120px;position:relative;display:flex;flex-direction:column;justify-content:center}.flow-step b{width:30px;height:30px;border-radius:9px;background:var(--forest);color:white;display:grid;place-items:center;margin:0 auto 10px;font-size:.82rem}.flow-step strong{display:block;font-size:.86rem;line-height:1.2}.flow-step span{display:block;font-size:.68rem;color:var(--muted);margin-top:6px}.flow-step:not(:last-child):after{content:"→";position:absolute;right:-11px;top:42%;font-size:1.1rem;font-weight:900;color:var(--gold);z-index:2}.flow-step.highlight{background:var(--forest);color:white;border-color:var(--forest)}.flow-step.highlight span{color:#d6e3db}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.why-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:24px}.why-card b{color:var(--gold2);display:block;font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}.why-card p{color:#dbe7e0;margin:0;font-size:.96rem}
+.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.who-card{background:white;border:1px solid #e1e7e2;border-radius:18px;padding:22px;min-height:140px}.who-card .ico{font-size:1.4rem;margin-bottom:12px}.who-card b{font-family:Georgia,serif;font-size:1.06rem;display:block;margin-bottom:6px}.who-card p{font-size:.83rem;color:var(--muted);margin:0}
+.stage-track{border:1px solid var(--line);border-radius:20px;background:white;margin-bottom:16px;overflow:hidden}
+.stage-track summary{cursor:pointer;list-style:none;padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--cream)}
+.stage-track summary::-webkit-details-marker{display:none}
+.stage-track summary:after{content:"+";font-size:1.5rem;color:var(--forest2);flex:0 0 auto}
+.stage-track[open] summary:after{content:"−"}
+.stage-title{display:flex;flex-direction:column;gap:4px}
+.stage-title b{font-family:Georgia,serif;font-size:1.2rem;color:var(--ink)}
+.stage-title span{font-size:.85rem;color:var(--muted);font-weight:600}
+.stage-body{padding:6px 26px 22px}
+.lesson-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0;border-top:1px solid #eef1ee;flex-wrap:wrap}
+.stage-body .lesson-row:first-of-type{border-top:0}
+.lesson-title{font-weight:750;font-size:.9rem;color:var(--ink)}
+.lesson-meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center;flex:0 0 auto}
+.type-tag{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);background:#f1f3f1;border-radius:999px;padding:4px 8px}
+.level-tag{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;border-radius:999px;padding:4px 8px}
+.level-tag.beginner{background:#EDF4FF;color:#2F7DE1}
+.level-tag.intermediate{background:#F5ECFB;color:#8246AF}
+.level-tag.advanced{background:var(--gold2);color:#6b4a12}
+.duration-tag{font-size:.74rem;color:var(--muted);font-weight:700}
+.faq{max-width:880px;margin:auto}details.faq-item{border-top:1px solid #d4ddd7;padding:18px 4px}details.faq-item:last-child{border-bottom:1px solid #d4ddd7}details.faq-item summary{cursor:pointer;font-weight:850;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}details.faq-item summary::-webkit-details-marker{display:none}details.faq-item summary:after{content:"+";font-size:1.3rem;color:var(--forest2);flex:0 0 auto}details.faq-item[open] summary:after{content:"−"}details.faq-item p{color:var(--muted);margin:14px 0 4px}
+.final{padding:84px 0;text-align:center;background:radial-gradient(circle at 50% 15%,rgba(227,187,103,.20),transparent 26%),#102e20;color:white}.final h2{font-size:clamp(2.4rem,5vw,4.2rem);line-height:.98;max-width:880px;margin:10px auto 18px}.final p{color:#cddad2;max-width:700px;margin:0 auto 26px}.final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer.site{padding:30px 0;background:#091d14;color:#becbc3;font-size:.79rem}.foot{display:flex;align-items:center;justify-content:space-between;gap:24px}.foot .brand{color:white}.foot-links{display:flex;gap:18px}
+@media(max-width:1000px){.nav-links{display:none}.why-grid{grid-template-columns:1fr}.who-grid{grid-template-columns:1fr 1fr}.flow{grid-template-columns:repeat(3,1fr)}.flow-step:nth-child(3):after{display:none}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:680px){.wrap{width:min(100% - 24px,var(--max))}.nav-in{height:68px}.nav .btn{padding:11px 14px;font-size:.76rem}.hero{padding-top:40px}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.section{padding:60px 0}.flow{grid-template-columns:1fr 1fr}.flow-step:after{display:none!important}.who-grid{grid-template-columns:1fr}.stage-track summary{padding:18px}.stage-body{padding:0 18px 18px}.lesson-row{flex-direction:column;align-items:flex-start}.final-actions .btn,.hero-actions .btn{width:100%}.foot{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="topbar">BSOE AI Academy · <span>Workplace AI Course — AI for Business, Marketing &amp; Sales</span></div>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="landingpage.html"><span class="brand-mark"></span><span>BSOE AI Academy</span></a>
+    <div class="nav-links"><a href="#flow">The Revenue Flow</a><a href="#why">Why It Matters</a><a href="#curriculum">Curriculum</a><a href="#faq">FAQ</a></div>
+    <div class="nav-cta"><a class="btn outline" href="landingpage.html">Back to Academy</a><a class="btn gold" href="landingpage.html#readiness">Join the Academy</a></div>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="pill">WORKPLACE AI · FOR BUSINESS, MARKETING &amp; SALES</span>
+    <h1>Generate leads. Win customers. Grow revenue.</h1>
+    <p class="hero-copy">Use Microsoft 365 Copilot, Dynamics 365 Sales, Power Platform and Power BI to drive ethical lead generation, stronger sales conversations and revenue growth across the full commercial lifecycle.</p>
+    <div class="hero-actions"><a class="btn gold" href="#flow">See the Revenue Flow ↓</a><a class="btn outline" href="landingpage.html#readiness">Join the Academy →</a></div>
+    <p class="micro">4 modules · 19 lessons and labs · ~7h 11m of content · Every campaign starts with an ethical ICP</p>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><b>4</b><span>modules</span></div>
+  <div class="stat"><b>19</b><span>lessons &amp; labs</span></div>
+  <div class="stat"><b>~7h</b><span>of content</span></div>
+  <div class="stat"><b>✓</b><span>ethical outreach by design</span></div>
+</div>
+
+<section class="section" id="flow">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The outcome</div><h2>One lifecycle, from first contact to closed revenue.</h2><p>Every module feeds this same chain — so a lead you generate is one you can actually track all the way to revenue.</p></div>
+    <div class="flow">
+      <div class="flow-step"><b>1</b><strong>Target</strong><span>Define the ICP</span></div>
+      <div class="flow-step"><b>2</b><strong>Reach</strong><span>Ethical outreach</span></div>
+      <div class="flow-step highlight"><b>3</b><strong>Capture</strong><span>No lead falls through</span></div>
+      <div class="flow-step"><b>4</b><strong>Nurture</strong><span>Automated follow-up</span></div>
+      <div class="flow-step"><b>5</b><strong>Convert</strong><span>Manage the pipeline</span></div>
+      <div class="flow-step"><b>6</b><strong>Grow</strong><span>Report on revenue</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="why">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow light">Why this matters</div><h2>Revenue teams move faster when the busywork disappears.</h2><p>Copilot and Power Platform don't replace a salesperson's relationship skills — they remove the manual research, drafting and follow-up that eat into time spent actually selling.</p></div>
+    <div class="why-grid">
+      <div class="why-card"><b>Research at Copilot speed</b><p>Account research, campaign drafting and personalised outreach that used to take hours now take minutes — without losing the personal touch.</p></div>
+      <div class="why-card"><b>Automation closes the follow-up gap</b><p>Power Automate makes sure no lead sits untouched because someone forgot to follow up — dedupe, routing and reminders happen automatically.</p></div>
+      <div class="why-card"><b>Pipeline decisions get made on real data</b><p>Dynamics 365 Sales and Power BI turn forecasting from a gut-feel number into something you can defend to leadership.</p></div>
+      <div class="why-card"><b>Ethical outreach protects the brand</b><p>Compliant, consent-respecting outreach built on a real ICP is treated as core to lead generation here — not a legal afterthought bolted on later.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="who">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Who this course is for</div><h2>Built for people who own the revenue number.</h2></div>
+    <div class="who-grid">
+      <div class="who-card"><div class="ico">📣</div><b>Marketers</b><p>Plan campaigns and content that speak to a clearly defined ICP.</p></div>
+      <div class="who-card"><div class="ico">🤝</div><b>Sales reps &amp; account executives</b><p>Move leads through the pipeline with better conversations, faster.</p></div>
+      <div class="who-card"><div class="ico">📊</div><b>Sales &amp; RevOps managers</b><p>Need pipeline and revenue reporting leadership can actually trust.</p></div>
+      <div class="who-card"><div class="ico">🚀</div><b>Small business owners</b><p>Doing their own sales and marketing and need it to scale efficiently.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="curriculum">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The curriculum</div><h2>Four modules, one commercial lifecycle.</h2><p>Select a module to see everything inside it.</p></div>
+
+    <details class="stage-track" open>
+      <summary><div class="stage-title"><b>1 · ICP + ethical outreach with Microsoft 365 Copilot</b><span>Define ICPs and value propositions; use Copilot to research accounts, draft compliant outreach, and plan campaign content.</span></div></summary>
+      <div class="stage-body">
+        <div class="lesson-row"><span class="lesson-title">Transform a marketing brief into a campaign plan with AI</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">17 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Align sales and marketing through a go-to-market roadmap with Copilot</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">1 min</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Develop a new marketing campaign with AI</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">15 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Improve customer service efficiency using Microsoft 365 Copilot with AI</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">17 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Boost sales performance with Sales in Microsoft 365 Copilot</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">36 mins</span></span></div>
+      </div>
+    </details>
+
+    <details class="stage-track">
+      <summary><div class="stage-title"><b>2 · Lead capture and follow-up automation (Power Platform)</b><span>Automate form-to-lead capture, dedupe/route, reminders and tasks across Forms, SharePoint, Outlook and Teams.</span></div></summary>
+      <div class="stage-body">
+        <div class="lesson-row"><span class="lesson-title">Enhance productivity with Power Automate and the Office 365 Outlook Connector</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">49 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Enhance the resolution quality of customer service cases with AI</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">16 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Drive Finance execution with AI Agents</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">23 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Supercharge Your Date Logic: The Ultimate Working Day Calculator for Power Automate</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">13 mins</span></span></div>
+      </div>
+    </details>
+
+    <details class="stage-track">
+      <summary><div class="stage-title"><b>3 · Dynamics 365 Sales pipeline + reporting</b><span>Manage leads through to opportunities with Copilot and Sales Accelerator; forecast and build pipeline/revenue KPIs.</span></div></summary>
+      <div class="stage-body">
+        <div class="lesson-row"><span class="lesson-title">Explore forecasting, pipeline management, and analytics in Dynamics 365 Sales</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">50 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Improve customer service efficiency using Microsoft 365 Copilot with AI</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">17 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Drive Finance execution with AI Agents</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">23 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Accelerate Finance productivity with Cowork</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">19 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Author custom Business Skills</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">1 min</span></span></div>
+      </div>
+    </details>
+
+    <details class="stage-track">
+      <summary><div class="stage-title"><b>4 · Capstone: Lead magnet launch + nurture + Dynamics tracking + Power BI dashboard</b><span>Ship a lead magnet and capture flow; auto-nurture with Power Automate; manage opportunities in Dynamics 365 Sales; build an executive pipeline dashboard covering pipeline, conversion and revenue.</span></div></summary>
+      <div class="stage-body">
+        <div class="lesson-row"><span class="lesson-title">Create dashboards in Power BI</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">59 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Analyze sales performance using AI, forecasting, and dashboards in Dynamics 365 Sales</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">53 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Prepare High Impact Sales Conversations with AI</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">19 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Generate a weighted sales pipeline forecast with Copilot</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">2 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Agent Mode in Excel: Turn Sales Data Into an Exec Dashboard</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">1 min</span></span></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section alt" id="faq">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Before you start</div><h2>Frequently asked questions</h2></div>
+    <div class="faq">
+      <details class="faq-item" open><summary>Do I need access to Dynamics 365 Sales or Power BI already?</summary><p>The course teaches practical, hands-on use of these tools. You'll get the most from it with access to Microsoft 365 Copilot and Dynamics 365 Sales through your organisation or a trial, but no prior CRM experience is required.</p></details>
+      <details class="faq-item"><summary>What does "ethical outreach" mean in this course?</summary><p>Outreach built on a clearly defined ICP and genuine value proposition, respecting consent and compliance — not mass-blasting contacts or deceptive tactics dressed up as personalisation.</p></details>
+      <details class="faq-item"><summary>What is the capstone project?</summary><p>You ship a lead magnet and capture flow, set up auto-nurture with Power Automate, manage the resulting opportunities in Dynamics 365 Sales, and build an executive dashboard covering pipeline, conversion and revenue.</p></details>
+      <details class="faq-item"><summary>Is this course for marketing, sales, or both?</summary><p>Both, deliberately. The course follows one commercial lifecycle from first outreach to closed revenue, so marketing and sales content sit side by side rather than in separate tracks.</p></details>
+      <details class="faq-item"><summary>How long does this course take?</summary><p>Four modules covering 19 lessons and labs, roughly 7 hours 11 minutes of content in total. Most learners work through one module per sitting.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap"><div class="eyebrow light">AI for Business, Marketing &amp; Sales</div><h2>Turn your next campaign into tracked, reportable revenue.</h2><p>Join the BSOE AI Academy and start with Module 1 — ICP and ethical outreach with Microsoft 365 Copilot.</p><div class="final-actions"><a class="btn gold" href="landingpage.html#readiness">Join the Academy →</a><a class="btn outline" style="color:white;border-color:rgba(255,255,255,.35)" href="AIForDataAnalysts.html">See AI for Data Analysts</a></div></div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap foot"><div class="brand"><span class="brand-mark"></span><span>BSOE AI Academy</span></div><div class="foot-links"><a href="landingpage.html">Academy Home</a><a href="AIFoundations.html">AI Foundations</a><a href="AIToolbox.html">AI Toolbox</a><a href="AzureAIEngineer.html">Azure AI Engineer</a><a href="AIForAdmins.html">AI for Admins</a><a href="AIHealthcare.html">AI in Healthcare</a><a href="AIForITDevelopers.html">AI for IT &amp; Developers</a><a href="AIForProductManagers.html">AI for Product Managers</a><a href="AIForBusinessAnalysts.html">AI for Business Analysts</a><a href="AIForDataAnalysts.html">AI for Data Analysts</a><a href="LearnerGuide.html">Learner Guide</a></div><div>© 2026 BSOE LTD.</div></div></footer>
+</body>
+</html>
