@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AI Academy learner guide: navigation, activities, evidence, points, badges, rewards and fair progress.">
+  <title>AI Academy Learner Guide</title>
+  <style>
+    :root{
+      --green-900:#0B3D2E;
+      --green-800:#124C3A;
+      --green-700:#1F6B52;
+      --green-100:#EAF6EF;
+      --green-050:#F5FAF7;
+      --gold-600:#C79A2B;
+      --gold-100:#FFF6D9;
+      --purple-600:#8246AF;
+      --purple-100:#F5ECFB;
+      --blue-600:#2F7DE1;
+      --blue-100:#EDF4FF;
+      --red-600:#C84D55;
+      --red-100:#FFF0F1;
+      --ink:#17372E;
+      --body:#38433F;
+      --muted:#68736E;
+      --line:#DDE8E1;
+      --white:#FFFFFF;
+      --shadow:0 8px 24px rgba(11,61,46,.10);
+      --radius:18px;
+      --max:1160px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Segoe UI, Arial, Helvetica, sans-serif;
+      color:var(--body);
+      background:var(--green-050);
+      line-height:1.6;
+    }
+    a{color:var(--green-700);text-decoration-thickness:2px;text-underline-offset:3px}
+    a:hover{color:var(--green-900)}
+    .page-shell{max-width:var(--max);margin:0 auto;background:var(--white);box-shadow:var(--shadow)}
+    .hero{
+      padding:58px 7% 48px;
+      color:var(--white);
+      background:
+        radial-gradient(circle at 82% 12%, rgba(47,125,225,.40), transparent 32%),
+        radial-gradient(circle at 15% 20%, rgba(31,107,82,.55), transparent 31%),
+        linear-gradient(135deg,#052C22 0%,#0B3D2E 58%,#0B204A 100%);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:after{
+      content:"AI";
+      position:absolute;
+      right:4%;
+      bottom:-38px;
+      font-size:180px;
+      line-height:1;
+      font-weight:800;
+      color:rgba(255,255,255,.055);
+      letter-spacing:-12px;
+    }
+    .eyebrow{
+      display:inline-block;
+      padding:6px 12px;
+      border:1px solid rgba(255,255,255,.25);
+      border-radius:999px;
+      font-size:.84rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      background:rgba(255,255,255,.07);
+    }
+    h1{
+      margin:18px 0 10px;
+      max-width:760px;
+      font-size:clamp(2.35rem,5vw,4.8rem);
+      line-height:1.02;
+      letter-spacing:-.045em;
+    }
+    .hero-subtitle{
+      max-width:820px;
+      font-size:clamp(1.05rem,2vw,1.34rem);
+      color:#E8F3EE;
+      margin:0 0 26px;
+    }
+    .version{
+      font-size:.92rem;
+      color:#D3E9DF;
+      margin-top:22px;
+    }
+    .promise{
+      margin:0;
+      padding:22px 7%;
+      background:var(--gold-100);
+      border-bottom:1px solid #ECDDA9;
+      color:var(--green-900);
+      font-size:1.04rem;
+    }
+    .promise strong{display:block;font-size:1.12rem;margin-bottom:4px}
+
+    .content{padding:38px 6% 64px}
+    .contents-box{
+      background:var(--green-050);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+      margin-bottom:42px;
+    }
+    .contents-box h2{margin-top:0}
+    .toc{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:10px 20px;
+      margin:0;
+      padding:0;
+      list-style:none;
+      counter-reset:toc;
+    }
+    .toc li{counter-increment:toc}
+    .toc a{
+      display:flex;
+      align-items:flex-start;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:12px;
+      text-decoration:none;
+      background:var(--white);
+      border:1px solid var(--line);
+      color:var(--ink);
+      font-weight:600;
+    }
+    .toc a:before{
+      content:counter(toc);
+      display:inline-grid;
+      place-items:center;
+      width:28px;height:28px;
+      flex:0 0 28px;
+      border-radius:50%;
+      color:var(--white);
+      background:var(--green-700);
+      font-size:.8rem;
+      font-weight:800;
+    }
+
+    .guide-section{
+      scroll-margin-top:20px;
+      padding:34px 0;
+      border-top:1px solid var(--line);
+    }
+    .guide-section:first-of-type{border-top:0}
+    .section-number{
+      color:var(--green-700);
+      font-size:.84rem;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      font-weight:800;
+      margin-bottom:2px;
+    }
+    h2{
+      color:var(--green-900);
+      line-height:1.18;
+      font-size:clamp(1.65rem,3vw,2.35rem);
+      margin:0 0 8px;
+      letter-spacing:-.025em;
+    }
+    h3{
+      color:var(--green-900);
+      font-size:1.22rem;
+      line-height:1.3;
+      margin:26px 0 10px;
+    }
+    .lead{font-size:1.06rem;color:var(--muted);margin-top:0}
+    .back{
+      display:inline-block;
+      margin-top:22px;
+      font-size:.9rem;
+      font-weight:700;
+    }
+
+    .grid-2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .grid-4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+    .card{
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:20px;
+      background:var(--white);
+      box-shadow:0 4px 14px rgba(11,61,46,.06);
+    }
+    .card h3,.card h4{margin-top:0}
+    .card-number{
+      width:38px;height:38px;border-radius:50%;
+      display:grid;place-items:center;
+      background:var(--green-700);color:var(--white);
+      font-weight:800;margin-bottom:12px;
+    }
+    .card.green{background:var(--green-100);border-color:#CDE8D7}
+    .card.gold{background:var(--gold-100);border-color:#EFDDA5}
+    .card.purple{background:var(--purple-100);border-color:#E7D2F3}
+    .card.blue{background:var(--blue-100);border-color:#D7E7FF}
+    .card.red{background:var(--red-100);border-color:#F1D4D7}
+
+    .note,.warning,.current,.future{
+      border-radius:15px;
+      padding:18px 20px;
+      margin:18px 0;
+      border-left:6px solid;
+    }
+    .note{background:var(--green-100);border-color:var(--green-700)}
+    .warning{background:var(--gold-100);border-color:var(--gold-600)}
+    .current{background:#F3F5F4;border-color:#7A8580}
+    .future{background:var(--blue-100);border-color:var(--blue-600)}
+    .note strong,.warning strong,.current strong,.future strong{color:var(--green-900)}
+
+    ol.steps{
+      counter-reset:step;
+      list-style:none;
+      margin:18px 0;
+      padding:0;
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+    }
+    ol.steps li{
+      counter-increment:step;
+      position:relative;
+      min-height:102px;
+      padding:18px 18px 18px 60px;
+      border:1px solid var(--line);
+      border-radius:15px;
+      background:var(--white);
+    }
+    ol.steps li:before{
+      content:counter(step);
+      position:absolute;
+      left:16px;top:17px;
+      width:32px;height:32px;
+      display:grid;place-items:center;
+      border-radius:50%;
+      background:var(--green-700);
+      color:var(--white);
+      font-weight:800;
+    }
+    ol.steps strong{display:block;color:var(--green-900);margin-bottom:4px}
+
+    .table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;margin:18px 0}
+    table{width:100%;border-collapse:collapse;background:var(--white)}
+    th{
+      text-align:left;
+      padding:13px 14px;
+      background:var(--green-900);
+      color:var(--white);
+      font-size:.92rem;
+    }
+    td{padding:12px 14px;border-top:1px solid var(--line);vertical-align:top}
+    tr:nth-child(even) td{background:#FAFCFB}
+    .points{text-align:right;font-weight:800;color:var(--green-900);white-space:nowrap}
+
+    .journey{
+      display:grid;
+      grid-template-columns:repeat(5,minmax(0,1fr));
+      gap:10px;
+      margin:22px 0;
+    }
+    .journey .step{
+      text-align:center;
+      padding:18px 10px;
+      background:var(--green-100);
+      border-radius:14px;
+      border:1px solid #CEE6D6;
+      color:var(--green-900);
+      font-weight:700;
+    }
+    .journey .step span{
+      display:block;
+      width:32px;height:32px;
+      margin:0 auto 8px;
+      border-radius:50%;
+      background:var(--green-700);
+      color:var(--white);
+      line-height:32px;
+    }
+
+    .homepage-map{
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:20px;
+      background:var(--green-050);
+      margin:20px 0;
+    }
+    .banner-mini{
+      border-radius:14px;
+      padding:30px 18px;
+      text-align:center;
+      color:var(--white);
+      background:linear-gradient(120deg,#073327,#0C4C3B,#11265A);
+      margin-bottom:14px;
+    }
+    .banner-mini strong{display:block;font-size:1.5rem}
+    .map-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:12px}
+    .map-block{
+      min-height:100px;
+      border-radius:12px;
+      padding:16px;
+      border:1px solid var(--line);
+      background:var(--white);
+    }
+    .map-block strong{display:block;color:var(--green-900);margin-bottom:6px}
+
+    .quick-links{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:12px;
+      margin:18px 0;
+    }
+    .quick-link{
+      border-radius:14px;
+      padding:18px;
+      color:var(--white);
+      font-weight:700;
+      min-height:100px;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+    }
+    .quick-link small{font-weight:400;opacity:.9}
+    .q1{background:#0B4A38}.q2{background:#7743B3}.q3{background:#0B99A4}.q4{background:#E77A00}
+    .q5{background:#CF4D56}.q6{background:#2F7DE1}.q7{background:#CDAA5D;color:#123E31}.q8{background:#CDAA5D;color:#123E31}
+    .q9{background:#E77A00}.q10{background:#23765C}
+
+    .point-pots{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}
+    .pot{text-align:center;padding:20px 12px;border-radius:15px;border:1px solid var(--line)}
+    .pot strong{display:block;color:var(--green-900);font-size:1.06rem;margin-bottom:5px}
+    .pot:nth-child(1){background:var(--blue-100)}
+    .pot:nth-child(2){background:var(--purple-100)}
+    .pot:nth-child(3){background:var(--gold-100)}
+    .pot:nth-child(4){background:var(--green-100)}
+
+    .formula{
+      padding:18px 22px;
+      border-radius:14px;
+      background:var(--green-900);
+      color:var(--white);
+      font-weight:700;
+      font-size:1.05rem;
+      text-align:center;
+      margin:20px 0;
+    }
+
+    .levels{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}
+    .level{text-align:center;border-radius:16px;padding:20px 12px;border:1px solid var(--line);background:var(--white)}
+    .level .circle{width:52px;height:52px;display:grid;place-items:center;margin:0 auto 10px;border-radius:50%;background:var(--green-700);color:var(--white);font-weight:800}
+    .level strong{display:block;color:var(--green-900);font-size:1.1rem}
+    .level span{display:block;color:var(--muted);font-size:.92rem}
+
+    .leaderboard{display:grid;gap:10px;margin:20px 0}
+    .rank-card{
+      display:grid;grid-template-columns:56px 1fr auto;align-items:center;gap:14px;
+      border-radius:15px;padding:14px 18px;border-left:7px solid var(--green-700);background:var(--green-100)
+    }
+    .rank-card .rank{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--green-700);color:var(--white);font-weight:800}
+    .rank-card strong{display:block;color:var(--green-900);font-size:1.05rem}
+    .rank-card .score{text-align:right;color:var(--green-900);font-size:1.3rem;font-weight:800}
+    .rank-card.r1{background:var(--gold-100);border-color:#CDAA5D}.rank-card.r1 .rank{background:#CDAA5D;color:var(--green-900)}
+    .rank-card.r2{background:#F2F4F7;border-color:#AEB4BC}.rank-card.r2 .rank{background:#D6DBE2;color:#31363B}
+    .rank-card.r3{background:#FFF0E3;border-color:#B87333}.rank-card.r3 .rank{background:#E0A066;color:#52331C}
+
+    .event-list{display:grid;gap:12px;margin:18px 0}
+    .event{
+      display:grid;grid-template-columns:90px 1fr;overflow:hidden;
+      border-radius:15px;border:1px solid var(--line);background:var(--white)
+    }
+    .event-date{background:var(--green-900);color:var(--white);padding:14px;text-align:center}
+    .event-date strong{display:block;font-size:1.9rem;line-height:1}
+    .event-body{padding:15px 18px}
+    .event-body strong{display:block;color:var(--green-900);font-size:1.07rem}
+
+    .flow{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:10px;
+      margin:20px 0;
+    }
+    .flow-item{
+      position:relative;
+      padding:16px 12px;
+      text-align:center;
+      border-radius:14px;
+      background:var(--green-100);
+      color:var(--green-900);
+      font-weight:700;
+      border:1px solid #CFE5D6;
+    }
+    .flow-item:not(:last-child):after{
+      content:"→";
+      position:absolute;
+      right:-12px;
+      top:50%;
+      transform:translateY(-50%);
+      color:var(--green-700);
+      font-size:1.3rem;
+      z-index:2;
+    }
+
+    .checklist{list-style:none;padding:0;margin:16px 0}
+    .checklist li{position:relative;padding:8px 0 8px 34px}
+    .checklist li:before{
+      content:"";
+      position:absolute;left:0;top:11px;
+      width:19px;height:19px;border:2px solid var(--green-700);border-radius:4px;background:var(--white)
+    }
+
+    .weekly td{height:58px}
+    .final{
+      text-align:center;
+      padding:44px 20px;
+      border-radius:20px;
+      color:var(--white);
+      background:linear-gradient(135deg,#0B3D2E,#1F6B52);
+    }
+    .final h2{color:var(--white);font-size:2.4rem}
+    .final .tagline{font-size:1.25rem;font-weight:700;color:#F4D986}
+
+    footer{
+      padding:22px 6%;
+      background:#082E24;
+      color:#D9E9E2;
+      text-align:center;
+      font-size:.9rem;
+    }
+
+    @media(max-width:860px){
+      .toc,.grid-2,.grid-3,.grid-4,.map-grid,.point-pots,.levels,.quick-links{grid-template-columns:1fr}
+      ol.steps{grid-template-columns:1fr}
+      .journey{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .flow{grid-template-columns:1fr}
+      .flow-item:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-18px;transform:translateX(-50%)}
+      .rank-card{grid-template-columns:48px 1fr}
+      .rank-card .score{grid-column:2;text-align:left}
+    }
+    @media(max-width:520px){
+      .hero{padding:44px 24px 38px}
+      .content{padding:28px 20px 50px}
+      .promise{padding:18px 24px}
+      .journey{grid-template-columns:1fr}
+      .event{grid-template-columns:72px 1fr}
+      .toc{grid-template-columns:1fr}
+    }
+    @media print{
+      body{background:#fff}
+      .page-shell{box-shadow:none;max-width:none}
+      .hero{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+      .guide-section{break-inside:avoid}
+      .back{display:none}
+      a{color:inherit;text-decoration:none}
+    }
+  </style>
+</head>
+<body>
+<div class="page-shell" id="top">
+
+  <header class="hero">
+    <span class="eyebrow">British School of Outdoor Education</span>
+    <h1>AI Academy Learner Guide</h1>
+    <p class="hero-subtitle">How to navigate, learn, complete activities, earn points, unlock badges and celebrate wins.</p>
+    <p class="version">Version 1.0 | July 2026</p>
+  </header>
+
+  <div class="promise">
+    <strong>Your learner promise</strong>
+    I will learn, apply and share responsibly. I will use my own thinking, check AI answers and ask for help when I need it.
+  </div>
+
+  <main class="content">
+    <nav class="contents-box" aria-label="Guide contents">
+      <h2>Contents</h2>
+      <p class="lead">Select a topic to jump to that part of the guide.</p>
+      <ol class="toc">
+        <li><a href="#journey">Your learner journey</a></li>
+        <li><a href="#homepage">Homepage map</a></li>
+        <li><a href="#navigation">Navigation and Quick Links</a></li>
+        <li><a href="#community">Community Feed</a></li>
+        <li><a href="#courses">Courses and activities</a></li>
+        <li><a href="#submitting">Submitting quizzes and evidence</a></li>
+        <li><a href="#points">How points work</a></li>
+        <li><a href="#points-table">Recommended points table</a></li>
+        <li><a href="#quiz-points">Quiz points calculation</a></li>
+        <li><a href="#levels">Levels</a></li>
+        <li><a href="#badges">Badges and rewards</a></li>
+        <li><a href="#leaderboard">Leaderboard and winning fairly</a></li>
+        <li><a href="#events">Events and attendance</a></li>
+        <li><a href="#linking">How course pages link to points</a></li>
+        <li><a href="#automatic">Automatic and staff-checked actions</a></li>
+        <li><a href="#help">Missing points and getting help</a></li>
+        <li><a href="#weekly-plan">My weekly plan and checklist</a></li>
+        <li><a href="#final-message">Final learner message</a></li>
+      </ol>
+    </nav>
+
+    <section class="guide-section" id="journey">
+      <div class="section-number">Part 1</div>
+      <h2>Your learner journey</h2>
+      <p class="lead">Ten simple steps from signing in to celebrating a win.</p>
+      <ol class="steps">
+        <li><strong>Sign in</strong>Use your academy account and keep your password private.</li>
+        <li><strong>Start Here</strong>Read the welcome, academy rules and safety information.</li>
+        <li><strong>Choose a course</strong>Pick a course that matches your level or goal.</li>
+        <li><strong>Learn</strong>Read, watch, listen and practise.</li>
+        <li><strong>Do the activity</strong>Complete a quiz, task, project or reflection.</li>
+        <li><strong>Submit</strong>Send your answers or upload evidence.</li>
+        <li><strong>Wait for the result</strong>A quiz may be marked quickly. Practical work may need staff approval.</li>
+        <li><strong>Check progress</strong>Look at your points, level, badge and next step.</li>
+        <li><strong>Join the community</strong>Ask useful questions, share wins and help safely.</li>
+        <li><strong>Keep going</strong>Try the next activity and build a record of real progress.</li>
+      </ol>
+      <div class="warning"><strong>A good learner does not rush.</strong><br>Take time to understand the task, check AI answers and save evidence of what you did.</div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+
+    <section class="guide-section" id="homepage">
+      <div class="section-number">Part 2</div>
+      <h2>Homepage map</h2>
+      <p class="lead">The homepage is your starting point.</p>
+
+      <div class="homepage-map">
+        <div class="banner-mini"><strong>WELCOME TO THE AI ACADEMY</strong>Learn practical AI. Build confidence. Create measurable results.</div>
+        <div class="map-block"><strong>Join the Academy Community</strong>Start a Post | Open Main Community</div>
+        <div class="map-grid">
+          <div class="map-block"><strong>Community Feed</strong>Motivation, Questions, Announcements and Learner Wins.</div>
+          <div>
+            <div class="map-block" style="margin-bottom:12px"><strong>Upcoming Events</strong>Future sessions, dates, times and audiences.</div>
+            <div class="map-block"><strong>Trending Posts</strong>Popular and helpful posts.</div>
+          </div>
+        </div>
+        <div class="map-grid" style="margin-top:12px">
+          <div class="map-block"><strong>Explore the AI Academy</strong>Colourful Quick Links to courses, resources, support and other pages.</div>
+          <div class="map-block"><strong>Top 5 Leaderboard</strong>Approved ranks, points, levels and badges.</div>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Area</th><th>What it is for</th></tr></thead>
+          <tbody>
+            <tr><td>Banner</td><td>Welcomes you and explains the academy purpose.</td></tr>
+            <tr><td>Join the Academy Community</td><td>Lets you start a post or open the full community.</td></tr>
+            <tr><td>Community Feed</td><td>Shows Motivation, Question, Announcement and Learner Win posts.</td></tr>
+            <tr><td>Upcoming Events</td><td>Shows future sessions, dates, times and audiences.</td></tr>
+            <tr><td>Trending Posts</td><td>Shows popular or useful community posts.</td></tr>
+            <tr><td>Explore the AI Academy</td><td>Opens courses, resources, support and other pages.</td></tr>
+            <tr><td>Top 5 Leaderboard</td><td>Shows approved ranks, points, levels and badges.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+
+    <section class="guide-section" id="navigation">
+      <div class="section-number">Part 3</div>
+      <h2>Navigation and Quick Links</h2>
+      <p class="lead">Use the coloured cards to move around the academy.</p>
+
+      <div class="quick-links">
+        <div class="quick-link q1">Start Here<small>Begin your academy orientation.</small></div>
+        <div class="quick-link q2">Courses<small>Browse academy learning programmes.</small></div>
+        <div class="quick-link q3">Toolbox<small>Open practical AI tools and templates.</small></div>
+        <div class="quick-link q4">Live Classes<small>Join live masterclasses in Teams.</small></div>
+        <div class="quick-link q5">Recordings<small>Watch previous academy sessions.</small></div>
+        <div class="quick-link q6">Resources<small>Open guides, worksheets and downloads.</small></div>
+        <div class="quick-link q7">Leaderboard<small>View points, levels and rankings.</small></div>
+        <div class="quick-link q8">Learner Wins<small>Celebrate practical learner results.</small></div>
+        <div class="quick-link q9">Events<small>View the academy calendar.</small></div>
+        <div class="quick-link q10">Get Support<small>Ask for course or technical help.</small></div>
+      </div>
+
+      <h3>Best route for a new learner</h3>
+      <ol>
+        <li><strong>Start Here</strong> — complete your orientation first.</li>
+        <li><strong>Courses</strong> — choose a learning programme.</li>
+        <li><strong>Toolbox and Resources</strong> — find useful guides, templates and downloads.</li>
+        <li><strong>Live Classes and Events</strong> — join scheduled sessions.</li>
+        <li><strong>Learner Wins and Leaderboard</strong> — check progress and celebrate results.</li>
+        <li><strong>Get Support</strong> — ask for help when you are stuck.</li>
+      </ol>
+
+      <div class="note"><strong>Check before you click.</strong><br>A link may open a SharePoint page, Microsoft Form, Teams meeting or another safe academy resource. Ask an adult or tutor if a link looks unusual.</div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+
+    <section class="guide-section" id="community">
+      <div class="section-number">Part 4</div>
+      <h2>Community Feed</h2>
+      <p class="lead">Read, ask, help and celebrate safely.</p>
+
+      <div class="grid-2">
+        <div class="card purple"><h3>Motivation</h3><p>A challenge or encouraging message.</p></div>
+        <div class="card blue"><h3>Question</h3><p>A clear request for help.</p></div>
+        <div class="card gold"><h3>Announcement</h3><p>Official academy information.</p></div>
+        <div class="card green"><h3>Learner Win</h3><p>Evidence of a real achievement.</p></div>
+      </div>
+
+      <h3>How to make a good post</h3>
+      <ol>
+        <li>Write a short, clear title.</li>
+        <li>Explain what happened or what help you need.</li>
+        <li>Choose the correct category.</li>
+        <li>Check spelling and facts.</li>
+        <li>Do not share passwords, addresses, telephone numbers, bank details or private medical information.</li>
+        <li>Be kind. Do not copy, insult or embarrass another person.</li>
+        <li>Select <strong>Save</strong> and wait for the post to appear.</li>
+      </ol>
+
+      <div class="warning"><strong>Points are not given for noise.</strong><br>Many short posts, repeated messages or copied answers should not earn points. Helpful, safe and approved contributions may earn points.</div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+
+    <section class="guide-section" id="courses">
+      <div class="section-number">Part 5</div>
+      <h2>Courses and activities</h2>
+      <p class="lead">A course is made of lessons and tasks.</p>
+
+      <ol class="steps">
+        <li><strong>Open a course</strong>Use the Courses card or a course link.</li>
+        <li><strong>Read the goal</strong>Know what you should be able to do at the end.</li>
+        <li><strong>Learn the lesson</strong>Read, watch, listen and practise.</li>
+        <li><strong>Complete the activity</strong>Do a quiz, practical task, reflection or project.</li>
+        <li><strong>Submit evidence</strong>Send the form, file, link or explanation requested.</li>
+        <li><strong>Check feedback</strong>Read your result and improve if needed.</li>
+      </ol>
+
+      <h3>Common activity types</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Activity</th><th>What you do</th></tr></thead>
+          <tbody>
+            <tr><td>Knowledge check</td><td>A few questions after a lesson.</td></tr>
+            <tr><td>Quiz</td><td>Questions with correct answers and a pass mark.</td></tr>
+            <tr><td>Practical activity</td><td>Use AI or another tool to create a real result.</td></tr>
+            <tr><td>Reflection</td><td>Explain what you learned and what you will do next.</td></tr>
+            <tr><td>Quick Win</td><td>Show a useful result, improvement or time saved.</td></tr>
+            <tr><td>Project or capstone</td><td>A larger task that brings several skills together.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note"><strong>Use AI responsibly.</strong><br>AI may help you plan, explain or improve work, but you must check the answer and be able to explain what you submitted.</div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+
+    <section class="guide-section" id="submitting">
+      <div class="section-number">Part 6</div>
+      <h2>Submitting quizzes and evidence</h2>
+      <p class="lead">Show what you learned so your work can be checked.</p>
+
+      <div class="grid-2">
+        <div class="card blue">
+          <h3>For a quiz</h3>
+          <ol>
+            <li>Open the correct quiz from the course page.</li>
+            <li>Check your name and academy account.</li>
+            <li>Answer every question you can.</li>
+            <li>Select Submit only when you are ready.</li>
+            <li>Read the result. If you did not pass, review the lesson before trying again.</li>
+          </ol>
+        </div>
+        <div class="card green">
+          <h3>For practical work</h3>
+          <ol>
+            <li>Read the task and success rules.</li>
+            <li>Create the work yourself, using approved tools.</li>
+            <li>Save evidence such as a file, screenshot, link, short video or reflection.</li>
+            <li>Open the Submit Evidence form from the course page.</li>
+            <li>Choose the correct course and activity.</li>
+            <li>Upload or link the evidence and explain what you did.</li>
+            <li>Select Submit and wait for staff feedback.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="warning"><strong>One activity, one real submission.</strong><br>Do not submit the same activity many times to collect extra points. The academy should check for duplicates.</div>
+
+      <h3>Good evidence answers three questions</h3>
+      <div class="grid-3">
+        <div class="card"><div class="card-number">1</div><strong>What did you do?</strong><p>Describe the task and the tool you used.</p></div>
+        <div class="card"><div class="card-number">2</div><strong>What changed or improved?</strong><p>Show a result, time saved, problem solved or skill improved.</p></div>
+        <div class="card"><div class="card-number">3</div><strong>What did you learn?</strong><p>Explain one thing you now understand or can do.</p></div>
+      </div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+
+    <section class="guide-section" id="points">
+      <div class="section-number">Part 7</div>
+      <h2>How points work</h2>
+      <p class="lead">Points show approved learning, participation and results.</p>
+
+      <div class="point-pots">
+        <div class="pot"><strong>Course</strong>Lessons, quizzes, practical work and course completion.</div>
+        <div class="pot"><strong>Community</strong>Useful questions, answers and resources.</div>
+        <div class="pot"><strong>Events</strong>Attend and reflect.</div>
+        <div class="pot"><strong>Wins</strong>Real results and projects.</div>
+      </div>
+
+      <div class="current"><strong>Current position</strong><br>The Leaderboard can show real points now, but trusted staff normally enter or change the points after checking your work. A quiz score does not automatically reach the Leaderboard unless the academy has built and switched on the correct automation.</div>
+      <div class="future"><strong>Future automatic system</strong><br>When the planned system is active, a quiz can send your score to SharePoint. A flow can check the activity, stop duplicates, calculate points and update your total. Practical work and community contributions still need approval.</div>
+
+      <h3>Your four point pots</h3>
+      <ul>
+        <li><strong>Course Points</strong> — lessons, quizzes, practical work and course completion.</li>
+        <li><strong>Community Points</strong> — approved useful questions, answers and resources.</li>
+        <li><strong>Event Points</strong> — attendance and approved event reflections.</li>
+        <li><strong>Win Points</strong> — quick wins, projects and capstones.</li>
+      </ul>
+
+      <div class="formula">Total Points = Course Points + Community Points + Event Points + Win Points</div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+
+    <section class="guide-section" id="points-table">
+      <div class="section-number">Part 8</div>
+      <h2>Recommended points table</h2>
+      <p class="lead">This is the example policy from the academy design.</p>
+
+      <div class="warning"><strong>Important.</strong><br>These are recommended numbers. The academy owner must approve the final points. Always read the points shown on the activity before you begin.</div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Area</th><th>Activity</th><th>What you must do</th><th class="points">Points</th></tr></thead>
+          <tbody>
+            <tr><td>Course</td><td>Knowledge check</td><td>Complete a short check after a lesson.</td><td class="points">5</td></tr>
+            <tr><td>Course</td><td>Quiz</td><td>Pass the course quiz. Points may match the quiz score.</td><td class="points">Up to 10</td></tr>
+            <tr><td>Course</td><td>Practical activity</td><td>Submit real work and evidence.</td><td class="points">15</td></tr>
+            <tr><td>Course</td><td>Course completion bonus</td><td>Complete every required activity.</td><td class="points">20</td></tr>
+            <tr><td>Community</td><td>Useful question</td><td>Ask a clear, relevant and approved question.</td><td class="points">2</td></tr>
+            <tr><td>Community</td><td>Helpful answer</td><td>Give a correct, respectful and approved answer.</td><td class="points">3</td></tr>
+            <tr><td>Community</td><td>Useful resource</td><td>Share a safe resource with an explanation.</td><td class="points">5</td></tr>
+            <tr><td>Event</td><td>Attend a live session</td><td>Attendance is recorded.</td><td class="points">5</td></tr>
+            <tr><td>Event</td><td>Event reflection</td><td>Write what you learned and what you will do next.</td><td class="points">3</td></tr>
+            <tr><td>Win</td><td>Quick Win evidence</td><td>Show a useful result, time saved or improvement.</td><td class="points">10</td></tr>
+            <tr><td>Win</td><td>Project or capstone</td><td>Complete a larger approved challenge.</td><td class="points">25</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note">Points are not money. A badge, certificate, prize or special opportunity must follow the academy reward and safeguarding rules.</div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+
+    <section class="guide-section" id="quiz-points">
+      <div class="section-number">Part 9</div>
+      <h2>How quiz points are calculated</h2>
+      <p class="lead">A simple formula with easy examples.</p>
+
+      <div class="formula">Awarded points = round((your quiz score ÷ maximum quiz score) × points available)</div>
+      <p>If you do not reach the pass mark, the normal rule is <strong>0 points until you pass</strong>.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>You score</th><th>Quiz maximum</th><th>Points available</th><th>Calculation</th><th class="points">Points awarded</th></tr></thead>
+          <tbody>
+            <tr><td>8</td><td>10</td><td>10</td><td>(8 ÷ 10) × 10</td><td class="points">8</td></tr>
+            <tr><td>15</td><td>20</td><td>10</td><td>(15 ÷ 20) × 10 = 7.5</td><td class="points">8 after rounding</td></tr>
+            <tr><td>5</td><td>10</td><td>10</td><td>50% is below a 60% pass mark</td><td class="points">0 until passed</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Total Points example</h3>
+      <div class="grid-4">
+        <div class="card blue"><strong>Course</strong><p style="font-size:1.6rem;margin:.3rem 0 0">180</p></div>
+        <div class="card purple"><strong>Community</strong><p style="font-size:1.6rem;margin:.3rem 0 0">15</p></div>
+        <div class="card gold"><strong>Events</strong><p style="font-size:1.6rem;margin:.3rem 0 0">20</p></div>
+        <div class="card green"><strong>Wins</strong><p style="font-size:1.6rem;margin:.3rem 0 0">35</p></div>
+      </div>
+      <div class="formula">180 + 15 + 20 + 35 = 250 Total Points</div>
+
+      <div class="note"><strong>Check the activity rule.</strong><br>Some quizzes may use a fixed score, a best attempt or a first-pass rule. The course page should tell you which rule applies.</div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+
+    <section class="guide-section" id="levels">
+      <div class="section-number">Part 10</div>
+      <h2>Levels</h2>
+      <p class="lead">A level shows progress, not just a number.</p>
+
+      <div class="levels">
+        <div class="level"><div class="circle">1</div><strong>Explorer</strong><span>0–99 points</span><span>Start orientation</span></div>
+        <div class="level"><div class="circle">2</div><strong>Practitioner</strong><span>100–174 points</span><span>1 practical task</span></div>
+        <div class="level"><div class="circle">3</div><strong>Builder</strong><span>175–249 points</span><span>2 courses + win</span></div>
+        <div class="level"><div class="circle">4</div><strong>Navigator</strong><span>250+ points</span><span>Capstone + sign-off</span></div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Level</th><th>Points guide</th><th>Extra requirement</th></tr></thead>
+          <tbody>
+            <tr><td>Explorer</td><td>0–99</td><td>Start the academy and complete orientation.</td></tr>
+            <tr><td>Practitioner</td><td>100–174</td><td>Complete at least one approved practical activity.</td></tr>
+            <tr><td>Builder</td><td>175–249</td><td>Complete at least two courses and one approved Learner Win.</td></tr>
+            <tr><td>Navigator</td><td>250+</td><td>Complete an approved capstone or graduation check and receive staff sign-off.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="note"><strong>Why there is an extra requirement.</strong><br>A learner should not become a higher level by collecting small points only. The academy also checks real practical work, course completion and responsible behaviour.</div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+
+    <section class="guide-section" id="badges">
+      <div class="section-number">Part 11</div>
+      <h2>Badges and rewards</h2>
+      <p class="lead">Badges celebrate a special kind of progress.</p>
+
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Badge</th><th>What it means</th><th>Possible evidence</th></tr></thead>
+          <tbody>
+            <tr><td>First Quick Win</td><td>You used AI or another skill to create a useful result.</td><td>Before-and-after evidence or a short reflection.</td></tr>
+            <tr><td>Rising Star</td><td>You made strong early progress.</td><td>Several approved activities.</td></tr>
+            <tr><td>Community Helper</td><td>You gave safe, accurate and useful help.</td><td>Approved answers or resources.</td></tr>
+            <tr><td>Consistent Learner</td><td>You kept learning over time.</td><td>Regular activity across several weeks.</td></tr>
+            <tr><td>AI Champion</td><td>You showed high-quality learning, application and responsible leadership.</td><td>Capstone, evidence and staff approval.</td></tr>
+            <tr><td>Certificate</td><td>You completed a course, level or programme.</td><td>All required activities approved.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>How to unlock a badge</h3>
+      <ul>
+        <li>Read the badge rule before you begin.</li>
+        <li>Complete the correct activity or milestone.</li>
+        <li>Submit clear evidence.</li>
+        <li>Wait for staff approval when needed.</li>
+        <li>Check your Leaderboard record or learner profile.</li>
+        <li>Ask for a review if the badge is missing.</li>
+      </ul>
+
+      <div class="warning"><strong>A badge is not bought.</strong><br>Badges are earned through approved work and behaviour. They should never be sold, traded or awarded because someone is popular.</div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+
+    <section class="guide-section" id="leaderboard">
+      <div class="section-number">Part 12</div>
+      <h2>Leaderboard and winning fairly</h2>
+      <p class="lead">The Top 5 shows approved progress.</p>
+
+      <div class="leaderboard">
+        <div class="rank-card r1"><div class="rank">#1</div><div><strong>Alex Learner</strong>Navigator | AI Champion</div><div class="score">250<br><small>points</small></div></div>
+        <div class="rank-card r2"><div class="rank">#2</div><div><strong>Sam Learner</strong>Builder | Rising Star</div><div class="score">220<br><small>points</small></div></div>
+        <div class="rank-card r3"><div class="rank">#3</div><div><strong>Maya Learner</strong>Practitioner | Quick Win</div><div class="score">180<br><small>points</small></div></div>
+        <div class="rank-card"><div class="rank">#4</div><div><strong>Jordan Learner</strong>Practitioner | Consistent Learner</div><div class="score">145<br><small>points</small></div></div>
+        <div class="rank-card"><div class="rank">#5</div><div><strong>Taylor Learner</strong>Explorer | Rising Learner</div><div class="score">120<br><small>points</small></div></div>
+      </div>
+
+      <h3>How the Top 5 should work</h3>
+      <ul>
+        <li>Learners are sorted by approved Total Points from highest to lowest.</li>
+        <li>Only real, checked work should be counted.</li>
+        <li>Copied work, spam, duplicate submissions and unsafe behaviour should not earn points.</li>
+        <li>A tie rule should be published. A good rule is higher Course Points first, then the earlier date the score was reached. Shared rank is also fair.</li>
+        <li>The academy may use monthly or term leaderboards so new learners also have a chance.</li>
+        <li>You can ask for a score review if you believe there is a mistake.</li>
+      </ul>
+
+      <div class="note"><strong>How to win the right way.</strong><br>Learn well, complete practical work, save evidence, help responsibly, attend events and keep going. Quality matters more than quantity.</div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+
+    <section class="guide-section" id="events">
+      <div class="section-number">Part 13</div>
+      <h2>Events and attendance</h2>
+      <p class="lead">Live sessions help you learn with other people.</p>
+
+      <div class="event-list">
+        <div class="event"><div class="event-date">JUL<strong>31</strong>2026</div><div class="event-body"><strong>AI Academy Welcome Session</strong>6:00 PM | Masterclass | All learners</div></div>
+        <div class="event"><div class="event-date">AUG<strong>7</strong>2026</div><div class="event-body"><strong>First Quick Win Workshop</strong>6:00 PM | Workshop | New learners</div></div>
+        <div class="event"><div class="event-date">AUG<strong>14</strong>2026</div><div class="event-body"><strong>Navigator Office Hours</strong>6:00 PM | Office Hours | Navigator cohort</div></div>
+      </div>
+
+      <h3>How to earn event points</h3>
+      <ol>
+        <li>Open the event card and read the date, time and audience.</li>
+        <li>Join using your academy account.</li>
+        <li>Attend the required part of the session.</li>
+        <li>Complete a reflection if the event asks for one.</li>
+        <li>Wait for attendance or the reflection to be approved.</li>
+        <li>Check that Event Points have been added.</li>
+      </ol>
+
+      <div class="note"><strong>Attendance is not enough for every event.</strong><br>Some events may award points for attendance only. Others may also require a short reflection or activity. Read the event instructions.</div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+
+    <section class="guide-section" id="linking">
+      <div class="section-number">Part 14</div>
+      <h2>How course pages link to points</h2>
+      <p class="lead">The Activity ID joins the right task to the right scoring rule.</p>
+
+      <div class="flow">
+        <div class="flow-item">1. Course card</div>
+        <div class="flow-item">2. Lesson page</div>
+        <div class="flow-item">3. Activity</div>
+        <div class="flow-item">4. Submit</div>
+        <div class="flow-item">5. Check</div>
+        <div class="flow-item">6. Completion</div>
+        <div class="flow-item">7. Points</div>
+        <div class="flow-item">8. Progress</div>
+      </div>
+
+      <h3>What is happening behind the page</h3>
+      <ul>
+        <li>A course card opens the correct SharePoint course page.</li>
+        <li>The course page contains the lesson and buttons for the correct quiz or evidence form.</li>
+        <li>Each activity has a unique Activity ID.</li>
+        <li>The Activity ID tells the system which course, points and pass rule belong to the task.</li>
+        <li>One approved Activity Completion record is saved for your submission.</li>
+        <li>Your approved points are then added to the Leaderboard.</li>
+        <li>The progress page can show your level, badge and next course.</li>
+      </ul>
+
+      <div class="warning"><strong>Why links must be correct.</strong><br>Always open the activity from the course page. A random or old form may not contain the correct Activity ID and may not connect to your progress.</div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+
+    <section class="guide-section" id="automatic">
+      <div class="section-number">Part 15</div>
+      <h2>What can be automatic and what staff check</h2>
+      <p class="lead">A safe system uses both computers and people.</p>
+
+      <div class="grid-2">
+        <div class="card blue">
+          <h3>Can be automatic</h3>
+          <ul>
+            <li>Multiple-choice quiz score</li>
+            <li>Duplicate check</li>
+            <li>Add approved points</li>
+            <li>Recalculate Total Points</li>
+            <li>Update level and rank</li>
+          </ul>
+        </div>
+        <div class="card gold">
+          <h3>Needs a person to check</h3>
+          <ul>
+            <li>Practical work and evidence</li>
+            <li>Written reflection</li>
+            <li>Helpful community answer</li>
+            <li>Capstone or graduation</li>
+            <li>Mistakes and score appeals</li>
+          </ul>
+        </div>
+      </div>
+
+      <h3>When automation is switched on</h3>
+      <ol>
+        <li>You submit a quiz or activity form.</li>
+        <li>The system reads your learner account and Activity ID.</li>
+        <li>It checks whether the same completion already earned points.</li>
+        <li>For a quiz, it calculates the score and pass rule.</li>
+        <li>For practical work, it sends the evidence to a tutor or moderator.</li>
+        <li>After approval, it updates Course, Community, Event or Win Points.</li>
+        <li>It recalculates Total Points and may update your level, badge and rank.</li>
+      </ol>
+
+      <div class="warning"><strong>Do not assume automation is active.</strong><br>Until the academy confirms that the flows are live and tested, expect staff to enter or approve points manually. A Microsoft Forms result by itself may not update the Leaderboard.</div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+
+    <section class="guide-section" id="help">
+      <div class="section-number">Part 16</div>
+      <h2>Missing points and getting help</h2>
+      <p class="lead">Use this checklist before reporting a problem.</p>
+
+      <ol class="steps">
+        <li><strong>Refresh the page</strong>The list may need a moment to update.</li>
+        <li><strong>Check the activity</strong>Make sure you used the correct course link and Activity ID.</li>
+        <li><strong>Check submission</strong>Confirm the form said your response was submitted.</li>
+        <li><strong>Check the pass rule</strong>A failed quiz may award 0 until you pass.</li>
+        <li><strong>Wait for approval</strong>Practical work, posts, events and projects may need a person to check them.</li>
+        <li><strong>Check for duplicates</strong>A second copy of the same task may not earn more points.</li>
+        <li><strong>Save evidence</strong>Keep a screenshot, file, link or submission date.</li>
+        <li><strong>Ask for support</strong>Use Get Support and explain the activity, date and expected points.</li>
+      </ol>
+
+      <div class="card green">
+        <h3>A good support message</h3>
+        <p><strong>Subject:</strong> Missing points for AI Presentation Task<br>
+        <strong>Course:</strong> AI Foundations<br>
+        <strong>Activity:</strong> AF-03 Practical Task<br>
+        <strong>Date submitted:</strong> 26 July 2026<br>
+        <strong>Expected points:</strong> 15<br>
+        <strong>What happened:</strong> My form was submitted, but the points are not showing.<br>
+        <strong>Evidence:</strong> I have attached the confirmation screenshot.</p>
+      </div>
+
+      <div class="note"><strong>Be patient and honest.</strong><br>Do not change scores yourself, create extra records or ask for points you did not earn. A staff member should review the evidence fairly.</div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+
+    <section class="guide-section" id="weekly-plan">
+      <div class="section-number">Part 17</div>
+      <h2>My weekly plan and quick checklist</h2>
+      <p class="lead">Plan a small amount of real progress each week.</p>
+
+      <div class="table-wrap">
+        <table class="weekly">
+          <thead><tr><th>Day</th><th>What I will learn or do</th><th>Evidence I will save</th><th>Done?</th></tr></thead>
+          <tbody>
+            <tr><td>Monday</td><td></td><td></td><td>□</td></tr>
+            <tr><td>Tuesday</td><td></td><td></td><td>□</td></tr>
+            <tr><td>Wednesday</td><td></td><td></td><td>□</td></tr>
+            <tr><td>Thursday</td><td></td><td></td><td>□</td></tr>
+            <tr><td>Friday</td><td></td><td></td><td>□</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Before I submit an activity</h3>
+      <ul class="checklist">
+        <li>I read the instructions and points rule.</li>
+        <li>I used the correct course page and activity link.</li>
+        <li>I completed the work myself and checked AI answers.</li>
+        <li>I saved clear evidence.</li>
+        <li>I used the correct learner account.</li>
+        <li>I submitted once and read the confirmation.</li>
+        <li>I know whether the result is automatic or needs approval.</li>
+      </ul>
+
+      <h3>Mini glossary</h3>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Word</th><th>Simple meaning</th></tr></thead>
+          <tbody>
+            <tr><td>Activity ID</td><td>A code that identifies the exact task and its scoring rule.</td></tr>
+            <tr><td>Evidence</td><td>A file, screenshot, link, reflection or result that shows what you did.</td></tr>
+            <tr><td>Approval</td><td>A tutor or moderator confirms that work meets the rule.</td></tr>
+            <tr><td>Leaderboard</td><td>A list showing approved points, levels, badges and ranks.</td></tr>
+            <tr><td>Power Automate</td><td>A Microsoft tool that can move information and update records automatically.</td></tr>
+            <tr><td>View</td><td>A rule that decides which list items are shown and in what order.</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+
+    <section class="guide-section" id="final-message">
+      <div class="section-number">Part 18</div>
+      <div class="final">
+        <h2>You are ready</h2>
+        <p class="tagline">Learn. Apply. Share.</p>
+        <p>Use the academy to build real skills, complete real activities and show real progress.</p>
+        <h3 style="color:#fff">Your five learner promises</h3>
+        <p>1. I will use my own thinking.<br>
+        2. I will check AI answers.<br>
+        3. I will save evidence.<br>
+        4. I will be safe and kind.<br>
+        5. I will ask for help when I need it.</p>
+        <p><strong>Final message:</strong> Learn something useful. Apply it to a real task. Share safely. Keep evidence. Ask for help. Your progress is more important than being first.</p>
+      </div>
+      <a class="back" href="#top">Back to contents ↑</a>
+    </section>
+  </main>
+
+  <footer>
+    British School of Outdoor Education - AI Academy<br>
+    Learner Guide | Version 1.0 | July 2026
+  </footer>
+</div>
+</body>
+</html>
