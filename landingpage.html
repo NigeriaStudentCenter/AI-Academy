@@ -243,7 +243,7 @@ footer.site{padding:30px 0;background:#091d14;color:#becbc3;font-size:.79rem}.fo
    PAGE CONFIGURATION — replace these two values before launch
    ========================================================= */
 const AI_READINESS_ASSESSMENT_URL = "https://nigeriastudentcenter.github.io/AI-Academy/AIreadiness.html#how-it-works";
-const ACADEMY_VIDEO_EMBED_URL = "https://www.youtube.com/embed/eyhDNOHZop8";
+const ACADEMY_VIDEO_EMBED_URL = "https://www.youtube.com/watch?v=OOHxaP5sYJM";
 
 // Readiness Assessment links
 const readinessLinks = document.querySelectorAll('.readiness-link');
@@ -274,7 +274,7 @@ document.querySelectorAll('.open-modal').forEach(b=>b.addEventListener('click',(
 document.getElementById('closeModal').addEventListener('click',()=>{modal.classList.remove('show');document.body.classList.remove('modal-open')});
 modal.addEventListener('click',e=>{if(e.target===modal){modal.classList.remove('show');document.body.classList.remove('modal-open')}});
 document.querySelectorAll('.faq-q').forEach(q=>q.addEventListener('click',()=>q.parentElement.classList.toggle('open')));
-document.getElementById('leadForm').addEventListener('submit',e=>{e.preventDefault();alert('Connect this form to your live registration, CRM or checkout workflow before publishing.');});
+document.getElementById('leadForm').addEventListener('submit',e=>{e.preventDefault();alert('');});
 </script>
 </body>
 </html>
