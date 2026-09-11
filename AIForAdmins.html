@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI for Admins Course — BSOE AI Academy</title>
+<meta name="description" content="AI for Administrative Professionals: work smarter, automate tasks and support better decisions using Microsoft 365 Copilot and Power Platform, with confidentiality and records discipline built in." />
+<style>
+:root{
+  --ink:#102218;--forest:#153f2a;--forest2:#215e3e;--cream:#f7f2e7;--paper:#fffdf8;
+  --gold:#c89442;--gold2:#f1d398;--muted:#607167;--line:#dbe1dc;--white:#fff;
+  --shadow:0 24px 70px rgba(16,34,24,.13);--max:1180px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.58}
+h1,h2,h3,p{margin-top:0} h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.038em} a{text-decoration:none;color:inherit} .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:900;color:var(--forest2)} .eyebrow.light{color:var(--gold2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 24px;border:0;border-radius:999px;background:var(--forest);color:white;font-weight:850;cursor:pointer;box-shadow:0 12px 30px rgba(21,63,42,.18);transition:.2s transform,.2s background}.btn:hover{transform:translateY(-2px);background:#0f3020}.btn.gold{background:linear-gradient(135deg,#b97c2c,#dfbc74);color:#122419}.btn.outline{background:transparent;color:var(--forest);border:1px solid rgba(21,63,42,.24);box-shadow:none}
+.topbar{background:#0b2a1b;color:#fff;text-align:center;padding:11px 16px;font-size:.85rem;font-weight:750}.topbar span{color:var(--gold2)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,253,248,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,34,24,.08)}.nav-in{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:11px;font-weight:900}.brand-mark{width:39px;height:39px;border-radius:13px;background:radial-gradient(circle at 38% 34%,#fff4b8 0 8%,#d6a44c 17%,#1c4b33 44%,#0f2f20 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35),0 8px 20px rgba(21,63,42,.2);position:relative}.brand-mark:after{content:"✦";position:absolute;inset:0;display:grid;place-items:center;color:#fff2c6}.nav-links{display:flex;gap:20px;align-items:center;font-size:.83rem;font-weight:760;color:#334a3c}.nav-cta{display:flex;gap:10px;align-items:center}
+.hero{padding:64px 0 70px;background:radial-gradient(circle at 82% 10%,rgba(200,148,66,.19),transparent 31%),linear-gradient(180deg,#fffdf8 0%,#f5efe2 100%);text-align:center}.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;border:1px solid rgba(21,63,42,.15);background:rgba(255,255,255,.72);font-size:.78rem;font-weight:900;letter-spacing:.04em}.hero h1{font-size:clamp(2.6rem,6vw,4.8rem);line-height:1.05;margin:20px auto 20px;max-width:900px}.hero-copy{font-size:1.14rem;color:#496054;max-width:720px;margin:0 auto}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 16px;justify-content:center}.micro{font-size:.82rem;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{text-align:center;padding:28px 18px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat b{font-family:Georgia,serif;font-size:1.9rem;display:block}.stat span{font-size:.79rem;color:var(--muted);font-weight:720}
+.section{padding:84px 0}.section.alt{background:var(--cream)}.section.dark{background:var(--forest);color:white}.section-head{max-width:800px;margin:0 auto 44px;text-align:center}.section-head h2{font-size:clamp(2.1rem,4.4vw,3.6rem);line-height:1.03;margin:12px 0 16px}.section-head p{font-size:1.05rem;color:var(--muted)}.dark .section-head p{color:#d4e0d8}
+.flow{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}.flow-step{background:white;border:1px solid #dfe5e0;border-radius:16px;padding:16px 10px;text-align:center;min-height:120px;position:relative;display:flex;flex-direction:column;justify-content:center}.flow-step b{width:30px;height:30px;border-radius:9px;background:var(--forest);color:white;display:grid;place-items:center;margin:0 auto 10px;font-size:.82rem}.flow-step strong{display:block;font-size:.86rem;line-height:1.2}.flow-step span{display:block;font-size:.68rem;color:var(--muted);margin-top:6px}.flow-step:not(:last-child):after{content:"→";position:absolute;right:-11px;top:42%;font-size:1.1rem;font-weight:900;color:var(--gold);z-index:2}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.why-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:24px}.why-card b{color:var(--gold2);display:block;font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}.why-card p{color:#dbe7e0;margin:0;font-size:.96rem}
+.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.who-card{background:white;border:1px solid #e1e7e2;border-radius:18px;padding:22px;min-height:140px}.who-card .ico{font-size:1.4rem;margin-bottom:12px}.who-card b{font-family:Georgia,serif;font-size:1.1rem;display:block;margin-bottom:6px}.who-card p{font-size:.84rem;color:var(--muted);margin:0}
+.stage-track{border:1px solid var(--line);border-radius:20px;background:white;margin-bottom:16px;overflow:hidden}
+.stage-track summary{cursor:pointer;list-style:none;padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--cream)}
+.stage-track summary::-webkit-details-marker{display:none}
+.stage-track summary:after{content:"+";font-size:1.5rem;color:var(--forest2);flex:0 0 auto}
+.stage-track[open] summary:after{content:"−"}
+.stage-title{display:flex;flex-direction:column;gap:4px}
+.stage-title b{font-family:Georgia,serif;font-size:1.24rem;color:var(--ink)}
+.stage-title span{font-size:.85rem;color:var(--muted);font-weight:600}
+.stage-body{padding:6px 26px 22px}
+.lesson-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0;border-top:1px solid #eef1ee;flex-wrap:wrap}
+.stage-body .lesson-row:first-of-type{border-top:0}
+.lesson-title{font-weight:750;font-size:.9rem;color:var(--ink)}
+.lesson-meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center;flex:0 0 auto}
+.type-tag{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);background:#f1f3f1;border-radius:999px;padding:4px 8px}
+.level-tag{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;border-radius:999px;padding:4px 8px}
+.level-tag.beginner{background:#EDF4FF;color:#2F7DE1}
+.level-tag.intermediate{background:#F5ECFB;color:#8246AF}
+.level-tag.advanced{background:var(--gold2);color:#6b4a12}
+.duration-tag{font-size:.74rem;color:var(--muted);font-weight:700}
+.note-box{background:var(--cream);border:1px solid #e6dcc8;border-radius:18px;padding:18px 22px;margin-top:6px;font-size:.86rem;color:var(--muted)}
+.faq{max-width:880px;margin:auto}details.faq-item{border-top:1px solid #d4ddd7;padding:18px 4px}details.faq-item:last-child{border-bottom:1px solid #d4ddd7}details.faq-item summary{cursor:pointer;font-weight:850;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}details.faq-item summary::-webkit-details-marker{display:none}details.faq-item summary:after{content:"+";font-size:1.3rem;color:var(--forest2);flex:0 0 auto}details.faq-item[open] summary:after{content:"−"}details.faq-item p{color:var(--muted);margin:14px 0 4px}
+.final{padding:84px 0;text-align:center;background:radial-gradient(circle at 50% 15%,rgba(227,187,103,.20),transparent 26%),#102e20;color:white}.final h2{font-size:clamp(2.4rem,5vw,4.2rem);line-height:.98;max-width:880px;margin:10px auto 18px}.final p{color:#cddad2;max-width:700px;margin:0 auto 26px}.final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer.site{padding:30px 0;background:#091d14;color:#becbc3;font-size:.79rem}.foot{display:flex;align-items:center;justify-content:space-between;gap:24px}.foot .brand{color:white}.foot-links{display:flex;gap:18px}
+@media(max-width:1000px){.nav-links{display:none}.why-grid{grid-template-columns:1fr}.who-grid{grid-template-columns:1fr 1fr}.flow{grid-template-columns:repeat(4,1fr)}.flow-step:nth-child(4):after{display:none}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:680px){.wrap{width:min(100% - 24px,var(--max))}.nav-in{height:68px}.nav .btn{padding:11px 14px;font-size:.76rem}.hero{padding-top:40px}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.section{padding:60px 0}.flow{grid-template-columns:1fr 1fr}.flow-step:after{display:none!important}.who-grid{grid-template-columns:1fr}.stage-track summary{padding:18px}.stage-body{padding:0 18px 18px}.lesson-row{flex-direction:column;align-items:flex-start}.final-actions .btn,.hero-actions .btn{width:100%}.foot{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="topbar">BSOE AI Academy · <span>Workplace AI Course — AI for Admins</span></div>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="landingpage.html"><span class="brand-mark"></span><span>BSOE AI Academy</span></a>
+    <div class="nav-links"><a href="#workflow">The Workflow</a><a href="#why">Why It Matters</a><a href="#curriculum">Curriculum</a><a href="#faq">FAQ</a></div>
+    <div class="nav-cta"><a class="btn outline" href="landingpage.html">Back to Academy</a><a class="btn gold" href="landingpage.html#readiness">Join the Academy</a></div>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="pill">WORKPLACE AI · FOR ADMINISTRATIVE PROFESSIONALS</span>
+    <h1>Work smarter. Automate tasks. Support better decisions.</h1>
+    <p class="hero-copy">Use Microsoft 365 Copilot and Power Platform to draft, organise, summarise and automate administrative work — while protecting confidentiality and accuracy. The outcome: a faster Request → Organise → Prepare → Communicate → Track → Complete → Report cycle, with human approval and records discipline built into every step.</p>
+    <div class="hero-actions"><a class="btn gold" href="#workflow">See the Workflow ↓</a><a class="btn outline" href="landingpage.html#readiness">Join the Academy →</a></div>
+    <p class="micro">5 modules · 23 lessons and labs · Copilot + Power Automate + Purview · Nothing skips human approval</p>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><b>5</b><span>modules</span></div>
+  <div class="stat"><b>23</b><span>lessons &amp; labs</span></div>
+  <div class="stat"><b>7</b><span>step outcome workflow</span></div>
+  <div class="stat"><b>✓</b><span>human approval, always</span></div>
+</div>
+
+<section class="section" id="workflow">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The outcome</div><h2>One workflow, every task.</h2><p>Every module in this course feeds into the same seven-step cycle — so whatever you automate, it still ends in a human check and a proper record.</p></div>
+    <div class="flow">
+      <div class="flow-step"><b>1</b><strong>Request</strong><span>Capture what's needed</span></div>
+      <div class="flow-step"><b>2</b><strong>Organise</strong><span>Sort and prioritise</span></div>
+      <div class="flow-step"><b>3</b><strong>Prepare</strong><span>Draft with Copilot</span></div>
+      <div class="flow-step"><b>4</b><strong>Communicate</strong><span>Share with confidence</span></div>
+      <div class="flow-step"><b>5</b><strong>Track</strong><span>Automate follow-ups</span></div>
+      <div class="flow-step"><b>6</b><strong>Complete</strong><span>Approve and close out</span></div>
+      <div class="flow-step"><b>7</b><strong>Report</strong><span>File and evidence it</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="why">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow light">Why this matters</div><h2>Administrative AI skill is now a core job requirement.</h2><p>Microsoft 365 Copilot and Power Platform are already inside the tools most administrative professionals use every day — this course is about using them properly, not just quickly.</p></div>
+    <div class="why-grid">
+      <div class="why-card"><b>Already in your apps</b><p>Copilot is built directly into Outlook, Word, PowerPoint and Teams — the tools you already use. Learning to prompt and validate it well is now a baseline workplace skill.</p></div>
+      <div class="why-card"><b>Time back, not just speed</b><p>Power Automate approvals, reminders and notifications remove the manual follow-ups and missed deadlines that eat into an admin professional's day.</p></div>
+      <div class="why-card"><b>Confidentiality is non-negotiable</b><p>Sensitivity labels, safe sharing and DLP basics matter more as AI drafts more of your written work — this course treats protection as a core skill, not an afterthought.</p></div>
+      <div class="why-card"><b>Records discipline still matters</b><p>Faster drafting means nothing if filing, retention and audit-readiness fall apart. This course keeps records management in the loop, not bolted on at the end.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="who">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Who this course is for</div><h2>Built for the people who keep the office running.</h2></div>
+    <div class="who-grid">
+      <div class="who-card"><div class="ico">🗂️</div><b>Executive assistants</b><p>Manage inboxes, meetings and communications for leaders under real time pressure.</p></div>
+      <div class="who-card"><div class="ico">🏢</div><b>Office managers</b><p>Keep documents, approvals and day-to-day operations moving smoothly.</p></div>
+      <div class="who-card"><div class="ico">📅</div><b>Coordinators &amp; schedulers</b><p>Own the follow-ups, reminders and moving parts behind every meeting.</p></div>
+      <div class="who-card"><div class="ico">📋</div><b>Department administrators</b><p>Handle records, filing and reporting where accuracy and audit-readiness count.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="curriculum">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The curriculum</div><h2>Five modules, one connected workflow.</h2><p>Select a module to see everything inside it.</p></div>
+
+    <details class="stage-track" open>
+      <summary><div class="stage-title"><b>1 · Copilot prompting and validation across M365</b><span>Draft emails/docs, summarise threads and meetings, and create presentations with clear prompts and review steps in Outlook, Word, PowerPoint and Teams.</span></div></summary>
+      <div class="stage-body">
+        <div class="lesson-row"><span class="lesson-title">Improve customer service efficiency using Microsoft 365 Copilot with AI</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">17 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Draft and refine business content using Microsoft 365 Copilot</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">1 hr 7 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Enhance the resolution quality of customer service cases with AI</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">16 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Work smarter with Copilot across your Microsoft 365 apps</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">39 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Save time and keep your team updated</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">1 min</span></span></div>
+      </div>
+    </details>
+
+    <details class="stage-track">
+      <summary><div class="stage-title"><b>2 · Power Automate approvals and reminders</b><span>Build approvals, reminders, and SharePoint/Outlook/Teams notifications to cut manual follow-ups and missed deadlines.</span></div></summary>
+      <div class="stage-body">
+        <div class="lesson-row"><span class="lesson-title">Use the Teams connector in Power Automate</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">17 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Accelerate Finance productivity with Cowork</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">19 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Enhance the resolution quality of customer service cases with AI</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">16 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Enhance productivity with Power Automate and the Office 365 Outlook Connector</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">49 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Introduction to modern automation features in SharePoint</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">12 mins</span></span></div>
+      </div>
+    </details>
+
+    <details class="stage-track">
+      <summary><div class="stage-title"><b>3 · Information protection, safe sharing, and DLP</b><span>Apply sensitivity labels, share safely, and understand DLP basics so confidential info stays protected across M365 and Copilot workflows.</span></div></summary>
+      <div class="stage-body">
+        <div class="lesson-row"><span class="lesson-title">Apply sensitivity labels for data protection</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">1 hr 10 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Labeling Files is Worth It | Speed &amp; Protection Benefits in Microsoft Purview</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">15 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Improve customer service efficiency using Microsoft 365 Copilot with AI</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">17 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Explore sensitivity labels</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">40 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Learn AI prompting basics</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">15 mins</span></span></div>
+      </div>
+    </details>
+
+    <details class="stage-track">
+      <summary><div class="stage-title"><b>4 · Records management and compliant filing</b><span>File emails/docs correctly with metadata, retention labels, and SharePoint practices; prepare for audits and consistent retrieval.</span></div></summary>
+      <div class="stage-body">
+        <div class="lesson-row"><span class="lesson-title">Manage records and disposition with Microsoft Purview</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">1 hr 13 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">What's next: File-level archiving in Microsoft 365</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">15 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Implement and manage Microsoft 365 retention and recovery</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">55 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Improve customer service efficiency using Microsoft 365 Copilot with AI</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">17 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Drive Finance execution with AI Agents</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">23 mins</span></span></div>
+      </div>
+    </details>
+
+    <details class="stage-track">
+      <summary><div class="stage-title"><b>5 · Capstone: Meeting-to-minutes workflow with approvals and filing</b><span>Design a department workflow: Copilot meeting summary → validated minutes → action tracker → approval workflow in Power Automate → SharePoint filing with retention → dashboard of actions/time saved.</span></div></summary>
+      <div class="stage-body">
+        <div class="lesson-row"><span class="lesson-title">Build Stronger RFP Responses with AI</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">19 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Transform a marketing brief into a campaign plan with AI</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">17 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Add Copilot &amp; Auto-Fill Records in Power Apps (Form Fill Assist)</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">1 min</span></span></div>
+        <div class="note-box">The capstone project is the meeting-to-minutes workflow described above. The supporting lessons listed here are general Copilot and Power Apps practice — treat the capstone itself as the applied task to complete once you've worked through Modules 1–4.</div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section alt" id="faq">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Before you start</div><h2>Frequently asked questions</h2></div>
+    <div class="faq">
+      <details class="faq-item" open><summary>Do I need technical or IT experience?</summary><p>No. This course is built for administrative professionals using the Microsoft 365 apps they already work in every day. No coding or IT background is required.</p></details>
+      <details class="faq-item"><summary>Will this replace my judgement with automation?</summary><p>No — the course is built around human approval at every stage. Copilot drafts, Power Automate reminds and routes, but a person always reviews and approves before anything is final.</p></details>
+      <details class="faq-item"><summary>Why does a course about admin work include data protection?</summary><p>Because administrative professionals routinely handle confidential documents, communications and records. Sensitivity labels and DLP basics protect that information as more of it passes through AI tools.</p></details>
+      <details class="faq-item"><summary>What is the capstone project?</summary><p>A designed department workflow: a Copilot meeting summary becomes validated minutes, which feed an action tracker, route through a Power Automate approval, and get filed in SharePoint with retention applied — ending in a simple dashboard of actions and time saved.</p></details>
+      <details class="faq-item"><summary>How long does this course take?</summary><p>Five modules covering 23 lessons and labs. Most learners complete one module per sitting rather than the full course in one go.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap"><div class="eyebrow light">AI for Admins</div><h2>Turn your daily workload into one clean workflow.</h2><p>Join the BSOE AI Academy and start with Module 1 — Copilot prompting and validation across Microsoft 365.</p><div class="final-actions"><a class="btn gold" href="landingpage.html#readiness">Join the Academy →</a><a class="btn outline" style="color:white;border-color:rgba(255,255,255,.35)" href="AIFoundations.html">Start with AI Foundations</a></div></div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap foot"><div class="brand"><span class="brand-mark"></span><span>BSOE AI Academy</span></div><div class="foot-links"><a href="landingpage.html">Academy Home</a><a href="AIFoundations.html">AI Foundations</a><a href="AIToolbox.html">AI Toolbox</a><a href="AzureAIEngineer.html">Azure AI Engineer</a><a href="LearnerGuide.html">Learner Guide</a></div><div>© 2026 BSOE LTD.</div></div></footer>
+</body>
+</html>
