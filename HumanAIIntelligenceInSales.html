@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Human and AI Intelligence in Sales — BSOE AI Academy</title>
+<meta name="description" content="Human and AI Intelligence in Sales: a seven-session course pairing timeless sales discipline with an AI-presented video and workbook format — each session watched, then practised, then saved automatically to your private workspace." />
+<style>
+:root{
+  --ink:#102218;--forest:#153f2a;--forest2:#215e3e;--cream:#f7f2e7;--paper:#fffdf8;
+  --gold:#c89442;--gold2:#f1d398;--muted:#607167;--line:#dbe1dc;--white:#fff;
+  --shadow:0 24px 70px rgba(16,34,24,.13);--max:1180px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.58}
+h1,h2,h3,p{margin-top:0} h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.038em} a{text-decoration:none;color:inherit} .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:900;color:var(--forest2)} .eyebrow.light{color:var(--gold2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 24px;border:0;border-radius:999px;background:var(--forest);color:white;font-weight:850;cursor:pointer;box-shadow:0 12px 30px rgba(21,63,42,.18);transition:.2s transform,.2s background}.btn:hover{transform:translateY(-2px);background:#0f3020}.btn.gold{background:linear-gradient(135deg,#b97c2c,#dfbc74);color:#122419}.btn.outline{background:transparent;color:var(--forest);border:1px solid rgba(21,63,42,.24);box-shadow:none}
+.topbar{background:#0b2a1b;color:#fff;text-align:center;padding:11px 16px;font-size:.85rem;font-weight:750}.topbar span{color:var(--gold2)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,253,248,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,34,24,.08)}.nav-in{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:11px;font-weight:900}.brand-mark{width:39px;height:39px;border-radius:13px;background:radial-gradient(circle at 38% 34%,#fff4b8 0 8%,#d6a44c 17%,#1c4b33 44%,#0f2f20 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35),0 8px 20px rgba(21,63,42,.2);position:relative}.brand-mark:after{content:"✦";position:absolute;inset:0;display:grid;place-items:center;color:#fff2c6}.nav-links{display:flex;gap:20px;align-items:center;font-size:.83rem;font-weight:760;color:#334a3c}.nav-cta{display:flex;gap:10px;align-items:center}
+.hero{padding:64px 0 70px;background:radial-gradient(circle at 82% 10%,rgba(200,148,66,.19),transparent 31%),linear-gradient(180deg,#fffdf8 0%,#f5efe2 100%);text-align:center}.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;border:1px solid rgba(21,63,42,.15);background:rgba(255,255,255,.72);font-size:.78rem;font-weight:900;letter-spacing:.04em}.hero h1{font-size:clamp(2.5rem,5.4vw,4.3rem);line-height:1.07;margin:20px auto 20px;max-width:880px}.hero-copy{font-size:1.14rem;color:#496054;max-width:730px;margin:0 auto}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 16px;justify-content:center}.micro{font-size:.82rem;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{text-align:center;padding:28px 18px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat b{font-family:Georgia,serif;font-size:1.6rem;display:block}.stat span{font-size:.78rem;color:var(--muted);font-weight:720}
+.section{padding:84px 0}.section.alt{background:var(--cream)}.section.dark{background:var(--forest);color:white}.section-head{max-width:800px;margin:0 auto 44px;text-align:center}.section-head h2{font-size:clamp(2.1rem,4.4vw,3.6rem);line-height:1.03;margin:12px 0 16px}.section-head p{font-size:1.05rem;color:var(--muted)}.dark .section-head p{color:#d4e0d8}
+.covers-box{max-width:840px;margin:0 auto;background:white;border:1px solid var(--line);border-radius:22px;padding:30px 34px;box-shadow:0 14px 32px rgba(16,34,24,.05)}.covers-box p{font-size:1.05rem;color:var(--ink);margin:0}
+.how-flow{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.how-step{background:white;border:1px solid #dfe5e0;border-radius:18px;padding:24px;text-align:center;position:relative}.how-step .ico{font-size:1.6rem;margin-bottom:12px}.how-step h3{font-family:Georgia,serif;font-size:1.2rem;margin-bottom:8px}.how-step p{color:var(--muted);font-size:.88rem;margin:0}.how-step:not(:last-child):after{content:"→";position:absolute;right:-19px;top:50%;transform:translateY(-50%);font-size:1.3rem;font-weight:900;color:var(--gold);z-index:2}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.why-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:24px}.why-card b{color:var(--gold2);display:block;font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}.why-card p{color:#dbe7e0;margin:0;font-size:.96rem}
+.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.who-card{background:white;border:1px solid #e1e7e2;border-radius:18px;padding:22px;min-height:130px}.who-card .ico{font-size:1.4rem;margin-bottom:12px}.who-card b{font-family:Georgia,serif;font-size:1.02rem;display:block;margin-bottom:6px}.who-card p{font-size:.82rem;color:var(--muted);margin:0}
+.topics{display:grid;gap:14px}
+.topic-card{background:white;border:1px solid #e4e9e5;border-radius:20px;padding:24px 26px;box-shadow:0 14px 32px rgba(16,34,24,.05);display:grid;grid-template-columns:56px 1fr;gap:20px;align-items:center}
+.topic-no{width:48px;height:48px;border-radius:14px;background:var(--forest);color:white;display:grid;place-items:center;font-family:Georgia,serif;font-size:1.25rem;font-weight:700}
+.topic-card h3{font-family:Georgia,serif;font-size:1.24rem;margin:0 0 6px}
+.topic-card p{color:var(--muted);margin:0 0 8px}
+.session-tag{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:var(--forest2);background:var(--cream);border:1px solid #e6dcc8;border-radius:999px;padding:4px 9px}
+.faq{max-width:880px;margin:auto}details.faq-item{border-top:1px solid #d4ddd7;padding:18px 4px}details.faq-item:last-child{border-bottom:1px solid #d4ddd7}details.faq-item summary{cursor:pointer;font-weight:850;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}details.faq-item summary::-webkit-details-marker{display:none}details.faq-item summary:after{content:"+";font-size:1.3rem;color:var(--forest2);flex:0 0 auto}details.faq-item[open] summary:after{content:"−"}details.faq-item p{color:var(--muted);margin:14px 0 4px}
+.final{padding:84px 0;text-align:center;background:radial-gradient(circle at 50% 15%,rgba(227,187,103,.20),transparent 26%),#102e20;color:white}.final h2{font-size:clamp(2.4rem,5vw,4.2rem);line-height:.98;max-width:880px;margin:10px auto 18px}.final p{color:#cddad2;max-width:700px;margin:0 auto 26px}.final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer.site{padding:30px 0;background:#091d14;color:#becbc3;font-size:.79rem}.foot{display:flex;align-items:center;justify-content:space-between;gap:24px}.foot .brand{color:white}.foot-links{display:flex;gap:18px}
+@media(max-width:1000px){.nav-links{display:none}.why-grid{grid-template-columns:1fr}.who-grid{grid-template-columns:1fr 1fr}.how-flow{grid-template-columns:1fr}.how-step:not(:last-child):after{content:"↓";right:auto;left:50%;top:auto;bottom:-17px;transform:translateX(-50%)}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:680px){.wrap{width:min(100% - 24px,var(--max))}.nav-in{height:68px}.nav .btn{padding:11px 14px;font-size:.76rem}.hero{padding-top:40px}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.section{padding:60px 0}.who-grid{grid-template-columns:1fr}.covers-box{padding:22px 20px}.topic-card{grid-template-columns:44px 1fr;padding:20px}.topic-no{width:40px;height:40px;font-size:1.05rem}.final-actions .btn,.hero-actions .btn{width:100%}.foot{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="topbar">BSOE AI Academy · <span>Course — Human and AI Intelligence in Sales</span></div>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="landingpage.html"><span class="brand-mark"></span><span>BSOE AI Academy</span></a>
+    <div class="nav-links"><a href="#covers">What It Covers</a><a href="#how">How It Works</a><a href="#topics">The 7 Sessions</a><a href="#faq">FAQ</a></div>
+    <div class="nav-cta"><a class="btn outline" href="landingpage.html">Back to Academy</a><a class="btn gold" href="landingpage.html#readiness">Join the Academy</a></div>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="pill">SALES SKILLS · 7 SESSIONS · VIDEO + WORKBOOK</span>
+    <h1>Sales is a human skill. This is an AI-presented way to master it.</h1>
+    <p class="hero-copy">Sales is still, at its core, a human skill — reading people, building trust, and knowing what to say and when. This course pairs that timeless discipline with an AI-presented learning format: each topic is delivered as a short video, followed by a hands-on workbook activity you complete and keep, so what you learn actually sticks.</p>
+    <div class="hero-actions"><a class="btn gold" href="#topics">See the 7 Sessions ↓</a><a class="btn outline" href="landingpage.html#readiness">Join the Academy →</a></div>
+    <p class="micro">7 sessions · Video + workbook activity in each · Auto-saved to your private workspace</p>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><b>7</b><span>sessions</span></div>
+  <div class="stat"><b>2</b><span>parts per session</span></div>
+  <div class="stat"><b>Auto</b><span>saved as you go</span></div>
+  <div class="stat"><b>✓</b><span>yours to keep</span></div>
+</div>
+
+<section class="section" id="covers">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">What this course covers</div><h2>From why people buy to reading the room.</h2></div>
+    <div class="covers-box"><p>Over seven sessions, you'll move from the fundamentals of why people buy through to reading the unspoken signals in a room. You'll cover the traditional Seven Steps of Selling and the modern consultative approach, how to phrase what you say for maximum effect, the psychology behind buying decisions, and how to read — and manage — body language in a sales conversation.</p></div>
+  </div>
+</section>
+
+<section class="section alt" id="how">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">How each session works</div><h2>Watch. Practise. It's saved.</h2><p>Every topic has two parts, and nothing to remember to submit.</p></div>
+    <div class="how-flow">
+      <div class="how-step"><div class="ico">▶</div><h3>Watch the video</h3><p>A short, focused video introduces the topic.</p></div>
+      <div class="how-step"><div class="ico">✍️</div><h3>Complete the activity</h3><p>Guided exercises and reflection prompts — type or speak your answers.</p></div>
+      <div class="how-step"><div class="ico">☁️</div><h3>It's saved automatically</h3><p>Your work goes straight to your own private workspace as you go.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="why">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow light">Why this matters</div><h2>AI presents it. The skill you build is entirely human.</h2><p>This course uses AI to deliver and personalise the learning experience — the discipline you're practising is reading people, building trust and knowing what to say.</p></div>
+    <div class="why-grid">
+      <div class="why-card"><b>The skill is human, the delivery is smart</b><p>AI presents and paces each session, but what you're actually building — rapport, timing, trust — stays a fundamentally human skill.</p></div>
+      <div class="why-card"><b>Practice that sticks</b><p>A hands-on workbook activity after every video turns passive watching into active, retained skill-building.</p></div>
+      <div class="why-card"><b>Nothing to lose</b><p>Your answers save automatically to a private workspace, so an interrupted session is never a lost one.</p></div>
+      <div class="why-card"><b>Old and new, together</b><p>The traditional Seven Steps of Selling sit alongside the modern consultative approach — you're not forced to choose one school of thought.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="who">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Who this course is for</div><h2>Built for anyone who has to persuade someone.</h2></div>
+    <div class="who-grid">
+      <div class="who-card"><div class="ico">🆕</div><b>New sales reps</b><p>Building a structured foundation from day one.</p></div>
+      <div class="who-card"><div class="ico">📈</div><b>Account executives</b><p>Sharpening fundamentals that experience alone doesn't always fix.</p></div>
+      <div class="who-card"><div class="ico">💡</div><b>Anyone who pitches ideas</b><p>Not just products — the same psychology applies.</p></div>
+      <div class="who-card"><div class="ico">🧑‍🏫</div><b>Sales managers</b><p>Coaching a team with a shared, structured vocabulary.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="topics">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The seven sessions</div><h2>One topic at a time, in order.</h2></div>
+    <div class="topics">
+      <article class="topic-card"><div class="topic-no">1</div><div><span class="session-tag">Session 1</span><h3>Sales Fundamentals</h3><p>Sell using a structured framework and have the right mentality to maximise your conversion.</p></div></article>
+      <article class="topic-card"><div class="topic-no">2</div><div><span class="session-tag">Session 2</span><h3>Sales Strategies</h3><p>Take advantage of modern sales techniques by understanding the difference between traditional and modern methods.</p></div></article>
+      <article class="topic-card"><div class="topic-no">3</div><div><span class="session-tag">Session 3</span><h3>Customer Needs</h3><p>Focus on the customer's needs and pitch your sale from the most efficient angle to get maximum results.</p></div></article>
+      <article class="topic-card"><div class="topic-no">4</div><div><span class="session-tag">Session 4</span><h3>Selling Formula</h3><p>Phrase your sentences efficiently when selling a product or an idea.</p></div></article>
+      <article class="topic-card"><div class="topic-no">5</div><div><span class="session-tag">Session 5</span><h3>Modern Selling Techniques</h3><p>Sell by focusing on the customer using effective modern selling frameworks.</p></div></article>
+      <article class="topic-card"><div class="topic-no">6</div><div><span class="session-tag">Session 6</span><h3>Psychology of Selling</h3><p>Use the power of the brain to optimise your sales activities.</p></div></article>
+      <article class="topic-card"><div class="topic-no">7</div><div><span class="session-tag">Session 7</span><h3>Body Language</h3><p>Read and use body language effectively to enhance your communication skills.</p></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="faq">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Before you start</div><h2>Frequently asked questions</h2></div>
+    <div class="faq">
+      <details class="faq-item" open><summary>How is AI actually used in this course?</summary><p>Differently from most Academy courses. Here, AI presents and delivers each session — the video and the guided workbook activity — rather than being a tool you're learning to operate. The skill you're building (reading people, persuasion, trust) is entirely human.</p></details>
+      <details class="faq-item"><summary>Do I need to already work in sales?</summary><p>No. Session 1 starts from the fundamentals — why people buy at all — before building toward more advanced topics like psychology and body language.</p></details>
+      <details class="faq-item"><summary>What's the difference between the Seven Steps of Selling and the modern consultative approach?</summary><p>Both are covered across the course — the traditional Seven Steps in the earlier sessions, and the modern, customer-focused consultative approach in Sessions 2 and 5 — so you understand both schools of thought rather than only one.</p></details>
+      <details class="faq-item"><summary>Is my workbook private?</summary><p>Yes. Your answers save automatically to your own private workspace as you go — nobody else sees them unless you choose to share them.</p></details>
+      <details class="faq-item"><summary>Can I type or speak my answers?</summary><p>Both are supported. Use whichever is faster for you in the moment.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap"><div class="eyebrow light">Human and AI Intelligence in Sales</div><h2>Seven sessions. One skill that never goes out of date.</h2><p>Join the BSOE AI Academy and start with Session 1 — Sales Fundamentals.</p><div class="final-actions"><a class="btn gold" href="landingpage.html#readiness">Join the Academy →</a><a class="btn outline" style="color:white;border-color:rgba(255,255,255,.35)" href="AIForBusinessMarketingSales.html">See AI for Business, Marketing &amp; Sales</a></div></div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap foot"><div class="brand"><span class="brand-mark"></span><span>BSOE AI Academy</span></div><div class="foot-links"><a href="landingpage.html">Academy Home</a><a href="AIFoundations.html">AI Foundations</a><a href="AIForBusinessMarketingSales.html">AI for Business, Marketing &amp; Sales</a><a href="AISkillsPortfolio.html">AI Skills Portfolio</a><a href="LearnerGuide.html">Learner Guide</a></div><div>© 2026 BSOE LTD.</div></div></footer>
+</body>
+</html>
