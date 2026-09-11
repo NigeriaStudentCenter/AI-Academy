@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AI-Enabled Project Management Course — BSOE AI Academy</title>
+<meta name="description" content="AI-Enabled Project Management: a 4-week PMO program to standardize AI prompt templates and enable end-to-end delivery using Microsoft 365 Copilot, Planner, Azure DevOps and Power Platform, within M365 compliance boundaries." />
+<style>
+:root{
+  --ink:#102218;--forest:#153f2a;--forest2:#215e3e;--cream:#f7f2e7;--paper:#fffdf8;
+  --gold:#c89442;--gold2:#f1d398;--muted:#607167;--line:#dbe1dc;--white:#fff;
+  --shadow:0 24px 70px rgba(16,34,24,.13);--max:1180px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.58}
+h1,h2,h3,p{margin-top:0} h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.038em} a{text-decoration:none;color:inherit} .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:900;color:var(--forest2)} .eyebrow.light{color:var(--gold2)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:16px 24px;border:0;border-radius:999px;background:var(--forest);color:white;font-weight:850;cursor:pointer;box-shadow:0 12px 30px rgba(21,63,42,.18);transition:.2s transform,.2s background}.btn:hover{transform:translateY(-2px);background:#0f3020}.btn.gold{background:linear-gradient(135deg,#b97c2c,#dfbc74);color:#122419}.btn.outline{background:transparent;color:var(--forest);border:1px solid rgba(21,63,42,.24);box-shadow:none}
+.topbar{background:#0b2a1b;color:#fff;text-align:center;padding:11px 16px;font-size:.85rem;font-weight:750}.topbar span{color:var(--gold2)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,253,248,.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(16,34,24,.08)}.nav-in{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:11px;font-weight:900}.brand-mark{width:39px;height:39px;border-radius:13px;background:radial-gradient(circle at 38% 34%,#fff4b8 0 8%,#d6a44c 17%,#1c4b33 44%,#0f2f20 100%);box-shadow:inset 0 0 0 1px rgba(255,255,255,.35),0 8px 20px rgba(21,63,42,.2);position:relative}.brand-mark:after{content:"✦";position:absolute;inset:0;display:grid;place-items:center;color:#fff2c6}.nav-links{display:flex;gap:20px;align-items:center;font-size:.83rem;font-weight:760;color:#334a3c}.nav-cta{display:flex;gap:10px;align-items:center}
+.hero{padding:64px 0 34px;background:radial-gradient(circle at 82% 10%,rgba(200,148,66,.19),transparent 31%),linear-gradient(180deg,#fffdf8 0%,#f5efe2 100%);text-align:center}.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;border:1px solid rgba(21,63,42,.15);background:rgba(255,255,255,.72);font-size:.78rem;font-weight:900;letter-spacing:.04em}.hero h1{font-size:clamp(2.4rem,5.4vw,4.2rem);line-height:1.08;margin:20px auto 20px;max-width:900px}.hero-copy{font-size:1.14rem;color:#496054;max-width:730px;margin:0 auto}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:30px 0 16px;justify-content:center}.micro{font-size:.82rem;color:var(--muted)}
+.gov-bar{background:#fff4db;border-top:1px solid #f0d7a2;border-bottom:1px solid #f0d7a2;padding:18px 0}.gov-bar .wrap{display:flex;gap:12px;align-items:flex-start;font-size:.9rem;color:#62460d}.gov-bar b{flex:0 0 auto}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{text-align:center;padding:28px 18px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat b{font-family:Georgia,serif;font-size:1.7rem;display:block}.stat span{font-size:.78rem;color:var(--muted);font-weight:720}
+.section{padding:84px 0}.section.alt{background:var(--cream)}.section.dark{background:var(--forest);color:white}.section-head{max-width:800px;margin:0 auto 44px;text-align:center}.section-head h2{font-size:clamp(2.1rem,4.4vw,3.6rem);line-height:1.03;margin:12px 0 16px}.section-head p{font-size:1.05rem;color:var(--muted)}.dark .section-head p{color:#d4e0d8}
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.flow-step{background:white;border:1px solid #dfe5e0;border-radius:16px;padding:18px 14px;text-align:center;min-height:130px;position:relative;display:flex;flex-direction:column;justify-content:center}.flow-step b{width:32px;height:32px;border-radius:9px;background:var(--forest);color:white;display:grid;place-items:center;margin:0 auto 10px;font-size:.82rem}.flow-step strong{display:block;font-size:.9rem;line-height:1.2}.flow-step span{display:block;font-size:.72rem;color:var(--muted);margin-top:6px}.flow-step:not(:last-child):after{content:"→";position:absolute;right:-14px;top:42%;font-size:1.2rem;font-weight:900;color:var(--gold);z-index:2}.flow-step.highlight{background:var(--forest);color:white;border-color:var(--forest)}.flow-step.highlight span{color:#d6e3db}
+.gov-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.gov-item{background:white;border:1px solid #e4e9e5;border-radius:16px;padding:18px 20px;font-size:.92rem;color:var(--ink);display:flex;gap:12px;align-items:flex-start}.gov-item:before{content:"✓";color:var(--gold);font-weight:900;flex:0 0 auto}
+.why-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}.why-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:24px}.why-card b{color:var(--gold2);display:block;font-size:.76rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}.why-card p{color:#dbe7e0;margin:0;font-size:.96rem}
+.who-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.who-card{background:white;border:1px solid #e1e7e2;border-radius:18px;padding:22px;min-height:140px}.who-card .ico{font-size:1.4rem;margin-bottom:12px}.who-card b{font-family:Georgia,serif;font-size:1.06rem;display:block;margin-bottom:6px}.who-card p{font-size:.83rem;color:var(--muted);margin:0}
+.stage-track{border:1px solid var(--line);border-radius:20px;background:white;margin-bottom:16px;overflow:hidden}
+.stage-track summary{cursor:pointer;list-style:none;padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--cream)}
+.stage-track summary::-webkit-details-marker{display:none}
+.stage-track summary:after{content:"+";font-size:1.5rem;color:var(--forest2);flex:0 0 auto}
+.stage-track[open] summary:after{content:"−"}
+.stage-title{display:flex;flex-direction:column;gap:4px}
+.stage-title b{font-family:Georgia,serif;font-size:1.16rem;color:var(--ink)}
+.stage-title span{font-size:.84rem;color:var(--muted);font-weight:600}
+.stage-body{padding:6px 26px 22px}
+.deliverable{background:var(--cream);border:1px solid #e6dcc8;border-radius:14px;padding:12px 16px;margin-bottom:12px;font-size:.85rem;color:#62460d}
+.deliverable strong{color:#4a3308}
+.lesson-row{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:12px 0;border-top:1px solid #eef1ee;flex-wrap:wrap}
+.stage-body .lesson-row:first-of-type{border-top:0}
+.lesson-title{font-weight:750;font-size:.9rem;color:var(--ink)}
+.lesson-meta{display:flex;gap:6px;flex-wrap:wrap;align-items:center;flex:0 0 auto}
+.type-tag{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--muted);background:#f1f3f1;border-radius:999px;padding:4px 8px}
+.level-tag{display:inline-block;font-size:.66rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;border-radius:999px;padding:4px 8px}
+.level-tag.beginner{background:#EDF4FF;color:#2F7DE1}
+.level-tag.intermediate{background:#F5ECFB;color:#8246AF}
+.level-tag.advanced{background:var(--gold2);color:#6b4a12}
+.duration-tag{font-size:.74rem;color:var(--muted);font-weight:700}
+.faq{max-width:880px;margin:auto}details.faq-item{border-top:1px solid #d4ddd7;padding:18px 4px}details.faq-item:last-child{border-bottom:1px solid #d4ddd7}details.faq-item summary{cursor:pointer;font-weight:850;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}details.faq-item summary::-webkit-details-marker{display:none}details.faq-item summary:after{content:"+";font-size:1.3rem;color:var(--forest2);flex:0 0 auto}details.faq-item[open] summary:after{content:"−"}details.faq-item p{color:var(--muted);margin:14px 0 4px}
+.final{padding:84px 0;text-align:center;background:radial-gradient(circle at 50% 15%,rgba(227,187,103,.20),transparent 26%),#102e20;color:white}.final h2{font-size:clamp(2.4rem,5vw,4.2rem);line-height:.98;max-width:880px;margin:10px auto 18px}.final p{color:#cddad2;max-width:700px;margin:0 auto 26px}.final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer.site{padding:30px 0;background:#091d14;color:#becbc3;font-size:.79rem}.foot{display:flex;align-items:center;justify-content:space-between;gap:24px}.foot .brand{color:white}.foot-links{display:flex;gap:18px}
+@media(max-width:1000px){.nav-links{display:none}.why-grid,.gov-grid{grid-template-columns:1fr}.who-grid{grid-template-columns:1fr 1fr}.flow{grid-template-columns:1fr 1fr}.flow-step:nth-child(2):after{display:none}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:680px){.wrap{width:min(100% - 24px,var(--max))}.nav-in{height:68px}.nav .btn{padding:11px 14px;font-size:.76rem}.hero{padding-top:40px}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.section{padding:60px 0}.flow{grid-template-columns:1fr}.flow-step:after{display:none!important}.who-grid{grid-template-columns:1fr}.stage-track summary{padding:18px}.stage-body{padding:0 18px 18px}.lesson-row{flex-direction:column;align-items:flex-start}.final-actions .btn,.hero-actions .btn{width:100%}.foot{flex-direction:column;align-items:flex-start}.gov-bar .wrap{flex-direction:column}}
+</style>
+</head>
+<body>
+<div class="topbar">BSOE AI Academy · <span>Workplace AI Course — AI-Enabled Project Management</span></div>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="landingpage.html"><span class="brand-mark"></span><span>BSOE AI Academy</span></a>
+    <div class="nav-links"><a href="#flow">The 4-Week Plan</a><a href="#governance">Governance</a><a href="#curriculum">Curriculum</a><a href="#faq">FAQ</a></div>
+    <div class="nav-cta"><a class="btn outline" href="landingpage.html">Back to Academy</a><a class="btn gold" href="landingpage.html#readiness">Join the Academy</a></div>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="pill">WORKPLACE AI · 4-WEEK PMO PROGRAM</span>
+    <h1>Standardize how your PMO uses AI — in four weeks.</h1>
+    <p class="hero-copy">Standardize PMO AI prompt templates and enable end-to-end delivery using Microsoft 365 Copilot, Planner, Azure DevOps and Power Platform — all within your M365 compliance boundaries.</p>
+    <div class="hero-actions"><a class="btn gold" href="#flow">See the 4-Week Plan ↓</a><a class="btn outline" href="landingpage.html#readiness">Join the Academy →</a></div>
+    <p class="micro">4 weeks · 11 lessons and labs · ~2h 39m of content · Ends in a PMO AI Playbook and governance checklist</p>
+  </div>
+</section>
+
+<div class="gov-bar"><div class="wrap"><b>🛡 Governance-first rollout.</b><span>This program is built around Microsoft Purview sensitivity labels, DLP, least-privilege permissions and tenant filtering — approved data sources only, external connectors disabled where required, prompt templates and change controls documented in a PMO AI Playbook, with usage telemetry and a RACI for exceptions. See the full governance section below.</span></div></div>
+
+<div class="stats">
+  <div class="stat"><b>4</b><span>weeks</span></div>
+  <div class="stat"><b>11</b><span>lessons &amp; labs</span></div>
+  <div class="stat"><b>~2h 39m</b><span>of content</span></div>
+  <div class="stat"><b>✓</b><span>PMO AI Playbook, delivered</span></div>
+</div>
+
+<section class="section" id="flow">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The four weeks</div><h2>One week, one deliverable, in order.</h2><p>Each week produces a real artefact for your PMO — by Week 4 you have a working playbook, not just a certificate.</p></div>
+    <div class="flow">
+      <div class="flow-step"><b>1</b><strong>Standardize</strong><span>Shared prompting framework</span></div>
+      <div class="flow-step"><b>2</b><strong>Plan &amp; Execute</strong><span>Backlog &amp; stakeholder map</span></div>
+      <div class="flow-step"><b>3</b><strong>Automate &amp; Report</strong><span>Flows &amp; time-saved BI view</span></div>
+      <div class="flow-step highlight"><b>4</b><strong>Secure &amp; Govern</strong><span>Playbook &amp; checklist</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="governance">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Governance notes</div><h2>Built to sit inside your compliance boundaries.</h2><p>This isn't a bolt-on Week 4 topic — every governance requirement below is a defined output of the program.</p></div>
+    <div class="gov-grid">
+      <div class="gov-item">Apply Microsoft Purview sensitivity labels and DLP across AI-assisted outputs.</div>
+      <div class="gov-item">Enforce least-privilege permissions and tenant filtering for every Copilot deployment.</div>
+      <div class="gov-item">Use only approved data sources; disable external connectors where required.</div>
+      <div class="gov-item">Document prompt templates and change controls in a PMO AI Playbook.</div>
+      <div class="gov-item">Establish usage telemetry to monitor how AI is actually being used.</div>
+      <div class="gov-item">Define a RACI for exceptions — who approves a deviation from the standard, and how.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark" id="why">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow light">Why this matters</div><h2>Shadow AI use is the real PMO risk, not slow adoption.</h2><p>Without a standard, every project manager prompts Copilot differently, with no shared library and no visibility for governance. This program exists to close that gap deliberately.</p></div>
+    <div class="why-grid">
+      <div class="why-card"><b>One shared prompting standard</b><p>A common prompt library and meeting-summary template mean consistent quality across the PMO — not one PM's lucky phrasing versus another's guesswork.</p></div>
+      <div class="why-card"><b>An auditable, documented rollout</b><p>A PMO AI Playbook with prompt templates and change controls means anyone can see exactly what's approved, and why, at any point.</p></div>
+      <div class="why-card"><b>Automation with proof of value</b><p>Meeting-to-action automation paired with a BI view of time saved turns "we use Copilot now" into a number leadership can actually see.</p></div>
+      <div class="why-card"><b>Governance built in from day one</b><p>Purview, DLP and least-privilege permissions are a defined Week 4 deliverable — so the rollout finishes secure, not fast-then-fixed-later.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="who">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Who this course is for</div><h2>Built for the people who own the PMO's AI rollout.</h2></div>
+    <div class="who-grid">
+      <div class="who-card"><div class="ico">🧭</div><b>PMO leads</b><p>Own the standard the whole project team will follow.</p></div>
+      <div class="who-card"><div class="ico">📅</div><b>Project &amp; programme managers</b><p>Plan, execute and report using a consistent, approved toolset.</p></div>
+      <div class="who-card"><div class="ico">🚚</div><b>Delivery managers</b><p>Turn AI-assisted planning into tracked, delivered outcomes.</p></div>
+      <div class="who-card"><div class="ico">🔐</div><b>IT &amp; governance leads</b><p>Need AI adoption that stays inside compliance boundaries from the start.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="curriculum">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The curriculum</div><h2>Four weeks, four deliverables.</h2><p>Select a week to see everything inside it.</p></div>
+
+    <details class="stage-track" open>
+      <summary><div class="stage-title"><b>Week 1 · Copilot Prompting Essentials for PMO Standards</b><span>Establish shared prompting frameworks grounded in M365 data; produce an initial prompt library and meeting summary template.</span></div></summary>
+      <div class="stage-body">
+        <div class="deliverable"><strong>Deliverable:</strong> Initial prompt library and meeting summary template.</div>
+        <div class="lesson-row"><span class="lesson-title">Learn AI prompting basics</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">15 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Microsoft 365 Copilot: Prepare for the Day</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">1 min</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Get ready to work with Microsoft 365 Copilot</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">22 mins</span></span></div>
+      </div>
+    </details>
+
+    <details class="stage-track">
+      <summary><div class="stage-title"><b>Week 2 · Plan &amp; Execute with Planner and Azure DevOps + Copilot</b><span>Translate scope into plans and backlogs and align delivery; produce a plan/backlog, stakeholder map, and status draft.</span></div></summary>
+      <div class="stage-body">
+        <div class="deliverable"><strong>Deliverable:</strong> Plan/backlog, stakeholder map, and status draft.</div>
+        <div class="lesson-row"><span class="lesson-title">Workflows Agent in Microsoft 365 Copilot</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">2 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Get started with Copilot in Dynamics 365 Project Operations</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">17 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Transform a marketing brief into a campaign plan with AI</span><span class="lesson-meta"><span class="type-tag">Skilling session</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">17 mins</span></span></div>
+      </div>
+    </details>
+
+    <details class="stage-track">
+      <summary><div class="stage-title"><b>Week 3 · Automate PMO Workflows and Reporting</b><span>Build Power Automate flows and Copilot-powered reporting; produce meeting-to-actions automation and a BI view of time saved.</span></div></summary>
+      <div class="stage-body">
+        <div class="deliverable"><strong>Deliverable:</strong> Meeting-to-actions automation and a BI view of time saved.</div>
+        <div class="lesson-row"><span class="lesson-title">Build flows for a real estate solution using Copilot in Power Automate</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag beginner">Beginner</span><span class="duration-tag">26 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Get started with Copilot in Power BI</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">27 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Add Copilot &amp; Auto-Fill Records in Power Apps (Form Fill Assist)</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">1 min</span></span></div>
+      </div>
+    </details>
+
+    <details class="stage-track">
+      <summary><div class="stage-title"><b>Week 4 · Security, Compliance, and Responsible AI for PMO</b><span>Apply Purview, DLP, sensitivity labels, permissions, and responsible AI practices; finalise the PMO AI governance checklist.</span></div></summary>
+      <div class="stage-body">
+        <div class="deliverable"><strong>Deliverable:</strong> Finalised PMO AI governance checklist.</div>
+        <div class="lesson-row"><span class="lesson-title">Examine data security and compliance in Microsoft 365 Copilot</span><span class="lesson-meta"><span class="type-tag">Module</span><span class="level-tag intermediate">Intermediate</span><span class="duration-tag">29 mins</span></span></div>
+        <div class="lesson-row"><span class="lesson-title">Microsoft 365 Copilot: AI Built for Work</span><span class="lesson-meta"><span class="type-tag">Video</span><span class="duration-tag">2 mins</span></span></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section alt" id="faq">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Before you start</div><h2>Frequently asked questions</h2></div>
+    <div class="faq">
+      <details class="faq-item" open><summary>How is this different from the other role-based courses?</summary><p>Most Academy courses are self-paced modules you work through in any order. This is an explicit 4-week program with a weekly deliverable, designed to be run as a standardised PMO rollout rather than browsed casually.</p></details>
+      <details class="faq-item"><summary>What is the PMO AI Playbook?</summary><p>The documented output of this program: your prompt templates, change controls and governance checklist, assembled week by week so your PMO has a single reference for approved AI use.</p></details>
+      <details class="faq-item"><summary>Do I need Azure DevOps and Power Platform access to take this course?</summary><p>Ideally yes, since Weeks 2 and 3 are hands-on with Planner, Azure DevOps and Power Platform. Without that access you can still complete the Copilot-focused exercises, but the automation and reporting deliverables need those tools.</p></details>
+      <details class="faq-item"><summary>What is the RACI for exceptions?</summary><p>A defined responsibility model — who is Responsible, Accountable, Consulted and Informed — for approving any deviation from the PMO's standard AI usage rules. You establish this in Week 4.</p></details>
+      <details class="faq-item"><summary>How long does this program take?</summary><p>Four weeks by design, covering 11 lessons and labs and roughly 2 hours 39 minutes of core content — the rest of each week is applying it to produce that week's deliverable.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap"><div class="eyebrow light">AI-Enabled Project Management</div><h2>Four weeks to a standard your whole PMO can trust.</h2><p>Join the BSOE AI Academy and start with Week 1 — Copilot Prompting Essentials for PMO Standards.</p><div class="final-actions"><a class="btn gold" href="landingpage.html#readiness">Join the Academy →</a><a class="btn outline" style="color:white;border-color:rgba(255,255,255,.35)" href="AIForBusinessAnalysts.html">See AI for Business Analysts</a></div></div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap foot"><div class="brand"><span class="brand-mark"></span><span>BSOE AI Academy</span></div><div class="foot-links"><a href="landingpage.html">Academy Home</a><a href="AIFoundations.html">AI Foundations</a><a href="AIToolbox.html">AI Toolbox</a><a href="AzureAIEngineer.html">Azure AI Engineer</a><a href="AIForAdmins.html">AI for Admins</a><a href="AIHealthcare.html">AI in Healthcare</a><a href="AIForITDevelopers.html">AI for IT &amp; Developers</a><a href="AIForProductManagers.html">AI for Product Managers</a><a href="AIForBusinessAnalysts.html">AI for Business Analysts</a><a href="AIForDataAnalysts.html">AI for Data Analysts</a><a href="AIForBusinessMarketingSales.html">AI for Business, Marketing &amp; Sales</a><a href="LearnerGuide.html">Learner Guide</a></div><div>© 2026 BSOE LTD.</div></div></footer>
+</body>
+</html>
