@@ -236,14 +236,15 @@ footer.site{padding:30px 0;background:#091d14;color:#becbc3;font-size:.79rem}.fo
 
 <footer class="site"><div class="wrap foot"><div class="brand"><span class="brand-mark"></span><span>BSOE AI Academy</span></div><div class="foot-links"><a href="#overview">About</a><a href="#structure">Curriculum</a><a href="#readiness">Assessment</a><a href="#faq">FAQ</a></div><div>© 2026 BSOE LTD.</div></div></footer>
 
-<div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinTitle"><div class="modal-card"><div class="modal-head"><div><div class="eyebrow">Academy registration</div><h3 id="joinTitle">Register your interest</h3></div><button class="close" id="closeModal" aria-label="Close">×</button></div><div class="modal-body"><form id="leadForm"><div class="form-grid"><div class="field"><label for="first">First name</label><input id="first" name="first" required></div><div class="field"><label for="last">Last name</label><input id="last" name="last" required></div><div class="field full"><label for="email">Email address</label><input id="email" name="email" type="email" required></div><div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel"></div><div class="field"><label for="interest">Main interest</label><select id="interest" name="interest"><option>General AI capability</option><option>AI for the workplace</option><option>AI automation</option><option>Agentic AI</option><option>AI for business</option><option>Using AI to make money</option></select></div></div><div class="secure-box"><strong>Publishing note:</strong> connect this form to your approved CRM, registration or checkout workflow. The page does not collect payment-card information.</div><button class="btn gold" type="submit">Continue →</button></form></div></div></div>
+<div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinTitle"><div class="modal-card"><div class="modal-head"><div><div class="eyebrow">Academy registration</div><h3 id="joinTitle">Register your interest</h3></div><button class="close" id="closeModal" aria-label="Close">×</button></div><div class="modal-body"><form id="leadForm"><div class="form-grid"><div class="field"><label for="first">First name</label><input id="first" name="first" required></div><div class="field"><label for="last">Last name</label><input id="last" name="last" required></div><div class="field full"><label for="email">Email address</label><input id="email" name="email" type="email" required></div><div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel"></div><div class="field"><label for="interest">Main interest</label><select id="interest" name="interest"><option>General AI capability</option><option>AI for the workplace</option><option>AI automation</option><option>Agentic AI</option><option>AI for business</option><option>Using AI to make money</option></select></div></div><div class="secure-box"><strong>Note:</strong> after continuing, you'll be redirected to Paystack to complete your subscription. The page does not collect payment-card information.</div><button class="btn gold" type="submit">Continue →</button></form></div></div></div>
 
 <script>
 /* =========================================================
-   PAGE CONFIGURATION — replace these two values before launch
+   PAGE CONFIGURATION — replace these values before launch
    ========================================================= */
 const AI_READINESS_ASSESSMENT_URL = "https://nigeriastudentcenter.github.io/AI-Academy/AIreadiness.html#how-it-works";
 const ACADEMY_VIDEO_EMBED_URL = "https://www.youtube.com/watch?v=OOHxaP5sYJM";
+const PAYSTACK_SUBSCRIPTION_URL = "https://paystack.shop/pay/bsoeaiacademy";
 
 // Readiness Assessment links
 const readinessLinks = document.querySelectorAll('.readiness-link');
@@ -262,14 +263,47 @@ readinessLinks.forEach(link => {
   }
 });
 
+// Turn a YouTube watch/share link into an embeddable iframe URL
+function toYouTubeEmbedUrl(url) {
+  try {
+    const u = new URL(url);
+    let id = '';
+    if (u.hostname.includes('youtu.be')) {
+      id = u.pathname.slice(1);
+    } else if (u.searchParams.get('v')) {
+      id = u.searchParams.get('v');
+    } else if (u.pathname.includes('/embed/')) {
+      return url;
+    }
+    return id ? `https://www.youtube.com/embed/${id}` : url;
+  } catch {
+    return url;
+  }
+}
+
 // Video embed slot
 if (/^https?:\/\//i.test(ACADEMY_VIDEO_EMBED_URL)) {
   const shell = document.getElementById('videoShell');
-  shell.innerHTML = `<iframe src="${ACADEMY_VIDEO_EMBED_URL}" title="BSOE AI Academy overview video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+  const embedUrl = toYouTubeEmbedUrl(ACADEMY_VIDEO_EMBED_URL);
+  shell.innerHTML = `<iframe src="${embedUrl}" title="BSOE AI Academy overview video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
 }
 
 // Modal
-cmodal.addEventListener('click', event => {
+const modal = document.getElementById('joinModal');
+
+document.querySelectorAll('.open-modal').forEach(btn => {
+  btn.addEventListener('click', () => {
+    modal.classList.add('show');
+    document.body.classList.add('modal-open');
+  });
+});
+
+document.getElementById('closeModal').addEventListener('click', () => {
+  modal.classList.remove('show');
+  document.body.classList.remove('modal-open');
+});
+
+modal.addEventListener('click', event => {
   if (event.target === modal) {
     modal.classList.remove('show');
     document.body.classList.remove('modal-open');
@@ -287,7 +321,7 @@ document.getElementById('leadForm').addEventListener('submit', function(e) {
   e.preventDefault();
 
   // Send the user to the BSOE AI Academy Paystack subscription page
-  window.location.href = 'https://paystack.shop/pay/bsoeaiacademy';
+  window.location.href = PAYSTACK_SUBSCRIPTION_URL;
 });
 </script>
 </body>
