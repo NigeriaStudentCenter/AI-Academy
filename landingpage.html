@@ -24,6 +24,7 @@ h1,h2,h3,p{margin-top:0} h1,h2,.serif{font-family:Georgia,"Times New Roman",seri
 .video-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center}.video-shell{aspect-ratio:16/9;border-radius:30px;background:linear-gradient(145deg,#122e21,#091c14);position:relative;overflow:hidden;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,.1)}.video-shell iframe{width:100%;height:100%;border:0}.video-placeholder{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:32px;color:white;background:radial-gradient(circle at 50% 40%,rgba(211,166,79,.25),transparent 30%)}.play{width:84px;height:84px;border-radius:50%;display:grid;place-items:center;margin:0 auto 18px;background:linear-gradient(135deg,#d3a550,#f1d497);color:#173522;font-size:1.8rem;box-shadow:0 14px 35px rgba(0,0,0,.26)}.video-placeholder strong{font-family:Georgia,serif;font-size:2rem;display:block;line-height:1.05;margin-bottom:8px}.video-copy h3{font-family:Georgia,serif;font-size:3.2rem;line-height:1;margin:10px 0 18px}.video-copy p{color:var(--muted)}
 .promise{border-radius:34px;background:#102b1e;color:white;padding:52px;display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center;box-shadow:var(--shadow)}.promise h2{font-size:clamp(2.6rem,5vw,4.5rem);line-height:.96;margin:10px 0}.promise p{color:#d0ddd5}.promise-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}.promise-item{padding:18px;border-radius:18px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.06)}.promise-item b{display:block;color:var(--gold2);font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;margin-bottom:5px}.promise-item strong{display:block;font-size:1.02rem}
 .pillars{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.pillar{background:white;border:1px solid #e4e9e5;border-radius:24px;padding:28px;box-shadow:0 14px 32px rgba(16,34,24,.05);position:relative;overflow:hidden}.pillar:after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;background:rgba(200,148,66,.08);right:-45px;top:-45px}.pillar-no{width:46px;height:46px;border-radius:14px;background:var(--forest);color:white;display:grid;place-items:center;font-family:Georgia,serif;font-size:1.35rem;margin-bottom:18px}.pillar h3{font-family:Georgia,serif;font-size:1.9rem;line-height:1.06;margin-bottom:10px}.pillar p{color:var(--muted);margin-bottom:14px}.mini-tags{display:flex;flex-wrap:wrap;gap:7px}.mini-tags span{font-size:.72rem;background:#f4f6f3;border:1px solid #e2e8e3;border-radius:999px;padding:6px 9px;font-weight:720;color:#3d5045}
+.catalogue-group{margin-bottom:36px}.catalogue-group:last-child{margin-bottom:0}.catalogue-group-head{display:flex;align-items:baseline;gap:10px;margin-bottom:14px}.catalogue-group-head h3{font-family:Georgia,serif;font-size:1.3rem;color:var(--ink);margin:0}.catalogue-group-head span{font-size:.78rem;color:var(--muted);font-weight:720}.catalogue-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.cat-card{display:flex;flex-direction:column;gap:4px;background:white;border:1px solid #e4e9e5;border-radius:16px;padding:16px 18px;box-shadow:0 8px 20px rgba(16,34,24,.04);transition:.15s transform,.15s box-shadow}.cat-card:hover{transform:translateY(-2px);box-shadow:0 14px 28px rgba(16,34,24,.09)}.cat-card b{font-family:Georgia,serif;font-size:1rem;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:8px}.cat-card b:after{content:"→";color:var(--gold);font-weight:900;flex:0 0 auto}.cat-card span{font-size:.8rem;color:var(--muted)}
 .tools-band{background:#122f21;color:white;border-radius:34px;padding:48px}.tools-band h3{font-family:Georgia,serif;font-size:3.1rem;line-height:1;margin:8px 0 16px}.tools-band p{color:#cbd8d0;max-width:760px}.tools-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:11px;margin-top:30px}.tool{min-height:100px;padding:14px;border-radius:17px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;justify-content:space-between}.tool b{font-size:.96rem}.tool span{font-size:.68rem;color:#c8d5cd}.tool i{font-style:normal;font-size:1.45rem;color:var(--gold2)}
 .functions{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.function{background:white;border:1px solid #e1e7e2;border-radius:18px;padding:21px;min-height:140px}.function b{font-family:Georgia,serif;font-size:1.28rem;display:block;margin-bottom:7px}.function p{font-size:.83rem;color:var(--muted);margin:0}.function .ico{font-size:1.4rem;margin-bottom:14px}
 .flow{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;align-items:stretch}.flow-step{background:white;border:1px solid #dfe5e0;border-radius:18px;padding:18px 14px;text-align:center;min-height:170px;position:relative}.flow-step b{width:40px;height:40px;border-radius:12px;background:var(--forest);color:white;display:grid;place-items:center;margin:0 auto 12px}.flow-step strong{display:block;font-size:.88rem;line-height:1.2}.flow-step span{display:block;font-size:.72rem;color:var(--muted);margin-top:7px}.flow-step:not(:last-child):after{content:"→";position:absolute;right:-11px;top:45%;font-size:1.2rem;font-weight:900;color:var(--gold);z-index:2}
@@ -35,7 +36,8 @@ h1,h2,h3,p{margin-top:0} h1,h2,.serif{font-family:Georgia,"Times New Roman",seri
 footer.site{padding:30px 0;background:#091d14;color:#becbc3;font-size:.79rem}.foot{display:flex;align-items:center;justify-content:space-between;gap:24px}.foot .brand{color:white}.foot-links{display:flex;gap:18px}
 .modal{display:none;position:fixed;inset:0;z-index:100;background:rgba(5,18,12,.75);padding:22px;place-items:center}.modal.show{display:grid}.modal-card{width:min(720px,100%);max-height:92vh;overflow:auto;background:#fffdf8;border-radius:28px;box-shadow:0 30px 90px rgba(0,0,0,.35)}.modal-head{padding:28px 30px 18px;display:flex;justify-content:space-between;align-items:flex-start;border-bottom:1px solid var(--line)}.modal-head h3{font-family:Georgia,serif;font-size:2rem;margin:5px 0 0}.close{border:0;background:#f0f2ef;width:38px;height:38px;border-radius:50%;font-size:1.4rem;cursor:pointer}.modal-body{padding:28px 30px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:.78rem;font-weight:850}.field input,.field select{width:100%;padding:13px 14px;border:1px solid #d6ded8;border-radius:12px;background:white}.secure-box{background:#f3f7f3;border:1px solid #dce6de;border-radius:13px;padding:13px;margin:18px 0;font-size:.79rem;color:#516359}
 .notice{display:none;margin-top:12px;padding:11px 13px;border-radius:12px;background:#fff4db;color:#62460d;font-size:.78rem;border:1px solid #f0d7a2}.notice.show{display:block}
-@media(max-width:1000px){.nav-links{display:none}.hero-grid,.video-grid,.promise,.readiness,.community-grid{grid-template-columns:1fr}.pillars{grid-template-columns:1fr}.tools-grid{grid-template-columns:repeat(2,1fr)}.functions{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:repeat(2,1fr)}.flow-step:not(:last-child):after{display:none}.hero-card{min-height:580px}.promise-list{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:1000px){.nav-links{display:none}.hero-grid,.video-grid,.promise,.readiness,.community-grid{grid-template-columns:1fr}.pillars{grid-template-columns:1fr}.tools-grid{grid-template-columns:repeat(2,1fr)}.functions{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:repeat(2,1fr)}.flow-step:not(:last-child):after{display:none}.hero-card{min-height:580px}.promise-list{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.catalogue-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:680px){.catalogue-grid{grid-template-columns:1fr}}
 @media(max-width:680px){.wrap{width:min(100% - 24px,var(--max))}.nav-in{height:68px}.nav-cta .btn.outline{display:none}.nav .btn{padding:11px 14px;font-size:.76rem}.hero{padding-top:44px}.hero h1{font-size:3.45rem}.hero-card{min-height:610px;padding:15px}.journey-card{inset:20px}.hero-ribbon{right:12px;bottom:10px}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.section{padding:72px 0}.video-copy h3,.tools-band h3{font-size:2.5rem}.promise,.tools-band,.readiness{padding:28px 20px}.promise-list,.tools-grid,.functions,.flow,.score-points{grid-template-columns:1fr}.community-card{padding:28px;min-height:420px}.certificate{width:72%}.final-actions .btn,.hero-actions .btn{width:100%}.foot{flex-direction:column;align-items:flex-start}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}}
 </style>
 </head>
@@ -44,7 +46,7 @@ footer.site{padding:30px 0;background:#091d14;color:#becbc3;font-size:.79rem}.fo
 <nav class="nav">
   <div class="wrap nav-in">
     <a class="brand" href="#top"><span class="brand-mark"></span><span>BSOE AI Academy</span></a>
-    <div class="nav-links"><a href="#overview">Overview</a><a href="#structure">Academy Structure</a><a href="#tools">10 AI Tools</a><a href="#readiness">AI Readiness</a><a href="#certificate">Certificate</a><a href="LearnerGuide.html">Learner Guide</a><a href="#faq">FAQ</a></div>
+    <div class="nav-links"><a href="#overview">Overview</a><a href="#structure">Academy Structure</a><a href="#catalogue">All Courses</a><a href="#readiness">AI Readiness</a><a href="#certificate">Certificate</a><a href="LearnerGuide.html">Learner Guide</a><a href="#faq">FAQ</a></div>
     <div class="nav-cta"><a class="btn outline readiness-link" href="#readiness">Take Assessment</a><button class="btn open-modal">Join Academy</button></div>
   </div>
 </nav>
@@ -127,6 +129,65 @@ footer.site{padding:30px 0;background:#091d14;color:#becbc3;font-size:.79rem}.fo
       <article class="pillar"><div class="pillar-no">6</div><h3>Agentic AI</h3><p>Progress from asking AI for answers to designing AI systems that can plan, use tools, take actions and complete multi-step goals with appropriate human oversight.</p><div class="mini-tags"><span>AI agents</span><span>Tool use</span><span>Multi-step tasks</span><span>Human oversight</span><span>Agent workflows</span></div></article>
       <article class="pillar"><div class="pillar-no">7</div><h3>Use AI to Make Money</h3><p>Turn AI capability into economic opportunity. Explore AI-enabled services, freelancing, content, productivity offers, digital products, consulting, automation services and business opportunities.</p><div class="mini-tags"><span>Freelancing</span><span>Digital products</span><span>Consulting</span><span>AI services</span><span>New ventures</span></div></article>
       <article class="pillar"><div class="pillar-no">8</div><h3>Learn in Community. Finish with Evidence.</h3><p>Learn alongside other learners, exchange ideas, see how others are applying AI and build momentum through shared learning. Complete the pathway and receive a BSOE Certificate of Achievement.</p><div class="mini-tags"><span>Community</span><span>Peer learning</span><span>Practice</span><span>Portfolio evidence</span><span>BSOE Certificate</span></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="catalogue">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The course catalogue</div><h2>Explore every course in the Academy.</h2><p>Seventeen courses and counting — organised so you can find the right one fast.</p></div>
+
+    <div class="catalogue-group">
+      <div class="catalogue-group-head"><h3>Core Learning Pathway</h3><span>The Academy's foundational sequence</span></div>
+      <div class="catalogue-grid">
+        <a class="cat-card" href="AIFoundations.html"><b>AI Foundations</b><span>Course 1 · Understand AI before you rely on it</span></a>
+        <a class="cat-card" href="AIToolbox.html"><b>AI Toolbox</b><span>Course 2 · Ten tools, Beginner to Advanced</span></a>
+      </div>
+    </div>
+
+    <div class="catalogue-group">
+      <div class="catalogue-group-head"><h3>Certification Pathways</h3><span>Industry-recognised Microsoft credentials</span></div>
+      <div class="catalogue-grid">
+        <a class="cat-card" href="AzureAIEngineer.html"><b>Azure AI Engineer</b><span>4 stages toward the official AI-103 exam</span></a>
+      </div>
+    </div>
+
+    <div class="catalogue-group">
+      <div class="catalogue-group-head"><h3>Workplace AI Courses</h3><span>Role-specific Copilot &amp; Power Platform skills</span></div>
+      <div class="catalogue-grid">
+        <a class="cat-card" href="AIForAdmins.html"><b>AI for Admins</b><span>Request → Organise → Report, with Copilot</span></a>
+        <a class="cat-card" href="AIHealthcare.html"><b>AI in Healthcare Practice</b><span>Safe, non-diagnostic, governed by design</span></a>
+        <a class="cat-card" href="AIForITDevelopers.html"><b>AI for IT &amp; Developers</b><span>Secure, AI-assisted SDLC end to end</span></a>
+        <a class="cat-card" href="AIForProductManagers.html"><b>AI for Product Managers</b><span>Evidence-to-roadmap Copilot workflows</span></a>
+        <a class="cat-card" href="AIForBusinessAnalysts.html"><b>AI for Business Analysts</b><span>Problem → Discovery → Recommendation</span></a>
+        <a class="cat-card" href="AIForDataAnalysts.html"><b>AI in Data Analyst Roles</b><span>Excel, SQL, Python &amp; Power BI, validated</span></a>
+        <a class="cat-card" href="AIForBusinessMarketingSales.html"><b>AI for Business, Marketing &amp; Sales</b><span>Leads to revenue, ethically automated</span></a>
+        <a class="cat-card" href="AIEnabledProjectManagement.html"><b>AI-Enabled Project Management</b><span>4-week PMO rollout with a governed playbook</span></a>
+        <a class="cat-card" href="HumanAIIntelligenceInSales.html"><b>Human and AI Intelligence in Sales</b><span>7 sessions, video + workbook, AI-presented</span></a>
+      </div>
+    </div>
+
+    <div class="catalogue-group">
+      <div class="catalogue-group-head"><h3>Legal AI Programmes</h3><span>Supervised, governed, human-in-the-loop</span></div>
+      <div class="catalogue-grid">
+        <a class="cat-card" href="LegalAIAccelerator.html"><b>Legal AI Accelerator</b><span>8 weeks · law students &amp; junior lawyers</span></a>
+        <a class="cat-card" href="LegalAIFastTrack.html"><b>Legal AI Fast-Track</b><span>8 weeks · contract cycle-time execution cohort</span></a>
+      </div>
+    </div>
+
+    <div class="catalogue-group">
+      <div class="catalogue-group-head"><h3>Short Lessons &amp; Skill Sprints</h3><span>Fast, tangible proof of what you can do</span></div>
+      <div class="catalogue-grid">
+        <a class="cat-card" href="AISkillsPortfolio.html"><b>AI Skills Portfolio</b><span>5 lessons, 5 Prove-Its, 1 portfolio piece</span></a>
+        <a class="cat-card" href="ResearchCompanyBeforeInterview.html"><b>Research a Company Before an Interview</b><span>~15 min · Beginner micro-lesson</span></a>
+      </div>
+    </div>
+
+    <div class="catalogue-group">
+      <div class="catalogue-group-head"><h3>Flagship Programme</h3><span>The Academy's deepest, most applied pathway</span></div>
+      <div class="catalogue-grid">
+        <a class="cat-card" href="AIEngineeringMastery.html"><b>AI Engineering &amp; Agentic Systems Mastery</b><span>24 weeks · 12 portfolio projects · 3 capstones</span></a>
+      </div>
     </div>
   </div>
 </section>
@@ -234,7 +295,7 @@ footer.site{padding:30px 0;background:#091d14;color:#becbc3;font-size:.79rem}.fo
 </section>
 </main>
 
-<footer class="site"><div class="wrap foot"><div class="brand"><span class="brand-mark"></span><span>BSOE AI Academy</span></div><div class="foot-links"><a href="#overview">About</a><a href="#structure">Curriculum</a><a href="#readiness">Assessment</a><a href="LearnerGuide.html">Learner Guide</a><a href="#faq">FAQ</a></div><div>© 2026 BSOE LTD.</div></div></footer>
+<footer class="site"><div class="wrap foot"><div class="brand"><span class="brand-mark"></span><span>BSOE AI Academy</span></div><div class="foot-links"><a href="#overview">About</a><a href="#structure">Curriculum</a><a href="#catalogue">All Courses</a><a href="#readiness">Assessment</a><a href="LearnerGuide.html">Learner Guide</a><a href="#faq">FAQ</a></div><div>© 2026 BSOE LTD.</div></div></footer>
 
 <div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinTitle"><div class="modal-card"><div class="modal-head"><div><div class="eyebrow">Academy registration</div><h3 id="joinTitle">Register your interest</h3></div><button class="close" id="closeModal" aria-label="Close">×</button></div><div class="modal-body"><form id="leadForm"><div class="form-grid"><div class="field"><label for="first">First name</label><input id="first" name="first" required></div><div class="field"><label for="last">Last name</label><input id="last" name="last" required></div><div class="field full"><label for="email">Email address</label><input id="email" name="email" type="email" required></div><div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel"></div><div class="field"><label for="interest">Main interest</label><select id="interest" name="interest"><option>General AI capability</option><option>AI for the workplace</option><option>AI automation</option><option>Agentic AI</option><option>AI for business</option><option>Using AI to make money</option></select></div></div><div class="secure-box"><strong>Note:</strong> after continuing, you'll be redirected to Paystack to complete your subscription. The page does not collect payment-card information.</div><button class="btn gold" type="submit">Continue →</button></form></div></div></div>
 
