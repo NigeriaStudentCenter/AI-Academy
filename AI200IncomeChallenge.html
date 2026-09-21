@@ -169,8 +169,8 @@ footer.site{padding:30px 0;background:#091d14;color:#becbc3;font-size:.79rem}.fo
 /* =========================================================
    PAGE CONFIGURATION — set these before launch
    ========================================================= */
-const STRIPE_PAYMENT_LINK = "";   // paste your Stripe Payment Link URL (Dashboard → Payment Links) for the monthly subscription price
-const PAYSTACK_PAYMENT_LINK = ""; // paste your Paystack Payment Page URL (Dashboard → Payment Pages) for the monthly subscription plan
+const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/14AdRb5W4crffBQcWXbbG00"; // Premium Subscription - International, £6.50/month
+const PAYSTACK_PAYMENT_LINK = ""; // still needs the correct Payment Page for THIS product — the link supplied on 2026-09-21 points to the existing "AI Academy For Professionals" plan (NGN 10,000/month), not this one
 
 function wirePaymentButton(btn, url) {
   if (/^https?:\/\//i.test(url)) {
