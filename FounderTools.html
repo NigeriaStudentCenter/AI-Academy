@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Founder Tools: 3 AI Agents — BSOE AI Academy</title>
+<meta name="description" content="Three ready-to-run AI agent prompts for the 200 AI Hustles Programme: find your profitable business idea with Ikigai, launch your personal brand with live competitor research, and build a scored outbound prospect list." />
+<style>
+:root{
+  --deep:#0B3D2E;--forest:#1F6B52;--forest2:#175A44;--gold:#C9A45D;--gold-light:#EFD9A8;
+  --ink:#0F2A20;--paper:#FCFBF7;--cream:#EEF5F0;--muted:#5C6E64;--line:#DCE6DF;--white:#fff;
+  --shadow:0 24px 70px rgba(11,61,46,.14);--max:1100px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+h1,h2,h3,p{margin-top:0} h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.03em} a{text-decoration:none;color:inherit} .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:900;color:var(--forest)} .eyebrow.light{color:var(--gold-light)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 24px;border:0;border-radius:999px;background:var(--forest);color:white;font-weight:850;cursor:pointer;box-shadow:0 12px 28px rgba(11,61,46,.2);transition:.2s transform,.2s background;font-size:.96rem}.btn:hover{transform:translateY(-2px);background:var(--deep)}.btn.gold{background:linear-gradient(135deg,#b3894a,var(--gold-light));color:#3a2a10}.btn.outline{background:transparent;color:var(--forest);border:1px solid rgba(31,106,82,.3);box-shadow:none}.btn.small{padding:10px 16px;font-size:.82rem}
+.topbar{background:var(--deep);color:#fff;text-align:center;padding:11px 16px;font-size:.85rem;font-weight:750}.topbar span{color:var(--gold-light)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(252,251,247,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(11,61,46,.08)}.nav-in{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-weight:900}.brand-mark{width:37px;height:37px;border-radius:11px;background:linear-gradient(135deg,var(--forest),var(--deep));display:grid;place-items:center;color:var(--gold-light);font-family:Georgia,serif;font-weight:900;font-size:1rem}.nav-links{display:flex;gap:16px;align-items:center;font-size:.8rem;font-weight:760;color:#334d40}.nav-cta{display:flex;gap:10px;align-items:center}
+.hero{padding:58px 0 44px;background:radial-gradient(circle at 82% 10%,rgba(201,164,93,.18),transparent 32%),linear-gradient(180deg,#fcfbf7 0%,var(--cream) 100%);text-align:center}.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;border:1px solid rgba(11,61,46,.15);background:rgba(255,255,255,.75);font-size:.76rem;font-weight:900;letter-spacing:.04em}.hero h1{font-size:clamp(2.2rem,4.8vw,3.6rem);line-height:1.08;margin:18px auto 16px;max-width:760px}.hero-copy{font-size:1.06rem;color:#4a5c52;max-width:660px;margin:0 auto}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 14px;justify-content:center}.micro{font-size:.8rem;color:var(--muted)}
+.how-note{max-width:700px;margin:22px auto 0;background:white;border:1px solid var(--line);border-radius:16px;padding:16px 20px;font-size:.86rem;color:var(--muted)}
+.section{padding:60px 0}.section.alt{background:var(--cream)}.section-head{max-width:760px;margin:0 auto 34px;text-align:center}.section-head h2{font-size:clamp(1.8rem,3.8vw,2.7rem);line-height:1.06;margin:8px 0 12px}.section-head p{font-size:.98rem;color:var(--muted)}
+.agent-card{background:white;border:1px solid var(--line);border-radius:24px;padding:32px;margin-bottom:22px;box-shadow:0 14px 32px rgba(11,61,46,.06)}
+.agent-head{display:flex;gap:18px;align-items:flex-start;margin-bottom:16px}
+.agent-no{width:52px;height:52px;border-radius:14px;background:var(--forest);color:#fff;display:grid;place-items:center;font-family:Georgia,serif;font-weight:800;font-size:1.3rem;flex:0 0 auto}
+.agent-head h3{font-family:Georgia,serif;font-size:1.55rem;margin-bottom:6px}
+.agent-head p.tagline{color:var(--muted);font-size:.94rem;margin:0}
+.agent-meta{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
+.meta-pill{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.04em;border-radius:999px;padding:6px 12px}
+.meta-pill.tool{background:var(--cream);color:var(--forest2);border:1px solid var(--line)}
+.meta-pill.web{background:var(--gold-light);color:#4a3410}
+.agent-card h4{font-family:Georgia,serif;font-size:1.05rem;margin:18px 0 8px;color:var(--forest2)}
+.agent-card ol, .agent-card ul{margin:6px 0;padding-left:22px}
+.agent-card li{margin-bottom:5px;font-size:.92rem}
+.prompt-box{background:var(--deep);color:#eaf3ee;border-radius:14px;padding:18px 20px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.82rem;line-height:1.6;white-space:pre-wrap;position:relative;margin-top:10px}
+.prompt-copy{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#eaf3ee;font-size:.72rem;padding:7px 12px;border-radius:8px;cursor:pointer;font-family:Inter,sans-serif;font-weight:750}
+.prompt-copy:hover{background:rgba(255,255,255,.22)}
+.output-box{background:var(--cream);border:1px solid #dccf9f;border-radius:14px;padding:16px 18px;margin-top:10px;font-size:.88rem}
+.compliance-box{background:#FBEAEA;border:1px solid #E5A6A6;border-radius:14px;padding:16px 18px;margin-top:14px;font-size:.86rem;color:#7a2323}
+.compliance-box b{display:block;color:#9C2B2B;text-transform:uppercase;font-size:.7rem;letter-spacing:.06em;margin-bottom:6px}
+.final{padding:70px 0;text-align:center;background:radial-gradient(circle at 50% 15%,rgba(201,164,93,.18),transparent 28%),var(--deep);color:white}.final h2{font-size:clamp(2rem,4.2vw,3.2rem);line-height:1;max-width:760px;margin:8px auto 16px}.final p{color:#cfe0d6;max-width:600px;margin:0 auto 22px}.final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer.site{padding:28px 0;background:#08251b;color:#a9c2b4;font-size:.78rem}.foot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot .brand{color:white}.foot-links{display:flex;gap:16px;flex-wrap:wrap}
+@media(max-width:1000px){.nav-links{display:none}}
+@media(max-width:680px){.wrap{width:min(100% - 24px,var(--max))}.nav-in{height:64px}.nav .btn{padding:10px 13px;font-size:.74rem}.section{padding:44px 0}.agent-card{padding:22px}.agent-head{flex-direction:column}.final-actions .btn,.hero-actions .btn{width:100%}.foot{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<div class="topbar">200 AI Hustles Programme · <span>Founder Tools — 3 Ready-to-Run AI Agents</span></div>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="landingpage.html"><span class="brand-mark">FT</span><span>Founder Tools</span></a>
+    <div class="nav-links"><a href="#ikigai">Find Your Idea</a><a href="#brand">Launch Your Brand</a><a href="#list">List Builder</a></div>
+    <div class="nav-cta"><a class="btn outline small" href="HowWeRank200Hustles.html">Back to Programme</a><a class="btn gold small" href="landingpage.html#readiness">Join the Academy</a></div>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="pill">THREE AGENTS · COPY, PASTE, RUN</span>
+    <h1>Founder Tools: three AI agents for building your hustle</h1>
+    <p class="hero-copy">Each tool below is a complete, ready-to-run agent prompt — not a description of one. Copy it, paste it into the AI tool named, and it runs the guided process itself: asking you questions, researching live where needed, and handing you a finished output.</p>
+    <div class="hero-actions"><a class="btn gold" href="#ikigai">Find Your Idea ↓</a><a class="btn outline" href="#list">Build Your Prospect List ↓</a></div>
+    <div class="how-note">🤖 <strong>How these work:</strong> these are prompts, not a hosted chatbot. Two of the three (Personal Brand, List Builder) need an AI tool with live web search switched on — Claude.ai with web search, or Perplexity. The Ikigai tool works with any chat AI, including offline models.</div>
+  </div>
+</section>
+
+<section class="section" id="ikigai">
+  <div class="wrap">
+    <div class="agent-card">
+      <div class="agent-head">
+        <div class="agent-no">1</div>
+        <div><h3>Find Your Profitable Business Idea (Ikigai)</h3><p class="tagline">Pinpoint the intersection of what you love, what you're good at, and what people will pay for — so you stop guessing and lock in a niche.</p></div>
+      </div>
+      <div class="agent-meta"><span class="meta-pill tool">Works with any chat AI</span><span class="meta-pill tool">ChatGPT · Claude · Gemini · Copilot</span></div>
+      <h4>What happens when you run it</h4>
+      <ol>
+        <li>The AI asks you a series of questions, one at a time, about what you love doing, what you're genuinely good at, and what people already pay for.</li>
+        <li>It maps your answers onto the three circles and shows you where they overlap.</li>
+        <li>It proposes 3–5 concrete business-idea candidates sitting inside that overlap, and pressure-tests each one against you, not just against the market.</li>
+        <li>It ends by handing you one locked-in niche statement, in the same specific style used throughout Hustle 1.</li>
+      </ol>
+      <h4>The agent prompt</h4>
+      <div class="prompt-box"><button class="prompt-copy" type="button">Copy</button>Act as my Ikigai business coach. Your job is to help me find a profitable business idea by walking me through the Ikigai framework: the intersection of (1) what I love doing, (2) what I'm genuinely good at, and (3) what people will actually pay for.
+
+Ask me one question at a time — do not dump a list of questions on me at once. Start by asking what I love doing, and go deeper with follow-up questions until you have a real answer, not a vague one. Then do the same for what I'm good at, and what people will pay for.
+
+Once you have all three, show me clearly where they overlap, and propose 3–5 specific business idea candidates that sit inside that overlap. For each one, challenge me: would I actually enjoy doing this at 6pm on a Tuesday after a full day? Could I realistically get good at the parts I'm not good at yet? Is there real evidence people pay for this, not just that it sounds good?
+
+Finish by helping me lock in ONE niche, written as a single specific sentence in this style: "I want to help [specific audience] [achieve a specific outcome] using [my angle]." Do not let me end the conversation with more than one option still open.</div>
+      <div class="output-box"><strong>You walk away with:</strong> one locked-in, specific niche statement — the exact input Lesson 1 of every hustle in this programme asks you to bring.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="brand">
+  <div class="wrap">
+    <div class="agent-card">
+      <div class="agent-head">
+        <div class="agent-no">2</div>
+        <div><h3>Launch Your Personal Brand</h3><p class="tagline">Eight questions, live research on the top creators in your space, and a report showing exactly where they're weak and how you stand out.</p></div>
+      </div>
+      <div class="agent-meta"><span class="meta-pill tool">Needs live web search</span><span class="meta-pill web">Claude.ai (web search on) or Perplexity</span></div>
+      <h4>What happens when you run it</h4>
+      <ol>
+        <li>The AI asks you eight questions about your niche, audience, expertise, tone and goals.</li>
+        <li>It searches live for the current top creators/accounts already active in your space.</li>
+        <li>It analyses each one: what they do well, and — more usefully — where they're weak, generic, or leaving an audience underserved.</li>
+        <li>It hands you a differentiation report: a short written brief on exactly how you can position yourself differently from what already exists.</li>
+      </ol>
+      <h4>The agent prompt</h4>
+      <div class="prompt-box"><button class="prompt-copy" type="button">Copy</button>Act as my personal-brand strategist. You have live web search — use it. Your job is to help me launch a personal brand that's genuinely differentiated from what already exists in my space.
+
+First, ask me these eight questions, one at a time, waiting for my answer before moving to the next:
+1. What topic or niche do you want to be known for?
+2. Who specifically is your audience (be as specific as possible)?
+3. What's your real expertise or experience in this area?
+4. What tone do you want to be known for (e.g. blunt, warm, funny, no-nonsense)?
+5. Which platform do you want to focus on first?
+6. What's the one outcome you want your audience to get from following you?
+7. What do you find most people in this space get wrong or oversimplify?
+8. What's your realistic weekly time budget for content?
+
+Once you have my answers, search the web for the current top 5–8 creators or accounts already active in this specific niche and audience. For each one, tell me: what they do well, who they're actually serving, and — most importantly — where they are weak, generic, repetitive, or leaving part of the audience underserved.
+
+Finish with a written Differentiation Report: a clear, specific brief on how I can position myself differently from every creator you found — not by copying a gap, but by being genuinely more useful to the audience I described in question 2.</div>
+      <div class="output-box"><strong>You walk away with:</strong> a written Differentiation Report naming real competitors, their real weaknesses, and your specific angle — feed this straight into Lesson 3 (Build Your Content Identity).</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="list">
+  <div class="wrap">
+    <div class="agent-card">
+      <div class="agent-head">
+        <div class="agent-no">3</div>
+        <div><h3>Build Your Outbound List (List Builder)</h3><p class="tagline">Hand the AI your ideal customer and get a scored, targeted brief on exactly which accounts and roles to approach first.</p></div>
+      </div>
+      <div class="agent-meta"><span class="meta-pill tool">Needs live web search</span><span class="meta-pill web">Claude.ai (web search on) or Perplexity</span></div>
+      <h4>What happens when you run it</h4>
+      <ol>
+        <li>You describe your ideal customer: industry, company size, role, and the problem you solve for them.</li>
+        <li>The AI researches live and identifies real company <em>types</em> and named example companies that fit — with a fit score and reasoning for each.</li>
+        <li>It names the specific job titles most likely to be your buyer or champion inside those companies.</li>
+        <li>It gives you a scored, prioritised outreach brief: who to approach first, and a one-line reason why each one is a good fit.</li>
+      </ol>
+      <h4>The agent prompt</h4>
+      <div class="prompt-box"><button class="prompt-copy" type="button">Copy</button>Act as my B2B research analyst. You have live web search — use it. My ideal customer is: [DESCRIBE INDUSTRY, COMPANY SIZE, LOCATION, AND THE PROBLEM YOU SOLVE FOR THEM].
+
+Research and identify:
+1. 15–20 real, named companies that plausibly match this profile, found via live search (not invented). For each, give a fit score out of 5 and one sentence explaining why they fit.
+2. The 2–3 job titles most likely to be the buyer or internal champion for what I offer, and why that role specifically (not just "the owner").
+3. For my top 10 highest-scored companies, one specific, researched reason I could reference in an opening message — something real and current about that company, not a generic compliment.
+
+Present this as a single prioritised table: Company | Fit Score | Likely Role to Contact | Why This Company | Opening-Message Angle.
+
+Do not invent personal names, email addresses or direct phone numbers — flag clearly that finding a named contact and verified contact details for each company is the next step, done through a proper B2B data source, not guessed.</div>
+      <div class="output-box"><strong>You walk away with:</strong> a scored table of real companies, the right role to target inside each, and a genuine opening angle for each of your top 10 — your outreach priority list.</div>
+      <div class="compliance-box"><b>Why this tool stops short of "contact info"</b>Asking a general AI to scrape or guess real people's personal emails and phone numbers is unreliable (it hallucinates names and addresses) and puts you at real risk under UK GDPR and PECR if you then use fabricated or scraped personal data for outreach. For the actual contact-detail lookup on your prioritised companies, use a proper B2B data source built and licensed for this — LinkedIn Sales Navigator, Apollo.io or Hunter.io — then run your own legitimate-interest check before you message anyone.</div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap"><div class="eyebrow light">Founder Tools</div><h2>Three prompts. Three real outputs. Zero guessing.</h2><p>Run these alongside Hustle 1, or any hustle in the programme — the niche, brand and outreach work is the same no matter which of the 200 you pick.</p><div class="final-actions"><a class="btn gold" href="Hustle01_ContentCreation.html">Go to Hustle 1 →</a><a class="btn outline" style="color:white;border-color:rgba(255,255,255,.35)" href="HowWeRank200Hustles.html">Back to the Ranking Framework</a></div></div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap foot"><div class="brand"><span class="brand-mark">FT</span><span>Founder Tools</span></div><div class="foot-links"><a href="landingpage.html">Academy Home</a><a href="HowWeRank200Hustles.html">Ranking Framework</a><a href="Hustle01_ContentCreation.html">Hustle 1</a><a href="LearnerGuide.html">Learner Guide</a></div><div>© 2026 BSOE LTD.</div></div></footer>
+
+<script>
+(function(){
+  "use strict";
+  document.querySelectorAll(".prompt-copy").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var box = btn.closest(".prompt-box");
+      var text = box.textContent.replace(/^Copy/, "").trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function(){
+          var old = btn.textContent; btn.textContent = "Copied!";
+          setTimeout(function(){ btn.textContent = old; }, 1500);
+        }).catch(function(){});
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
