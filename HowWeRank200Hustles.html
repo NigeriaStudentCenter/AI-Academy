@@ -14,7 +14,16 @@
 *{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
 h1,h2,h3,p{margin-top:0} h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.03em} a{text-decoration:none;color:inherit} .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
 .eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:900;color:var(--forest)} .eyebrow.light{color:var(--gold-light)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 24px;border:0;border-radius:999px;background:var(--forest);color:white;font-weight:850;cursor:pointer;box-shadow:0 12px 28px rgba(11,61,46,.2);transition:.2s transform,.2s background;font-size:.96rem}.btn:hover{transform:translateY(-2px);background:var(--deep)}.btn.gold{background:linear-gradient(135deg,#b3894a,var(--gold-light));color:#3a2a10}.btn.outline{background:transparent;color:var(--forest);border:1px solid rgba(31,106,82,.3);box-shadow:none}.btn.small{padding:10px 16px;font-size:.82rem}.btn.ghost{background:var(--cream);color:var(--forest);box-shadow:none}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 24px;border:0;border-radius:999px;background:var(--forest);color:white;font-weight:850;cursor:pointer;box-shadow:0 12px 28px rgba(11,61,46,.2);transition:.2s transform,.2s background;font-size:.96rem}.btn:hover{transform:translateY(-2px);background:var(--deep)}.btn.gold{background:linear-gradient(135deg,#b3894a,var(--gold-light));color:#3a2a10}.btn.outline{background:transparent;color:var(--forest);border:1px solid rgba(31,106,82,.3);box-shadow:none}.btn.small{padding:10px 16px;font-size:.82rem}.btn.ghost{background:var(--cream);color:var(--forest);box-shadow:none}.btn.stripe{background:#635bff;color:#fff}.btn.paystack{background:#00c3f7;color:#062331}
+.pricing-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:820px;margin:0 auto}
+.pricing-card{background:white;border:1px solid var(--line);border-radius:24px;padding:34px 30px;text-align:center;box-shadow:0 16px 34px rgba(11,61,46,.08)}
+.pricing-card .flag{font-size:1.6rem;margin-bottom:6px}
+.pricing-card h3{font-family:Georgia,serif;font-size:1.3rem;margin-bottom:4px}
+.pricing-card .price-amount{font-family:Georgia,serif;font-size:2.4rem;color:var(--forest);margin:8px 0;font-weight:800}
+.pricing-card .price-amount span{font-size:.95rem;color:var(--muted);font-weight:400}
+.pricing-card p.sub{color:var(--muted);font-size:.86rem;margin-bottom:18px}
+.pay-notice{display:none;margin-top:12px;padding:10px 13px;border-radius:10px;background:#fff4db;color:#62460d;font-size:.78rem;border:1px solid #f0d7a2;text-align:left}
+.pay-notice.show{display:block}
 .topbar{background:var(--deep);color:#fff;text-align:center;padding:11px 16px;font-size:.85rem;font-weight:750}.topbar span{color:var(--gold-light)}
 .nav{position:sticky;top:0;z-index:50;background:rgba(252,251,247,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(11,61,46,.08)}.nav-in{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-weight:900}.brand-mark{width:37px;height:37px;border-radius:11px;background:linear-gradient(135deg,var(--forest),var(--deep));display:grid;place-items:center;color:var(--gold-light);font-family:Georgia,serif;font-weight:900;font-size:.85rem}.nav-links{display:flex;gap:18px;align-items:center;font-size:.82rem;font-weight:760;color:#334d40}.nav-cta{display:flex;gap:10px;align-items:center}
 .hero{padding:60px 0 56px;background:radial-gradient(circle at 82% 10%,rgba(201,164,93,.18),transparent 32%),linear-gradient(180deg,#fcfbf7 0%,var(--cream) 100%);text-align:center}.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;border:1px solid rgba(11,61,46,.15);background:rgba(255,255,255,.75);font-size:.76rem;font-weight:900;letter-spacing:.04em}.hero h1{font-size:clamp(2.3rem,5vw,4rem);line-height:1.06;margin:18px auto 16px;max-width:840px}.hero-copy{font-size:1.1rem;color:#4a5c52;max-width:680px;margin:0 auto}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 14px;justify-content:center}.micro{font-size:.8rem;color:var(--muted)}
@@ -93,8 +102,8 @@ footer.site{padding:28px 0;background:#08251b;color:#a9c2b4;font-size:.78rem}.fo
 <nav class="nav">
   <div class="wrap nav-in">
     <a class="brand" href="landingpage.html"><span class="brand-mark">200</span><span>AI Hustles</span></a>
-    <div class="nav-links"><a href="#criteria">The 5 Criteria</a><a href="#weekend-test">Weekend Test</a><a href="#ai-boundary">AI's Role</a><a href="#exercises">Exercises</a><a href="#faq">FAQ</a></div>
-    <div class="nav-cta"><a class="btn outline small" href="landingpage.html">Back to Academy</a><a class="btn gold small" href="landingpage.html#readiness">Join the Academy</a></div>
+    <div class="nav-links"><a href="#criteria">The 5 Criteria</a><a href="#weekend-test">Weekend Test</a><a href="#ai-boundary">AI's Role</a><a href="#exercises">Exercises</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a></div>
+    <div class="nav-cta"><a class="btn outline small" href="landingpage.html">Back to Academy</a><a class="btn gold small" href="#pricing">Join the Academy</a></div>
   </div>
 </nav>
 
@@ -300,8 +309,32 @@ footer.site{padding:28px 0;background:#08251b;color:#a9c2b4;font-size:.78rem}.fo
   </div>
 </section>
 
+<section class="section alt" id="pricing">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Join the programme</div><h2>Choose your payment method.</h2><p>Same subscription, priced for where you are. Cancel anytime.</p></div>
+    <div class="pricing-wrap">
+      <div class="pricing-card">
+        <div class="flag">🇳🇬</div>
+        <h3>Nigeria</h3>
+        <div class="price-amount">₦10,000<span>/month</span></div>
+        <p class="sub">Pay by card, bank transfer or USSD via Paystack.</p>
+        <button class="btn paystack" id="paystackBtn" type="button">Pay with Paystack →</button>
+        <div class="pay-notice" id="paystackNotice">Payment isn't connected yet — add your Paystack Payment Page URL in the page configuration.</div>
+      </div>
+      <div class="pricing-card">
+        <div class="flag">🌍</div>
+        <h3>International</h3>
+        <div class="price-amount">£6.50<span>/month</span></div>
+        <p class="sub">Pay by card, anywhere outside Nigeria, via Stripe.</p>
+        <button class="btn stripe" id="stripeBtn" type="button">Pay with Card (Stripe) →</button>
+        <div class="pay-notice" id="stripeNotice">Payment isn't connected yet — add your Stripe Payment Link URL in the page configuration.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="final">
-  <div class="wrap"><div class="eyebrow light">200 AI Hustles Programme</div><h2>You now know how to judge an opportunity. Let's find one.</h2><p>Join the BSOE AI Academy and move into Hustle 1, scored against exactly the framework you just practised.</p><div class="final-actions"><a class="btn gold" href="landingpage.html#readiness">Join the Academy →</a><a class="btn outline" style="color:white;border-color:rgba(255,255,255,.35)" href="AISkillsPortfolio.html">See AI Skills Portfolio</a></div></div>
+  <div class="wrap"><div class="eyebrow light">200 AI Hustles Programme</div><h2>You now know how to judge an opportunity. Let's find one.</h2><p>Join the BSOE AI Academy and move into Hustle 1, scored against exactly the framework you just practised.</p><div class="final-actions"><a class="btn gold" href="#pricing">Join Now →</a><a class="btn outline" style="color:white;border-color:rgba(255,255,255,.35)" href="AISkillsPortfolio.html">See AI Skills Portfolio</a></div></div>
 </section>
 </main>
 
@@ -449,6 +482,29 @@ footer.site{padding:28px 0;background:#08251b;color:#a9c2b4;font-size:.78rem}.fo
     pipelineGrid.appendChild(row);
   });
 })();
+</script>
+
+<script>
+/* =========================================================
+   PAYMENT CONFIGURATION — shared platform subscription links
+   ========================================================= */
+const PAYSTACK_PAYMENT_LINK = "https://paystack.shop/pay/bsoeaiacademy"; // Nigeria — NGN 10,000/month
+const STRIPE_PAYMENT_LINK = "https://buy.stripe.com/14AdRb5W4crffBQcWXbbG00"; // International — £6.50/month
+
+function wirePaymentButton(btnId, noticeId, url) {
+  var btn = document.getElementById(btnId);
+  if (!btn) return;
+  if (/^https?:\/\//i.test(url)) {
+    btn.addEventListener("click", function(){ window.open(url, "_blank", "noopener"); });
+  } else {
+    btn.addEventListener("click", function(e){
+      e.preventDefault();
+      document.getElementById(noticeId).classList.add("show");
+    });
+  }
+}
+wirePaymentButton("paystackBtn", "paystackNotice", PAYSTACK_PAYMENT_LINK);
+wirePaymentButton("stripeBtn", "stripeNotice", STRIPE_PAYMENT_LINK);
 </script>
 </body>
 </html>
