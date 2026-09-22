@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>How We Rank the 200 AI Hustle Businesses — BSOE AI Academy</title>
+<meta name="description" content="The opening lesson of the 200 AI Hustles Programme: the 25-star framework used to evaluate every opportunity, the Night and Weekend Test, and the One-Person AI Business pipeline — with built-in interactive exercises." />
+<style>
+:root{
+  --deep:#0B3D2E;--forest:#1F6B52;--forest2:#175A44;--gold:#C9A45D;--gold-light:#EFD9A8;
+  --ink:#0F2A20;--paper:#FCFBF7;--cream:#EEF5F0;--muted:#5C6E64;--line:#DCE6DF;--white:#fff;
+  --shadow:0 24px 70px rgba(11,61,46,.14);--max:1160px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+h1,h2,h3,p{margin-top:0} h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.03em} a{text-decoration:none;color:inherit} .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:900;color:var(--forest)} .eyebrow.light{color:var(--gold-light)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 24px;border:0;border-radius:999px;background:var(--forest);color:white;font-weight:850;cursor:pointer;box-shadow:0 12px 28px rgba(11,61,46,.2);transition:.2s transform,.2s background;font-size:.96rem}.btn:hover{transform:translateY(-2px);background:var(--deep)}.btn.gold{background:linear-gradient(135deg,#b3894a,var(--gold-light));color:#3a2a10}.btn.outline{background:transparent;color:var(--forest);border:1px solid rgba(31,106,82,.3);box-shadow:none}.btn.small{padding:10px 16px;font-size:.82rem}.btn.ghost{background:var(--cream);color:var(--forest);box-shadow:none}
+.topbar{background:var(--deep);color:#fff;text-align:center;padding:11px 16px;font-size:.85rem;font-weight:750}.topbar span{color:var(--gold-light)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(252,251,247,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(11,61,46,.08)}.nav-in{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-weight:900}.brand-mark{width:37px;height:37px;border-radius:11px;background:linear-gradient(135deg,var(--forest),var(--deep));display:grid;place-items:center;color:var(--gold-light);font-family:Georgia,serif;font-weight:900;font-size:.85rem}.nav-links{display:flex;gap:18px;align-items:center;font-size:.82rem;font-weight:760;color:#334d40}.nav-cta{display:flex;gap:10px;align-items:center}
+.hero{padding:60px 0 56px;background:radial-gradient(circle at 82% 10%,rgba(201,164,93,.18),transparent 32%),linear-gradient(180deg,#fcfbf7 0%,var(--cream) 100%);text-align:center}.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;border:1px solid rgba(11,61,46,.15);background:rgba(255,255,255,.75);font-size:.76rem;font-weight:900;letter-spacing:.04em}.hero h1{font-size:clamp(2.3rem,5vw,4rem);line-height:1.06;margin:18px auto 16px;max-width:840px}.hero-copy{font-size:1.1rem;color:#4a5c52;max-width:680px;margin:0 auto}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 14px;justify-content:center}.micro{font-size:.8rem;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{text-align:center;padding:24px 16px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat b{font-family:Georgia,serif;font-size:1.6rem;display:block;color:var(--forest)}.stat span{font-size:.76rem;color:var(--muted);font-weight:720}
+.section{padding:72px 0}.section.alt{background:var(--cream)}.section.dark{background:var(--deep);color:white}.section-head{max-width:780px;margin:0 auto 40px;text-align:center}.section-head h2{font-size:clamp(1.9rem,4vw,3rem);line-height:1.05;margin:10px 0 14px}.section-head p{font-size:1rem;color:var(--muted)}.dark .section-head p{color:#cfe0d6}
+.criteria-grid{display:grid;gap:16px}
+.criterion{background:white;border:1px solid var(--line);border-radius:20px;padding:26px 28px;box-shadow:0 10px 26px rgba(11,61,46,.05)}
+.criterion-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:10px}
+.criterion-no{width:42px;height:42px;border-radius:12px;background:var(--forest);color:#fff;display:grid;place-items:center;font-family:Georgia,serif;font-weight:800;font-size:1.15rem;flex:0 0 auto}
+.criterion h3{font-family:Georgia,serif;font-size:1.32rem;margin:0}
+.star-max{color:var(--gold);font-size:1.1rem;letter-spacing:2px;flex:0 0 auto}
+.criterion .q{font-style:italic;color:var(--forest2);font-weight:700;margin-bottom:10px}
+.criterion p{color:var(--muted);margin-bottom:10px}
+.criterion ul{margin:6px 0 10px;padding-left:22px;color:var(--ink)}
+.criterion li{margin-bottom:5px}
+.framework-table{width:100%;border-collapse:collapse;background:white;border-radius:16px;overflow:hidden;box-shadow:0 10px 26px rgba(11,61,46,.06)}
+.framework-table th{background:var(--forest);color:#fff;text-align:left;padding:13px 16px;font-size:.86rem}
+.framework-table td{padding:12px 16px;border-top:1px solid var(--line);font-size:.92rem}
+.framework-table tr:nth-child(even) td{background:var(--cream)}
+.framework-table td.stars{color:var(--gold);letter-spacing:2px;white-space:nowrap}
+.framework-table tr.total td{font-weight:900;background:var(--deep);color:#fff}
+.note-box{background:var(--cream);border:1px solid #dccf9f;border-radius:16px;padding:18px 22px;font-size:.9rem;color:#5c4a1f;margin-top:22px}
+.callout{background:var(--deep);color:#fff;border-radius:18px;padding:24px 26px;margin:26px 0}
+.callout b{display:block;color:var(--gold-light);text-transform:uppercase;font-size:.72rem;letter-spacing:.08em;margin-bottom:8px}
+.callout p{margin:0;font-style:italic;font-size:1.08rem}
+.flow-chain{display:grid;grid-template-columns:repeat(7,1fr);gap:8px;margin:24px 0}
+.flow-chain .fnode{background:white;border:1px solid var(--line);border-radius:14px;padding:14px 8px;text-align:center;font-size:.82rem;font-weight:750;color:var(--forest);position:relative;display:flex;align-items:center;justify-content:center;min-height:56px}
+.flow-chain .fnode:not(:last-child):after{content:"→";position:absolute;right:-11px;color:var(--gold);font-weight:900;font-size:1.1rem;z-index:2}
+.weekend-flow{display:grid;gap:10px;max-width:640px;margin:24px auto}
+.weekend-flow .wstep{background:white;border:1px solid var(--line);border-radius:14px;padding:14px 18px;text-align:center;font-weight:750;color:var(--ink)}
+.weekend-flow .arrow{text-align:center;color:var(--gold);font-weight:900}
+.responsibility-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:10px}
+.resp-col h4{font-family:Georgia,serif;font-size:1.05rem;margin-bottom:10px;color:var(--forest2)}
+.resp-col ul{margin:0;padding-left:22px;color:var(--ink)}
+.resp-col li{margin-bottom:7px}
+/* ---- exercise components ---- */
+.exercise{background:white;border:2px solid var(--gold);border-radius:22px;padding:30px 32px;margin:30px 0;box-shadow:0 16px 34px rgba(11,61,46,.08)}
+.exercise-tag{display:inline-flex;align-items:center;gap:8px;background:var(--gold-light);color:#4a3410;font-weight:900;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;padding:6px 13px;border-radius:999px;margin-bottom:14px}
+.exercise h3{font-family:Georgia,serif;font-size:1.5rem;margin-bottom:10px}
+.exercise p.lead{color:var(--muted);margin-bottom:20px}
+/* scorer */
+.scorer-row{display:grid;grid-template-columns:1.6fr auto;gap:16px;align-items:center;padding:13px 0;border-top:1px solid var(--line)}
+.scorer-row:first-of-type{border-top:0}
+.scorer-row .label{font-weight:750;font-size:.94rem}
+.stars-input{display:flex;gap:4px;direction:ltr}
+.stars-input button{background:none;border:0;font-size:1.5rem;cursor:pointer;color:#d8ddd6;line-height:1;padding:2px;transition:.15s transform}
+.stars-input button:hover{transform:scale(1.15)}
+.stars-input button.on{color:var(--gold)}
+.scorer-total{margin-top:18px;padding:18px 22px;border-radius:14px;background:var(--cream);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.scorer-total .num{font-family:Georgia,serif;font-size:2rem;color:var(--forest);font-weight:800}
+.scorer-total .verdict{font-size:.88rem;color:var(--muted);max-width:420px}
+/* worksheet */
+.field{margin-bottom:16px}
+.field label{display:block;font-weight:750;font-size:.9rem;margin-bottom:6px;color:var(--forest2)}
+.field textarea, .field input[type=text]{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font-family:inherit;font-size:.92rem;resize:vertical;background:var(--paper)}
+.field textarea{min-height:64px}
+.check-list{display:grid;gap:10px;margin:10px 0}
+.check-item{display:flex;align-items:flex-start;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--paper);cursor:pointer}
+.check-item input{margin-top:3px;width:18px;height:18px;accent-color:var(--forest);flex:0 0 auto}
+.check-item span{font-size:.92rem}
+.exercise-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.save-note{font-size:.78rem;color:var(--muted);margin-top:10px}
+.save-note.ok{color:var(--forest);font-weight:750}
+.pipeline-grid{display:grid;gap:10px}
+.pipeline-row{display:grid;grid-template-columns:150px 1fr;gap:12px;align-items:center}
+.pipeline-row .stage-tag{font-weight:900;font-size:.78rem;color:#fff;background:var(--forest);border-radius:999px;padding:8px 12px;text-align:center}
+.faq{max-width:820px;margin:auto}details.faq-item{border-top:1px solid var(--line);padding:16px 4px}details.faq-item:last-child{border-bottom:1px solid var(--line)}details.faq-item summary{cursor:pointer;font-weight:850;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}details.faq-item summary::-webkit-details-marker{display:none}details.faq-item summary:after{content:"+";font-size:1.2rem;color:var(--forest);flex:0 0 auto}details.faq-item[open] summary:after{content:"−"}details.faq-item p{color:var(--muted);margin:12px 0 4px}
+.final{padding:76px 0;text-align:center;background:radial-gradient(circle at 50% 15%,rgba(201,164,93,.18),transparent 28%),var(--deep);color:white}.final h2{font-size:clamp(2.2rem,4.6vw,3.8rem);line-height:1;max-width:840px;margin:8px auto 16px}.final p{color:#cfe0d6;max-width:640px;margin:0 auto 24px}.final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer.site{padding:28px 0;background:#08251b;color:#a9c2b4;font-size:.78rem}.foot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot .brand{color:white}.foot-links{display:flex;gap:16px;flex-wrap:wrap}
+@media(max-width:1000px){.nav-links{display:none}.flow-chain{grid-template-columns:repeat(4,1fr)}.flow-chain .fnode:nth-child(4n):after{display:none}.responsibility-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+@media(max-width:680px){.wrap{width:min(100% - 24px,var(--max))}.nav-in{height:64px}.nav .btn{padding:10px 13px;font-size:.74rem}.section{padding:52px 0}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.flow-chain{grid-template-columns:1fr 1fr}.flow-chain .fnode:after{display:none!important}.exercise{padding:22px 20px}.scorer-row{grid-template-columns:1fr}.pipeline-row{grid-template-columns:1fr}.final-actions .btn,.hero-actions .btn{width:100%}.foot{flex-direction:column;align-items:flex-start}.framework-table{font-size:.8rem}}
+</style>
+</head>
+<body>
+<div class="topbar">200 AI Hustles Programme · <span>Opening Lesson — How We Rank Every Opportunity</span></div>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="landingpage.html"><span class="brand-mark">200</span><span>AI Hustles</span></a>
+    <div class="nav-links"><a href="#criteria">The 5 Criteria</a><a href="#weekend-test">Weekend Test</a><a href="#ai-boundary">AI's Role</a><a href="#exercises">Exercises</a><a href="#faq">FAQ</a></div>
+    <div class="nav-cta"><a class="btn outline small" href="landingpage.html">Back to Academy</a><a class="btn gold small" href="landingpage.html#readiness">Join the Academy</a></div>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="pill">OPENING LESSON · APPLIES TO ALL 200 HUSTLES</span>
+    <h1>How We Rank the 200 AI Hustle Businesses</h1>
+    <p class="hero-copy">Before you explore a single opportunity, learn the method. Every one of the 200 AI hustles in this programme is scored against the same five criteria — so you can compare them honestly, instead of chasing whichever one sounds most exciting today.</p>
+    <div class="hero-actions"><a class="btn gold" href="#criteria">See the 5 Criteria ↓</a><a class="btn outline" href="#exercises">Jump to the Exercises ↓</a></div>
+    <p class="micro">Read time ~12 min · 4 built-in interactive exercises · Save your own work as you go</p>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><b>5</b><span>ranking criteria</span></div>
+  <div class="stat"><b>25</b><span>maximum star score</span></div>
+  <div class="stat"><b>4</b><span>built-in exercises</span></div>
+  <div class="stat"><b>200</b><span>hustles this method applies to</span></div>
+</div>
+
+<section class="section" id="intro">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Why a ranking method</div>
+      <h2>The aim isn't a long list. It's judgement.</h2>
+      <p>For every hustle business in this course, we assess it using five practical criteria. Each earns a score of 1–5 stars, for a maximum of 25 stars. But remember: <strong>the score is a guide, not a promise of income.</strong> Your skills, location, network, effort, experience, niche and ability to execute will all affect the outcome.</p>
+    </div>
+    <div class="framework-table" style="overflow-x:auto">
+      <table class="framework-table">
+        <thead><tr><th>Criterion</th><th>Question it answers</th><th style="text-align:right">Maximum</th></tr></thead>
+        <tbody>
+          <tr><td>1. Speed to first paying client</td><td>How quickly could a beginner realistically get paid?</td><td class="stars" style="text-align:right">★★★★★</td></tr>
+          <tr><td>2. Simplicity to start</td><td>How easy is it for a beginner to begin?</td><td class="stars" style="text-align:right">★★★★★</td></tr>
+          <tr><td>3. Demand</td><td>Do people or businesses actually need this?</td><td class="stars" style="text-align:right">★★★★★</td></tr>
+          <tr><td>4. Competition / opportunity to differentiate</td><td>How crowded is it, and how could you stand out?</td><td class="stars" style="text-align:right">★★★★★</td></tr>
+          <tr><td>5. Long-term potential</td><td>Could this become more than a one-off gig?</td><td class="stars" style="text-align:right">★★★★★</td></tr>
+          <tr class="total"><td colspan="2">Maximum score</td><td style="text-align:right">25 ★</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="criteria">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The five criteria, explained</div><h2>What we're actually asking, one at a time.</h2></div>
+    <div class="criteria-grid">
+
+      <article class="criterion">
+        <div class="criterion-head"><div style="display:flex;gap:14px;align-items:flex-start"><div class="criterion-no">1</div><h3>Speed to Your First Paying Client</h3></div><div class="star-max">★★★★★</div></div>
+        <p class="q">How quickly could a beginner realistically get their first paying customer?</p>
+        <p>Some AI businesses can potentially be launched within days — for example, using AI to help a local business create social media content, marketing materials, product descriptions, customer-service responses, presentations, CVs and career documents, or basic business documents.</p>
+        <p>Others take considerably longer, because you first need to build a portfolio, technical skills, an audience, trust, qualifications or specialist knowledge. We consider how quickly someone could move from <strong>Learning → Creating → Finding a customer → Delivering the service → Getting paid.</strong> The objective isn't an idea that sounds exciting — it's an opportunity where you can realistically take action and test the market.</p>
+      </article>
+
+      <article class="criterion">
+        <div class="criterion-head"><div style="display:flex;gap:14px;align-items:flex-start"><div class="criterion-no">2</div><h3>Simplicity to Start</h3></div><div class="star-max">★★★★★</div></div>
+        <p class="q">How easy is it for a beginner to get started?</p>
+        <p>You don't necessarily need to be a programmer, have a large team, or own expensive equipment. Many opportunities in this course can be started with a computer or smartphone, an internet connection, AI tools, a willingness to learn, time to practise, and the ability to communicate with potential customers.</p>
+        <p>But simplicity doesn't mean "no skills required." For every hustle, we identify:</p>
+        <ul><li>What you need to know</li><li>What you need to learn</li><li>What tools you need</li><li>What you need to create</li><li>What you need before approaching your first customer</li></ul>
+        <p>That way you see the actual work involved, rather than just hearing "use AI and make money."</p>
+      </article>
+
+      <article class="criterion">
+        <div class="criterion-head"><div style="display:flex;gap:14px;align-items:flex-start"><div class="criterion-no">3</div><h3>Demand</h3></div><div class="star-max">★★★★★</div></div>
+        <p class="q">Do people or businesses actually need this?</p>
+        <p>An excellent idea is worthless as a business if nobody wants to pay for it. We look for evidence of a genuine problem: a business needing more social-media content, a property company needing better tenant communications, a restaurant needing promotional material, a recruitment business needing help processing information, a small business wanting to automate admin, a student wanting help with a CV or interview prep.</p>
+        <p>The key question is always: <strong>what problem are you solving?</strong> Businesses don't pay simply because something uses AI — they pay because you help them save time, reduce costs, increase sales, attract customers, improve productivity, solve a problem, produce something they need, or make their work easier. That is the difference between an AI experiment and a business opportunity.</p>
+      </article>
+
+      <article class="criterion">
+        <div class="criterion-head"><div style="display:flex;gap:14px;align-items:flex-start"><div class="criterion-no">4</div><h3>Competition</h3></div><div class="star-max">★★★★★</div></div>
+        <p class="q">How crowded is this opportunity, and how could you stand out?</p>
+        <p>Thousands of people may already offer a particular AI service. That doesn't automatically mean you shouldn't enter the market — it means asking how you can become more specific, more useful or more relevant to a particular customer.</p>
+        <p>Instead of "I create AI content," specialise: "I create social-media content for independent UK restaurants." Instead of "I provide AI automation": "I help small letting agencies automate tenant enquiries and maintenance administration." The more clearly you define <strong>WHO you help + WHAT problem you solve + WHAT outcome you provide</strong>, the easier it becomes for a customer to understand your offer. Throughout this course we look past "is there competition?" and ask <strong>"where is the opportunity to differentiate?"</strong></p>
+      </article>
+
+      <article class="criterion">
+        <div class="criterion-head"><div style="display:flex;gap:14px;align-items:flex-start"><div class="criterion-no">5</div><h3>Long-Term Potential</h3></div><div class="star-max">★★★★★</div></div>
+        <p class="q">Could this become more than a one-off gig?</p>
+        <p>Some opportunities pay for an individual job — useful, but limited. We also want to identify opportunities that could develop into repeat customers, monthly retainers, subscriptions, digital products, courses, consulting, agencies, automated services, specialist businesses or larger service companies.</p>
+        <p>For example: <strong>One client → Five clients → Monthly retainers → Content agency.</strong> Or: <strong>One automation → Repeatable solution → Productised service → Software/SaaS opportunity.</strong> The goal is to help you recognise where a small AI-powered hustle could become a larger business.</p>
+      </article>
+
+    </div>
+
+    <div class="callout"><b>Important</b><p>A higher score does NOT automatically mean it is the right business for you. The scoring system helps you understand the opportunity — it isn't there to tell you "do this one." Ask yourself instead: does this match my skills? Do I understand the customer? Would I enjoy doing this? Can I realistically find customers? Do I have time to learn it? Can I start with what I already have? Could I see myself developing this into something bigger? Your own circumstances matter.</p></div>
+  </div>
+</section>
+
+<section class="section" id="exercises">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Put the method to work</div><h2>Four exercises. Use them on every hustle you evaluate.</h2><p>These tools aren't just for this lesson — reuse the scorer below on every one of the 200 hustles as you go.</p></div>
+
+    <div class="exercise" id="ex1">
+      <span class="exercise-tag">Exercise 1 · The 25-Star Scorer</span>
+      <h3>Score your first hustle idea</h3>
+      <p class="lead">Think of one AI hustle idea — from this programme or your own. Click 1–5 stars for each criterion below and watch your total build. This exact tool is yours to reuse on every hustle in the 200-course series.</p>
+      <div id="scorerRows"></div>
+      <div class="scorer-total">
+        <div><span class="num" id="scorerTotal">0</span><span style="color:var(--muted)"> / 25</span></div>
+        <div class="verdict" id="scorerVerdict">Score all five criteria to see your result.</div>
+      </div>
+      <div class="exercise-actions">
+        <button class="btn small ghost" id="scorerReset" type="button">Reset scores</button>
+      </div>
+      <p class="save-note" id="scorerSaveNote">Your scores save automatically in this browser.</p>
+    </div>
+
+    <div class="exercise" id="ex2">
+      <span class="exercise-tag">Exercise 2 · The Night and Weekend Test</span>
+      <h3>Plan how you'll actually test this, around your real life</h3>
+      <p class="lead">Many opportunities in this course are designed to be tested alongside existing work, education or other commitments. Write one line for each step below.</p>
+      <div class="weekend-flow">
+        <div class="wstep">Work your normal job during the day</div>
+        <div class="arrow">↓</div>
+        <div class="wstep">Learn and build during evenings or weekends</div>
+        <div class="arrow">↓</div>
+        <div class="wstep">Find your first customer</div>
+        <div class="arrow">↓</div>
+        <div class="wstep">Deliver your first project</div>
+        <div class="arrow">↓</div>
+        <div class="wstep">Learn from the experience</div>
+        <div class="arrow">↓</div>
+        <div class="wstep">Build a repeatable service</div>
+        <div class="arrow">↓</div>
+        <div class="wstep">Decide whether you want to scale it</div>
+      </div>
+      <div class="field"><label for="wk1">When, this week, will you actually learn and build?</label><textarea id="wk1" placeholder="e.g. Tuesday and Thursday evenings, 7–9pm, plus Saturday morning"></textarea></div>
+      <div class="field"><label for="wk2">Where will your first customer realistically come from?</label><textarea id="wk2" placeholder="e.g. A local business I already know, or a post in a community group I'm part of"></textarea></div>
+      <div class="field"><label for="wk3">What's the smallest version of the project you could deliver first?</label><textarea id="wk3" placeholder="e.g. One social post, not a month of content"></textarea></div>
+      <p class="note-box">Don't treat this as a promise that every hustle needs only a few hours a week. Some can be tested with limited time; others need considerably more effort and customer service as they grow. Start with a manageable experiment, learn from the market, then decide how far to take it.</p>
+      <p class="save-note" id="wkSaveNote">Your answers save automatically in this browser.</p>
+    </div>
+
+    <div class="exercise" id="ex3">
+      <span class="exercise-tag">Exercise 3 · The AI Boundary Check</span>
+      <h3>What AI does for you — and what stays your job</h3>
+      <p class="lead" id="ai-boundary">AI should help you do the work faster. It should not remove your responsibility for the quality of the work. Tick each one only once you genuinely understand why it's still your job, not AI's.</p>
+      <div class="responsibility-grid">
+        <div class="resp-col">
+          <h4>AI can help you</h4>
+          <ul>
+            <li>Generate ideas</li><li>Research markets</li><li>Create drafts</li><li>Write scripts</li>
+            <li>Analyse information</li><li>Create images</li><li>Edit videos</li><li>Produce presentations</li>
+            <li>Write marketing copy</li><li>Automate repetitive tasks</li><li>Organise information</li><li>Create workflows</li>
+          </ul>
+        </div>
+        <div class="resp-col">
+          <h4>You still need to</h4>
+          <div class="check-list" id="responsibilityChecks">
+            <label class="check-item"><input type="checkbox" data-key="check-information" /><span>Check information before it goes out</span></label>
+            <label class="check-item"><input type="checkbox" data-key="understand-problem" /><span>Understand your customer's actual problem</span></label>
+            <label class="check-item"><input type="checkbox" data-key="review-content" /><span>Review AI-generated content properly</span></label>
+            <label class="check-item"><input type="checkbox" data-key="protect-info" /><span>Protect customer information</span></label>
+            <label class="check-item"><input type="checkbox" data-key="respect-copyright" /><span>Respect copyright</span></label>
+            <label class="check-item"><input type="checkbox" data-key="follow-law" /><span>Follow relevant laws and regulations</span></label>
+            <label class="check-item"><input type="checkbox" data-key="communicate" /><span>Communicate with customers, yourself</span></label>
+            <label class="check-item"><input type="checkbox" data-key="decide" /><span>Make the actual business decisions</span></label>
+          </div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:22px"><b>Remember</b><p>Think of AI as your digital assistant, not your replacement.</p></div>
+      <p class="save-note" id="respSaveNote">Your checklist saves automatically in this browser.</p>
+    </div>
+
+    <div class="exercise" id="ex4">
+      <span class="exercise-tag">Exercise 4 · Map Your One-Person AI Business</span>
+      <h3>Run one idea through the full pipeline</h3>
+      <p class="lead">Every hustle in this programme moves through the same nine stages. Pick one idea and write a single line for each stage — you don't need the full answer yet, just your first instinct.</p>
+      <div class="pipeline-grid" id="pipelineGrid"></div>
+      <p class="save-note" id="pipelineSaveNote">Your notes save automatically in this browser.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="weekend-test">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The one-person AI business</div><h2>From idea to a business, using AI as leverage.</h2><p>Traditionally, starting a business meant hiring a researcher, writer, designer, marketing assistant, administrator, analyst and customer-service assistant. Today, AI tools can help one person perform many of these tasks. That doesn't mean one person can magically run a huge company without effort — it means the cost and time required to test certain business ideas can potentially be much lower than before.</p></div>
+    <div class="flow-chain">
+      <div class="fnode">IDEA</div><div class="fnode">RESEARCH</div><div class="fnode">PLAN</div><div class="fnode">CREATE</div>
+      <div class="fnode">TEST</div><div class="fnode">SELL</div><div class="fnode">DELIVER</div>
+    </div>
+    <div class="flow-chain" style="grid-template-columns:repeat(2,1fr);max-width:340px;margin:0 auto">
+      <div class="fnode">IMPROVE</div><div class="fnode">SCALE</div>
+    </div>
+    <p style="text-align:center;color:var(--muted);max-width:640px;margin:22px auto 0">We are not simply going to give you 200 AI hustle ideas. We are going to show you how each idea could actually work. For every opportunity, we'll look at what the business does, who the customer is, what problem you solve, what you need to get started, which AI tools can help, how to find your first customer, how to deliver the service, how you could charge, how you could improve it, and how you could potentially turn it into a larger business. And most importantly — you will practise.</p>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Before you start hustle 1</div><h2>Frequently asked questions</h2></div>
+    <div class="faq">
+      <details class="faq-item" open><summary>Does a 25-star score guarantee I'll make money?</summary><p>No. The score is a guide, not a promise of income. Your skills, location, network, effort, experience, niche and ability to execute all affect the outcome — the framework just helps you compare opportunities fairly.</p></details>
+      <details class="faq-item"><summary>Do I need to quit my job to try one of these hustles?</summary><p>No. The Night and Weekend Test is built around testing an idea alongside existing work, education or other commitments, so you can validate it before making any major changes to your life.</p></details>
+      <details class="faq-item"><summary>Will AI do the work for me?</summary><p>AI accelerates the work — research, drafts, scripts, images, analysis, automation. It does not remove your responsibility for checking information, understanding your customer, protecting their data, respecting copyright, following the law, or making the actual business decisions.</p></details>
+      <details class="faq-item"><summary>Do my exercise answers get saved anywhere other than my browser?</summary><p>No. Everything you type or tick on this page is stored only in your own browser (locally), so it's there when you come back — it isn't sent anywhere or seen by anyone else.</p></details>
+      <details class="faq-item"><summary>What happens after this lesson?</summary><p>You move into the 200 individual hustle courses. Each one follows this same practical structure: idea → AI tools → practical exercise → real deliverable → customer → monetisation — scored against the same 25-star framework you just used.</p></details>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap"><div class="eyebrow light">200 AI Hustles Programme</div><h2>You now know how to judge an opportunity. Let's find one.</h2><p>Join the BSOE AI Academy and move into Hustle 1, scored against exactly the framework you just practised.</p><div class="final-actions"><a class="btn gold" href="landingpage.html#readiness">Join the Academy →</a><a class="btn outline" style="color:white;border-color:rgba(255,255,255,.35)" href="AISkillsPortfolio.html">See AI Skills Portfolio</a></div></div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap foot"><div class="brand"><span class="brand-mark">200</span><span>AI Hustles Programme</span></div><div class="foot-links"><a href="landingpage.html">Academy Home</a><a href="AIFoundations.html">AI Foundations</a><a href="AISkillsPortfolio.html">AI Skills Portfolio</a><a href="LearnerGuide.html">Learner Guide</a></div><div>© 2026 BSOE LTD.</div></div></footer>
+
+<script>
+(function(){
+  "use strict";
+  var STORAGE_KEY = "bsoe-200hustles-opening-lesson-v1";
+
+  function loadState(){
+    try {
+      var raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : {};
+    } catch(e) { return {}; }
+  }
+  function saveState(state){
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); return true; }
+    catch(e) { return false; }
+  }
+  var state = loadState();
+
+  function flashSaved(el){
+    if (!el) return;
+    el.textContent = "Saved just now.";
+    el.classList.add("ok");
+    clearTimeout(el._t);
+    el._t = setTimeout(function(){
+      el.textContent = el.dataset.defaultText || "Your answers save automatically in this browser.";
+      el.classList.remove("ok");
+    }, 1800);
+  }
+  document.querySelectorAll(".save-note").forEach(function(n){ n.dataset.defaultText = n.textContent; });
+
+  // ---- Exercise 1: 25-star scorer ----
+  var CRITERIA = [
+    "Speed to first paying client",
+    "Simplicity to start",
+    "Demand",
+    "Competition / differentiation",
+    "Long-term potential"
+  ];
+  var scores = state.scores || [0,0,0,0,0];
+  var rowsEl = document.getElementById("scorerRows");
+
+  function renderScorer(){
+    rowsEl.innerHTML = "";
+    CRITERIA.forEach(function(label, idx){
+      var row = document.createElement("div");
+      row.className = "scorer-row";
+      var labelEl = document.createElement("div");
+      labelEl.className = "label";
+      labelEl.textContent = (idx+1) + ". " + label;
+      var starsEl = document.createElement("div");
+      starsEl.className = "stars-input";
+      for (var s = 1; s <= 5; s++){
+        (function(starVal){
+          var b = document.createElement("button");
+          b.type = "button";
+          b.textContent = "★";
+          if (scores[idx] >= starVal) b.classList.add("on");
+          b.setAttribute("aria-label", label + ": " + starVal + " star" + (starVal>1?"s":""));
+          b.addEventListener("click", function(){
+            scores[idx] = (scores[idx] === starVal) ? starVal - 1 : starVal;
+            state.scores = scores;
+            saveState(state);
+            flashSaved(document.getElementById("scorerSaveNote"));
+            renderScorer();
+          });
+          starsEl.appendChild(b);
+        })(s);
+      }
+      row.appendChild(labelEl);
+      row.appendChild(starsEl);
+      rowsEl.appendChild(row);
+    });
+    var total = scores.reduce(function(a,b){ return a+b; }, 0);
+    document.getElementById("scorerTotal").textContent = total;
+    var verdict = document.getElementById("scorerVerdict");
+    if (total === 0) verdict.textContent = "Score all five criteria to see your result.";
+    else if (total <= 10) verdict.textContent = "Low score isn't a dead end — check which specific criteria are weak, and whether that matches something you're willing to work through.";
+    else if (total <= 17) verdict.textContent = "A solid, realistic opportunity. Look at your weakest criterion — that's usually where your plan needs the most thought.";
+    else verdict.textContent = "A strong opportunity on paper. Remember: a high score still doesn't guarantee it's right for you personally — check it against your own skills and circumstances.";
+  }
+  renderScorer();
+  document.getElementById("scorerReset").addEventListener("click", function(){
+    scores = [0,0,0,0,0];
+    state.scores = scores;
+    saveState(state);
+    renderScorer();
+  });
+
+  // ---- Exercise 2: Night and Weekend Test worksheet ----
+  ["wk1","wk2","wk3"].forEach(function(id){
+    var el = document.getElementById(id);
+    if (!el) return;
+    if (state[id]) el.value = state[id];
+    el.addEventListener("input", function(){
+      state[id] = el.value;
+      saveState(state);
+      flashSaved(document.getElementById("wkSaveNote"));
+    });
+  });
+
+  // ---- Exercise 3: AI boundary checklist ----
+  var respState = state.responsibilities || {};
+  document.querySelectorAll("#responsibilityChecks input[type=checkbox]").forEach(function(cb){
+    var key = cb.dataset.key;
+    cb.checked = !!respState[key];
+    cb.addEventListener("change", function(){
+      respState[key] = cb.checked;
+      state.responsibilities = respState;
+      saveState(state);
+      flashSaved(document.getElementById("respSaveNote"));
+    });
+  });
+
+  // ---- Exercise 4: one-person business pipeline ----
+  var PIPELINE = ["IDEA","RESEARCH","PLAN","CREATE","TEST","SELL","DELIVER","IMPROVE","SCALE"];
+  var pipelineState = state.pipeline || {};
+  var pipelineGrid = document.getElementById("pipelineGrid");
+  PIPELINE.forEach(function(stage){
+    var row = document.createElement("div");
+    row.className = "pipeline-row";
+    var tag = document.createElement("div");
+    tag.className = "stage-tag";
+    tag.textContent = stage;
+    var input = document.createElement("input");
+    input.type = "text";
+    input.placeholder = "One line for " + stage.toLowerCase() + "…";
+    input.style.padding = "10px 14px";
+    input.style.border = "1px solid var(--line)";
+    input.style.borderRadius = "10px";
+    input.style.fontFamily = "inherit";
+    input.style.fontSize = ".9rem";
+    input.value = pipelineState[stage] || "";
+    input.addEventListener("input", function(){
+      pipelineState[stage] = input.value;
+      state.pipeline = pipelineState;
+      saveState(state);
+      flashSaved(document.getElementById("pipelineSaveNote"));
+    });
+    row.appendChild(tag);
+    row.appendChild(input);
+    pipelineGrid.appendChild(row);
+  });
+})();
+</script>
+</body>
+</html>
