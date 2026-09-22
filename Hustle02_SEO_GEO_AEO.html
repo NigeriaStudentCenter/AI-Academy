@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hustle 2: AI SEO, GEO & AEO — BSOE AI Academy</title>
+<meta name="description" content="Hustle 2 of the 200 AI Hustles Programme: build a business helping companies get found in search and AI. Every lesson follows Explanation → AI Tools → Practical Exercise → Real Deliverable → Customer → Monetisation, with built-in progress tracking and an interactive knowledge check." />
+<style>
+:root{
+  --deep:#0B3D2E;--forest:#1F6B52;--forest2:#175A44;--gold:#C9A45D;--gold-light:#EFD9A8;
+  --ink:#0F2A20;--paper:#FCFBF7;--cream:#EEF5F0;--muted:#5C6E64;--line:#DCE6DF;--white:#fff;
+  --shadow:0 24px 70px rgba(11,61,46,.14);--max:1160px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+h1,h2,h3,p{margin-top:0} h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.03em} a{text-decoration:none;color:inherit} .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:900;color:var(--forest)} .eyebrow.light{color:var(--gold-light)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 24px;border:0;border-radius:999px;background:var(--forest);color:white;font-weight:850;cursor:pointer;box-shadow:0 12px 28px rgba(11,61,46,.2);transition:.2s transform,.2s background;font-size:.96rem}.btn:hover{transform:translateY(-2px);background:var(--deep)}.btn.gold{background:linear-gradient(135deg,#b3894a,var(--gold-light));color:#3a2a10}.btn.outline{background:transparent;color:var(--forest);border:1px solid rgba(31,106,82,.3);box-shadow:none}.btn.small{padding:10px 16px;font-size:.82rem}
+.topbar{background:var(--deep);color:#fff;text-align:center;padding:11px 16px;font-size:.85rem;font-weight:750}.topbar span{color:var(--gold-light)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(252,251,247,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(11,61,46,.08)}.nav-in{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-weight:900}.brand-mark{width:37px;height:37px;border-radius:11px;background:linear-gradient(135deg,var(--forest),var(--deep));display:grid;place-items:center;color:var(--gold-light);font-family:Georgia,serif;font-weight:900;font-size:1rem}.nav-links{display:flex;gap:14px;align-items:center;font-size:.78rem;font-weight:760;color:#334d40}.nav-cta{display:flex;gap:10px;align-items:center}
+.hero{padding:60px 0 40px;background:radial-gradient(circle at 82% 10%,rgba(201,164,93,.18),transparent 32%),linear-gradient(180deg,#fcfbf7 0%,var(--cream) 100%);text-align:center}.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;border:1px solid rgba(11,61,46,.15);background:rgba(255,255,255,.75);font-size:.76rem;font-weight:900;letter-spacing:.04em}.hero h1{font-size:clamp(2.1rem,4.6vw,3.6rem);line-height:1.08;margin:18px auto 16px;max-width:860px}.hero-copy{font-size:1.08rem;color:#4a5c52;max-width:700px;margin:0 auto}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 14px;justify-content:center}.micro{font-size:.8rem;color:var(--muted)}
+.rank-back{max-width:640px;margin:22px auto 0;background:white;border:1px solid var(--line);border-radius:16px;padding:14px 20px;font-size:.86rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{text-align:center;padding:24px 16px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat b{font-family:Georgia,serif;font-size:1.6rem;display:block;color:var(--forest)}.stat span{font-size:.76rem;color:var(--muted);font-weight:720}
+.progress-bar-outer{height:10px;border-radius:999px;background:var(--cream);overflow:hidden;border:1px solid var(--line)}
+.progress-bar-inner{height:100%;background:linear-gradient(90deg,var(--forest),var(--gold));width:0%;transition:width .3s}
+.progress-wrap{max-width:640px;margin:18px auto 0;text-align:center}
+.progress-label{font-size:.82rem;color:var(--muted);margin-bottom:8px;font-weight:750}
+.section{padding:60px 0}.section.alt{background:var(--cream)}.section.dark{background:var(--deep);color:white}.section-head{max-width:800px;margin:0 auto 34px;text-align:center}.section-head h2{font-size:clamp(1.8rem,3.8vw,2.8rem);line-height:1.05;margin:10px 0 14px}.section-head p{font-size:.98rem;color:var(--muted)}.dark .section-head p{color:#cfe0d6}
+.method-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;max-width:960px;margin:0 auto}
+.method-strip .mnode{background:white;border:1px solid var(--line);border-radius:12px;padding:10px 6px;text-align:center;font-size:.7rem;font-weight:850;color:var(--forest);position:relative}
+.method-strip .mnode:not(:last-child):after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:var(--gold);font-weight:900;z-index:2;font-size:.9rem}
+.flow-chain{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:20px 0}
+.flow-chain .fnode{background:white;border:1px solid var(--line);border-radius:12px;padding:11px 6px;text-align:center;font-size:.72rem;font-weight:800;color:var(--forest);position:relative;min-height:44px;display:flex;align-items:center;justify-content:center}
+.flow-chain .fnode:not(:last-child):after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:var(--gold);font-weight:900;z-index:2;font-size:.9rem}
+.lesson-block{background:white;border:1px solid var(--line);border-radius:22px;margin-bottom:16px;overflow:hidden;box-shadow:0 10px 26px rgba(11,61,46,.05)}
+.lesson-block summary{cursor:pointer;list-style:none;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--cream)}
+.lesson-block summary::-webkit-details-marker{display:none}
+.lesson-block summary:after{content:"+";font-size:1.5rem;color:var(--forest);flex:0 0 auto}
+.lesson-block[open] summary:after{content:"−"}
+.lesson-title-row{display:flex;align-items:center;gap:14px}
+.lesson-no{width:38px;height:38px;border-radius:11px;background:var(--forest);color:#fff;display:grid;place-items:center;font-family:Georgia,serif;font-weight:800;font-size:1rem;flex:0 0 auto}
+.lesson-title-row h3{font-family:Georgia,serif;font-size:1.14rem;margin:0}
+.lesson-title-row span.tag{display:block;font-size:.7rem;color:var(--muted);font-weight:700;margin-top:2px}
+.lesson-body{padding:6px 24px 24px}
+.lesson-part{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.lesson-part:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.lesson-part .part-label{display:inline-block;font-size:.66rem;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--forest2);margin-bottom:6px}
+.lesson-part p, .lesson-part li{color:var(--ink);font-size:.9rem;margin:0 0 6px}
+.lesson-part ul{margin:4px 0;padding-left:20px}
+.part-exercise{background:var(--cream);border:1px solid #dccf9f;border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:13px 15px}
+.part-exercise .part-label{color:#7a5c1f}
+.part-deliverable{display:inline-flex;align-items:center;gap:8px;background:var(--deep);color:#fff;border-radius:999px;padding:7px 14px;font-size:.8rem;font-weight:750}
+.part-deliverable b{color:var(--gold-light);text-transform:uppercase;font-size:.66rem;letter-spacing:.06em}
+.lesson-complete{display:flex;align-items:center;gap:10px;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}
+.lesson-complete input{width:19px;height:19px;accent-color:var(--forest)}
+.lesson-complete label{font-size:.84rem;font-weight:750;color:var(--forest2);cursor:pointer}
+.tool-pill{display:inline-block;background:var(--cream);border:1px solid var(--line);color:var(--forest2);font-size:.78rem;font-weight:700;border-radius:999px;padding:5px 12px;margin:0 6px 6px 0}
+.prompt-box{background:var(--deep);color:#eaf3ee;border-radius:14px;padding:16px 18px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.55;white-space:pre-wrap;position:relative}
+.prompt-copy{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#eaf3ee;font-size:.7rem;padding:6px 10px;border-radius:8px;cursor:pointer;font-family:Inter,sans-serif;font-weight:700}
+.prompt-copy:hover{background:rgba(255,255,255,.22)}
+.callout{background:var(--deep);color:#fff;border-radius:18px;padding:22px 24px;margin:18px 0}
+.callout b{display:block;color:var(--gold-light);text-transform:uppercase;font-size:.7rem;letter-spacing:.08em;margin-bottom:8px}
+.callout p{margin:0;font-style:italic;font-size:1rem}
+.dont-box{background:#FBEAEA;border:1px solid #E5A6A6;border-radius:18px;padding:24px 26px}
+.dont-box b{display:block;color:#9C2B2B;text-transform:uppercase;font-size:.72rem;letter-spacing:.08em;margin-bottom:10px}
+.dont-box ul{margin:0;padding-left:22px}
+.dont-box li{margin-bottom:6px}
+.data-table{width:100%;border-collapse:collapse;background:white;border-radius:14px;overflow:hidden;font-size:.86rem}
+.data-table th{background:var(--forest);color:#fff;text-align:left;padding:10px 13px;font-size:.78rem}
+.data-table td{padding:9px 13px;border-top:1px solid var(--line)}
+.data-table tr:nth-child(even) td{background:var(--cream)}
+.quiz-q{background:white;border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin-bottom:14px}
+.quiz-q .qtext{font-weight:800;margin-bottom:12px}
+.quiz-opt{display:block;width:100%;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:8px;cursor:pointer;font-size:.9rem;font-family:inherit}
+.quiz-opt:hover{border-color:var(--forest)}
+.quiz-opt.correct{background:#E9F3EC;border-color:var(--forest);font-weight:750}
+.quiz-opt.incorrect{background:#FBEAEA;border-color:#E5A6A6}
+.quiz-opt[disabled]{cursor:default}
+.quiz-score{text-align:center;padding:18px;border-radius:14px;background:var(--cream);font-weight:800;color:var(--forest);margin-top:10px}
+.project-grid{display:grid;gap:12px}
+.project-part{background:white;border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.project-part b{color:var(--forest2);display:block;margin-bottom:4px;font-family:Georgia,serif;font-size:1.02rem}
+.final{padding:76px 0;text-align:center;background:radial-gradient(circle at 50% 15%,rgba(201,164,93,.18),transparent 28%),var(--deep);color:white}.final h2{font-size:clamp(2.1rem,4.4vw,3.6rem);line-height:1.02;max-width:840px;margin:8px auto 16px}.final p{color:#cfe0d6;max-width:640px;margin:0 auto 24px}.final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer.site{padding:28px 0;background:#08251b;color:#a9c2b4;font-size:.78rem}.foot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot .brand{color:white}.foot-links{display:flex;gap:16px;flex-wrap:wrap}
+@media(max-width:1000px){.nav-links{display:none}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.method-strip{grid-template-columns:repeat(3,1fr)}.method-strip .mnode:nth-child(3n):after{display:none}.flow-chain{grid-template-columns:repeat(3,1fr)}.flow-chain .fnode:nth-child(3n):after{display:none}}
+@media(max-width:680px){.wrap{width:min(100% - 24px,var(--max))}.nav-in{height:64px}.nav .btn{padding:10px 13px;font-size:.74rem}.section{padding:46px 0}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.method-strip{grid-template-columns:1fr 1fr}.flow-chain{grid-template-columns:1fr 1fr}.lesson-block summary{padding:16px}.lesson-body{padding:0 16px 18px}.final-actions .btn,.hero-actions .btn{width:100%}.foot{flex-direction:column;align-items:flex-start}.data-table{font-size:.76rem}}
+</style>
+</head>
+<body>
+<div class="topbar">200 AI Hustles Programme · <span>Hustle 2 of 200 — AI SEO, GEO &amp; AEO</span></div>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="landingpage.html"><span class="brand-mark">02</span><span>Hustle 2</span></a>
+    <div class="nav-links"><a href="#lessons">The Lessons</a><a href="#dontdo">Don't Do This</a><a href="#project">Final Project</a><a href="#quiz">Knowledge Check</a></div>
+    <div class="nav-cta"><a class="btn outline small" href="HowWeRank200Hustles.html">Back to Programme</a><a class="btn gold small" href="HowWeRank200Hustles.html#pricing">Join the Academy</a></div>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="pill">HUSTLE 2 OF 200 · SEO · GEO · AEO</span>
+    <h1>Build a Business Helping Companies Get Found in Search and AI</h1>
+    <p class="hero-copy">Being found by customers is something businesses have always needed. Now people ask AI systems the questions they used to type into Google — and businesses need help being discovered, understood and trusted across both.</p>
+    <div class="hero-actions"><a class="btn gold" href="#lessons">Start Lesson 1 ↓</a><a class="btn outline" href="#project">See the Final Project ↓</a></div>
+    <p class="micro">17 lessons · Every lesson: Explanation → AI Tools → Exercise → Deliverable → Customer → Monetisation</p>
+    <div class="rank-back">📊 Curious how this hustle scores? Use the <a href="HowWeRank200Hustles.html#ex1" style="color:var(--forest);font-weight:800;text-decoration:underline">25-star scorer from the opening lesson</a> to rank it yourself.</div>
+    <div class="progress-wrap">
+      <div class="progress-label"><span id="progressText">0 of 17 lessons complete</span></div>
+      <div class="progress-bar-outer"><div class="progress-bar-inner" id="progressBar"></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><b>17</b><span>lessons</span></div>
+  <div class="stat"><b>1</b><span>real business you'll audit</span></div>
+  <div class="stat"><b>20+</b><span>customer questions you'll map</span></div>
+  <div class="stat"><b>3</b><span>service tiers you'll design</span></div>
+</div>
+
+<section class="section" id="method">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Every lesson, same shape</div><h2>Explanation → AI Tools → Exercise → Deliverable → Customer → Monetisation.</h2><p>The terminology (SEO, GEO, AEO) is still evolving. The business problem never changes: how do we help a business become easier to discover, understand and trust?</p></div>
+    <div class="method-strip">
+      <div class="mnode">EXPLANATION</div><div class="mnode">AI TOOLS</div><div class="mnode">EXERCISE</div>
+      <div class="mnode">DELIVERABLE</div><div class="mnode">CUSTOMER</div><div class="mnode">MONETISATION</div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="lessons">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The 17 lessons</div><h2>Work through them in order. Tick each one off as you go.</h2></div>
+
+    <!-- LESSON 1 -->
+    <details class="lesson-block" open data-lesson="1">
+      <summary><div class="lesson-title-row"><div class="lesson-no">1</div><div><h3>What Is The Hustle? SEO, GEO &amp; AEO Explained</h3><span class="tag">The opportunity, in plain language</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span>
+          <p>People are increasingly asking AI systems questions like "Who are the best accountants for small businesses in London?" — and receiving an AI-generated answer, not just a list of links. <strong>SEO</strong> (Search Engine Optimisation) helps pages appear in search engines. <strong>AEO</strong> (Answer Engine Optimisation) focuses on content that directly answers real questions. <strong>GEO</strong> (Generative Engine Optimisation) is the emerging term for improving how a business is represented in generative AI systems.</p>
+          <p>The terminology is still evolving. The business problem is simple: <strong>how can we help a business become easier for people — and increasingly AI systems — to discover, understand and trust?</strong> Your business is an AI-assisted search visibility service, not "I will write blogs using AI."</p>
+        </div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">ChatGPT</span><span class="tool-pill">Claude</span><span class="tool-pill">Gemini</span><span class="tool-pill">Copilot</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Write your own one-sentence positioning statement in this style: "I help businesses become more discoverable when potential customers search for the products, services and expertise they provide."</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; One-sentence business proposition</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>Businesses that already care about being found — but have room to improve how discoverable, clear or trustworthy their online presence is.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>None yet. This sentence is what every future audit, report and offer in this hustle gets built on.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-1" data-lesson="1" /><label for="complete-1">Mark Lesson 1 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 2 -->
+    <details class="lesson-block" data-lesson="2">
+      <summary><div class="lesson-title-row"><div class="lesson-no">2</div><div><h3>Why Would A Business Pay You?</h3><span class="tag">Discover → Understand → Trust → Contact → Buy</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>Five companies may provide excellent services — but if a potential customer can't discover them, quality alone doesn't generate the enquiry. Your service sits heavily around the first three stages: Discover, Understand, Trust. Businesses pay you to attract relevant visitors, answer customer questions, demonstrate expertise and strengthen online authority. Don't sell "AI." Sell the business outcome.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">ChatGPT</span><span class="tool-pill">Claude</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Pick a business you know. List which specific commercial problems from this lesson (attracting visitors, answering questions, demonstrating expertise, local visibility...) they most need solved right now.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A short list of the commercial problems you solve</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>Any business whose ideal customers can't easily find, understand or trust them yet.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>This is your sales pitch foundation — you're selling outcomes (enquiries, trust, visibility), not "AI."</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-2" data-lesson="2" /><label for="complete-2">Mark Lesson 2 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 3 -->
+    <details class="lesson-block" data-lesson="3">
+      <summary><div class="lesson-title-row"><div class="lesson-no">3</div><div><h3>Avoid AI Slop — Quality Over Quantity</h3><span class="tag">The most important lesson in this course</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>AI makes it extremely easy to produce content — that doesn't mean businesses need a thousand generic articles. The objective is not MORE AI CONTENT. It's MORE USEFUL INFORMATION: relevant, accurate, original, evidenced, backed by real expertise and human review. Think <strong>AI-assisted quality</strong>, not AI-generated quantity.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">Any chat AI — this lesson is about judgement, not a tool</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Take one piece of AI-generated content (yours or an example). Score it against this list: relevance, accuracy, originality, expertise, examples, evidence, clear answers. What's missing?</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A personal "quality checklist" for your own content</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The real person reading the content, trying to make a decision — not an AI crawler.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Quality is what actually builds authority and trust. Quantity alone builds neither — and clients eventually notice the difference.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-3" data-lesson="3" /><label for="complete-3">Mark Lesson 3 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 4 -->
+    <details class="lesson-block" data-lesson="4">
+      <summary><div class="lesson-title-row"><div class="lesson-no">4</div><div><h3>The AI Visibility Workflow</h3><span class="tag">Your repeatable business system</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>Discover → Research → Identify → Audit → Plan → Create → Verify → Publish → Monitor → Improve. Ten steps, repeated for every client, every time.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">Used across every step below</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Write these ten steps out in your own words, as if explaining your process to a client in one paragraph.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; Your own plain-English process explanation</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>N/A — this is your internal operating system, not client-facing work yet.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>This workflow becomes the backbone of every productised service tier you build in Lesson 13.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-4" data-lesson="4" /><label for="complete-4">Mark Lesson 4 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 5 -->
+    <details class="lesson-block" data-lesson="5">
+      <summary><div class="lesson-title-row"><div class="lesson-no">5</div><div><h3>Find A Business With The Problem</h3><span class="tag">Research your first real target</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>Don't ask "who wants AI SEO?" Ask: "which businesses already care about search visibility but have room to improve?" Look for companies that already publish blogs, invest in SEO, have competitors outranking them, or have unanswered customer questions — this is far easier than convincing someone visibility matters at all.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">ChatGPT</span><span class="tool-pill">Perplexity</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Choose one real business (yours, a friend's, or a local company). Research their website: homepage, service pages, blog, FAQs, case studies, locations, expertise.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; Initial research notes on one real business</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The specific business you just researched.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>None yet — this is the groundwork every paid audit in this hustle is built on.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-5" data-lesson="5" /><label for="complete-5">Mark Lesson 5 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 6 -->
+    <details class="lesson-block" data-lesson="6">
+      <summary><div class="lesson-title-row"><div class="lesson-no">6</div><div><h3>Use AI To Perform The Audit</h3><span class="tag">Your research assistant, not your source of truth</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>AI can dramatically reduce research time. Give it publicly available business information and ask it to identify services, target customers, likely questions, content gaps and opportunities. But AI is your research assistant — verify important information before you rely on it.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">ChatGPT</span><span class="tool-pill">Claude</span><span class="tool-pill">Perplexity</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Run the prompt below on the business from Lesson 5.</p>
+          <div class="prompt-box"><button class="prompt-copy" type="button">Copy</button>Analyse this business as a search visibility consultant. Identify its main services, target customers, areas of expertise, likely customer questions, content gaps and opportunities for useful educational content. Separate observations from assumptions and identify information that requires verification.</div>
+        </div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; An initial AI-assisted research document</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The business being audited.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>This audit document is your first real deliverable — the seed of the paid report in Lesson 12.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-6" data-lesson="6" /><label for="complete-6">Mark Lesson 6 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 7 -->
+    <details class="lesson-block" data-lesson="7">
+      <summary><div class="lesson-title-row"><div class="lesson-no">7</div><div><h3>Discover The Customer's Questions</h3><span class="tag">The Customer Question Map</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>Customers don't search using a company's preferred terminology. A business sells "workforce transformation consultancy" — customers search "how can I train employees to use AI?" The business thinks in terms of its product; the customer thinks in terms of their problem. Your job is to connect the two.</p>
+          <table class="data-table"><thead><tr><th>Customer Question</th><th>Business Service</th><th>Content Opportunity</th></tr></thead><tbody>
+            <tr><td>How can we train employees in AI?</td><td>AI training</td><td>AI workforce training guide</td></tr>
+            <tr><td>How much does AI training cost?</td><td>Training</td><td>AI training cost guide</td></tr>
+            <tr><td>What AI tools should employees use?</td><td>AI consultancy</td><td>Workplace AI tools guide</td></tr>
+            <tr><td>How do we introduce AI safely?</td><td>AI consultancy</td><td>AI adoption framework</td></tr>
+          </tbody></table>
+        </div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">ChatGPT</span><span class="tool-pill">Claude</span><span class="tool-pill">Perplexity</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Build your own Customer Question Map for the business from Lesson 5 — at least 6 rows.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A Customer Question Map</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The business's actual potential customers — named by their real search language, not the business's internal jargon.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Every row on this map is a content opportunity — and every content opportunity is billable work.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-7" data-lesson="7" /><label for="complete-7">Mark Lesson 7 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 8 -->
+    <details class="lesson-block" data-lesson="8">
+      <summary><div class="lesson-title-row"><div class="lesson-no">8</div><div><h3>Create Content That Answers Real Questions</h3><span class="tag">AI draft → human review → fact check → publish</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>A strong content mix: educational articles, comparison articles, how-to guides, FAQ pages, case studies, industry guides, local content, expert content. AI helps structure, outline and draft. Your workflow must be <strong>AI draft → Human review → Fact check → Improve → Publish</strong> — never AI straight to publish. Create for humans first: content should help someone understand, decide, compare or avoid a mistake.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">ChatGPT</span><span class="tool-pill">Claude</span><span class="tool-pill">Gemini</span><span class="tool-pill">Copilot</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Pick one question from your Lesson 7 map. Draft a short article with AI, then rewrite/fact-check it yourself before calling it finished.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; One reviewed, fact-checked piece of content</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The real reader trying to solve a real problem — not a search algorithm.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Content production, done properly, is the recurring service every retainer tier is built around.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-8" data-lesson="8" /><label for="complete-8">Mark Lesson 8 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 9 -->
+    <details class="lesson-block" data-lesson="9">
+      <summary><div class="lesson-title-row"><div class="lesson-no">9</div><div><h3>Build Authority Maps &amp; Content Clusters</h3><span class="tag">A structured knowledge base, not random posts</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>Map what a business should become known for: audience, core services, expertise topics, customer questions. Then organise content into clusters around one main topic — e.g. "AI Automation for Small Businesses" with 8-10 supporting articles (what it is, what it costs, mistakes, tools, examples). This is far more valuable than unrelated AI-generated articles.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">ChatGPT</span><span class="tool-pill">Claude</span><span class="tool-pill">NotebookLM</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Build an Authority Map for your Lesson 5 business, then design one content cluster: one main topic and 6-8 supporting article titles.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; An Authority Map + one content cluster</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The business's target audience, across their whole buying journey — not just one search query.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>A content cluster is a multi-month deliverable — exactly what a monthly content retainer is sold against.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-9" data-lesson="9" /><label for="complete-9">Mark Lesson 9 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 10 -->
+    <details class="lesson-block" data-lesson="10">
+      <summary><div class="lesson-title-row"><div class="lesson-no">10</div><div><h3>The AI Search Visibility Audit Framework</h3><span class="tag">Ten sections, every client, every time</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>A repeatable 10-section audit: Brand, Services, Expertise, Customer Questions, Evidence, Consistency, Content, Competitors, Search Visibility, AI Discovery. Running the same framework every time is what makes your service look — and be — professional.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">ChatGPT</span><span class="tool-pill">Perplexity</span><span class="tool-pill">Claude</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Work through all 10 sections for your Lesson 5 business. One or two sentences per section is enough for now.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A completed 10-section audit</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The business — this audit is literally what they're paying you to produce.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>This audit is your first sellable product: the "AI Visibility Audit" one-off project from Lesson 13's pricing structure.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-10" data-lesson="10" /><label for="complete-10">Mark Lesson 10 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 11 -->
+    <details class="lesson-block" data-lesson="11">
+      <summary><div class="lesson-title-row"><div class="lesson-no">11</div><div><h3>Test AI Discovery</h3><span class="tag">Observed results, not permanent rankings</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>Create commercially relevant questions (e.g. "Who are the best HR consultants for small businesses in London?") and test them across relevant AI/search tools. Record whether the company appears, how it's described, what sources are referenced, and what competitors show up. Never treat one AI response as a definitive ranking — AI responses change, and different users can get different results.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">ChatGPT</span><span class="tool-pill">Perplexity</span><span class="tool-pill">Gemini</span><span class="tool-pill">Claude</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Write 5 commercially relevant AI/search questions for your business. Test them and record what you observe — not what you'd promise.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A 5-question AI discovery observation log</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The business — this is the evidence behind your "AI discovery" audit section.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Feeds directly into the professional client report — real, tested evidence is what clients are actually paying for.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-11" data-lesson="11" /><label for="complete-11">Mark Lesson 11 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 12 -->
+    <details class="lesson-block" data-lesson="12">
+      <summary><div class="lesson-title-row"><div class="lesson-no">12</div><div><h3>Report, Outreach &amp; Your First Client</h3><span class="tag">Offer insight before asking for money</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>Turn your research into an "AI &amp; Search Visibility Opportunity Report": current situation, discovery findings, content gaps, competitor observations, AI-search observations, opportunities, and a 90-day plan. Find first clients among businesses that already understand marketing — including existing SEO/marketing agencies, who already have clients and may want to add this as a specialist service. Don't cold-pitch generically — demonstrate research first.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">ChatGPT</span><span class="tool-pill">Claude</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Draft your outreach message using this structure:</p>
+          <div class="prompt-box"><button class="prompt-copy" type="button">Copy</button>I was researching businesses in your sector and noticed that your company already has a strong SEO/content presence. I also noticed several customer questions around [TOPIC] that aren't currently well covered. I carried out a short AI/search visibility review and identified a few opportunities that may be worth exploring. I'd be happy to send you the findings.</div>
+        </div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A draft report outline + a personalised outreach message</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>A prospective client you've actually researched — not a cold, generic list.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>A free 10-minute mini-audit (3 observations, 3 opportunities, 3 questions, 2 competitor notes, 1 action) is your sales funnel entry point into a paid service.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-12" data-lesson="12" /><label for="complete-12">Mark Lesson 12 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 13 -->
+    <details class="lesson-block" data-lesson="13">
+      <summary><div class="lesson-title-row"><div class="lesson-no">13</div><div><h3>Pricing &amp; Productising Your Service</h3><span class="tag">Sell a system, not just your time</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>Structure services rather than one vague monthly package: <strong>AI Visibility Audit</strong> (one-off), <strong>Content &amp; Search Optimisation</strong> (monthly), <strong>AI Search Visibility Management</strong> (monthly strategy + content + monitoring + reporting), <strong>Enterprise AI Visibility Consulting</strong> (higher-value strategic work). Then productise into tiers: Starter (audit + research + 30-day plan), Growth (+ monthly content, FAQs, reporting), Partner (+ strategic consulting, digital PR, authority development). Never promise specific rankings — charge for the work, expertise, strategy and reporting.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">ChatGPT / Claude for drafting service copy</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Design your own three-tier service ladder (Starter / Growth / Partner), naming what's included and a rough price for each.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A 3-tier productised service structure</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>Different businesses at different tiers — a one-off audit buyer vs. a retained monthly client.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>This lesson IS the monetisation model — you're no longer selling hours, you're selling a system.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-13" data-lesson="13" /><label for="complete-13">Mark Lesson 13 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 14 -->
+    <details class="lesson-block" data-lesson="14">
+      <summary><div class="lesson-title-row"><div class="lesson-no">14</div><div><h3>AI Tools &amp; Your Operating Workflow</h3><span class="tag">Lead → Audit → Report → Follow-up → Proposal → Client</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>Organised by job: Ideation (ChatGPT/Claude/Gemini/Copilot), Research (Perplexity/NotebookLM), Content (ChatGPT/Claude/Gemini/Copilot), Design (Canva/Adobe/AI image tools), Video (CapCut/Descript/HeyGen), Automation (Power Automate/Zapier/Make) to connect your own lead → audit → report → follow-up → proposal → client pipeline.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span>
+          <div><span class="tool-pill">Ideate: ChatGPT/Claude/Gemini/Copilot</span><span class="tool-pill">Research: Perplexity/NotebookLM</span><span class="tool-pill">Design: Canva/Firefly</span><span class="tool-pill">Automation: Zapier/Make/Power Automate</span></div>
+        </div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Name the exact tool you'll use for each stage of your own lead → audit → report → follow-up → proposal → client pipeline.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; Your named operating tool stack</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>N/A — this is your own business's operations, not client-facing.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Automation here is pure margin — every manual step you remove increases profit per client without raising price.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-14" data-lesson="14" /><label for="complete-14">Mark Lesson 14 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 15 -->
+    <details class="lesson-block" data-lesson="15">
+      <summary><div class="lesson-title-row"><div class="lesson-no">15</div><div><h3>Risks, Metrics &amp; The Client Dashboard</h3><span class="tag">Activity vs. results</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>"How many articles did you publish?" is an activity measure. "What happened because we published them?" is the real question — traffic, enquiries, conversions, engagement, visibility across AI/search tests, branded searches, leads, sales. Build a monthly dashboard: Content, Search, AI Discovery, Traffic, Leads, Conversions, Learning, Next Actions. This makes your service feel professional, not like "someone who writes blogs with AI."</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">Analytics platforms + ChatGPT/Claude for pattern analysis</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Build one section of a client dashboard for your Lesson 5 business — pick "Content" or "AI Discovery" and note what you'd actually track.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; One completed dashboard section</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The client who needs proof the retainer is working, not just proof you're busy.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>A real dashboard is what justifies a recurring fee — and what a client renews or cancels based on.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-15" data-lesson="15" /><label for="complete-15">Mark Lesson 15 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 16 -->
+    <details class="lesson-block" data-lesson="16">
+      <summary><div class="lesson-title-row"><div class="lesson-no">16</div><div><h3>Growth, Recurring Revenue &amp; The Numbers</h3><span class="tag">Revenue is not profit</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>Growth path: One audit → One client → Monthly content → Monthly monitoring → Multiple clients → Specialist niche → Productised service → Small agency. Specialising (e.g. "AI Search Visibility for UK Recruitment Companies") makes your offer easier to explain and market. Illustration: 5 clients × £750/month = £3,750/month, or 10 × £1,000 = £10,000/month — these are illustrations, not guarantees. <strong>Revenue − Costs = Profit</strong>: software, AI subscriptions, freelancers, website costs, taxes all come out first.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">Spreadsheet tools + ChatGPT/Claude for scenario planning</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Sketch your own growth ladder and a simple clients × monthly-fee calculation for where you'd like to be in 12 months. Then list your likely monthly costs.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A growth plan + a revenue and cost projection</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The specialist niche audience you eventually focus on, once you've proven the model on a handful of clients.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Explicit — this lesson is the numbers behind the whole hustle, including the discipline to track costs, not just revenue.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-16" data-lesson="16" /><label for="complete-16">Mark Lesson 16 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 17 -->
+    <details class="lesson-block" data-lesson="17">
+      <summary><div class="lesson-title-row"><div class="lesson-no">17</div><div><h3>The 7-Day AI Visibility Hustle Challenge</h3><span class="tag">Turn everything into a habit</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>Day 1 — Choose a niche. Day 2 — Find 10 businesses (name, website, industry, location, contact, current content activity). Day 3 — Research three of them. Day 4 — Build a short report for each. Day 5 — Create your offer (e.g. "AI Search Visibility Audit"). Day 6 — Outreach: relevant, personalised messages, not spam. Day 7 — Improve: review responses, questions and objections.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">Everything from Lessons 1–16</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Block these 7 days in your calendar right now. Write your Day 1 niche choice and your Day 2 target: 10 named businesses.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A dated 7-day action plan</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>Your first 10 prospects — named, researched, real.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Day 5 is explicitly where your first sellable offer gets created and priced.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-17" data-lesson="17" /><label for="complete-17">Mark Lesson 17 complete</label></div>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<section class="section" id="mindset">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The business mindset</div><h2>You are not selling AI. You are selling a business solution.</h2><p>A client doesn't wake up thinking "I need more GEO." They think: "Why aren't customers finding us? Why is my competitor getting the enquiries? Why aren't website visitors becoming customers?" That's where your opportunity exists — AI just gives you faster tools to research, create, analyse and deliver.</p></div>
+    <div class="flow-chain">
+      <div class="fnode">FIND A BUSINESS</div><div class="fnode">UNDERSTAND CUSTOMERS</div><div class="fnode">IDENTIFY QUESTIONS</div><div class="fnode">AUDIT VISIBILITY</div><div class="fnode">TEST AI/SEARCH</div>
+    </div>
+    <div class="flow-chain">
+      <div class="fnode">FIND GAPS</div><div class="fnode">CONTENT STRATEGY</div><div class="fnode">AI-ACCELERATE</div><div class="fnode">HUMAN REVIEW</div><div class="fnode">PUBLISH</div>
+    </div>
+    <div class="flow-chain" style="grid-template-columns:repeat(4,1fr)">
+      <div class="fnode">MONITOR</div><div class="fnode">REPORT</div><div class="fnode">RETAIN CLIENT</div><div class="fnode">SCALE</div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="dontdo">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Before you promise anything</div><h2>Don't Do This</h2></div>
+    <div class="dont-box">
+      <b>Avoid these entirely</b>
+      <ul>
+        <li>Promise you can guarantee a particular ranking or position inside ChatGPT, Claude, Gemini or any AI system</li>
+        <li>Publish fabricated information</li>
+        <li>Create fake reviews or invented expertise</li>
+        <li>Invent statistics</li>
+        <li>Copy competitors' content</li>
+        <li>Publish hundreds of meaningless AI-generated articles</li>
+        <li>Manipulate information deceptively</li>
+        <li>Claim an AI system uses a particular ranking factor without reliable evidence</li>
+        <li>Tell a client that one test proves permanent visibility</li>
+      </ul>
+      <p style="margin-top:14px"><strong>The most valuable skill isn't generating content — it's understanding information, evidence, customers and business objectives.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="coach">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Bonus exercise</div><h2>The AI Search Visibility Consultant Prompt</h2><p>The full structured research prompt from this course. Paste it into ChatGPT, Claude or Gemini for any real business.</p></div>
+    <div class="prompt-box" style="max-width:780px;margin:0 auto"><button class="prompt-copy" type="button">Copy</button>Act as an AI search visibility consultant.
+
+I am analysing this business:
+Business: [BUSINESS]
+Website: [WEBSITE]
+Industry: [INDUSTRY]
+Location: [LOCATION]
+Target customers: [CUSTOMERS]
+Main services: [SERVICES]
+
+Analyse the information I provide. Identify:
+1. The main customer problems this business solves.
+2. Ten questions potential customers might ask before buying.
+3. Ten content opportunities.
+4. Five possible content gaps.
+5. Five competitor research questions.
+6. Five potential AI-search queries relevant to this business.
+7. Topics the company could become known for.
+8. Information that needs to be verified before publication.
+9. A 30-day content plan.
+10. A proposed AI/search visibility service I could offer this business.
+
+Do not invent facts about the company. Clearly separate observations, assumptions and recommendations.</div>
+  </div>
+</section>
+
+<section class="section alt" id="project">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The assessed project</div><h2>Build An AI Search Visibility Business</h2><p>Complete all ten parts — together, they prove you can run the whole business, not just one audit.</p></div>
+    <div class="project-grid">
+      <div class="project-part"><b>Part 1 — Choose Your Niche</b>Identify one industry: why you chose it, who the customers are, what problems they have, what businesses in the sector sell.</div>
+      <div class="project-part"><b>Part 2 — Choose A Real Business</b>Business profile, customer profile, service analysis, competitor analysis.</div>
+      <div class="project-part"><b>Part 3 — Customer Question Map</b>At least 20 customer questions, grouped into themes.</div>
+      <div class="project-part"><b>Part 4 — AI Visibility Audit</b>Current strengths, information gaps, content gaps, customer questions, competitor opportunities, AI/search visibility observations.</div>
+      <div class="project-part"><b>Part 5 — Content Strategy</b>A 30-day AI-assisted content plan.</div>
+      <div class="project-part"><b>Part 6 — Create Content</b>3 article outlines · 1 complete article · 10 FAQs · 5 social posts · 1 service-page improvement · 1 case-study concept.</div>
+      <div class="project-part"><b>Part 7 — Build Your Offer</b>Service name, target customer, problem, deliverables, timescale, pricing, reporting, terms/limitations.</div>
+      <div class="project-part"><b>Part 8 — Sales</b>Outreach message, free audit offer, discovery-call questions, proposal structure.</div>
+      <div class="project-part"><b>Part 9 — Delivery</b>Show the process: Client onboarding → Research → Strategy → Content → Review → Publishing → Monitoring → Reporting.</div>
+      <div class="project-part"><b>Part 10 — Scale</b>Explain how you'd grow from 1 client → 5 clients → 10 clients → specialist service → agency/productised service.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="quiz">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Check your understanding</div><h2>Knowledge Check</h2><p>Click an answer for instant feedback. Eight questions, automatically marked.</p></div>
+    <div id="quizContainer"></div>
+    <div class="quiz-score" id="quizScore">0 of 8 answered</div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap"><div class="eyebrow light">Hustle 2 of 200</div><h2>Seventeen lessons. One real, evidenced business.</h2><p>Join the BSOE AI Academy to unlock the full 200 AI Hustles Programme — Hustle 2 turns "being found" into a service you can sell.</p><div class="final-actions"><a class="btn gold" href="HowWeRank200Hustles.html#pricing">Join the Academy →</a><a class="btn outline" style="color:white;border-color:rgba(255,255,255,.35)" href="Hustle01_ContentCreation.html">See Hustle 1: Content Creation</a></div></div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap foot"><div class="brand"><span class="brand-mark">02</span><span>Hustle 2 · SEO, GEO &amp; AEO</span></div><div class="foot-links"><a href="landingpage.html">Academy Home</a><a href="HowWeRank200Hustles.html">Ranking Framework</a><a href="Hustle01_ContentCreation.html">Hustle 1</a><a href="FounderTools.html">Founder Tools</a><a href="LearnerGuide.html">Learner Guide</a></div><div>© 2026 BSOE LTD.</div></div></footer>
+
+<script>
+(function(){
+  "use strict";
+  var STORAGE_KEY = "bsoe-hustle02-seo-geo-aeo-v1";
+  function loadState(){ try { var raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) : {}; } catch(e){ return {}; } }
+  function saveState(s){ try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch(e){} }
+  var state = loadState();
+
+  // ---- lesson completion + progress bar ----
+  var checkboxes = document.querySelectorAll(".lesson-complete input[type=checkbox]");
+  var completed = state.completed || {};
+  function updateProgress(){
+    var total = checkboxes.length;
+    var done = Object.keys(completed).filter(function(k){ return completed[k]; }).length;
+    document.getElementById("progressText").textContent = done + " of " + total + " lessons complete";
+    document.getElementById("progressBar").style.width = (done/total*100) + "%";
+  }
+  checkboxes.forEach(function(cb){
+    var key = cb.dataset.lesson;
+    cb.checked = !!completed[key];
+    cb.addEventListener("change", function(){
+      completed[key] = cb.checked;
+      state.completed = completed;
+      saveState(state);
+      updateProgress();
+    });
+  });
+  updateProgress();
+
+  // ---- copy-prompt buttons ----
+  document.querySelectorAll(".prompt-copy").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var box = btn.closest(".prompt-box");
+      var text = box.textContent.replace(/^Copy/, "").trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function(){
+          var old = btn.textContent; btn.textContent = "Copied!";
+          setTimeout(function(){ btn.textContent = old; }, 1500);
+        }).catch(function(){});
+      }
+    });
+  });
+
+  // ---- interactive knowledge check ----
+  var QUIZ = [
+    { q: "What is the main purpose of SEO?", opts: ["To generate random AI content","To improve discoverability through search","To replace a company's website","To guarantee sales"], correct: 1 },
+    { q: "What is GEO generally associated with?", opts: ["Generative AI/search visibility","Graphic design","Accounting","Email management"], correct: 0 },
+    { q: "Why should you avoid mass-producing generic AI content?", opts: ["AI cannot write anything","Businesses do not need content","Quantity alone does not create useful information, authority or customers","Search engines cannot read text"], correct: 2 },
+    { q: "What should you do before publishing AI-generated factual information?", opts: ["Publish immediately","Verify and review it","Remove the business name","Add more keywords"], correct: 1 },
+    { q: "Which is the stronger business proposition?", opts: ["“I use AI to write blogs.”","“I help businesses improve their search and AI visibility through research, useful content and digital information.”"], correct: 1 },
+    { q: "Why should you not guarantee that a business will appear first in an AI answer?", opts: ["AI systems are identical","AI/search experiences can vary and their outputs are not under your complete control","SEO no longer exists","Businesses cannot use AI"], correct: 1 },
+    { q: "What should you investigate before creating content?", opts: ["Only keywords","Customer questions, problems and search intent","Only competitors","Only AI tools"], correct: 1 },
+    { q: "What is the purpose of an AI visibility audit?", opts: ["To guarantee rankings","To understand how discoverable and well represented a business currently is and identify opportunities","To generate fake reviews","To replace the company's employees"], correct: 1 }
+  ];
+  var quizAnswers = state.quiz || {};
+  var quizContainer = document.getElementById("quizContainer");
+  QUIZ.forEach(function(item, qi){
+    var qEl = document.createElement("div");
+    qEl.className = "quiz-q";
+    var qText = document.createElement("div");
+    qText.className = "qtext";
+    qText.textContent = "Question " + (qi+1) + ". " + item.q;
+    qEl.appendChild(qText);
+    item.opts.forEach(function(opt, oi){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "quiz-opt";
+      b.textContent = String.fromCharCode(65+oi) + ". " + opt;
+      if (quizAnswers[qi] !== undefined) {
+        b.disabled = true;
+        if (oi === item.correct) b.classList.add("correct");
+        else if (oi === quizAnswers[qi]) b.classList.add("incorrect");
+      }
+      b.addEventListener("click", function(){
+        if (quizAnswers[qi] !== undefined) return;
+        quizAnswers[qi] = oi;
+        state.quiz = quizAnswers;
+        saveState(state);
+        renderQuizOptions(qEl, item, qi);
+        updateQuizScore();
+      });
+      qEl.appendChild(b);
+    });
+    quizContainer.appendChild(qEl);
+  });
+  function renderQuizOptions(qEl, item, qi){
+    var btns = qEl.querySelectorAll(".quiz-opt");
+    btns.forEach(function(b, oi){
+      b.disabled = true;
+      if (oi === item.correct) b.classList.add("correct");
+      else if (oi === quizAnswers[qi]) b.classList.add("incorrect");
+    });
+  }
+  function updateQuizScore(){
+    var answered = Object.keys(quizAnswers).length;
+    var correct = QUIZ.filter(function(item, qi){ return quizAnswers[qi] === item.correct; }).length;
+    document.getElementById("quizScore").textContent = answered === QUIZ.length
+      ? ("Score: " + correct + " of " + QUIZ.length + " correct" + (correct >= 6 ? " — pass!" : " — review and try again"))
+      : (answered + " of " + QUIZ.length + " answered");
+  }
+  updateQuizScore();
+})();
+</script>
+</body>
+</html>
