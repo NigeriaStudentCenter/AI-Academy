@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hustle 3: AI Data Entry & Document Automation — BSOE AI Academy</title>
+<meta name="description" content="Hustle 3 of the 200 AI Hustles Programme: build AI-enhanced data entry and document processing automation tools. Every lesson follows Explanation → AI Tools → Practical Exercise → Real Deliverable → Customer → Monetisation, with a built-in time-cost calculator, progress tracking and an interactive knowledge check." />
+<style>
+:root{
+  --deep:#0B3D2E;--forest:#1F6B52;--forest2:#175A44;--gold:#C9A45D;--gold-light:#EFD9A8;
+  --ink:#0F2A20;--paper:#FCFBF7;--cream:#EEF5F0;--muted:#5C6E64;--line:#DCE6DF;--white:#fff;
+  --shadow:0 24px 70px rgba(11,61,46,.14);--max:1160px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+h1,h2,h3,p{margin-top:0} h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.03em} a{text-decoration:none;color:inherit} .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:900;color:var(--forest)} .eyebrow.light{color:var(--gold-light)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 24px;border:0;border-radius:999px;background:var(--forest);color:white;font-weight:850;cursor:pointer;box-shadow:0 12px 28px rgba(11,61,46,.2);transition:.2s transform,.2s background;font-size:.96rem}.btn:hover{transform:translateY(-2px);background:var(--deep)}.btn.gold{background:linear-gradient(135deg,#b3894a,var(--gold-light));color:#3a2a10}.btn.outline{background:transparent;color:var(--forest);border:1px solid rgba(31,106,82,.3);box-shadow:none}.btn.small{padding:10px 16px;font-size:.82rem}
+.topbar{background:var(--deep);color:#fff;text-align:center;padding:11px 16px;font-size:.85rem;font-weight:750}.topbar span{color:var(--gold-light)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(252,251,247,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(11,61,46,.08)}.nav-in{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-weight:900}.brand-mark{width:37px;height:37px;border-radius:11px;background:linear-gradient(135deg,var(--forest),var(--deep));display:grid;place-items:center;color:var(--gold-light);font-family:Georgia,serif;font-weight:900;font-size:1rem}.nav-links{display:flex;gap:14px;align-items:center;font-size:.78rem;font-weight:760;color:#334d40}.nav-cta{display:flex;gap:10px;align-items:center}
+.hero{padding:60px 0 40px;background:radial-gradient(circle at 82% 10%,rgba(201,164,93,.18),transparent 32%),linear-gradient(180deg,#fcfbf7 0%,var(--cream) 100%);text-align:center}.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;border:1px solid rgba(11,61,46,.15);background:rgba(255,255,255,.75);font-size:.76rem;font-weight:900;letter-spacing:.04em}.hero h1{font-size:clamp(2.1rem,4.6vw,3.6rem);line-height:1.08;margin:18px auto 16px;max-width:860px}.hero-copy{font-size:1.08rem;color:#4a5c52;max-width:700px;margin:0 auto}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 14px;justify-content:center}.micro{font-size:.8rem;color:var(--muted)}
+.rank-back{max-width:640px;margin:22px auto 0;background:white;border:1px solid var(--line);border-radius:16px;padding:14px 20px;font-size:.86rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{text-align:center;padding:24px 16px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat b{font-family:Georgia,serif;font-size:1.6rem;display:block;color:var(--forest)}.stat span{font-size:.76rem;color:var(--muted);font-weight:720}
+.progress-bar-outer{height:10px;border-radius:999px;background:var(--cream);overflow:hidden;border:1px solid var(--line)}
+.progress-bar-inner{height:100%;background:linear-gradient(90deg,var(--forest),var(--gold));width:0%;transition:width .3s}
+.progress-wrap{max-width:640px;margin:18px auto 0;text-align:center}
+.progress-label{font-size:.82rem;color:var(--muted);margin-bottom:8px;font-weight:750}
+.section{padding:60px 0}.section.alt{background:var(--cream)}.section-head{max-width:800px;margin:0 auto 34px;text-align:center}.section-head h2{font-size:clamp(1.8rem,3.8vw,2.8rem);line-height:1.05;margin:10px 0 14px}.section-head p{font-size:.98rem;color:var(--muted)}
+.method-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;max-width:960px;margin:0 auto}
+.method-strip .mnode{background:white;border:1px solid var(--line);border-radius:12px;padding:10px 6px;text-align:center;font-size:.7rem;font-weight:850;color:var(--forest);position:relative}
+.method-strip .mnode:not(:last-child):after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:var(--gold);font-weight:900;z-index:2;font-size:.9rem}
+.flow-chain{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0}
+.flow-chain.c4{grid-template-columns:repeat(4,1fr)}
+.flow-chain.c6{grid-template-columns:repeat(6,1fr)}
+.flow-chain .fnode{background:white;border:1px solid var(--line);border-radius:12px;padding:11px 6px;text-align:center;font-size:.72rem;font-weight:800;color:var(--forest);position:relative;min-height:44px;display:flex;align-items:center;justify-content:center}
+.flow-chain .fnode:not(:last-child):after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:var(--gold);font-weight:900;z-index:2;font-size:.9rem}
+.lesson-block{background:white;border:1px solid var(--line);border-radius:22px;margin-bottom:16px;overflow:hidden;box-shadow:0 10px 26px rgba(11,61,46,.05)}
+.lesson-block summary{cursor:pointer;list-style:none;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--cream)}
+.lesson-block summary::-webkit-details-marker{display:none}
+.lesson-block summary:after{content:"+";font-size:1.5rem;color:var(--forest);flex:0 0 auto}
+.lesson-block[open] summary:after{content:"−"}
+.lesson-title-row{display:flex;align-items:center;gap:14px}
+.lesson-no{width:38px;height:38px;border-radius:11px;background:var(--forest);color:#fff;display:grid;place-items:center;font-family:Georgia,serif;font-weight:800;font-size:1rem;flex:0 0 auto}
+.lesson-title-row h3{font-family:Georgia,serif;font-size:1.14rem;margin:0}
+.lesson-title-row span.tag{display:block;font-size:.7rem;color:var(--muted);font-weight:700;margin-top:2px}
+.lesson-body{padding:6px 24px 24px}
+.lesson-part{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.lesson-part:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.lesson-part .part-label{display:inline-block;font-size:.66rem;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--forest2);margin-bottom:6px}
+.lesson-part p, .lesson-part li{color:var(--ink);font-size:.9rem;margin:0 0 6px}
+.lesson-part ul,.lesson-part ol{margin:4px 0;padding-left:20px}
+.part-exercise{background:var(--cream);border:1px solid #dccf9f;border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:13px 15px}
+.part-exercise .part-label{color:#7a5c1f}
+.part-deliverable{display:inline-flex;align-items:center;gap:8px;background:var(--deep);color:#fff;border-radius:999px;padding:7px 14px;font-size:.8rem;font-weight:750}
+.part-deliverable b{color:var(--gold-light);text-transform:uppercase;font-size:.66rem;letter-spacing:.06em}
+.lesson-complete{display:flex;align-items:center;gap:10px;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}
+.lesson-complete input{width:19px;height:19px;accent-color:var(--forest)}
+.lesson-complete label{font-size:.84rem;font-weight:750;color:var(--forest2);cursor:pointer}
+.tool-pill{display:inline-block;background:var(--cream);border:1px solid var(--line);color:var(--forest2);font-size:.78rem;font-weight:700;border-radius:999px;padding:5px 12px;margin:0 6px 6px 0}
+.prompt-box{background:var(--deep);color:#eaf3ee;border-radius:14px;padding:16px 18px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.55;white-space:pre-wrap;position:relative}
+.prompt-copy{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#eaf3ee;font-size:.7rem;padding:6px 10px;border-radius:8px;cursor:pointer;font-family:Inter,sans-serif;font-weight:700}
+.prompt-copy:hover{background:rgba(255,255,255,.22)}
+.dont-box{background:#FBEAEA;border:1px solid #E5A6A6;border-radius:18px;padding:24px 26px}
+.dont-box b{display:block;color:#9C2B2B;text-transform:uppercase;font-size:.72rem;letter-spacing:.08em;margin-bottom:10px}
+.dont-box ul{margin:0;padding-left:22px}
+.dont-box li{margin-bottom:6px}
+.data-table{width:100%;border-collapse:collapse;background:white;border-radius:14px;overflow:hidden;font-size:.86rem;margin:8px 0}
+.data-table th{background:var(--forest);color:#fff;text-align:left;padding:10px 13px;font-size:.78rem}
+.data-table td{padding:9px 13px;border-top:1px solid var(--line);vertical-align:top}
+.data-table tr:nth-child(even) td{background:var(--cream)}
+.calc{background:white;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:10px}
+.calc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.calc label{display:block;font-size:.74rem;font-weight:800;color:var(--forest2);margin-bottom:4px}
+.calc input{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:.95rem;font-family:inherit;background:var(--paper)}
+.calc-out{margin-top:14px;padding:14px 16px;border-radius:12px;background:var(--deep);color:#fff;font-size:.92rem}
+.calc-out b{color:var(--gold-light)}
+.calc-note{font-size:.74rem;color:var(--muted);margin-top:8px}
+.quiz-q{background:white;border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin-bottom:14px}
+.quiz-q .qtext{font-weight:800;margin-bottom:12px}
+.quiz-opt{display:block;width:100%;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:8px;cursor:pointer;font-size:.9rem;font-family:inherit}
+.quiz-opt:hover{border-color:var(--forest)}
+.quiz-opt.correct{background:#E9F3EC;border-color:var(--forest);font-weight:750}
+.quiz-opt.incorrect{background:#FBEAEA;border-color:#E5A6A6}
+.quiz-opt[disabled]{cursor:default}
+.quiz-score{text-align:center;padding:18px;border-radius:14px;background:var(--cream);font-weight:800;color:var(--forest);margin-top:10px}
+.project-grid{display:grid;gap:12px}
+.project-part{background:white;border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.project-part b{color:var(--forest2);display:block;margin-bottom:4px;font-family:Georgia,serif;font-size:1.02rem}
+.final{padding:76px 0;text-align:center;background:radial-gradient(circle at 50% 15%,rgba(201,164,93,.18),transparent 28%),var(--deep);color:white}.final h2{font-size:clamp(2.1rem,4.4vw,3.6rem);line-height:1.02;max-width:840px;margin:8px auto 16px}.final p{color:#cfe0d6;max-width:640px;margin:0 auto 24px}.final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer.site{padding:28px 0;background:#08251b;color:#a9c2b4;font-size:.78rem}.foot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot .brand{color:white}.foot-links{display:flex;gap:16px;flex-wrap:wrap}
+@media(max-width:1000px){.nav-links{display:none}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.method-strip{grid-template-columns:repeat(3,1fr)}.method-strip .mnode:nth-child(3n):after{display:none}.flow-chain,.flow-chain.c4,.flow-chain.c6{grid-template-columns:repeat(3,1fr)}.flow-chain .fnode:nth-child(3n):after{display:none}}
+@media(max-width:680px){.wrap{width:min(100% - 24px,var(--max))}.nav-in{height:64px}.nav .btn{padding:10px 13px;font-size:.74rem}.section{padding:46px 0}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.method-strip{grid-template-columns:1fr 1fr}.flow-chain,.flow-chain.c4,.flow-chain.c6{grid-template-columns:1fr 1fr}.flow-chain .fnode:nth-child(3n):after{display:block}.flow-chain .fnode:nth-child(2n):after{display:none}.calc-grid{grid-template-columns:1fr}.lesson-block summary{padding:16px}.lesson-body{padding:0 16px 18px}.final-actions .btn,.hero-actions .btn{width:100%}.foot{flex-direction:column;align-items:flex-start}.data-table{font-size:.76rem}}
+</style>
+</head>
+<body>
+<div class="topbar">200 AI Hustles Programme · <span>Hustle 3 of 200 — AI Data Entry &amp; Document Automation</span></div>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="landingpage.html"><span class="brand-mark">03</span><span>Hustle 3</span></a>
+    <div class="nav-links"><a href="#lessons">The Lessons</a><a href="#dontdo">Before You Build</a><a href="#project">Final Project</a><a href="#quiz">Knowledge Check</a></div>
+    <div class="nav-cta"><a class="btn outline small" href="HowWeRank200Hustles.html">Back to Programme</a><a class="btn gold small" href="HowWeRank200Hustles.html#pricing">Join the Academy</a></div>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="pill">HUSTLE 3 OF 200 · DATA ENTRY · DOCUMENT PROCESSING · AUTOMATION</span>
+    <h1>Build AI-Enhanced Data Entry &amp; Document Processing Automation Tools</h1>
+    <p class="hero-copy">Turn repetitive paperwork into an AI-powered business. You don't need to build the next Microsoft or Google — find one repetitive document-processing problem, build a solution, test it, sell it, then turn it into a repeatable service.</p>
+    <div class="hero-actions"><a class="btn gold" href="#lessons">Start Lesson 1 ↓</a><a class="btn outline" href="#project">See the Final Project ↓</a></div>
+    <p class="micro">7 lessons · Every lesson: Explanation → AI Tools → Exercise → Deliverable → Customer → Monetisation</p>
+    <div class="rank-back">📊 Curious how this hustle scores? Use the <a href="HowWeRank200Hustles.html#ex1" style="color:var(--forest);font-weight:800;text-decoration:underline">25-star scorer from the opening lesson</a> to rank it yourself.</div>
+    <div class="progress-wrap">
+      <div class="progress-label"><span id="progressText">0 of 7 lessons complete</span></div>
+      <div class="progress-bar-outer"><div class="progress-bar-inner" id="progressBar"></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><b>7</b><span>lessons</span></div>
+  <div class="stat"><b>1</b><span>time-cost calculator</span></div>
+  <div class="stat"><b>8</b><span>industries mapped</span></div>
+  <div class="stat"><b>1</b><span>automation blueprint you'll design</span></div>
+</div>
+
+<section class="section" id="method">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Every lesson, same shape</div><h2>Explanation → AI Tools → Exercise → Deliverable → Customer → Monetisation.</h2><p>Almost every business deals with documents — invoices, application forms, CVs, purchase orders, receipts, contracts, delivery notes. Many still have people reading them and retyping the information into another system. That's the problem you'll learn to solve.</p></div>
+    <div class="method-strip">
+      <div class="mnode">EXPLANATION</div><div class="mnode">AI TOOLS</div><div class="mnode">EXERCISE</div>
+      <div class="mnode">DELIVERABLE</div><div class="mnode">CUSTOMER</div><div class="mnode">MONETISATION</div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="lessons">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The 7 lessons</div><h2>Work through them in order. Tick each one off as you go.</h2></div>
+
+    <!-- LESSON 1 -->
+    <details class="lesson-block" open data-lesson="1">
+      <summary><div class="lesson-title-row"><div class="lesson-no">1</div><div><h3>What Is The Hustle?</h3><span class="tag">An AI document-processing and data-entry automation service</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span>
+          <p>Many businesses still have people reading documents, copying information and typing it into another system. That creates repetitive work — and it can create delays, inconsistent data entry and avoidable errors. Your business: help organisations automate processes where people currently <strong>receive a document, open it, read it, find specific information, copy it, enter it into another system, rename or store the document, notify somebody, and repeat.</strong></p>
+          <p>Your AI-assisted system can potentially perform much of that workflow automatically. For example, an invoice pipeline:</p>
+          <div class="flow-chain c4">
+            <div class="fnode">Invoice received</div><div class="fnode">AI reads invoice</div><div class="fnode">Extract supplier, invoice no., date</div><div class="fnode">Extract amount &amp; VAT</div>
+            <div class="fnode">Check required fields</div><div class="fnode">Store information</div><div class="fnode">Update spreadsheet / accounting system</div><div class="fnode">Notify finance team</div>
+          </div>
+          <p>That is the business.</p>
+        </div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">ChatGPT</span><span class="tool-pill">Claude</span><span class="tool-pill">Gemini</span><span class="tool-pill">Microsoft AI Builder</span><span class="tool-pill">Power Automate</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Pick one document type you know well (an invoice, a form, a CV). Write out the manual steps a person takes today, from "received" to "repeat". Then write your one-sentence proposition: <em>"I help [type of organisation] automate [document type] processing so staff spend less time typing and more time on higher-value work."</em></p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; One-sentence proposition + the manual steps of one real document process</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>Any organisation whose staff repeatedly read documents and retype the information somewhere else.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Start small: find one repetitive document-processing problem, build a solution, test it, sell it to a business — then turn the solution into a repeatable service.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-1" data-lesson="1" /><label for="complete-1">Mark Lesson 1 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 2 -->
+    <details class="lesson-block" data-lesson="2">
+      <summary><div class="lesson-title-row"><div class="lesson-no">2</div><div><h3>The Problem You Are Solving</h3><span class="tag">Put a number on the paperwork</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span>
+          <p>Imagine a small business receives 200 invoices every month, and each takes about five minutes to process. That's 200 × 5 = 1,000 minutes — roughly <strong>16.7 hours every month</strong>. If part of that process can be automated, the business may be able to redirect staff time toward more valuable work.</p>
+          <p>The opportunity is therefore not "I can use AI." It is: <strong>"I can identify repetitive document work and build an automation that reduces manual processing."</strong> That is a business proposition.</p>
+        </div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">Excel / Google Sheets</span><span class="tool-pill">ChatGPT / Claude for sanity-checking your maths</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Use the calculator below. It starts with the 200-invoice example — replace the numbers with a real process you know. Add an hourly staff cost if you can estimate one.</p>
+          <div class="calc">
+            <div class="calc-grid">
+              <div><label for="calcDocs">Documents per month</label><input type="number" id="calcDocs" min="0" value="200" /></div>
+              <div><label for="calcMins">Minutes to process each</label><input type="number" id="calcMins" min="0" step="0.5" value="5" /></div>
+              <div><label for="calcRate">Staff cost per hour (optional)</label><input type="number" id="calcRate" min="0" step="0.5" placeholder="e.g. 15" /></div>
+            </div>
+            <div class="calc-out" id="calcOut">—</div>
+            <div class="calc-note">An estimate to start a conversation, not a guaranteed saving. Automation may reduce manual processing — it rarely removes it entirely.</div>
+          </div>
+        </div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A time (and optionally cost) figure for one real document process</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The owner or operations manager who currently absorbs that time as an unexamined cost.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>A quantified problem is the foundation of every proposal: you're no longer pitching "AI" — you're pitching hours back.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-2" data-lesson="2" /><label for="complete-2">Mark Lesson 2 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 3 -->
+    <details class="lesson-block" data-lesson="3">
+      <summary><div class="lesson-title-row"><div class="lesson-no">3</div><div><h3>Who Needs This?</h3><span class="tag">The industry doesn't matter — the process does</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span>
+          <table class="data-table"><thead><tr><th>Customer</th><th>Documents they handle</th></tr></thead><tbody>
+            <tr><td>Small businesses</td><td>Invoices, expenses, customer forms, supplier documents</td></tr>
+            <tr><td>Accountants</td><td>Receipts, invoices, expense records, client documentation</td></tr>
+            <tr><td>Estate agencies</td><td>Tenant applications, property documents, maintenance requests, identity information</td></tr>
+            <tr><td>Recruitment companies</td><td>CVs, candidate forms, application documents, interview records</td></tr>
+            <tr><td>Insurance businesses</td><td>Claims forms, supporting documents, customer information</td></tr>
+            <tr><td>Healthcare organisations</td><td>Referral forms, administrative documents, appointment information</td></tr>
+            <tr><td>Construction companies</td><td>Purchase orders, delivery notes, invoices, compliance documents</td></tr>
+            <tr><td>Logistics companies</td><td>Delivery notes, shipping documents, invoices, customer forms</td></tr>
+            <tr><td>Education organisations</td><td>Application forms, enrolment documents, certificates, student administration</td></tr>
+          </tbody></table>
+          <p>The key is not the industry. The key is finding a <strong>repetitive, document-heavy process</strong>.</p>
+        </div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">ChatGPT</span><span class="tool-pill">Claude</span><span class="tool-pill">Perplexity</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Choose three industries from the table where you have a contact, experience or easy access. For each, name one specific document type and who in the organisation handles it.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A shortlist of 3 target industries, each with a named document type</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The person inside those organisations who actually handles the documents day to day.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Choosing where you already have access keeps early sales conversations warm — your first paid project usually comes from someone you can reach.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-3" data-lesson="3" /><label for="complete-3">Mark Lesson 3 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 4 -->
+    <details class="lesson-block" data-lesson="4">
+      <summary><div class="lesson-title-row"><div class="lesson-no">4</div><div><h3>Find The Repetitive Task</h3><span class="tag">One question, then ten follow-ups</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span>
+          <p>When talking to a business, ask: <strong>"What documents do your staff repeatedly receive, read and manually enter into another system?"</strong> Then dig into how many arrive each week, who processes them, how long each takes, what's extracted, where it's entered, what happens when information is missing or wrong, where the originals are stored, who checks it, and what happens after processing. You're looking for a <em>process</em>.</p>
+        </div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">ChatGPT / Claude for role-playing the discovery call</span><span class="tool-pill">Notes app / Word</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Run this discovery conversation with a real person — or rehearse it with an AI playing a busy office manager — and record the answers.</p>
+          <div class="prompt-box"><button class="prompt-copy" type="button">Copy</button>Opening question:
+What documents do your staff repeatedly receive, read and manually enter into another system?
+
+Follow-ups:
+1. How many arrive each week?
+2. Who processes them?
+3. How long does each one take?
+4. What information is extracted?
+5. Where is that information entered?
+6. What happens when information is missing?
+7. What happens when information is incorrect?
+8. Where are the original documents stored?
+9. Who checks the information?
+10. What happens after processing?</div>
+        </div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; Completed discovery notes for one real process</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>Whoever repeatedly handles the documents — they know the process better than the business owner does.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>These ten answers become the scope of work and the basis of your quote — and they reveal whether the process is worth automating at all.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-4" data-lesson="4" /><label for="complete-4">Mark Lesson 4 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 5 -->
+    <details class="lesson-block" data-lesson="5">
+      <summary><div class="lesson-title-row"><div class="lesson-no">5</div><div><h3>Map The Automation Opportunity</h3><span class="tag">Worked example: recruitment CVs</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span>
+          <p>A recruiter manually reads a CV for the candidate's name, email, phone number, location, qualifications, experience and skills — then copies it into an applicant tracking system or spreadsheet. As a workflow:</p>
+          <div class="flow-chain c4">
+            <div class="fnode">CV received</div><div class="fnode">Document stored</div><div class="fnode">AI extracts relevant information</div><div class="fnode">Information structured into fields</div>
+            <div class="fnode">Validation</div><div class="fnode">Database / CRM updated</div><div class="fnode">Recruiter notified</div><div class="fnode">CV stored against candidate</div>
+          </div>
+          <p>You've just turned a manual administrative task into an automated workflow.</p>
+        </div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">ChatGPT</span><span class="tool-pill">Claude</span><span class="tool-pill">Whiteboard / Miro / paper</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Take the process from your Lesson 4 discovery notes and map it in the same style: received → stored → extracted → structured → validated → recorded → notified → filed.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; An end-to-end workflow map for one real process</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The team that will use the automated output — the recruiter, finance team or admin who receives the notification.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Every mapped workflow is a priced project waiting to happen — and a template you can adapt for the next client in the same industry.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-5" data-lesson="5" /><label for="complete-5">Mark Lesson 5 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 6 -->
+    <details class="lesson-block" data-lesson="6">
+      <summary><div class="lesson-title-row"><div class="lesson-no">6</div><div><h3>AI Is Not The Whole Solution</h3><span class="tag">Document → Extraction → Logic → Validation → Database → Action</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span>
+          <p>A good automation normally combines several technologies:</p>
+          <div class="flow-chain c6">
+            <div class="fnode">Document</div><div class="fnode">Extraction</div><div class="fnode">Logic</div><div class="fnode">Validation</div><div class="fnode">Database</div><div class="fnode">Action</div>
+          </div>
+          <ul>
+            <li><strong>AI</strong> may perform the extraction or classification.</li>
+            <li><strong>Automation software</strong> moves information between systems.</li>
+            <li><strong>Databases</strong> store information.</li>
+            <li><strong>Business applications</strong> perform actions.</li>
+            <li><strong>Humans</strong> handle exceptions.</li>
+          </ul>
+          <p>That's why the business opportunity is bigger than simply asking ChatGPT to read a PDF.</p>
+        </div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">Any chat AI to challenge your design</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Take your Lesson 5 workflow map and label every step: is it done by <strong>AI</strong>, <strong>automation software</strong>, a <strong>database</strong>, a <strong>business application</strong> or a <strong>human</strong>? Mark clearly where a person steps in when something is missing or wrong.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A component-labelled workflow, with human exception points marked</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>A business that wants a reliable process — not a one-off AI demo that breaks on the first unusual document.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>The value you sell is the joined-up system — extraction, logic, validation, storage, action and exception handling — which is exactly what a client can't get from pasting a PDF into a chatbot.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-6" data-lesson="6" /><label for="complete-6">Mark Lesson 6 complete</label></div>
+      </div>
+    </details>
+
+    <!-- LESSON 7 -->
+    <details class="lesson-block" data-lesson="7">
+      <summary><div class="lesson-title-row"><div class="lesson-no">7</div><div><h3>Your AI Automation Toolkit</h3><span class="tag">Capture · Extract · Automate · Store</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span>
+          <table class="data-table"><thead><tr><th>Function</th><th>Possible tools</th></tr></thead><tbody>
+            <tr><td><strong>Document capture</strong></td><td>Microsoft Forms, SharePoint, OneDrive, email, cloud storage, scanners, document upload systems</td></tr>
+            <tr><td><strong>AI extraction</strong></td><td>Microsoft AI Builder, Azure AI Document Intelligence, OpenAI models, Google Gemini, Claude, other document-processing AI services</td></tr>
+            <tr><td><strong>Automation</strong></td><td>Microsoft Power Automate, Make, Zapier</td></tr>
+            <tr><td><strong>Data storage</strong></td><td>Excel, SharePoint Lists, Dataverse, SQL, CRM systems, accounting systems, project-management systems</td></tr>
+          </tbody></table>
+        </div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">Capture: Forms / SharePoint / OneDrive</span><span class="tool-pill">Extract: AI Builder / Document Intelligence / Gemini / Claude</span><span class="tool-pill">Automate: Power Automate / Make / Zapier</span><span class="tool-pill">Store: Excel / SharePoint Lists / CRM</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>For your workflow, choose one tool for each of the four functions and write one sentence on why. Note which of them the client already uses.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A four-layer tool stack for your chosen process</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The client's IT-minded contact — whoever will need to trust, approve and maintain the tools you choose.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Setup of the stack is the project fee; keeping it running, adapting it to new document types and handling changes is the natural ongoing service.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-7" data-lesson="7" /><label for="complete-7">Mark Lesson 7 complete</label></div>
+      </div>
+    </details>
+  </div>
+</section>
+
+<section class="section" id="mindset">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The business model</div><h2>Find one problem. Build. Test. Sell. Repeat.</h2><p>You don't need to build the next Microsoft or Google. Start small — then turn the solution into a repeatable service.</p></div>
+    <div class="flow-chain c4">
+      <div class="fnode">FIND A REPETITIVE PROCESS</div><div class="fnode">ASK THE DISCOVERY QUESTIONS</div><div class="fnode">MAP THE WORKFLOW</div><div class="fnode">CHOOSE THE TOOLS</div>
+      <div class="fnode">BUILD THE SOLUTION</div><div class="fnode">TEST IT</div><div class="fnode">SELL IT TO A BUSINESS</div><div class="fnode">REPEAT AS A SERVICE</div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="dontdo">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Before you build anything</div><h2>Handle Documents Responsibly</h2></div>
+    <div class="dont-box">
+      <b>Avoid these</b>
+      <ul>
+        <li>Promise 100% accuracy — extraction can be wrong, so a human must handle exceptions and missing or incorrect data</li>
+        <li>Process CVs, identity documents, claims or health information without the client's authority and a clear data-protection basis (for UK/EU clients, that means UK GDPR)</li>
+        <li>Send a client's real documents to an AI service without checking where the data goes and how it is stored</li>
+        <li>Remove the validation step to make the demo look faster</li>
+        <li>Test on live client documents before you've tested on samples or dummy data</li>
+        <li>Sell "AI" — sell the reduced manual processing and the reliability of the whole workflow</li>
+      </ul>
+      <p style="margin-top:14px"><em>This section was drafted for the programme to accompany the lessons above — review it against your own client terms and data-protection obligations.</em></p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="project">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The assessed project</div><h2>Design An AI Document Automation Blueprint</h2><p>Pull the seven lessons together into one blueprint you could show a real business.</p></div>
+    <div class="project-grid">
+      <div class="project-part"><b>Part 1 — The Process</b>Name the document, the industry, who handles it, and the manual steps taken today.</div>
+      <div class="project-part"><b>Part 2 — The Cost</b>Documents per month × minutes each = hours per month. Add a staff cost if you can.</div>
+      <div class="project-part"><b>Part 3 — Discovery Notes</b>Your answers to the ten discovery questions.</div>
+      <div class="project-part"><b>Part 4 — The Workflow</b>The end-to-end map: received → stored → extracted → structured → validated → recorded → notified → filed.</div>
+      <div class="project-part"><b>Part 5 — The Components</b>Label each step as AI, automation software, database, business application or human — and mark the human exception points.</div>
+      <div class="project-part"><b>Part 6 — The Tool Stack</b>One tool each for capture, extraction, automation and storage, with a sentence of reasoning.</div>
+      <div class="project-part"><b>Part 7 — The Offer</b>One paragraph a business owner could say yes to: the problem, the workflow, the time saved (as an estimate), and what happens when the AI gets it wrong.</div>
+    </div>
+    <p class="micro" style="text-align:center;margin-top:14px">This project was drafted from the lessons above.</p>
+  </div>
+</section>
+
+<section class="section alt" id="quiz">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Check your understanding</div><h2>Knowledge Check</h2><p>Click an answer for instant feedback. Six questions, automatically marked.</p></div>
+    <div id="quizContainer"></div>
+    <div class="quiz-score" id="quizScore">0 of 6 answered</div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap"><div class="eyebrow light">Hustle 3 of 200</div><h2>Seven lessons. One real workflow, ready to sell.</h2><p>Join the BSOE AI Academy to unlock the full 200 AI Hustles Programme — Hustle 3 turns repetitive paperwork into a service you can sell.</p><div class="final-actions"><a class="btn gold" href="HowWeRank200Hustles.html#pricing">Join the Academy →</a><a class="btn outline" style="color:white;border-color:rgba(255,255,255,.35)" href="Hustle02_SEO_GEO_AEO.html">Previous: Hustle 2 — SEO, GEO &amp; AEO</a></div></div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap foot"><div class="brand"><span class="brand-mark">03</span><span>Hustle 3 · Document Automation</span></div><div class="foot-links"><a href="landingpage.html">Academy Home</a><a href="HowWeRank200Hustles.html">Ranking Framework</a><a href="Hustle01_ContentCreation.html">Hustle 1</a><a href="Hustle02_SEO_GEO_AEO.html">Hustle 2</a><a href="FounderTools.html">Founder Tools</a><a href="LearnerGuide.html">Learner Guide</a></div><div>© 2026 BSOE LTD.</div></div></footer>
+
+<script>
+(function(){
+  "use strict";
+  var STORAGE_KEY = "bsoe-hustle03-document-automation-v1";
+  function loadState(){ try { var raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) : {}; } catch(e){ return {}; } }
+  function saveState(s){ try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch(e){} }
+  var state = loadState();
+
+  // lesson completion + progress
+  var checkboxes = document.querySelectorAll(".lesson-complete input[type=checkbox]");
+  var completed = state.completed || {};
+  function updateProgress(){
+    var total = checkboxes.length;
+    var done = Object.keys(completed).filter(function(k){ return completed[k]; }).length;
+    document.getElementById("progressText").textContent = done + " of " + total + " lessons complete";
+    document.getElementById("progressBar").style.width = (done/total*100) + "%";
+  }
+  checkboxes.forEach(function(cb){
+    var key = cb.dataset.lesson;
+    cb.checked = !!completed[key];
+    cb.addEventListener("change", function(){
+      completed[key] = cb.checked;
+      state.completed = completed;
+      saveState(state);
+      updateProgress();
+    });
+  });
+  updateProgress();
+
+  // copy prompt buttons
+  document.querySelectorAll(".prompt-copy").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var box = btn.closest(".prompt-box");
+      var text = box.textContent.replace(/^Copy/, "").trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function(){
+          var old = btn.textContent; btn.textContent = "Copied!";
+          setTimeout(function(){ btn.textContent = old; }, 1500);
+        }).catch(function(){});
+      }
+    });
+  });
+
+  // time-cost calculator
+  var docsEl = document.getElementById("calcDocs"), minsEl = document.getElementById("calcMins"), rateEl = document.getElementById("calcRate"), outEl = document.getElementById("calcOut");
+  var calc = state.calc || {};
+  if (calc.docs !== undefined) docsEl.value = calc.docs;
+  if (calc.mins !== undefined) minsEl.value = calc.mins;
+  if (calc.rate !== undefined) rateEl.value = calc.rate;
+  function fmt(n){ return n.toLocaleString("en-GB", {maximumFractionDigits:1}); }
+  function runCalc(){
+    var docs = parseFloat(docsEl.value), mins = parseFloat(minsEl.value), rate = parseFloat(rateEl.value);
+    if (!(docs >= 0) || !(mins >= 0)) { outEl.textContent = "Enter documents per month and minutes per document."; return; }
+    var totalMins = docs * mins, hours = totalMins / 60;
+    var html = docs + " × " + mins + " min = <b>" + fmt(totalMins) + " minutes</b> ≈ <b>" + fmt(hours) + " hours per month</b> (" + fmt(hours*12) + " hours a year).";
+    if (rate > 0) html += "<br>At " + rate + " per hour, that's about <b>" + fmt(hours*rate) + " per month</b> (" + fmt(hours*rate*12) + " a year) of manual processing.";
+    outEl.innerHTML = html;
+    state.calc = { docs: docsEl.value, mins: minsEl.value, rate: rateEl.value };
+    saveState(state);
+  }
+  [docsEl, minsEl, rateEl].forEach(function(el){ el.addEventListener("input", runCalc); });
+  runCalc();
+
+  // knowledge check
+  var QUIZ = [
+    { q: "What is the business in this hustle?", opts: ["Selling ChatGPT subscriptions","Building systems that use AI to extract information from documents and move it to the right place","Typing data manually for clients","Designing websites"], correct: 1 },
+    { q: "A business processes 200 invoices a month at 5 minutes each. Roughly how many hours is that?", opts: ["1.7 hours","16.7 hours","100 hours","5 hours"], correct: 1 },
+    { q: "What is the key when choosing who to sell to?", opts: ["The biggest company you can find","A repetitive, document-heavy process — the industry matters less","Only accountants","Only technology companies"], correct: 1 },
+    { q: "Which is the strongest opening discovery question?", opts: ["“What documents do your staff repeatedly receive, read and manually enter into another system?”","“Do you like AI?”","“How big is your company?”","“What is your budget?”"], correct: 0 },
+    { q: "In Document → Extraction → Logic → Validation → Database → Action, who handles exceptions?", opts: ["The AI alone","The database","Humans","Nobody"], correct: 2 },
+    { q: "Why is this opportunity bigger than asking ChatGPT to read a PDF?", opts: ["ChatGPT cannot read PDFs","A good automation combines extraction, automation software, storage, business applications and human exception handling","PDFs are being banned","Businesses do not receive documents"], correct: 1 }
+  ];
+  var quizAnswers = state.quiz || {};
+  var quizContainer = document.getElementById("quizContainer");
+  QUIZ.forEach(function(item, qi){
+    var qEl = document.createElement("div");
+    qEl.className = "quiz-q";
+    var qText = document.createElement("div");
+    qText.className = "qtext";
+    qText.textContent = "Question " + (qi+1) + ". " + item.q;
+    qEl.appendChild(qText);
+    item.opts.forEach(function(opt, oi){
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "quiz-opt";
+      b.textContent = String.fromCharCode(65+oi) + ". " + opt;
+      if (quizAnswers[qi] !== undefined) {
+        b.disabled = true;
+        if (oi === item.correct) b.classList.add("correct");
+        else if (oi === quizAnswers[qi]) b.classList.add("incorrect");
+      }
+      b.addEventListener("click", function(){
+        if (quizAnswers[qi] !== undefined) return;
+        quizAnswers[qi] = oi;
+        state.quiz = quizAnswers;
+        saveState(state);
+        qEl.querySelectorAll(".quiz-opt").forEach(function(o, idx){
+          o.disabled = true;
+          if (idx === item.correct) o.classList.add("correct");
+          else if (idx === oi) o.classList.add("incorrect");
+        });
+        updateQuizScore();
+      });
+      qEl.appendChild(b);
+    });
+    quizContainer.appendChild(qEl);
+  });
+  function updateQuizScore(){
+    var answered = Object.keys(quizAnswers).length;
+    var correct = QUIZ.filter(function(item, qi){ return quizAnswers[qi] === item.correct; }).length;
+    document.getElementById("quizScore").textContent = answered === QUIZ.length
+      ? ("Score: " + correct + " of " + QUIZ.length + " correct" + (correct >= 5 ? " — pass!" : " — review and try again"))
+      : (answered + " of " + QUIZ.length + " answered");
+  }
+  updateQuizScore();
+})();
+</script>
+</body>
+</html>
