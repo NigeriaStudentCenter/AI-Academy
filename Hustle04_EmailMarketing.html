@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Hustle 4: AI Email Marketing Platforms — BSOE AI Academy</title>
+<meta name="description" content="Hustle 4 of the 200 AI Hustles Programme: build AI-enhanced email marketing platforms with personalisation and optimisation. Every lesson follows Explanation → AI Tools → Practical Exercise → Real Deliverable → Customer → Monetisation, with a built-in A/B test calculator, progress tracking and an interactive knowledge check." />
+<style>
+:root{
+  --deep:#0B3D2E;--forest:#1F6B52;--forest2:#175A44;--gold:#C9A45D;--gold-light:#EFD9A8;
+  --ink:#0F2A20;--paper:#FCFBF7;--cream:#EEF5F0;--muted:#5C6E64;--line:#DCE6DF;--white:#fff;
+  --shadow:0 24px 70px rgba(11,61,46,.14);--max:1160px;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth} body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--paper);line-height:1.6}
+h1,h2,h3,p{margin-top:0} h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;letter-spacing:-.03em} a{text-decoration:none;color:inherit} .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+.eyebrow{text-transform:uppercase;letter-spacing:.14em;font-size:.76rem;font-weight:900;color:var(--forest)} .eyebrow.light{color:var(--gold-light)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 24px;border:0;border-radius:999px;background:var(--forest);color:white;font-weight:850;cursor:pointer;box-shadow:0 12px 28px rgba(11,61,46,.2);transition:.2s transform,.2s background;font-size:.96rem}.btn:hover{transform:translateY(-2px);background:var(--deep)}.btn.gold{background:linear-gradient(135deg,#b3894a,var(--gold-light));color:#3a2a10}.btn.outline{background:transparent;color:var(--forest);border:1px solid rgba(31,106,82,.3);box-shadow:none}.btn.small{padding:10px 16px;font-size:.82rem}
+.topbar{background:var(--deep);color:#fff;text-align:center;padding:11px 16px;font-size:.85rem;font-weight:750}.topbar span{color:var(--gold-light)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(252,251,247,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(11,61,46,.08)}.nav-in{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:10px;font-weight:900}.brand-mark{width:37px;height:37px;border-radius:11px;background:linear-gradient(135deg,var(--forest),var(--deep));display:grid;place-items:center;color:var(--gold-light);font-family:Georgia,serif;font-weight:900;font-size:1rem}.nav-links{display:flex;gap:14px;align-items:center;font-size:.78rem;font-weight:760;color:#334d40}.nav-cta{display:flex;gap:10px;align-items:center}
+.hero{padding:60px 0 40px;background:radial-gradient(circle at 82% 10%,rgba(201,164,93,.18),transparent 32%),linear-gradient(180deg,#fcfbf7 0%,var(--cream) 100%);text-align:center}.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 13px;border-radius:999px;border:1px solid rgba(11,61,46,.15);background:rgba(255,255,255,.75);font-size:.76rem;font-weight:900;letter-spacing:.04em}.hero h1{font-size:clamp(2.1rem,4.6vw,3.6rem);line-height:1.08;margin:18px auto 16px;max-width:860px}.hero-copy{font-size:1.08rem;color:#4a5c52;max-width:700px;margin:0 auto}.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:26px 0 14px;justify-content:center}.micro{font-size:.8rem;color:var(--muted)}
+.rank-back{max-width:640px;margin:22px auto 0;background:white;border:1px solid var(--line);border-radius:16px;padding:14px 20px;font-size:.86rem;color:var(--muted);display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);background:white;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.stat{text-align:center;padding:24px 16px;border-right:1px solid var(--line)}.stat:last-child{border-right:0}.stat b{font-family:Georgia,serif;font-size:1.6rem;display:block;color:var(--forest)}.stat span{font-size:.76rem;color:var(--muted);font-weight:720}
+.progress-bar-outer{height:10px;border-radius:999px;background:var(--cream);overflow:hidden;border:1px solid var(--line)}
+.progress-bar-inner{height:100%;background:linear-gradient(90deg,var(--forest),var(--gold));width:0%;transition:width .3s}
+.progress-wrap{max-width:640px;margin:18px auto 0;text-align:center}
+.progress-label{font-size:.82rem;color:var(--muted);margin-bottom:8px;font-weight:750}
+.section{padding:60px 0}.section.alt{background:var(--cream)}.section-head{max-width:800px;margin:0 auto 34px;text-align:center}.section-head h2{font-size:clamp(1.8rem,3.8vw,2.8rem);line-height:1.05;margin:10px 0 14px}.section-head p{font-size:.98rem;color:var(--muted)}
+.method-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;max-width:960px;margin:0 auto}
+.method-strip .mnode{background:white;border:1px solid var(--line);border-radius:12px;padding:10px 6px;text-align:center;font-size:.7rem;font-weight:850;color:var(--forest);position:relative}
+.method-strip .mnode:not(:last-child):after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:var(--gold);font-weight:900;z-index:2;font-size:.9rem}
+.flow-chain{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:14px 0}
+.flow-chain.c4{grid-template-columns:repeat(4,1fr)}
+.flow-chain.c6{grid-template-columns:repeat(6,1fr)}
+.flow-chain .fnode{background:white;border:1px solid var(--line);border-radius:12px;padding:11px 6px;text-align:center;font-size:.72rem;font-weight:800;color:var(--forest);position:relative;min-height:44px;display:flex;align-items:center;justify-content:center}
+.flow-chain .fnode:not(:last-child):after{content:"→";position:absolute;right:-9px;top:50%;transform:translateY(-50%);color:var(--gold);font-weight:900;z-index:2;font-size:.9rem}
+.lesson-block{background:white;border:1px solid var(--line);border-radius:22px;margin-bottom:16px;overflow:hidden;box-shadow:0 10px 26px rgba(11,61,46,.05)}
+.lesson-block summary{cursor:pointer;list-style:none;padding:20px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--cream)}
+.lesson-block summary::-webkit-details-marker{display:none}
+.lesson-block summary:after{content:"+";font-size:1.5rem;color:var(--forest);flex:0 0 auto}
+.lesson-block[open] summary:after{content:"−"}
+.lesson-title-row{display:flex;align-items:center;gap:14px}
+.lesson-no{width:38px;height:38px;border-radius:11px;background:var(--forest);color:#fff;display:grid;place-items:center;font-family:Georgia,serif;font-weight:800;font-size:1rem;flex:0 0 auto}
+.lesson-title-row h3{font-family:Georgia,serif;font-size:1.14rem;margin:0}
+.lesson-title-row span.tag{display:block;font-size:.7rem;color:var(--muted);font-weight:700;margin-top:2px}
+.lesson-body{padding:6px 24px 24px}
+.lesson-part{margin-bottom:16px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.lesson-part:last-of-type{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.lesson-part .part-label{display:inline-block;font-size:.66rem;font-weight:900;text-transform:uppercase;letter-spacing:.07em;color:var(--forest2);margin-bottom:6px}
+.lesson-part p, .lesson-part li{color:var(--ink);font-size:.9rem;margin:0 0 6px}
+.lesson-part ul,.lesson-part ol{margin:4px 0;padding-left:20px}
+.part-exercise{background:var(--cream);border:1px solid #dccf9f;border-left:4px solid var(--gold);border-radius:0 12px 12px 0;padding:13px 15px}
+.part-exercise .part-label{color:#7a5c1f}
+.part-deliverable{display:inline-flex;align-items:center;gap:8px;background:var(--deep);color:#fff;border-radius:999px;padding:7px 14px;font-size:.8rem;font-weight:750}
+.part-deliverable b{color:var(--gold-light);text-transform:uppercase;font-size:.66rem;letter-spacing:.06em}
+.lesson-complete{display:flex;align-items:center;gap:10px;margin-top:16px;padding-top:14px;border-top:1px dashed var(--line)}
+.lesson-complete input{width:19px;height:19px;accent-color:var(--forest)}
+.lesson-complete label{font-size:.84rem;font-weight:750;color:var(--forest2);cursor:pointer}
+.tool-pill{display:inline-block;background:var(--cream);border:1px solid var(--line);color:var(--forest2);font-size:.78rem;font-weight:700;border-radius:999px;padding:5px 12px;margin:0 6px 6px 0}
+.prompt-box{background:var(--deep);color:#eaf3ee;border-radius:14px;padding:16px 18px;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:.8rem;line-height:1.55;white-space:pre-wrap;position:relative}
+.prompt-copy{position:absolute;top:10px;right:10px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#eaf3ee;font-size:.7rem;padding:6px 10px;border-radius:8px;cursor:pointer;font-family:Inter,sans-serif;font-weight:700}
+.prompt-copy:hover{background:rgba(255,255,255,.22)}
+.dont-box{background:#FBEAEA;border:1px solid #E5A6A6;border-radius:18px;padding:24px 26px}
+.dont-box b{display:block;color:#9C2B2B;text-transform:uppercase;font-size:.72rem;letter-spacing:.08em;margin-bottom:10px}
+.dont-box ul{margin:0;padding-left:22px}
+.dont-box li{margin-bottom:6px}
+.data-table{width:100%;border-collapse:collapse;background:white;border-radius:14px;overflow:hidden;font-size:.86rem;margin:8px 0}
+.data-table th{background:var(--forest);color:#fff;text-align:left;padding:10px 13px;font-size:.78rem}
+.data-table td{padding:9px 13px;border-top:1px solid var(--line);vertical-align:top}
+.data-table tr:nth-child(even) td{background:var(--cream)}
+.calc{background:white;border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-top:10px}
+.calc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.calc label{display:block;font-size:.74rem;font-weight:800;color:var(--forest2);margin-bottom:4px}
+.calc input{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:10px;font-size:.95rem;font-family:inherit;background:var(--paper)}
+.calc-out{margin-top:14px;padding:14px 16px;border-radius:12px;background:var(--deep);color:#fff;font-size:.92rem}
+.calc-out b{color:var(--gold-light)}
+.calc-note{font-size:.74rem;color:var(--muted);margin-top:8px}
+.quiz-q{background:white;border:1px solid var(--line);border-radius:18px;padding:22px 24px;margin-bottom:14px}
+.quiz-q .qtext{font-weight:800;margin-bottom:12px}
+.quiz-opt{display:block;width:100%;text-align:left;background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:11px 14px;margin-bottom:8px;cursor:pointer;font-size:.9rem;font-family:inherit}
+.quiz-opt:hover{border-color:var(--forest)}
+.quiz-opt.correct{background:#E9F3EC;border-color:var(--forest);font-weight:750}
+.quiz-opt.incorrect{background:#FBEAEA;border-color:#E5A6A6}
+.quiz-opt[disabled]{cursor:default}
+.quiz-score{text-align:center;padding:18px;border-radius:14px;background:var(--cream);font-weight:800;color:var(--forest);margin-top:10px}
+.project-grid{display:grid;gap:12px}
+.project-part{background:white;border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.project-part b{color:var(--forest2);display:block;margin-bottom:4px;font-family:Georgia,serif;font-size:1.02rem}
+.final{padding:76px 0;text-align:center;background:radial-gradient(circle at 50% 15%,rgba(201,164,93,.18),transparent 28%),var(--deep);color:white}.final h2{font-size:clamp(2.1rem,4.4vw,3.6rem);line-height:1.02;max-width:840px;margin:8px auto 16px}.final p{color:#cfe0d6;max-width:640px;margin:0 auto 24px}.final-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer.site{padding:28px 0;background:#08251b;color:#a9c2b4;font-size:.78rem}.foot{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot .brand{color:white}.foot-links{display:flex;gap:16px;flex-wrap:wrap}
+@media(max-width:1000px){.nav-links{display:none}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}.method-strip{grid-template-columns:repeat(3,1fr)}.method-strip .mnode:nth-child(3n):after{display:none}.flow-chain,.flow-chain.c4,.flow-chain.c6{grid-template-columns:repeat(3,1fr)}.flow-chain .fnode:nth-child(3n):after{display:none}}
+@media(max-width:680px){.wrap{width:min(100% - 24px,var(--max))}.nav-in{height:64px}.nav .btn{padding:10px 13px;font-size:.74rem}.section{padding:46px 0}.stats{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid var(--line)}.method-strip{grid-template-columns:1fr 1fr}.flow-chain,.flow-chain.c4,.flow-chain.c6{grid-template-columns:1fr 1fr}.flow-chain .fnode:nth-child(3n):after{display:block}.flow-chain .fnode:nth-child(2n):after{display:none}.calc-grid{grid-template-columns:1fr}.lesson-block summary{padding:16px}.lesson-body{padding:0 16px 18px}.final-actions .btn,.hero-actions .btn{width:100%}.foot{flex-direction:column;align-items:flex-start}.data-table{font-size:.76rem}}
+.checklist{list-style:none;padding:0;margin:0;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.checklist li{padding:11px 16px;border-bottom:1px solid var(--line);background:white}
+.checklist li:last-child{border-bottom:0}
+.checklist label{display:flex;gap:10px;align-items:flex-start;cursor:pointer;font-size:.92rem}
+.checklist input{width:18px;height:18px;accent-color:var(--forest);margin-top:3px;flex:0 0 auto}
+.quote{border-left:4px solid var(--gold);background:white;border-radius:0 14px 14px 0;padding:16px 20px;font-family:Georgia,serif;font-size:1.05rem;max-width:760px;margin:0 auto 18px}
+.calc h4{margin:0 0 8px;font-size:.84rem;color:var(--forest2)}.calc .calc-grid+h4{margin-top:14px}
+</style>
+</head>
+<body>
+<div class="topbar">200 AI Hustles Programme · <span>Hustle 4 of 200 — AI Email Marketing Platforms</span></div>
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="brand" href="landingpage.html"><span class="brand-mark">04</span><span>Hustle 4</span></a>
+    <div class="nav-links"><a href="#lessons">The Lessons</a><a href="#dontdo">Don't Do This</a><a href="#project">Final Project</a><a href="#quiz">Knowledge Check</a></div>
+    <div class="nav-cta"><a class="btn outline small" href="HowWeRank200Hustles.html">Back to Programme</a><a class="btn gold small" href="HowWeRank200Hustles.html#pricing">Join the Academy</a></div>
+  </div>
+</nav>
+
+<main>
+<section class="hero">
+  <div class="wrap">
+    <span class="pill">HUSTLE 4 OF 200 · MARKETING &amp; ADVERTISING · EMAIL · PERSONALISATION</span>
+    <h1>Build AI-Enhanced Email Marketing Platforms with Personalisation &amp; Optimisation</h1>
+    <p class="hero-copy">Apply AI to email campaign creation, targeting, testing and analytics — and sell to digital marketers. The opportunity isn't another email-writing tool. It's the AI decision and optimisation layer around the whole process.</p>
+    <div class="hero-actions"><a class="btn gold" href="#lessons">Start Lesson 1 ↓</a><a class="btn outline" href="#project">See the Course Project ↓</a></div>
+    <p class="micro">16 lessons · Every lesson: Explanation → AI Tools → Exercise → Deliverable → Customer → Monetisation</p>
+    <div class="rank-back">📊 Curious how this hustle scores? Use the <a href="HowWeRank200Hustles.html#ex1" style="color:var(--forest);font-weight:800;text-decoration:underline">25-star scorer from the opening lesson</a> to rank it yourself.</div>
+    <div class="progress-wrap">
+      <div class="progress-label"><span id="progressText">0 of 16 lessons complete</span></div>
+      <div class="progress-bar-outer"><div class="progress-bar-inner" id="progressBar"></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><b>16</b><span>lessons</span></div>
+  <div class="stat"><b>1</b><span>A/B test calculator</span></div>
+  <div class="stat"><b>8</b><span>stage course project</span></div>
+  <div class="stat"><b>8</b><span>question knowledge check</span></div>
+</div>
+
+<section class="section" id="method">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Every lesson, same shape</div><h2>Explanation → AI Tools → Exercise → Deliverable → Customer → Monetisation.</h2><p>The platform helps marketers decide who should receive an email, what to say, when to send it, which version performs better, and what to send next. You'll learn to design it — and finish with a prototype you can demonstrate to a real business.</p></div>
+    <div class="method-strip">
+      <div class="mnode">EXPLANATION</div><div class="mnode">AI TOOLS</div><div class="mnode">EXERCISE</div>
+      <div class="mnode">DELIVERABLE</div><div class="mnode">CUSTOMER</div><div class="mnode">MONETISATION</div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="lessons">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The 16 lessons</div><h2>Work through them in order. Tick each one off as you go.</h2></div>
+
+    <details class="lesson-block" open data-lesson="1">
+      <summary><div class="lesson-title-row"><div class="lesson-no">1</div><div><h3>What The Business Idea Means</h3><span class="tag">Not another email-writing tool</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>Build an AI-powered email marketing platform that helps businesses <strong>create, personalise, send, test and optimise</strong> email campaigns. The key opportunity is not simply to create another email-writing tool. The platform should help marketers answer:</p><ul><li>Who should receive this email?</li><li>What should we say to them?</li><li>When should we send it?</li><li>Which subject line is most likely to get attention?</li><li>Which version performs better?</li><li>Which customers are becoming inactive?</li><li>Who is most likely to buy?</li><li>What should we send next?</li></ul><p>The AI becomes the <strong>decision and optimisation layer</strong> around the email marketing process.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">OpenAI</span><span class="tool-pill">Microsoft Copilot</span><span class="tool-pill">Google Gemini</span><span class="tool-pill">Claude</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Pick a business you know that sends marketing emails. For each of the eight questions above, write down how that business answers it today — or where it simply guesses.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; An eight-question gap sheet for one real business</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>Marketers and business owners who send email campaigns and make these decisions by feel.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Every question the business can't answer well is a feature you could build — and a reason they'd pay for it.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-1" data-lesson="1" /><label for="complete-1">Mark Lesson 1 complete</label></div>
+      </div>
+    </details>
+
+    <details class="lesson-block" data-lesson="2">
+      <summary><div class="lesson-title-row"><div class="lesson-no">2</div><div><h3>The Problem You Are Solving</h3><span class="tag">Lots of data, one message for everyone</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>Many businesses collect large amounts of customer information but still send broadly similar emails to everyone. This can lead to:</p><ul><li>Low open rates</li><li>Low click-through rates</li><li>Poor conversion</li><li>Unsubscribes</li><li>Repetitive campaigns</li><li>Too much manual campaign preparation</li><li>Poor customer segmentation</li><li>Missed sales opportunities</li><li>Difficulty understanding campaign data</li></ul><p>Your platform can help turn customer and campaign data into more targeted and personalised communication.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">Spreadsheet</span><span class="tool-pill">Claude / ChatGPT to analyse a sample export</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Look at the last few campaigns of one business (or a brand you subscribe to). Tick which of the nine problems you can see, and note the evidence for each.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A problem diagnosis of one real email programme</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The business that holds customer data but isn't using it in its emails.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>You are selling the move from &ldquo;same email to everyone&rdquo; to targeted communication — the gap between the two is the value.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-2" data-lesson="2" /><label for="complete-2">Mark Lesson 2 complete</label></div>
+      </div>
+    </details>
+
+    <details class="lesson-block" data-lesson="3">
+      <summary><div class="lesson-title-row"><div class="lesson-no">3</div><div><h3>Who Would Buy It?</h3><span class="tag">Four buyer groups, one to start with</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><table class="data-table"><thead><tr><th>Buyer</th><th>Who they are</th></tr></thead><tbody><tr><td><strong>Small businesses</strong></td><td>Retailers, restaurants, hotels, online shops, professional services, training companies, gyms, beauty businesses</td></tr><tr><td><strong>Digital marketers</strong></td><td>Agencies and freelance marketers managing campaigns for multiple clients</td></tr><tr><td><strong>E-commerce businesses</strong></td><td>Especially those with large customer databases, repeat purchases, abandoned carts, product recommendations and loyalty programmes</td></tr><tr><td><strong>Larger organisations</strong></td><td>Eventually: marketing departments, customer relationship teams, sales teams, customer success teams</td></tr></tbody></table></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">Perplexity</span><span class="tool-pill">ChatGPT</span><span class="tool-pill">Claude</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Choose one of the four buyer groups — and one specific type within it — as your target market. Write two sentences on why you can reach them and what their email problem probably is.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; Your chosen target market, with reasoning</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The specific buyer type you selected — you'll build the whole prototype around them.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>The buyer you choose shapes your pricing tier (Starter, Professional, Business or Agency) in Lesson 12.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-3" data-lesson="3" /><label for="complete-3">Mark Lesson 3 complete</label></div>
+      </div>
+    </details>
+
+    <details class="lesson-block" data-lesson="4">
+      <summary><div class="lesson-title-row"><div class="lesson-no">4</div><div><h3>AI Campaign Generator &amp; Personalisation</h3><span class="tag">From brief to personalised message</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p><strong>Campaign generator.</strong> The marketer enters: <em>Product: AI training course · Audience: University students · Objective: Increase registrations</em>. The system generates email subject lines, preview text, email copy, a call-to-action, and different versions for different audiences.</p>
+<p><strong>Personalisation.</strong> Instead of &ldquo;Hello everyone,&rdquo; generate messaging from the customer information available — e.g. <em>&ldquo;Hello Sarah, we noticed you've previously attended one of our digital skills courses...&rdquo;</em> It could consider: name, previous purchases, previous engagement, customer segment, location, interests, behaviour and stage in the customer journey.</p>
+<p>The platform turns the prompt below into a structured workflow, so marketers don't have to write prompts manually.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">OpenAI</span><span class="tool-pill">Microsoft Copilot</span><span class="tool-pill">Google Gemini</span><span class="tool-pill">Claude</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Fill in a Product / Audience / Objective brief for your target market, then run this prompt on one segment. Check the output for anything unsupported before you keep it.</p><div class="prompt-box"><button class="prompt-copy" type="button">Copy</button>Analyse this customer segment and create three email campaign concepts designed to increase engagement.
+
+For each campaign, provide a subject line, preview text, headline, body copy and call-to-action.
+
+Use a different communication approach for each version.
+
+Keep the messaging appropriate for the customer segment and avoid making unsupported claims.</div></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A brief plus three campaign concepts (subject, preview, headline, body, CTA)</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The marketer who wants campaign preparation to take less time — and the recipients who should get relevant messages.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>AI generations and campaigns are natural usage-based pricing metrics (see Lesson 12).</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-4" data-lesson="4" /><label for="complete-4">Mark Lesson 4 complete</label></div>
+      </div>
+    </details>
+
+    <details class="lesson-block" data-lesson="5">
+      <summary><div class="lesson-title-row"><div class="lesson-no">5</div><div><h3>AI Customer Segmentation</h3><span class="tag">Stop treating everyone identically</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>The platform could automatically identify groups such as:</p><table class="data-table"><thead><tr><th>Segment</th><th>Who they are</th></tr></thead><tbody><tr><td>New customers</td><td>People who have recently joined</td></tr><tr><td>Highly engaged customers</td><td>People regularly opening and clicking emails</td></tr><tr><td>At-risk customers</td><td>People whose engagement is declining</td></tr><tr><td>Inactive customers</td><td>People who have stopped interacting with campaigns</td></tr><tr><td>Potential buyers</td><td>People demonstrating behaviours associated with purchasing</td></tr></tbody></table><p>This allows marketers to create campaigns for different customer groups rather than treating everyone identically.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">Claude / ChatGPT</span><span class="tool-pill">Spreadsheet</span><span class="tool-pill">CRM data</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>For your target market, describe in plain English how you'd recognise each of the five segments using data a business would realistically have (joining date, opens, clicks, purchases).</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A five-segment definition sheet</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The marketer who currently sends one campaign to a single undivided list.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Segmentation is the feature that shows a customer the platform is smarter than a copywriting tool.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-5" data-lesson="5" /><label for="complete-5">Mark Lesson 5 complete</label></div>
+      </div>
+    </details>
+
+    <details class="lesson-block" data-lesson="6">
+      <summary><div class="lesson-title-row"><div class="lesson-no">6</div><div><h3>Subject-Line Optimisation &amp; Automated A/B Testing</h3><span class="tag">Let the results choose</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p><strong>Subject lines.</strong> The system generates several and helps marketers test them. For example: <em>A — &ldquo;Learn AI Skills in 30 Days&rdquo; · B — &ldquo;Your AI Skills Could Be Your Next Career Advantage&rdquo; · C — &ldquo;Ready to Become AI-Ready?&rdquo;</em> Then it tracks performance and identifies which approaches generate stronger engagement.</p>
+<p><strong>A/B testing.</strong> Instead of manually creating and comparing campaigns, AI could help test: subject lines, email length, headlines, images, calls-to-action, offers, send times, personalisation and content structure — and progressively learn from campaign results.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">OpenAI</span><span class="tool-pill">Microsoft Copilot</span><span class="tool-pill">Google Gemini</span><span class="tool-pill">Claude</span><span class="tool-pill">Email delivery platform</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Write three subject lines for one segment, each with a different approach. Then practise reading a test result with the calculator — the numbers start as examples; replace them with real results when you have them.</p>
+<div class="calc">
+<h4>Version A</h4><div class="calc-grid">
+<div><label for="abASent">Emails sent</label><input type="number" id="abASent" min="0" value="1000" /></div>
+<div><label for="abAOpen">Opened</label><input type="number" id="abAOpen" min="0" value="220" /></div>
+<div><label for="abAClick">Clicked</label><input type="number" id="abAClick" min="0" value="38" /></div></div>
+<h4>Version B</h4><div class="calc-grid">
+<div><label for="abBSent">Emails sent</label><input type="number" id="abBSent" min="0" value="1000" /></div>
+<div><label for="abBOpen">Opened</label><input type="number" id="abBOpen" min="0" value="260" /></div>
+<div><label for="abBClick">Clicked</label><input type="number" id="abBClick" min="0" value="45" /></div></div>
+<div class="calc-out" id="abOut">—</div>
+<div class="calc-note">Open rate = opened ÷ sent. Click-through rate = clicked ÷ sent. With small audiences a gap can be chance — treat it as a signal to investigate and re-test, not proof.</div></div></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; Three subject-line versions + a plain-English reading of one A/B result</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The marketer who currently guesses which subject line will work.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Testing that improves each campaign is a clear, ongoing benefit to build into a subscription.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-6" data-lesson="6" /><label for="complete-6">Mark Lesson 6 complete</label></div>
+      </div>
+    </details>
+
+    <details class="lesson-block" data-lesson="7">
+      <summary><div class="lesson-title-row"><div class="lesson-no">7</div><div><h3>Send-Time Optimisation</h3><span class="tag">Different customers, different moments</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>Different customers may interact with emails at different times. The system could analyse historical engagement and identify suitable sending windows for different audience segments. Instead of <em>&ldquo;send everyone at 9:00 AM,&rdquo;</em> it supports <strong>sending each segment when engagement data suggests they are most likely to interact.</strong></p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">Analytics platform</span><span class="tool-pill">Email delivery platform</span><span class="tool-pill">Claude / ChatGPT to interpret engagement data</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Pick two of your segments. For each, describe what historical engagement data you'd need to choose a send window, and how you'd test whether it worked.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A send-time plan for two segments</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The marketer who sends everything at the same time out of habit.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Send-time optimisation is an easy-to-explain premium feature for the higher tiers.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-7" data-lesson="7" /><label for="complete-7">Mark Lesson 7 complete</label></div>
+      </div>
+    </details>
+
+    <details class="lesson-block" data-lesson="8">
+      <summary><div class="lesson-title-row"><div class="lesson-no">8</div><div><h3>AI Campaign Analytics</h3><span class="tag">Explain the numbers in plain English</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>This is where the platform becomes much more valuable than a simple AI copywriting tool. The dashboard explains campaign results in plain English. For example:</p>
+<ul><li>&ldquo;Your campaign generated a higher click-through rate among customers who had previously purchased within the last 90 days.&rdquo;</li>
+<li>&ldquo;Engagement has declined among customers who have received more than five promotional emails this month.&rdquo;</li></ul>
+<p>The AI should not simply display numbers. It should help marketers understand <strong>what the numbers mean and what they could investigate next.</strong></p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">OpenAI</span><span class="tool-pill">Microsoft Copilot</span><span class="tool-pill">Google Gemini</span><span class="tool-pill">Claude</span><span class="tool-pill">Analytics platforms</span><span class="tool-pill">Spreadsheet</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Invent a result for a campaign to one segment (open rate, click rate, unsubscribes). Write three plain-English insights about it, and one &ldquo;what to investigate next&rdquo; for each.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A mock insights panel: three explained findings with next steps</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The marketer who has to explain campaign results to a client or manager.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Explained analytics is what justifies a higher subscription tier — the marketer is paying for understanding, not a chart.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-8" data-lesson="8" /><label for="complete-8">Mark Lesson 8 complete</label></div>
+      </div>
+    </details>
+
+    <details class="lesson-block" data-lesson="9">
+      <summary><div class="lesson-title-row"><div class="lesson-no">9</div><div><h3>Predictive Marketing</h3><span class="tag">Campaigns built around likely behaviour</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>A more advanced version could identify customers who appear more likely to:</p><ul><li>Purchase</li><li>Churn</li><li>Re-engage</li><li>Click</li><li>Respond</li><li>Upgrade</li><li>Renew</li></ul><p>This allows marketers to create targeted campaigns around predicted customer behaviour. Keep human review in the loop — predictions are signals for the marketer to act on with judgement.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">Azure</span><span class="tool-pill">OpenAI</span><span class="tool-pill">CRM data</span><span class="tool-pill">Analytics platforms</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Choose one prediction (for example, &ldquo;likely to re-engage&rdquo;). Describe the data you'd need, how a marketer would use the prediction, and what targeted campaign they'd send.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A predictive campaign concept</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The marketer or customer-success team who wants to act before a customer churns or lapses.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Prediction is an advanced feature — a natural reason for a customer to move up to the Business or Enterprise tier.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-9" data-lesson="9" /><label for="complete-9">Mark Lesson 9 complete</label></div>
+      </div>
+    </details>
+
+    <details class="lesson-block" data-lesson="10">
+      <summary><div class="lesson-title-row"><div class="lesson-no">10</div><div><h3>The AI Campaign Workflow &amp; Tools You Could Integrate</h3><span class="tag">A continuous optimisation cycle</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>A complete workflow:</p><div class="flow-chain c4"><div class="fnode">Customer data</div><div class="fnode">AI segmentation</div><div class="fnode">Campaign objective</div><div class="fnode">Audience selection</div><div class="fnode">AI content generation</div><div class="fnode">Personalisation</div><div class="fnode">A/B testing</div><div class="fnode">Campaign delivery</div><div class="fnode">Performance analysis</div><div class="fnode">AI recommendations</div><div class="fnode">Next campaign</div></div><p>This creates a continuous optimisation cycle. Depending on your architecture, the platform could connect with: OpenAI, Microsoft Copilot, Microsoft Power Automate, Azure, Google Gemini, Claude, CRM systems, e-commerce platforms, customer databases, analytics platforms and email delivery platforms. The opportunity is to build the <strong>workflow and business solution</strong>, rather than simply relying on one AI model.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">OpenAI</span><span class="tool-pill">Copilot</span><span class="tool-pill">Power Automate</span><span class="tool-pill">Azure</span><span class="tool-pill">Gemini</span><span class="tool-pill">Claude</span><span class="tool-pill">CRM</span><span class="tool-pill">E-commerce platforms</span><span class="tool-pill">Email delivery platforms</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>For each of the eleven workflow stages, name the data source or tool you'd use for your target market, and mark which stages you'd build first.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; An eleven-stage workflow with a tool or data source for each stage</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The customer's technical contact, who needs to know how the platform connects to what they already use.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Integrations and workflows are what a customer pays for that a standalone AI model doesn't provide.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-10" data-lesson="10" /><label for="complete-10">Mark Lesson 10 complete</label></div>
+      </div>
+    </details>
+
+    <details class="lesson-block" data-lesson="11">
+      <summary><div class="lesson-title-row"><div class="lesson-no">11</div><div><h3>Worked Examples: E-commerce &amp; Training Provider</h3><span class="tag">Same platform, different segments</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p><strong>E-commerce.</strong> An online clothing business with 20,000 customers has purchase history and email engagement data. The platform identifies: Segment 1 — recent purchasers · Segment 2 — customers who haven't purchased for six months · Segment 3 — customers interested in a particular product category · Segment 4 — highly engaged customers. It creates different campaigns for each, so the business isn't sending the same message to all 20,000 people.</p>
+<p><strong>Training provider.</strong> The AI could identify students interested in AI, previous learners, inactive learners, people who started but didn't complete registration, and people who downloaded information but didn't enrol. Each group receives a different campaign.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">OpenAI</span><span class="tool-pill">Microsoft Copilot</span><span class="tool-pill">Google Gemini</span><span class="tool-pill">Claude</span><span class="tool-pill">CRM</span><span class="tool-pill">E-commerce platform</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Choose one example (or your own target market) and build a campaign plan: for every segment, write the campaign idea, the message angle and the desired action.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A segment-by-segment campaign plan</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>An online business owner with a large list, or a training provider promoting courses.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Showing a customer their own list split into meaningful segments is one of the clearest sales demonstrations you can give.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-11" data-lesson="11" /><label for="complete-11">Mark Lesson 11 complete</label></div>
+      </div>
+    </details>
+
+    <details class="lesson-block" data-lesson="12">
+      <summary><div class="lesson-title-row"><div class="lesson-no">12</div><div><h3>How You Could Make Money</h3><span class="tag">Subscription, usage, agency and enterprise</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><table class="data-table"><thead><tr><th>Model</th><th>How it works</th></tr></thead><tbody><tr><td><strong>Monthly SaaS subscription</strong></td><td>Starter (small businesses) · Professional (growing businesses and marketers) · Business (larger teams) · Agency (marketers managing multiple clients)</td></tr><tr><td><strong>Usage-based pricing</strong></td><td>Charge by number of contacts, number of emails, AI generations, campaigns or AI analysis</td></tr><tr><td><strong>Agency model</strong></td><td>Allow marketing agencies to use the platform across multiple clients</td></tr><tr><td><strong>Enterprise</strong></td><td>Custom integrations, security controls, dedicated support, custom workflows, advanced analytics</td></tr></tbody></table></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">Spreadsheet</span><span class="tool-pill">ChatGPT / Claude to draft pricing-page copy</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Design the pricing page for your first customer type: pick the tier or model that fits, the metric you'd charge on, and what's included. Choose your own prices and sanity-check them against your costs.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A draft pricing structure for your first customer type</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The buyer group you chose in Lesson 3 — a small shop and an agency need very different plans.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>This lesson is the monetisation model — recurring subscription revenue, with usage and enterprise options as the platform grows.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-12" data-lesson="12" /><label for="complete-12">Mark Lesson 12 complete</label></div>
+      </div>
+    </details>
+
+    <details class="lesson-block" data-lesson="13">
+      <summary><div class="lesson-title-row"><div class="lesson-no">13</div><div><h3>First Customer Strategy &amp; Discovery Questions</h3><span class="tag">One clearly defined problem</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>Don't try to build a huge platform immediately. Start with one clearly defined problem — for example, <strong>AI-powered email campaign optimisation for small e-commerce businesses.</strong> Build the smallest useful version, then demonstrate:</p>
+<p><strong>Before AI:</strong> manual segmentation → manual copywriting → manual testing → manual analysis.<br><strong>With your platform:</strong> customer data → AI segmentation → personalised campaign → testing → automated analysis.</p>
+<p>These questions identify the actual business problem before you build the solution.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">Claude / ChatGPT to rehearse the conversation</span><span class="tool-pill">Notes app</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Run this discovery conversation with a real marketer or business owner — or rehearse it with an AI playing one — and record the answers. Then write your before/with comparison for that business.</p><div class="prompt-box"><button class="prompt-copy" type="button">Copy</button>1. How many marketing emails do you send each month?
+2. How do you currently segment customers?
+3. How do you personalise emails?
+4. How do you decide what content to send?
+5. Do you currently run A/B tests?
+6. How do you measure campaign performance?
+7. How much time does campaign creation take?
+8. What happens when customers stop engaging?
+9. How do you identify your most valuable customers?
+10. What would better email conversion mean financially for your business?</div></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; Discovery notes + a before/with-your-platform comparison</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>A small e-commerce business (or your chosen niche) that sends regular campaigns.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Question 10 puts a financial value on better conversion — the basis of what the customer will pay.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-13" data-lesson="13" /><label for="complete-13">Mark Lesson 13 complete</label></div>
+      </div>
+    </details>
+
+    <details class="lesson-block" data-lesson="14">
+      <summary><div class="lesson-title-row"><div class="lesson-no">14</div><div><h3>Security &amp; Responsible AI</h3><span class="tag">Designed into the product from day one</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>Because the platform may process customer information, security needs to be designed in. Important considerations:</p><ul><li>Data protection</li><li>Access controls</li><li>Consent</li><li>Customer preferences</li><li>Unsubscribe requirements</li><li>Secure integrations</li><li>Data retention</li><li>Human review</li><li>Protection of customer information</li><li>Appropriate use of AI-generated content</li></ul><p>The platform should also make it clear when AI-generated content is being used and provide appropriate human oversight.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">Client IT / security policies</span><span class="tool-pill">ChatGPT / Claude to draft a checklist (never with real customer data)</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>For your prototype, go through all ten considerations and write one concrete control for each (for example, how consent is recorded, or who reviews AI copy before it sends).</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A one-page security and responsible-AI checklist</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>The customer's data-protection lead or owner — and the recipients whose data is used.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Security controls are an explicit part of the Enterprise offer and a reason a careful customer will trust you.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-14" data-lesson="14" /><label for="complete-14">Mark Lesson 14 complete</label></div>
+      </div>
+    </details>
+
+    <details class="lesson-block" data-lesson="15">
+      <summary><div class="lesson-title-row"><div class="lesson-no">15</div><div><h3>The Seven-Day Business Challenge</h3><span class="tag">From AI idea → working prototype → potential business</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><table class="data-table"><thead><tr><th>Day</th><th>Task</th></tr></thead><tbody><tr><td>Day 1</td><td>Identify one target market</td></tr><tr><td>Day 2</td><td>Identify its email marketing problem</td></tr><tr><td>Day 3</td><td>Design the customer segmentation process</td></tr><tr><td>Day 4</td><td>Build an AI campaign-generation prototype</td></tr><tr><td>Day 5</td><td>Add personalisation and testing</td></tr><tr><td>Day 6</td><td>Create a campaign analytics dashboard</td></tr><tr><td>Day 7</td><td>Demonstrate the solution to a potential customer</td></tr></tbody></table></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">Everything from Lessons 1–14</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Block the seven days in your calendar now. Write down your Day 1 target market and who you'll demonstrate to on Day 7.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A dated 7-day plan ending in a customer demonstration</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>A named potential customer for your Day 7 demonstration.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>The Day 7 demonstration is where a prototype becomes a first sales conversation.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-15" data-lesson="15" /><label for="complete-15">Mark Lesson 15 complete</label></div>
+      </div>
+    </details>
+
+    <details class="lesson-block" data-lesson="16">
+      <summary><div class="lesson-title-row"><div class="lesson-no">16</div><div><h3>The Final Business Model</h3><span class="tag">Positioning: writing tool vs optimisation platform</span></div></div></summary>
+      <div class="lesson-body">
+        <div class="lesson-part"><span class="part-label">Explanation</span><p>The strongest version of this opportunity is not <em>&ldquo;An AI that writes marketing emails.&rdquo;</em> It is:</p>
+<p><strong>&ldquo;An AI-powered marketing optimisation platform that helps businesses decide who to contact, what to say, when to say it, and how to improve the next campaign.&rdquo;</strong></p>
+<p>That positioning moves the product from a simple AI writing tool toward a business workflow and optimisation platform.</p></div>
+        <div class="lesson-part"><span class="part-label">AI Tools</span><div><span class="tool-pill">OpenAI</span><span class="tool-pill">Microsoft Copilot</span><span class="tool-pill">Google Gemini</span><span class="tool-pill">Claude</span></div></div>
+        <div class="lesson-part part-exercise"><span class="part-label">Practical Exercise</span><p>Write your own positioning statement for your target market, using the four decisions: who to contact, what to say, when to say it, and how to improve the next campaign.</p></div>
+        <div class="lesson-part"><span class="part-label">Real Deliverable</span><p><span class="part-deliverable"><b>Deliverable</b>&nbsp; A one-paragraph positioning statement</span></p></div>
+        <div class="lesson-part"><span class="part-label">Customer</span><p>Your first target customer — it should read as an answer to their problem, not a feature list.</p></div>
+        <div class="lesson-part"><span class="part-label">Monetisation</span><p>Positioning as an optimisation platform, not a writing tool, is what supports a subscription customers keep paying for.</p></div>
+        <div class="lesson-complete"><input type="checkbox" id="complete-16" data-lesson="16" /><label for="complete-16">Mark Lesson 16 complete</label></div>
+      </div>
+    </details>
+
+  </div>
+</section>
+
+<section class="section" id="mindset">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The course project model</div><h2>From customer data to the next action.</h2></div>
+    <div class="quote">The learner should finish with something they can demonstrate to a real business, rather than simply completing an AI exercise.</div>
+    <div class="flow-chain c4"><div class="fnode">Customer data</div><div class="fnode">Segmentation</div><div class="fnode">Personalisation</div><div class="fnode">AI campaign creation</div><div class="fnode">A/B testing</div><div class="fnode">Campaign analytics</div><div class="fnode">AI recommendations</div><div class="fnode">Next action</div></div>
+  </div>
+</section>
+
+<section class="section alt" id="dontdo">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Before you send anything</div><h2>Don't Do This</h2></div>
+    <div class="dont-box">
+      <b>Avoid these</b>
+      <ul>
+        <li>Build &ldquo;just another AI email writer&rdquo; — build the decision and optimisation layer around the campaign</li>
+        <li>Send the same message to everyone on the list</li>
+        <li>Ignore consent, customer preferences or unsubscribe requirements</li>
+        <li>Publish AI-generated content without human review — and make it clear when AI-generated content is being used</li>
+        <li>Make unsupported claims in campaign messaging</li>
+        <li>Process customer information without access controls, secure integrations and a data-retention approach</li>
+        <li>Show marketers raw numbers without explaining what they mean and what to investigate next</li>
+        <li>Try to build a huge platform first — start with one clearly defined problem</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="project">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">The course project</div><h2>Build A Prototype For One Specific Industry</h2><p>Your solution should demonstrate every stage of the chain below, using sample or dummy customer data — never a real customer list for practice.</p></div>
+    <div class="project-grid">
+      <div class="project-part"><b>Part 1 — Customer Data</b>Choose your industry and define the customer data your prototype starts from (sample data only).</div>
+      <div class="project-part"><b>Part 2 — Segmentation</b>Show how the customers are divided into meaningful segments.</div>
+      <div class="project-part"><b>Part 3 — Personalisation</b>Show how messaging changes using the customer information available.</div>
+      <div class="project-part"><b>Part 4 — AI Campaign Creation</b>Generate subject lines, preview text, copy and calls-to-action for the segments.</div>
+      <div class="project-part"><b>Part 5 — A/B Testing</b>Set up and read a test between at least two versions.</div>
+      <div class="project-part"><b>Part 6 — Campaign Analytics</b>Present the results in plain English, explaining what the numbers mean.</div>
+      <div class="project-part"><b>Part 7 — AI Recommendations</b>Recommend what to change or investigate based on the results.</div>
+      <div class="project-part"><b>Part 8 — Next Action</b>Define the next campaign — closing the optimisation loop.</div>
+    </div>
+  </div>
+</section>
+
+<section class="section alt" id="challenge">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Prototype checklist</div><h2>Before you move to the next AI hustle, my prototype shows:</h2><p>Tick each one off as you achieve it — your progress is saved in this browser.</p></div>
+    <ul class="checklist" id="finalChecklist" style="max-width:780px;margin:0 auto">
+      <li><label><input type="checkbox" data-ck="0" /> customer data for one specific industry</label></li>
+      <li><label><input type="checkbox" data-ck="1" /> segmentation</label></li>
+      <li><label><input type="checkbox" data-ck="2" /> personalisation</label></li>
+      <li><label><input type="checkbox" data-ck="3" /> AI campaign creation</label></li>
+      <li><label><input type="checkbox" data-ck="4" /> A/B testing</label></li>
+      <li><label><input type="checkbox" data-ck="5" /> campaign analytics</label></li>
+      <li><label><input type="checkbox" data-ck="6" /> AI recommendations</label></li>
+      <li><label><input type="checkbox" data-ck="7" /> a next action</label></li>
+      <li><label><input type="checkbox" data-ck="8" /> I have demonstrated it to a potential customer</label></li>
+    </ul>
+    <p class="calc-note" id="checkNote" style="text-align:center;margin-top:12px">0 of 9 complete</p>
+  </div>
+</section>
+
+<section class="section" id="quiz">
+  <div class="wrap">
+    <div class="section-head"><div class="eyebrow">Check your understanding</div><h2>Knowledge Check</h2><p>Click an answer for instant feedback. Eight questions, automatically marked. (Questions drafted from the course content.)</p></div>
+    <div id="quizContainer"></div>
+    <div class="quiz-score" id="quizScore">0 of 8 answered</div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap"><div class="eyebrow light">Hustle 4 of 200</div><h2>Sixteen lessons. One prototype you can demonstrate to a real business.</h2><p>Join the BSOE AI Academy to unlock the full 200 AI Hustles Programme — Hustle 4 turns email marketing into an optimisation platform you can sell.</p><div class="final-actions"><a class="btn gold" href="HowWeRank200Hustles.html#pricing">Join the Academy →</a><a class="btn outline" style="color:white;border-color:rgba(255,255,255,.35)" href="Hustle03_DocumentAutomation.html">Previous: Hustle 3 — Document Automation</a></div></div>
+</section>
+</main>
+
+<footer class="site"><div class="wrap foot"><div class="brand"><span class="brand-mark">04</span><span>Hustle 4 · AI Email Marketing</span></div><div class="foot-links"><a href="landingpage.html">Academy Home</a><a href="HowWeRank200Hustles.html">Ranking Framework</a><a href="Hustle01_ContentCreation.html">Hustle 1</a><a href="Hustle02_SEO_GEO_AEO.html">Hustle 2</a><a href="Hustle03_DocumentAutomation.html">Hustle 3</a><a href="FounderTools.html">Founder Tools</a><a href="LearnerGuide.html">Learner Guide</a></div><div>© 2026 BSOE LTD.</div></div></footer>
+
+<script>
+(function(){
+  "use strict";
+  var STORAGE_KEY = "bsoe-hustle04-email-marketing-v1";
+  function loadState(){ try { var raw = localStorage.getItem(STORAGE_KEY); return raw ? JSON.parse(raw) : {}; } catch(e){ return {}; } }
+  function saveState(s){ try { localStorage.setItem(STORAGE_KEY, JSON.stringify(s)); } catch(e){} }
+  var state = loadState();
+
+  var checkboxes = document.querySelectorAll(".lesson-complete input[type=checkbox]");
+  var completed = state.completed || {};
+  function updateProgress(){
+    var total = checkboxes.length;
+    var done = Object.keys(completed).filter(function(k){ return completed[k]; }).length;
+    document.getElementById("progressText").textContent = done + " of " + total + " lessons complete";
+    document.getElementById("progressBar").style.width = (done/total*100) + "%";
+  }
+  checkboxes.forEach(function(cb){
+    var key = cb.dataset.lesson;
+    cb.checked = !!completed[key];
+    cb.addEventListener("change", function(){
+      completed[key] = cb.checked; state.completed = completed; saveState(state); updateProgress();
+    });
+  });
+  updateProgress();
+
+  document.querySelectorAll(".prompt-copy").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var box = btn.closest(".prompt-box");
+      var text = box.textContent.replace(/^Copy/, "").trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function(){
+          var old = btn.textContent; btn.textContent = "Copied!";
+          setTimeout(function(){ btn.textContent = old; }, 1500);
+        }).catch(function(){});
+      }
+    });
+  });
+
+  // A/B test calculator
+  var ids = ["abASent","abAOpen","abAClick","abBSent","abBOpen","abBClick"];
+  var el = {}; ids.forEach(function(i){ el[i] = document.getElementById(i); });
+  var abOut = document.getElementById("abOut");
+  var ab = state.ab || {};
+  ids.forEach(function(i){ if (ab[i] !== undefined) el[i].value = ab[i]; });
+  function pct(n){ return n.toLocaleString("en-GB", {maximumFractionDigits:1}) + "%"; }
+  function runAb(){
+    var v = {}; ids.forEach(function(i){ v[i] = parseFloat(el[i].value); });
+    var bad = ids.some(function(i){ return !(v[i] >= 0); }) || !(v.abASent > 0) || !(v.abBSent > 0);
+    if (bad) { abOut.textContent = "Enter numbers for both versions (emails sent must be greater than zero)."; return; }
+    if (v.abAOpen > v.abASent || v.abBOpen > v.abBSent || v.abAClick > v.abASent || v.abBClick > v.abBSent) { abOut.textContent = "Opened and clicked can\u2019t be more than emails sent."; return; }
+    var aO = v.abAOpen/v.abASent*100, bO = v.abBOpen/v.abBSent*100, aC = v.abAClick/v.abASent*100, bC = v.abBClick/v.abBSent*100;
+    function lead(a, b, name){
+      if (Math.abs(a-b) < 0.05) return "the two versions are level on " + name;
+      return "Version " + (b > a ? "B" : "A") + " is ahead on " + name + " by " + (Math.abs(a-b)).toLocaleString("en-GB",{maximumFractionDigits:1}) + " percentage points";
+    }
+    abOut.innerHTML = "<b>Version A:</b> open rate " + pct(aO) + " \u00B7 click-through rate " + pct(aC) + "<br><b>Version B:</b> open rate " + pct(bO) + " \u00B7 click-through rate " + pct(bC) + "<br>" + lead(aO,bO,"opens") + "; " + lead(aC,bC,"clicks") + ".";
+    var s = {}; ids.forEach(function(i){ s[i] = el[i].value; }); state.ab = s; saveState(state);
+  }
+  ids.forEach(function(i){ el[i].addEventListener("input", runAb); });
+  runAb();
+
+  var ckBoxes = document.querySelectorAll("#finalChecklist input[type=checkbox]");
+  var ck = state.ck || {};
+  function updateCk(){
+    var n = Object.keys(ck).filter(function(k){ return ck[k]; }).length;
+    document.getElementById("checkNote").textContent = n + " of " + ckBoxes.length + " complete";
+  }
+  ckBoxes.forEach(function(b){
+    var k = b.dataset.ck; b.checked = !!ck[k];
+    b.addEventListener("change", function(){ ck[k] = b.checked; state.ck = ck; saveState(state); updateCk(); });
+  });
+  updateCk();
+
+  var QUIZ = [
+    { q: "What is the key opportunity in this hustle?", opts: ["Building yet another email-writing tool","Building an AI decision and optimisation layer around the email marketing process","Sending as many emails as possible","Replacing marketers entirely"], correct: 1 },
+    { q: "Why is sending the same email to everyone a problem?", opts: ["It is illegal","It can lead to low engagement, unsubscribes and missed sales opportunities","It makes emails load slowly","It has no effect"], correct: 1 },
+    { q: "Which segment describes people whose engagement is declining?", opts: ["New customers","Highly engaged customers","At-risk customers","Potential buyers"], correct: 2 },
+    { q: "What is the purpose of A/B testing?", opts: ["To send emails to two different companies","To compare versions and learn which performs better","To double the number of emails sent","To hide results from customers"], correct: 1 },
+    { q: "What does send-time optimisation do?", opts: ["Sends everyone the email at 9:00 AM","Uses historical engagement to identify suitable sending windows for different segments","Deletes old emails","Blocks unsubscribes"], correct: 1 },
+    { q: "Beyond displaying numbers, what should AI campaign analytics do?", opts: ["Nothing — charts are enough","Help marketers understand what the numbers mean and what to investigate next","Hide poor results","Replace the email platform"], correct: 1 },
+    { q: "Which is the stronger positioning?", opts: ["\u201CAn AI that writes marketing emails.\u201D","\u201CAn AI-powered marketing optimisation platform that helps businesses decide who to contact, what to say, when to say it, and how to improve the next campaign.\u201D"], correct: 1 },
+    { q: "Because the platform processes customer information, what must be designed in from the start?", opts: ["Nothing until customers complain","Security, consent, unsubscribe handling, data retention and human oversight","Only a logo","Only faster sending"], correct: 1 }
+  ];
+  var quizAnswers = state.quiz || {};
+  var quizContainer = document.getElementById("quizContainer");
+  QUIZ.forEach(function(item, qi){
+    var qEl = document.createElement("div");
+    qEl.className = "quiz-q";
+    var qText = document.createElement("div");
+    qText.className = "qtext";
+    qText.textContent = "Question " + (qi+1) + ". " + item.q;
+    qEl.appendChild(qText);
+    item.opts.forEach(function(opt, oi){
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "quiz-opt";
+      b.textContent = String.fromCharCode(65+oi) + ". " + opt;
+      if (quizAnswers[qi] !== undefined) {
+        b.disabled = true;
+        if (oi === item.correct) b.classList.add("correct");
+        else if (oi === quizAnswers[qi]) b.classList.add("incorrect");
+      }
+      b.addEventListener("click", function(){
+        if (quizAnswers[qi] !== undefined) return;
+        quizAnswers[qi] = oi; state.quiz = quizAnswers; saveState(state);
+        qEl.querySelectorAll(".quiz-opt").forEach(function(o, idx){
+          o.disabled = true;
+          if (idx === item.correct) o.classList.add("correct");
+          else if (idx === oi) o.classList.add("incorrect");
+        });
+        updateQuizScore();
+      });
+      qEl.appendChild(b);
+    });
+    quizContainer.appendChild(qEl);
+  });
+  function updateQuizScore(){
+    var answered = Object.keys(quizAnswers).length;
+    var correct = QUIZ.filter(function(item, qi){ return quizAnswers[qi] === item.correct; }).length;
+    document.getElementById("quizScore").textContent = answered === QUIZ.length
+      ? ("Score: " + correct + " of " + QUIZ.length + " correct" + (correct >= 6 ? " \u2014 pass!" : " \u2014 review and try again"))
+      : (answered + " of " + QUIZ.length + " answered");
+  }
+  updateQuizScore();
+})();
+</script>
+</body>
+</html>
