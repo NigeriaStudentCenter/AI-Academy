@@ -1,0 +1,41 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>My courses | BSOE Practical Skills Academy</title>
+<style>
+body{font:16px/1.55 Arial,sans-serif;margin:0;background:#f5f7f5;color:#183c32}
+header{background:#183c32;color:#fff;padding:14px 20px;font-weight:bold;letter-spacing:.04em}
+main{max-width:760px;margin:24px auto;padding:0 16px}
+.card{background:#fff;border:1px solid #d5ddd8;border-radius:12px;padding:20px;margin-bottom:18px}
+input{width:100%;box-sizing:border-box;padding:10px;margin:6px 0 14px;border:1px solid #9aa;border-radius:8px;font-size:16px}
+button,.btn{background:#183c32;color:#fff;border:0;border-radius:8px;padding:10px 18px;font-size:16px;cursor:pointer;text-decoration:none;display:inline-block}
+.course{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:12px 0;border-top:1px solid #e3e8e5}
+.muted{color:#566}.err{color:#a11;margin-top:10px}
+</style></head><body>
+<header>BSOE · PRACTICAL SKILLS ACADEMY</header>
+<main>
+<div class="card" id="signin"><h2>Sign in to your courses</h2>
+<p class="muted">Use the email you paid with and the payment reference from your Paystack receipt email (or a BSOE access code).</p>
+<form id="f"><label>Email<input id="email" type="email" autocomplete="email" required></label><label>Payment reference<input id="ref" type="text" required></label><button>Sign in</button></form><div class="err" id="err" role="alert"></div></div>
+<div class="card" id="mine" hidden><h2>My courses</h2><div id="list"></div><p><button id="out" type="button" style="background:#fff;color:#183c32;border:1px solid #183c32">Sign out</button></p></div>
+<div class="card"><h3>Courses</h3><div id="all"></div><p class="muted">Each course is ₦35,000 and opens for one year from the payment date. Course completion is formative and is not a trade licence.</p></div>
+</main>
+<script src="config.js"></script>
+<script>
+(function(){
+const C=window.COURSE_CONFIG,KEY='bsoe_ps_token',$=id=>document.getElementById(id);
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function mine(){try{const t=localStorage.getItem(KEY);if(!t)return null;const c=JSON.parse(atob(t.split('.')[0].replace(/-/g,'+').replace(/_/g,'/')));return c.exp*1000>Date.now()?c:null}catch{return null}}
+function render(){
+ const c=mine(),have=new Set(c?c.c:[]);
+ $('signin').hidden=!!c;$('mine').hidden=!c;
+ if(c)$('list').innerHTML=have.size?[...have].map(id=>{const m=C.courses.find(x=>x.id===id);return '<div class="course"><span>'+esc(m.icon)+' <b>'+esc(m.title)+'</b></span><span><a class="btn" href="course.html?course='+id+'">Lessons</a> <a class="btn" href="media.html?course='+id+'">Equipment lab</a></span></div>'}).join(''):'<p class="muted">No courses on this account yet.</p>';
+ $('all').innerHTML=C.courses.filter(m=>!have.has(m.id)).map(m=>'<div class="course"><span>'+esc(m.icon)+' '+esc(m.title)+'</span>'+(C.pay[m.id]?'<a class="btn" href="'+esc(C.pay[m.id])+'">Enrol · ₦35,000</a>':'<span class="muted">Enrolment opening soon</span>')+'</div>').join('');
+}
+$('f').addEventListener('submit',async e=>{e.preventDefault();$('err').textContent='';
+ try{const r=await fetch(C.api+'/access/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:$('email').value,reference:$('ref').value})});
+  const d=await r.json();if(!r.ok){$('err').textContent=d.message||'Could not sign in.';return}
+  localStorage.setItem(KEY,d.token);const next=new URLSearchParams(location.search).get('next');
+  if(next&&/^(course|media)\.html\?course=[a-z]+$/.test(next)){location.replace(next);return}render()}
+ catch{$('err').textContent='We could not reach the course server. Please try again.'}});
+$('out').addEventListener('click',()=>{localStorage.removeItem(KEY);render()});
+render();
+})();
+</script></body></html>
